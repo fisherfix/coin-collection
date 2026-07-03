@@ -277,6 +277,36 @@ grid.addEventListener('drop', e => {
   document.querySelectorAll('.coin-card').forEach(c => c.classList.remove('drag-over'));
 });
 
+// ===== 自动计算统计数字 =====
+function recalcStats() {
+  const cards = document.querySelectorAll('.coin-card');
+  const coinCount = cards.length;
+  let total = 0;
+  const cats = new Set();
+  cards.forEach(c => {
+    if (c.dataset.category) cats.add(c.dataset.category);
+    const priceText = c.querySelector('.price-value')?.textContent || '';
+    // 提取所有数字（处理 "€386.43 / 9枚" 这种格式）
+    const matches = priceText.match(/[\d,]+\.?\d*/g);
+    if (matches) {
+      matches.forEach(m => {
+        const n = parseFloat(m.replace(/,/g, ''));
+        if (!isNaN(n) && n > 0 && n < 100000) total += n;
+      });
+    }
+  });
+  const countEl = document.querySelector('.stat-count .stat-value');
+  const totalEl = document.querySelector('.stat-total .stat-value');
+  const catsEl = document.querySelector('.stat-cats .stat-value');
+  if (countEl) countEl.textContent = coinCount;
+  if (totalEl) totalEl.textContent = '€' + total.toLocaleString('en-US', {minimumFractionDigits: 0, maximumFractionDigits: 2});
+  if (catsEl) catsEl.textContent = cats.size;
+}
+recalcStats();
+// 卡片内容变化时重新计算
+document.addEventListener('input', recalcStats);
+document.addEventListener('dragend', recalcStats);
+
 // ===== 自动保存到 localStorage（防抖800ms） =====
 let _saveTimer;
 function autoSave() {
@@ -379,9 +409,9 @@ document.querySelectorAll('.coin-card').forEach(attachCard);
 <p class="subtitle" contenteditable="true">NumisMaster Collection Catalog</p>
 
 <div class="stats">
-  <div class="stat"><div class="stat-value" contenteditable="true">7</div><div class="stat-label">藏品总数</div></div>
-  <div class="stat"><div class="stat-value" contenteditable="true">€2,844</div><div class="stat-label">总估值</div></div>
-  <div class="stat"><div class="stat-value" contenteditable="true">4</div><div class="stat-label">专题分类</div></div>
+  <div class="stat stat-count"><div class="stat-value">7</div><div class="stat-label">藏品总数（自动计算）</div></div>
+  <div class="stat stat-total"><div class="stat-value">€0</div><div class="stat-label">总估值（自动计算）</div></div>
+  <div class="stat stat-cats"><div class="stat-value">0</div><div class="stat-label">专题分类（自动计算）</div></div>
 </div>
 
 <div class="filters">

@@ -68,6 +68,9 @@ h1 { text-align: center; color: #d4af37; font-size: 2em; margin-bottom: 10px; }
 const GITHUB_REPO = 'fisherfix/coin-collection';
 const GITHUB_BRANCH = 'master';
 let githubToken = localStorage.getItem('gh_token') || '';
+let autoSyncEnabled = localStorage.getItem('gh_autoSync') === 'true';
+let _syncPending = false;
+let _syncTimer = null;
 
 // ===== Toast提示 =====
 function showToast(msg) {
@@ -161,11 +164,15 @@ function openGithubPanel() {
   panel.innerHTML = `
     <h3 style="color:#d4af37;margin-bottom:15px;">⚙️ GitHub 同步设置</h3>
     <p style="color:#888;font-size:0.85em;margin-bottom:15px;line-height:1.6;">
-      将 Token 填入后点击保存，数据修改会自动同步到 GitHub 仓库永久保存。<br>
-      生成 Token：GitHub → Settings → Developer settings → Personal access tokens → Generate new token → 勾选 <strong style="color:#d4af37">repo</strong>
+      Token 只需填一次，之后所有修改会自动同步到 GitHub。<br>
+      生成 Token：<a href="https://github.com/settings/tokens/new" target="_blank" style="color:#d4af37;">点此生成</a> → Note 填 coin → 勾选 <strong style="color:#d4af37">repo</strong> → Generate → 复制粘贴到这里
     </p>
     <input id="gh-token-input" type="password" placeholder="ghp_xxxxxxxxxxxxxxxxxxxx" value="${githubToken}"
       style="width:100%;padding:10px;border:1px solid #555;background:#1a1a2e;color:#eee;border-radius:8px;margin-bottom:12px;font-size:0.9em;">
+    <label style="display:flex;align-items:center;gap:8px;margin-bottom:15px;cursor:pointer;">
+      <input id="gh-auto-sync" type="checkbox" ${autoSyncEnabled?'checked':''} style="width:18px;height:18px;accent-color:#d4af37;">
+      <span style="color:#ccc;font-size:0.9em;">☑️ 编辑后自动同步（每3秒无操作自动推送）</span>
+    </label>
     <div style="display:flex;gap:10px;justify-content:flex-end;">
       <button onclick="this.closest('#gh-panel').remove()" style="padding:8px 16px;background:#333;color:#888;border:1px solid #555;border-radius:6px;cursor:pointer;">取消</button>
       <button onclick="saveGithubToken()" style="padding:8px 16px;background:#d4af37;color:#1a1a2e;border:none;border-radius:6px;cursor:pointer;font-weight:bold;">保存并同步</button>
@@ -179,7 +186,10 @@ function saveGithubToken() {
   if (!token) return;
   githubToken = token;
   localStorage.setItem('gh_token', token);
-  document.getElementById('gh-status').innerHTML = '<span style="color:#90EE90">✅ Token 已保存，正在同步...</span>';
+  const autoCheck = document.getElementById('gh-auto-sync');
+  autoSyncEnabled = autoCheck ? autoCheck.checked : false;
+  localStorage.setItem('gh_autoSync', autoSyncEnabled ? 'true' : 'false');
+  document.getElementById('gh-status').innerHTML = '<span style="color:#90EE90">✅ Token 已保存' + (autoSyncEnabled ? '，自动同步已开启' : '') + '</span>';
   syncToGithub().then(() => setTimeout(() => document.getElementById('gh-panel')?.remove(), 1500));
 }
 
@@ -307,8 +317,9 @@ recalcStats();
 document.addEventListener('input', recalcStats);
 document.addEventListener('dragend', recalcStats);
 
-// ===== 自动保存到 localStorage（防抖800ms） =====
+// ===== 自动保存 + 自动同步 =====
 let _saveTimer;
+let _syncCooldown = false;
 function autoSave() {
   clearTimeout(_saveTimer);
   _saveTimer = setTimeout(() => {
@@ -316,6 +327,14 @@ function autoSave() {
     if (!g) return;
     const cards = [...g.querySelectorAll('.coin-card')].map(c => c.outerHTML);
     localStorage.setItem('coinCat_v3', JSON.stringify({ cards }));
+    // 自动同步：每3秒无操作后推送一次
+    if (autoSyncEnabled && githubToken && !_syncCooldown) {
+      _syncCooldown = true;
+      clearTimeout(_syncTimer);
+      _syncTimer = setTimeout(() => {
+        syncToGithub().finally(() => { _syncCooldown = false; });
+      }, 3000);
+    }
   }, 800);
 }
 document.addEventListener('input', autoSave);

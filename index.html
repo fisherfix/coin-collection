@@ -83,6 +83,7 @@ h1 { text-align: center; color: #d4af37; font-size: 2em; margin-bottom: 10px; }
 
 <div class="toolbar">
   <button class="tool-btn" onclick="restoreLocal()">↩️ 恢复本地编辑</button>
+  <button class="tool-btn" onclick="exportHTML()" style="border-color:#4c4;color:#4c4">💾 保存我的修改</button>
   <button class="tool-btn" onclick="exportCSV()">📋 导出CSV</button>
   <button class="tool-btn github" onclick="openGithubPanel()">⚙️ GitHub 同步</button>
   <button class="tool-btn github" onclick="syncToGithub()">🔄 同步到 GitHub</button>
@@ -721,50 +722,100 @@ function exportCSV() {
   showToast('📋 CSV已导出');
 }
 
+// ===== 导出当前完整 HTML（包含所有手动修改） =====
+function exportHTML() {
+  // 1. 克隆当前 document
+  const doc = document.documentElement.cloneNode(true);
+
+  // 2. 移除所有 contenteditable 属性（让下载下来的文件不再可编辑，避免误改）
+  //    但保留用户已经编辑好的文本内容
+  doc.querySelectorAll('[contenteditable]').forEach(el => {
+    el.removeAttribute('contenteditable');
+  });
+
+  // 3. 移除 token 面板（避免泄露）
+  const tk = doc.querySelector('#tokenPanel');
+  if (tk) tk.remove();
+
+  // 4. 移除"恢复本地编辑"和"重置本地"按钮（这些只在浏览器里有意义）
+  doc.querySelectorAll('.tool-btn').forEach(btn => {
+    const txt = btn.textContent.trim();
+    if (txt.includes('恢复本地编辑') || txt.includes('重置本地') || txt.includes('同步到 GitHub')) {
+      btn.remove();
+    }
+  });
+
+  // 5. 移除会触发 GitHub 推送的 onclick
+  doc.querySelectorAll('[onclick]').forEach(el => {
+    const fn = el.getAttribute('onclick');
+    if (fn && (fn.includes('syncToGithub') || fn.includes('openGithubPanel') || fn.includes('resetLocal') || fn.includes('restoreLocal') || fn.includes('exportHTML'))) {
+      el.removeAttribute('onclick');
+    }
+  });
+
+  // 6. 在脚本区开头加注释，说明这是手动导出版本
+  let html = '<!DOCTYPE html>\n' + doc.outerHTML;
+
+  // 7. 注入版本标记
+  const ts = new Date().toISOString().replace(/[:.]/g, '-').slice(0, 19);
+  html = html.replace('<head>', `<head>\n<!-- 💾 用户手动编辑快照 ${ts} -->`);
+
+  const blob = new Blob([html], {type:'text/html;charset=utf-8'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = `coin-collection_${ts}.html`;
+  a.click();
+  showToast('💾 HTML 已下载，请把文件发给我');
+  console.log('[exportHTML] 快照已生成：', `coin-collection_${ts}.html`);
+  console.log('[exportHTML] 卡片数量：', document.querySelectorAll('.coin-card').length);
+}
+
 // ===== 尝试自动恢复本地编辑 =====
-(function tryRestore() {
-  const raw = localStorage.getItem('coinCat_v4');
-  if (!raw) return;
-  try {
-    const d = JSON.parse(raw);
-    if (!d.cards || !d.cards.length) return;
-    const g = document.getElementById('coinGrid');
-    d.cards.forEach(html => {
-      const p = document.createElement('div');
-      p.innerHTML = html;
-      const sc = p.querySelector('.coin-card');
-      if (!sc) return;
-      const num = sc.querySelector('.coin-number')?.textContent?.trim();
-      const ex = [...g.querySelectorAll('.coin-card')].find(c => c.querySelector('.coin-number')?.textContent?.trim()===num);
-      if (!ex) return;
-      const si = sc.querySelector('.coin-image img');
-      if (si) {
-        const di = ex.querySelector('.coin-image img');
-        if (di && si.src && si.src.startsWith('data:')) { di.src = si.src; di.setAttribute('data-path', si.getAttribute('data-path')||''); }
-      }
-      // 按 className+tagName 分组，按索引匹配（修复 find() 总是匹配第一个的 bug）
-      const sGroups = {}, dGroups = {};
-      sc.querySelectorAll('[contenteditable]').forEach((el, i) => {
-        const k = el.className + '|' + el.tagName;
-        if (!sGroups[k]) sGroups[k] = [];
-        sGroups[k].push(i);
-      });
-      ex.querySelectorAll('[contenteditable]').forEach((el, i) => {
-        const k = el.className + '|' + el.tagName;
-        if (!dGroups[k]) dGroups[k] = [];
-        dGroups[k].push(el);
-      });
-      Object.keys(sGroups).forEach(k => {
-        sGroups[k].forEach((si, idx) => {
-          if (dGroups[k] && dGroups[k][idx]) {
-            dGroups[k][idx].textContent = sc.querySelectorAll('[contenteditable]')[si].textContent;
-          }
-        });
-      });
-    });
-    setTimeout(() => showToast('↩️ 已恢复上次编辑内容'), 500);
-  } catch(e) {}
-})();
+// 临时禁用：避免覆盖 HTML 手动修改的内容
+// (function tryRestore() {
+//   const raw = localStorage.getItem('coinCat_v4');
+//   if (!raw) return;
+//   try {
+//     const d = JSON.parse(raw);
+//     if (!d.cards || !d.cards.length) return;
+//     const g = document.getElementById('coinGrid');
+//     d.cards.forEach(html => {
+//       const p = document.createElement('div');
+//       p.innerHTML = html;
+//       const sc = p.querySelector('.coin-card');
+//       if (!sc) return;
+//       const num = sc.querySelector('.coin-number')?.textContent?.trim();
+//       const ex = [...g.querySelectorAll('.coin-card')].find(c => c.querySelector('.coin-number')?.textContent?.trim()===num);
+//       if (!ex) return;
+//       const si = sc.querySelector('.coin-image img');
+//       if (si) {
+//         const di = ex.querySelector('.coin-image img');
+//         if (di && si.src && si.src.startsWith('data:')) { di.src = si.src; di.setAttribute('data-path', si.getAttribute('data-path')||''); }
+//       }
+//       // 按 className+tagName 分组，按索引匹配（修复 find() 总是匹配第一个的 bug）
+//       const sGroups = {}, dGroups = {};
+//       sc.querySelectorAll('[contenteditable]').forEach((el, i) => {
+//         const k = el.className + '|' + el.tagName;
+//         if (!sGroups[k]) sGroups[k] = [];
+//         sGroups[k].push(i);
+//       });
+//       ex.querySelectorAll('[contenteditable]').forEach((el, i) => {
+//         const k = el.className + '|' + el.tagName;
+//         if (!dGroups[k]) dGroups[k] = [];
+//         dGroups[k].push(el);
+//       });
+//       Object.keys(sGroups).forEach(k => {
+//         sGroups[k].forEach((si, idx) => {
+//           if (dGroups[k] && dGroups[k][idx]) {
+//             dGroups[k][idx].textContent = sc.querySelectorAll('[contenteditable]')[si].textContent;
+//           }
+//         });
+//       });
+//     });
+//     setTimeout(() => showToast('↩️ 已恢复上次编辑内容'), 500);
+//   } catch(e) {}
+// })();
+console.log('[tryRestore] 已禁用，页面仅从 HTML 加载数据');
 
 document.querySelectorAll('.coin-card').forEach(attachCard);
 

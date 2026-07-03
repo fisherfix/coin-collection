@@ -427,34 +427,53 @@ async function uploadImage(file) {
 // ===== 同步 catalog.csv 到 GitHub =====
 async function syncToGithub() {
   if (!githubToken) { showToast('⚠️ 请先设置 GitHub Token'); openGithubPanel(); return; }
-  showToast('🔄 正在同步数据...');
+  showToast('🔄 正在同步完整页面...');
   try {
-    const rows = ['id,title,subtitle,category,grade,era,denomination,material,reference,history_bg,obv,rev,tags,price,price_label,provenance'];
-    document.querySelectorAll('.coin-card').forEach(c => {
-      const get = sel => c.querySelector(sel)?.textContent?.trim()||'';
-      const q = s => `"${s.replace(/"/g,'""')}"`;
-      const d = c.querySelectorAll('.detail-value');
-      rows.push([
-        get('.coin-number'), get('.coin-title'), get('.coin-subtitle'),
-        c.dataset.category, get('.coin-grade'),
-        d[0]?.textContent.trim()||'', d[1]?.textContent.trim()||'',
-        d[2]?.textContent.trim()||'', d[3]?.textContent.trim()||'',
-        get('.description p'), get('.obv'), get('.rev'),
-        [...c.querySelectorAll('.tag')].map(t=>t.textContent.trim()).join('|'),
-        get('.price-value'), get('.price-label'),
-        get('.prov-compact').replace(/\s+/g,' '),
-      ].map(q).join(','));
+    // 克隆完整 HTML，清理敏感/临时内容
+    const doc = document.documentElement.cloneNode(true);
+
+    // 移除 token 面板
+    const tk = doc.querySelector('#gh-panel');
+    if (tk) tk.remove();
+
+    // 移除功能性按钮（这些只在浏览器里有效）
+    const removeBtnTexts = ['恢复本地编辑', '重置本地', 'GitHub 同步', '同步到 GitHub'];
+    doc.querySelectorAll('.tool-btn').forEach(btn => {
+      if (removeBtnTexts.some(t => btn.textContent.includes(t))) btn.remove();
     });
-    const csvContent = '\uFEFF' + rows.join('\n');
+
+    // 清理 onclick 属性（避免残留）
+    doc.querySelectorAll('[onclick]').forEach(el => {
+      const fn = el.getAttribute('onclick');
+      if (fn && (fn.includes('syncToGithub') || fn.includes('openGithubPanel') || fn.includes('resetLocal') || fn.includes('restoreLocal') || fn.includes('uploadImage') || fn.includes('editImgPath') || fn.includes('triggerUpload'))) {
+        el.removeAttribute('onclick');
+      }
+    });
+
+    // 移除 contenteditable（下载后不再可编辑）
+    doc.querySelectorAll('[contenteditable]').forEach(el => el.removeAttribute('contenteditable'));
+
+    // 注入同步标记
+    const ts = new Date().toISOString().replace(/[:.]/g, '-').slice(0, 19);
+    const head = doc.querySelector('head');
+    if (head) {
+      const meta = doc.createElement('meta');
+      meta.name = 'sync-ts';
+      meta.content = ts;
+      head.appendChild(meta);
+    }
+
+    const htmlContent = '<!DOCTYPE html>\n' + doc.outerHTML;
     let sha;
     try {
-      const existing = await ghApi('GET', `/repos/${GITHUB_REPO}/contents/catalog.csv?ref=${GITHUB_BRANCH}`);
+      const existing = await ghApi('GET', `/repos/${GITHUB_REPO}/contents/index.html?ref=${GITHUB_BRANCH}`);
       sha = existing.sha;
     } catch(e) { /* 新建 */ }
-    const putBody = { message: 'Update catalog.csv via NumisMaster web editor', content: btoa(unescape(encodeURIComponent(csvContent))), branch: GITHUB_BRANCH };
+    const commitMsg = `Sync full HTML snapshot ${ts}`;
+    const putBody = { message: commitMsg, content: btoa(unescape(encodeURIComponent(htmlContent))), branch: GITHUB_BRANCH };
     if (sha) putBody.sha = sha;
-    await ghApi('PUT', `/repos/${GITHUB_REPO}/contents/catalog.csv`, putBody);
-    showToast('✅ 数据已同步到 GitHub！');
+    await ghApi('PUT', `/repos/${GITHUB_REPO}/contents/index.html`, putBody);
+    showToast('✅ 完整页面已同步到 GitHub！');
   } catch(e) { showToast('❌ 同步失败: ' + e.message); }
 }
 
@@ -468,7 +487,8 @@ function openGithubPanel() {
   panel.innerHTML = `
     <h3 style="color:#d4af37;margin-bottom:15px;">⚙️ GitHub 同步设置</h3>
     <p style="color:#888;font-size:0.85em;margin-bottom:15px;line-height:1.6;">
-      Token 只需填一次，之后所有修改会自动同步到 GitHub。<br>
+      设置 Token 后，每次编辑都会自动推送完整 HTML 到 GitHub。<br>
+      <strong style="color:#d4af37">你的修改会自动同步给我</strong>（无需下载再上传）<br>
       生成 Token：<a href="https://github.com/settings/tokens/new" target="_blank" style="color:#d4af37;">点此生成</a> → Note 填 coin → 勾选 <strong style="color:#d4af37">repo</strong> → Generate → 复制粘贴到这里
     </p>
     <input id="gh-token-input" type="password" placeholder="ghp_xxxxxxxxxxxxxxxxxxxx" value="${githubToken}"

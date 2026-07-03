@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NumisMaster 钱币收藏数据库</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Segoe UI', 'PingFang SC', sans-serif; background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); color: #eee; min-height: 100vh; padding: 20px; }
+    .container { max-width: 1400px; margin: 0 auto; }
+    h1 { text-align: center; font-size: 2.5em; color: #d4af37; margin-bottom: 10px; }
+    .subtitle { text-align: center; color: #888; margin-bottom: 30px; }
+    .stats { display: flex; justify-content: center; gap: 40px; margin-bottom: 30px; }
+    .stat { text-align: center; }
+    .stat-value { font-size: 2em; color: #d4af37; font-weight: bold; }
+    .stat-label { color: #888; font-size: 0.9em; }
+    .filters { text-align: center; margin-bottom: 20px; }
+    .filter-btn { background: rgba(212,175,55,0.1); border: 1px solid #d4af37; color: #d4af37; padding: 8px 16px; margin: 5px; border-radius: 20px; cursor: pointer; transition: all 0.3s; }
+    .filter-btn:hover, .filter-btn.active { background: #d4af37; color: #1a1a2e; }
+    .coin-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(400px, 1fr)); gap: 20px; }
+    .coin-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(212,175,55,0.3); border-radius: 15px; overflow: hidden; display: flex; transition: transform 0.3s, box-shadow 0.3s; }
+    .coin-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(212,175,55,0.2); }
+    .coin-image { width: 200px; min-height: 200px; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,0.3); position: relative; }
+    .coin-image img { max-width: 180px; max-height: 180px; object-fit: contain; }
+    .coin-number { position: absolute; top: 10px; left: 10px; background: #d4af37; color: #1a1a2e; padding: 4px 10px; border-radius: 10px; font-weight: bold; font-size: 0.85em; }
+    .coin-grade { position: absolute; top: 10px; right: 10px; background: rgba(212,175,55,0.2); border: 1px solid #d4af37; color: #d4af37; padding: 4px 10px; border-radius: 10px; font-size: 0.85em; }
+    .coin-info { flex: 1; padding: 15px; }
+    .coin-title { font-size: 1.2em; color: #d4af37; margin-bottom: 5px; }
+    .coin-subtitle { font-size: 0.85em; color: #888; margin-bottom: 10px; }
+    .coin-detail { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 10px; font-size: 0.85em; }
+    .detail-item { display: flex; gap: 5px; }
+    .detail-label { color: #888; }
+    .detail-value { color: #eee; }
+    .description { background: rgba(0,0,0,0.2); padding: 10px; border-radius: 8px; margin-bottom: 10px; font-size: 0.9em; line-height: 1.5; }
+    .description h4 { color: #d4af37; margin-bottom: 5px; font-size: 0.9em; }
+    .obv-rev { font-size: 0.85em; color: #aaa; margin-bottom: 10px; }
+    .tags { margin-bottom: 10px; }
+    .tag { background: rgba(212,175,55,0.1); border: 1px solid rgba(212,175,55,0.3); color: #d4af37; padding: 3px 8px; border-radius: 10px; font-size: 0.75em; margin-right: 5px; display: inline-block; margin-bottom: 3px; }
+    .bottom-row { display: flex; justify-content: space-between; align-items: flex-end; margin-top: auto; padding-top: 10px; border-top: 1px solid rgba(212,175,55,0.2); }
+    .price-value { font-size: 1.3em; color: #d4af37; font-weight: bold; }
+    .price-label { font-size: 0.75em; color: #888; }
+    .prov-compact { font-size: 0.75em; color: #aaa; text-align: right; max-width: 200px; }
+    .prov-compact strong { color: #d4af37; }
+    .placeholder { font-size: 4em; opacity: 0.3; cursor: pointer; }
+    .loading { text-align: center; padding: 50px; color: #888; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🏛️ 钱币收藏数据库</h1>
+    <p class="subtitle">NumisMaster Collection Catalog</p>
+    
+    <div class="stats" id="stats">
+      <div class="stat"><div class="stat-value" id="totalCount">-</div><div class="stat-label">藏品总数</div></div>
+      <div class="stat"><div class="stat-value" id="totalValue">-</div><div class="stat-label">总估值</div></div>
+      <div class="stat"><div class="stat-value" id="categoryCount">-</div><div class="stat-label">专题分类</div></div>
+    </div>
+    
+    <div class="filters">
+      <button class="filter-btn active" onclick="filter('all')">全部</button>
+      <button class="filter-btn" onclick="filter('greek')">🇬🇷 古希腊</button>
+      <button class="filter-btn" onclick="filter('roman')">🏛️ 古罗马</button>
+      <button class="filter-btn" onclick="filter('romanemp')">👑 五贤帝</button>
+      <button class="filter-btn" onclick="filter('romaeg')">🇪🇬 行省埃及</button>
+    </div>
+    
+    <div class="coin-grid" id="coinGrid">
+      <div class="loading">正在加载数据...</div>
+    </div>
+  </div>
+
+  <script>
+    let coins = [];
+    
+    // 解析 CSV
+    function parseCSV(text) {
+      const lines = text.split('\n').filter(l => l.trim());
+      const headers = lines[0].split(',').map(h => h.trim());
+      return lines.slice(1).map(line => {
+        const values = [];
+        let current = '';
+        let inQuotes = false;
+        for (let char of line) {
+          if (char === '"') inQuotes = !inQuotes;
+          else if (char === ',' && !inQuotes) { values.push(current.trim()); current = ''; }
+          else current += char;
+        }
+        values.push(current.trim());
+        const obj = {};
+        headers.forEach((h, i) => obj[h] = values[i] || '');
+        return obj;
+      });
+    }
+    
+    // 渲染卡片
+    function renderCoins(filter = 'all') {
+      const grid = document.getElementById('coinGrid');
+      const filtered = filter === 'all' ? coins : coins.filter(c => c.category === filter);
+      
+      grid.innerHTML = filtered.map(coin => `
+        <div class="coin-card" data-category="${coin.category}">
+          <div class="coin-image">
+            <span class="coin-number">${coin.id}</span>
+            <span class="coin-grade">${coin.grade}</span>
+            ${coin.image_path ? `<img src="${coin.image_path}" alt="${coin.title}" onerror="this.outerHTML='<div class=\\'placeholder\\'>🪙</div>'">` : '<div class="placeholder">🪙</div>'}
+          </div>
+          <div class="coin-info">
+            <h2 class="coin-title">${coin.title}</h2>
+            <p class="coin-subtitle">${coin.subtitle}</p>
+            <div class="coin-detail">
+              <div class="detail-item"><span class="detail-label">年代:</span><span class="detail-value">${coin.era}</span></div>
+              <div class="detail-item"><span class="detail-label">面值:</span><span class="detail-value">${coin.denomination}</span></div>
+              <div class="detail-item"><span class="detail-label">材质:</span><span class="detail-value">${coin.material}</span></div>
+              <div class="detail-item"><span class="detail-label">参考:</span><span class="detail-value">${coin.reference}</span></div>
+            </div>
+            <div class="description">
+              <h4>📜 历史背景</h4>
+              <p>${coin.history_bg}</p>
+            </div>
+            <div class="obv-rev">
+              <div>${coin.obv}</div>
+              <div>${coin.rev}</div>
+            </div>
+            <div class="tags">${coin.tags.split('|').map(t => `<span class="tag">${t}</span>` ).join('')}</div>
+            <div class="bottom-row">
+              <div><div class="price-value">${coin.price}</div><div class="price-label">${coin.price_label}</div></div>
+              <div class="prov-compact">${coin.provenance}</div>
+            </div>
+          </div>
+        </div>
+      `).join('');
+    }
+    
+    // 筛选
+    function filter(cat) {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      event.target.classList.add('active');
+      renderCoins(cat);
+    }
+    
+    // 更新统计
+    function updateStats() {
+      document.getElementById('totalCount').textContent = coins.length;
+      const categories = new Set(coins.map(c => c.category));
+      document.getElementById('categoryCount').textContent = categories.size;
+      
+      let total = 0;
+      coins.forEach(c => {
+        const match = c.price.match(/[\d,]+/);
+        if (match) total += parseFloat(match[0].replace(',', ''));
+      });
+      document.getElementById('totalValue').textContent = '€' + total.toFixed(0);
+    }
+    
+    // 加载数据
+    fetch('catalog.csv')
+      .then(r => r.text())
+      .then(text => {
+        coins = parseCSV(text);
+        renderCoins();
+        updateStats();
+      })
+      .catch(err => {
+        document.getElementById('coinGrid').innerHTML = '<div class="loading">❌ 加载失败: ' + err.message + '</div>';
+      });
+  </script>
+</body>
+</html>

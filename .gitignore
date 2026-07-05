@@ -4,11 +4,10 @@ __pycache__/
 *.egg-info/
 
 # 临时/调试文件
-_*.html
 _*.py
 _*.js
-_*.md
 _*.log
+# 注意：保留 _ref_gr001.html 作为标准模板参考
 
 # 测试用文件
 test_*

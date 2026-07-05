@@ -1,14 +1,29 @@
-# 钱币库文件说明
-# tools/ — 本地工具脚本，无需部署到 GitHub Pages
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
 
-tools/
-*.ps1
-*.py
-versions/
+# 临时/调试文件
+_*.html
+_*.py
+_*.js
+_*.md
+_*.log
+
+# 测试用文件
+test_*
+
+# 自动备份（运行时产生）
 *.bak
-*.bak2
-*.bak3
-process_*.py
-rebuild_*.py
-merge_*.py
-insert_*.ps1
+*.tmp
+
+# 基线指纹（每次会变，不入版本控制）
+.protect-baseline.json
+
+# 归档目录
+_archive/
+
+# IDE
+.vscode/
+.idea/
+*.swp

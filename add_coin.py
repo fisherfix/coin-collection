@@ -37,25 +37,24 @@ if sys.platform == "win32":
 # ============ 配置区域：录入新币 ============
 # 每枚新币按以下结构添加。已确认卡片不要修改。
 coins = [
-    # 模板示例（请替换为真实数据）：
-    # {
-    #     "number": "GR-002",
-    #     "image": "images/GR-002.jpg",
-    #     "grade": "VF",
-    #     "title": "雅典 猫头鹰四德拉克马",
-    #     "subtitle": "ATTICA · ATHENS",
-    #     "era": "BC 454-404",
-    #     "denomination": "Tetradrachm 四德拉克马",
-    #     "material": "Silver 银 · 24mm · 17.2g",
-    #     "reference": "SNG France 31",
-    #     "description": "（历史背景 3-5 句）",
-    #     "obverse": "正面: 雅典娜头像+铭文",
-    #     "reverse": "背面: 猫头鹰+橄榄枝",
-    #     "tags": ["雅典", "古典", "猫头鹰"],
-    #     "price": "€XXX",
-    #     "provenance": "<strong>拍卖行</strong> · 拍卖 · Lot · 年份",
-    #     "category": "greek",
-    # },
+    {
+        "number": "GK-008",
+        "image": "images/GK-008.jpg",
+        "grade": "VF",
+        "title": "马其顿·亚历山大三世 大帝 四德拉克马",
+        "subtitle": "MACEDONIA · ALEXANDER III",
+        "era": "BC 336-323",
+        "denomination": "Tetradrachm 四德拉克马",
+        "material": "Silver 银 · 26mm · 16.9g",
+        "reference": "—",
+        "description": "亚历山大三世（大帝，356-323 BC）统一希腊、征服波斯，建立了人类历史上第一个横跨欧亚非的超级帝国。他对货币体系的改革影响深远：四德拉克马银币以赫拉克勒斯头像为正面，宙斯持鹰坐像为背面，成为帝国扩张的战略工具与文化符号。随着亚历山大的征服，这套币制被推广至从埃及到印度河的广大地区，继业者纷纷仿铸。利西普斯（ Lysippos ）风格的赫拉克勒斯肖像极具古典理想美，而宙斯坐像手持雄鹰的形象则强化了王权的神圣性。此枚米勒都斯（Miletus）铸币约 BC 325-320 年所见宙斯底座无碑铭，为亚历山大在世时期的早期铸型。",
+        "obverse": "正面: 赫拉克勒斯狮皮盔头像",
+        "reverse": "背面: 宙斯持鹰坐像 · ΑΛΕΞΑΝΔΡΟΥ（亚历山大的）",
+        "tags": ["亚历山大", "希腊化", "四德", "马其顿", "赫拉克勒斯", "宙斯"],
+        "price": "¥4,000",
+        "provenance": "<strong>达爷</strong> · 私洽 · 2025",
+        "category": "greek",
+    },
 ]
 
 # ============ 以下逻辑固定，无需修改 ============

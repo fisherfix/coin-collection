@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ã°ÂÂÂÃ¯Â¸Â Ã©ÂÂ±Ã¥Â¸ÂÃ¦ÂÂ¶Ã¨ÂÂÃ¦ÂÂ°Ã¦ÂÂ®Ã¥ÂºÂ</title>
+<title>脙掳脗聼脗聫脗聸脙炉脗赂脗聫 脙漏脗聮脗卤脙楼脗赂脗聛脙娄脗聰脗露脙篓脗聴脗聫脙娄脗聲脗掳脙娄脗聧脗庐脙楼脗潞脗聯</title>
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body { font-family: 'Segoe UI', 'PingFang SC', sans-serif; background: #1a1a2e; color: #eee; min-height: 100vh; padding: 20px 40px 60px; }
@@ -63,315 +63,315 @@ h1 { text-align: center; color: #d4af37; font-size: 2em; margin-bottom: 10px; }
 </head>
 <body>
 
-<h1 contenteditable="true">Ã°ÂÂÂÃ¯Â¸Â Ã©ÂÂ±Ã¥Â¸ÂÃ¦ÂÂ¶Ã¨ÂÂÃ¦ÂÂ°Ã¦ÂÂ®Ã¥ÂºÂ</h1>
+<h1 contenteditable="true">脙掳脗聼脗聫脗聸脙炉脗赂脗聫 脙漏脗聮脗卤脙楼脗赂脗聛脙娄脗聰脗露脙篓脗聴脗聫脙娄脗聲脗掳脙娄脗聧脗庐脙楼脗潞脗聯</h1>
 <p class="subtitle" contenteditable="true">NumisMaster Collection Catalog</p>
 
 <div class="stats">
-  <div class="stat stat-count"><div class="stat-value">7</div><div class="stat-label">Ã¨ÂÂÃ¥ÂÂÃ¦ÂÂ»Ã¦ÂÂ°Ã¯Â¼ÂÃ¨ÂÂªÃ¥ÂÂ¨Ã¨Â®Â¡Ã§Â®ÂÃ¯Â¼Â</div></div>
-  <div class="stat stat-total"><div class="stat-value">Ã¢ÂÂ¬0</div><div class="stat-label">Ã¦ÂÂ»Ã¤Â¼Â°Ã¥ÂÂ¼Ã¯Â¼ÂÃ¨ÂÂªÃ¥ÂÂ¨Ã¨Â®Â¡Ã§Â®ÂÃ¯Â¼Â</div></div>
-  <div class="stat stat-cats"><div class="stat-value">0</div><div class="stat-label">Ã¤Â¸ÂÃ©Â¢ÂÃ¥ÂÂÃ§Â±Â»Ã¯Â¼ÂÃ¨ÂÂªÃ¥ÂÂ¨Ã¨Â®Â¡Ã§Â®ÂÃ¯Â¼Â</div></div>
+  <div class="stat stat-count"><div class="stat-value">7</div><div class="stat-label">脙篓脗聴脗聫脙楼脗聯脗聛脙娄脗聙脗禄脙娄脗聲脗掳脙炉脗录脗聢脙篓脗聡脗陋脙楼脗聤脗篓脙篓脗庐脗隆脙搂脗庐脗聴脙炉脗录脗聣</div></div>
+  <div class="stat stat-total"><div class="stat-value">脙垄脗聜脗卢0</div><div class="stat-label">脙娄脗聙脗禄脙陇脗录脗掳脙楼脗聙脗录脙炉脗录脗聢脙篓脗聡脗陋脙楼脗聤脗篓脙篓脗庐脗隆脙搂脗庐脗聴脙炉脗录脗聣</div></div>
+  <div class="stat stat-cats"><div class="stat-value">0</div><div class="stat-label">脙陇脗赂脗聯脙漏脗垄脗聵脙楼脗聢脗聠脙搂脗卤脗禄脙炉脗录脗聢脙篓脗聡脗陋脙楼脗聤脗篓脙篓脗庐脗隆脙搂脗庐脗聴脙炉脗录脗聣</div></div>
   <div class="stat" id="saveIndicator" style="color:#d4af37;font-size:0.75em;margin-top:4px;"></div>
 </div>
 
 <div class="filters">
-  <button class="filter-btn active" onclick="filter('all')">Ã¥ÂÂ¨Ã©ÂÂ¨</button>
-  <button class="filter-btn" onclick="filter('greek')">Ã°ÂÂÂ¬Ã°ÂÂÂ· Ã¥ÂÂ¤Ã¥Â¸ÂÃ¨ÂÂ</button>
-  <button class="filter-btn" onclick="filter('roman')">Ã°ÂÂÂÃ¯Â¸Â Ã¥ÂÂ¤Ã§Â½ÂÃ©Â©Â¬</button>
-  <button class="filter-btn" onclick="filter('romanemp')">Ã°ÂÂÂ Ã¤ÂºÂÃ¨Â´Â¤Ã¥Â¸Â</button>
-  <button class="filter-btn" onclick="filter('romaeg')">Ã°ÂÂÂªÃ°ÂÂÂ¬ Ã¨Â¡ÂÃ§ÂÂÃ¥ÂÂÃ¥ÂÂ</button>
+  <button class="filter-btn active" onclick="filter('all')">脙楼脗聟脗篓脙漏脗聝脗篓</button>
+  <button class="filter-btn" onclick="filter('greek')">脙掳脗聼脗聡脗卢脙掳脗聼脗聡脗路 脙楼脗聫脗陇脙楼脗赂脗聦脙篓脗聟脗聤</button>
+  <button class="filter-btn" onclick="filter('roman')">脙掳脗聼脗聫脗聸脙炉脗赂脗聫 脙楼脗聫脗陇脙搂脗陆脗聴脙漏脗漏脗卢</button>
+  <button class="filter-btn" onclick="filter('romanemp')">脙掳脗聼脗聭脗聭 脙陇脗潞脗聰脙篓脗麓脗陇脙楼脗赂脗聺</button>
+  <button class="filter-btn" onclick="filter('romaeg')">脙掳脗聼脗聡脗陋脙掳脗聼脗聡脗卢 脙篓脗隆脗聦脙搂脗聹脗聛脙楼脗聼脗聝脙楼脗聫脗聤</button>
 </div>
 
 <div class="toolbar">
-  <button class="tool-btn" onclick="restoreLocal()">Ã¢ÂÂ©Ã¯Â¸Â Ã¦ÂÂ¢Ã¥Â¤ÂÃ¦ÂÂ¬Ã¥ÂÂ°Ã§Â¼ÂÃ¨Â¾Â</button>
-  <button class="tool-btn" onclick="saveToLocalFile()" style="border-color:#4c4;color:#4c4">Ã°ÂÂÂ¾ Ã¤Â¿ÂÃ¥Â­ÂÃ¥ÂÂ°Ã¦ÂÂÃ¤Â»Â¶</button>
-  <button class="tool-btn" onclick="exportCSV()">Ã°ÂÂÂ Ã¥Â¯Â¼Ã¥ÂÂºCSV</button>
-  <button class="tool-btn github" onclick="openGithubPanel()">Ã¢ÂÂÃ¯Â¸Â GitHub Ã¥ÂÂÃ¦Â­Â¥</button>
-  <button class="tool-btn github" onclick="syncToGithub()">Ã°ÂÂÂ Ã¥ÂÂÃ¦Â­Â¥Ã¥ÂÂ° GitHub</button>
-  <button class="tool-btn" onclick="resetLocal()" style="border-color:#c66;color:#c66">Ã°ÂÂÂÃ¯Â¸Â Ã©ÂÂÃ§Â½Â®Ã¦ÂÂ¬Ã¥ÂÂ°</button>
+  <button class="tool-btn" onclick="restoreLocal()">脙垄脗聠脗漏脙炉脗赂脗聫 脙娄脗聛脗垄脙楼脗陇脗聧脙娄脗聹脗卢脙楼脗聹脗掳脙搂脗录脗聳脙篓脗戮脗聭</button>
+  <button class="tool-btn" onclick="saveToLocalFile()" style="border-color:#4c4;color:#4c4">脙掳脗聼脗聮脗戮 脙陇脗驴脗聺脙楼脗颅脗聵脙楼脗聢脗掳脙娄脗聳脗聡脙陇脗禄脗露</button>
+  <button class="tool-btn" onclick="exportCSV()">脙掳脗聼脗聯脗聥 脙楼脗炉脗录脙楼脗聡脗潞CSV</button>
+  <button class="tool-btn github" onclick="openGithubPanel()">脙垄脗職脗聶脙炉脗赂脗聫 GitHub 脙楼脗聬脗聦脙娄脗颅脗楼</button>
+  <button class="tool-btn github" onclick="syncToGithub()">脙掳脗聼脗聰脗聞 脙楼脗聬脗聦脙娄脗颅脗楼脙楼脗聢脗掳 GitHub</button>
+  <button class="tool-btn" onclick="resetLocal()" style="border-color:#c66;color:#c66">脙掳脗聼脗聴脗聭脙炉脗赂脗聫 脙漏脗聡脗聧脙搂脗陆脗庐脙娄脗聹脗卢脙楼脗聹脗掳</button>
 </div>
 
 <div class="coin-grid" id="coinGrid">
 
 <!-- GR-001 -->
 <div class="coin-card" data-category="greek" draggable="true">
-  <div class="drag-handle">Ã¢Â Â¿ Ã¦ÂÂÃ¦ÂÂ½Ã¦ÂÂÃ¥ÂºÂ</div>
+  <div class="drag-handle">脙垄脗聽脗驴 脙娄脗聥脗聳脙娄脗聥脗陆脙娄脗聨脗聮脙楼脗潞脗聫</div>
   <div class="coin-image">
     <span class="coin-number" contenteditable="true">GR-001</span>
     <span class="coin-grade" contenteditable="true">VF</span>
-    <img src="images/GR-001.jpg" alt="Ã©ÂÂ¡Ã¦ÂÂÃ¥ÂºÂÃ¨ÂÂ¨Ã¥ÂÂÃ¥Â¾Â·Ã¦ÂÂÃ¥ÂÂÃ©Â©Â¬" data-path="images/GR-001.jpg" onerror="this.style.display='none'">
-    <div class="placeholder" onclick="triggerUpload(this)" style="display:none">Ã°ÂÂªÂ</div>
+    <img src="images/GR-001.jpg" alt="脙漏脗聰脗隆脙娄脗聥脗聣脙楼脗潞脗聯脙篓脗聬脗篓脙楼脗聸脗聸脙楼脗戮脗路脙娄脗聥脗聣脙楼脗聟脗聥脙漏脗漏脗卢" data-path="images/GR-001.jpg" onerror="this.style.display='none'">
+    <div class="placeholder" onclick="triggerUpload(this)" style="display:none">脙掳脗聼脗陋脗聶</div>
     <div class="img-overlay">
-      <button class="img-btn" onclick="triggerUpload(this)">Ã°ÂÂÂ· Ã¤Â¸ÂÃ¤Â¼Â Ã¥ÂÂ¾Ã§ÂÂ</button>
-      <button class="img-btn" onclick="editImgPath(this)">Ã°ÂÂÂ Ã¦ÂÂ¹Ã¨Â·Â¯Ã¥Â¾Â</button>
+      <button class="img-btn" onclick="triggerUpload(this)">脙掳脗聼脗聯脗路 脙陇脗赂脗聤脙陇脗录脗聽脙楼脗聸脗戮脙搂脗聣脗聡</button>
+      <button class="img-btn" onclick="editImgPath(this)">脙掳脗聼脗聰脗聴 脙娄脗聰脗鹿脙篓脗路脗炉脙楼脗戮脗聞</button>
     </div>
   </div>
   <div class="coin-info">
-    <h2 class="coin-title" contenteditable="true">Ã©ÂÂ¡Ã¦ÂÂÃ¥ÂºÂÃ¨ÂÂ¨ÃÂ·Deinomenid Ã¥ÂÂ­Ã¤Â¸Â» Ã¥ÂÂÃ¥Â¾Â·Ã¦ÂÂÃ¥ÂÂÃ©Â©Â¬</h2>
-    <p class="coin-subtitle" contenteditable="true">SICILY ÃÂ· Syracuse ÃÂ· Deinomenid Tyranny</p>
+    <h2 class="coin-title" contenteditable="true">脙漏脗聰脗隆脙娄脗聥脗聣脙楼脗潞脗聯脙篓脗聬脗篓脙聜脗路Deinomenid 脙楼脗聝脗颅脙陇脗赂脗禄 脙楼脗聸脗聸脙楼脗戮脗路脙娄脗聥脗聣脙楼脗聟脗聥脙漏脗漏脗卢</h2>
+    <p class="coin-subtitle" contenteditable="true">SICILY 脙聜脗路 Syracuse 脙聜脗路 Deinomenid Tyranny</p>
     <div class="coin-detail">
-      <div class="detail-item"><div class="detail-label" contenteditable="true">Ã¥Â¹Â´Ã¤Â»Â£</div><div class="detail-value" contenteditable="true">BC 485-466</div></div>
-      <div class="detail-item"><div class="detail-label" contenteditable="true">Ã©ÂÂ¢Ã¥ÂÂ¼</div><div class="detail-value" contenteditable="true">Tetradrachm Ã¥ÂÂÃ¥Â¾Â·Ã¦ÂÂÃ¥ÂÂÃ©Â©Â¬</div></div>
-      <div class="detail-item"><div class="detail-label" contenteditable="true">Ã¦ÂÂÃ¨Â´Â¨</div><div class="detail-value" contenteditable="true">Ã©ÂÂ¶ ÃÂ· 24mm ÃÂ· 16.72g</div></div>
-      <div class="detail-item"><div class="detail-label" contenteditable="true">Ã¥ÂÂÃ¨ÂÂ</div><div class="detail-value" contenteditable="true">Boehringer 115; HGC 2 1306</div></div>
+      <div class="detail-item"><div class="detail-label" contenteditable="true">脙楼脗鹿脗麓脙陇脗禄脗拢</div><div class="detail-value" contenteditable="true">BC 485-466</div></div>
+      <div class="detail-item"><div class="detail-label" contenteditable="true">脙漏脗聺脗垄脙楼脗聙脗录</div><div class="detail-value" contenteditable="true">Tetradrachm 脙楼脗聸脗聸脙楼脗戮脗路脙娄脗聥脗聣脙楼脗聟脗聥脙漏脗漏脗卢</div></div>
+      <div class="detail-item"><div class="detail-label" contenteditable="true">脙娄脗聺脗聬脙篓脗麓脗篓</div><div class="detail-value" contenteditable="true">脙漏脗聯脗露 脙聜脗路 24mm 脙聜脗路 16.72g</div></div>
+      <div class="detail-item"><div class="detail-label" contenteditable="true">脙楼脗聫脗聜脙篓脗聙脗聝</div><div class="detail-value" contenteditable="true">Boehringer 115; HGC 2 1306</div></div>
     </div>
     <div class="description">
-      <h4 contenteditable="true">Ã°ÂÂÂ Ã¥ÂÂÃ¥ÂÂ²Ã¨ÂÂÃ¦ÂÂ¯</h4>
-      <p contenteditable="true">Deinomenid Ã¥ÂÂÃ¥ÂÂÃ¥Â¼ÂÃ¯Â¼ÂGelonÃ£ÂÂHieronÃ£ÂÂThrasybulusÃ£ÂÂPolyzelusÃ¯Â¼ÂÃ¤ÂºÂ BC 485 Ã¥Â¹Â´Ã¥Â»ÂºÃ§Â«ÂÃ¥ÂÂ­Ã¤Â¸Â»Ã§Â»ÂÃ¦Â²Â»Ã¯Â¼ÂSyracuse Ã§ÂÂ±Ã¦Â­Â¤Ã¨Â·ÂÃ¥ÂÂÃ¤Â¸ÂºÃ¨Â¥Â¿Ã¥ÂÂ°Ã¤Â¸Â­Ã¦ÂµÂ·Ã¦ÂÂÃ¥Â¼ÂºÃ¥Â¸ÂÃ¨ÂÂÃ¥ÂÂÃ©ÂÂ¦Ã£ÂÂBC 480 Ã¥Â¹Â´Ã¥Â¸ÂÃ¦Â¢ÂÃ¦ÂÂÃ¦ÂÂÃ¥Â½Â¹Ã¯Â¼ÂHimeraÃ¯Â¼ÂÃ¢ÂÂÃ¢ÂÂ Gelon Ã¨ÂÂÃ¥ÂÂ Akragas Ã¥ÂÂÃ¥Â¤Â§Ã¨Â´Â¥Ã¨Â¿Â¦Ã¥Â¤ÂªÃ¥ÂÂºÃ¯Â¼ÂÃ¥ÂÂ¤Ã¥ÂÂ¸Ã¤Â½ÂÃ¥Â®Â¶Ã¥Â¸ÂÃ§Â½ÂÃ¥Â¤ÂÃ¥Â¾Â·Ã¥Â°ÂÃ¥ÂÂ¶Ã¤Â¸ÂÃ¥ÂÂÃ¥Â¹Â´Ã§ÂÂÃ¨ÂÂ¨Ã¦ÂÂÃ§Â±Â³Ã¦ÂÂ¯Ã¦ÂµÂ·Ã¦ÂÂÃ¥Â¹Â¶Ã¥ÂÂÃ¤Â¸ÂºÃ¥Â¸ÂÃ¨ÂÂÃ¤ÂºÂºÃ¤Â¸ÂÃ¨Â¥Â¿Ã¦ÂÂ¹Ã¦ÂÂÃ§ÂÂ¥Ã§ÂÂÃ¦Â ÂÃ¥Â¿ÂÃ¦ÂÂ§Ã¨ÂÂÃ¥ÂÂ©Ã£ÂÂÃ¥ÂÂÃ©Â©Â¬Ã¦ÂÂÃ¨Â½Â¦Ã¯Â¼ÂQuadrigaÃ¯Â¼ÂÃ¥ÂÂÃ¥ÂÂ³Ã§ÂÂ¾Ã©Â©Â°Ã£ÂÂNike Ã©Â£ÂÃ©ÂÂÃ¥ÂÂ Ã¥ÂÂÃ¯Â¼ÂÃ§ÂÂ´Ã¦ÂÂ¥Ã¨Â±Â¡Ã¥Â¾ÂÃ¦Â­Â¤Ã§Â±Â»Ã¥ÂÂÃ¤ÂºÂÃ¨ÂÂÃ¥ÂÂ©Ã¤Â¸ÂÃ§Â¥ÂÃ¥ÂÂ£Ã¨ÂµÂÃ§Â¦ÂÃ£ÂÂÃ¨ÂÂÃ©ÂÂ¢ Arethusa Ã¥Â¤Â´Ã¥ÂÂÃ¨Â¢Â«Ã¥ÂÂÃ¥ÂÂªÃ¦ÂµÂ·Ã¨Â±ÂÃ§ÂÂ¯Ã§Â»ÂÃ¢ÂÂÃ¢ÂÂÃ¦ÂµÂ·Ã¨Â±ÂÃ¦ÂÂ¯ Syracuse Ã¥Â»Â¶Ã§Â»Â­Ã¦ÂÂ°Ã§ÂÂ¾Ã¥Â¹Â´Ã§ÂÂÃ¥ÂÂÃ¥Â¾Â½Ã¯Â¼ÂÃ¥Â¯ÂÃ¦ÂÂÃ¥ÂÂÃ¥Â¸ÂÃ¨Â¢Â«Ã¦ÂµÂ·Ã¦Â´ÂÃ¦ÂÂ¥Ã¦ÂÂ±Ã§ÂÂÃ¥ÂÂ°Ã§ÂÂÃ¤Â¸ÂÃ¦ÂÂÃ¥ÂÂÃ¥ÂÂÃ©ÂÂÃ¨ÂºÂ«Ã¤Â»Â½Ã£ÂÂÃ¦Â­Â¤Ã¥Â¸ÂÃ¥Â±Â Boehringer 115 Ã¦Â ÂÃ¥ÂÂÃ§ÂÂÃ¥Â¼ÂÃ¯Â¼ÂÃ¤Â»Â£Ã¨Â¡Â¨Ã¥ÂÂ¤Ã¥ÂÂ¸Ã¨Â¥Â¿Ã¨Â¥Â¿Ã©ÂÂÃ¨ÂÂºÃ¦ÂÂ¯Ã¥Â·ÂÃ¥Â³Â°Ã§ÂÂÃ¥ÂÂÃ¥Â¤ÂÃ£ÂÂ</p>
+      <h4 contenteditable="true">脙掳脗聼脗聯脗聹 脙楼脗聨脗聠脙楼脗聫脗虏脙篓脗聝脗聦脙娄脗聶脗炉</h4>
+      <p contenteditable="true">Deinomenid 脙楼脗聸脗聸脙楼脗聟脗聞脙楼脗录脗聼脙炉脗录脗聢Gelon脙拢脗聙脗聛Hieron脙拢脗聙脗聛Thrasybulus脙拢脗聙脗聛Polyzelus脙炉脗录脗聣脙陇脗潞脗聨 BC 485 脙楼脗鹿脗麓脙楼脗禄脗潞脙搂脗芦脗聥脙楼脗聝脗颅脙陇脗赂脗禄脙搂脗禄脗聼脙娄脗虏脗禄脙炉脗录脗聦Syracuse 脙搂脗聰脗卤脙娄脗颅脗陇脙篓脗路脗聝脙楼脗聧脗聡脙陇脗赂脗潞脙篓脗楼脗驴脙楼脗聹脗掳脙陇脗赂脗颅脙娄脗碌脗路脙娄脗聹脗聙脙楼脗录脗潞脙楼脗赂脗聦脙篓脗聟脗聤脙楼脗聼脗聨脙漏脗聜脗娄脙拢脗聙脗聜BC 480 脙楼脗鹿脗麓脙楼脗赂脗聦脙娄脗垄脗聟脙娄脗聥脗聣脙娄脗聢脗聵脙楼脗陆脗鹿脙炉脗录脗聢Himera脙炉脗录脗聣脙垄脗聙脗聰脙垄脗聙脗聰 Gelon 脙篓脗聛脗聰脙楼脗聬脗聢 Akragas 脙楼脗聼脗聨脙楼脗陇脗搂脙篓脗麓脗楼脙篓脗驴脗娄脙楼脗陇脗陋脙楼脗聼脗潞脙炉脗录脗聦脙楼脗聫脗陇脙楼脗聟脗赂脙陇脗陆脗聹脙楼脗庐脗露脙楼脗赂脗聦脙搂脗陆脗聴脙楼脗陇脗職脙楼脗戮脗路脙楼脗掳脗聠脙楼脗聟脗露脙陇脗赂脗聨脙楼脗聬脗聦脙楼脗鹿脗麓脙搂脗職脗聞脙篓脗聬脗篓脙娄脗聥脗聣脙搂脗卤脗鲁脙娄脗聳脗炉脙娄脗碌脗路脙娄脗聢脗聵脙楼脗鹿脗露脙楼脗聢脗聴脙陇脗赂脗潞脙楼脗赂脗聦脙篓脗聟脗聤脙陇脗潞脗潞脙陇脗赂脗聹脙篓脗楼脗驴脙娄脗聳脗鹿脙娄脗聢脗聵脙搂脗聲脗楼脙搂脗職脗聞脙娄脗聽脗聡脙楼脗驴脗聴脙娄脗聙脗搂脙篓脗聝脗聹脙楼脗聢脗漏脙拢脗聙脗聜脙楼脗聸脗聸脙漏脗漏脗卢脙娄脗聢脗聵脙篓脗陆脗娄脙炉脗录脗聢Quadriga脙炉脗录脗聣脙楼脗聬脗聭脙楼脗聫脗鲁脙搂脗聳脗戮脙漏脗漏脗掳脙拢脗聙脗聛Nike 脙漏脗拢脗聻脙漏脗聶脗聧脙楼脗聤脗聽脙楼脗聠脗聲脙炉脗录脗聦脙搂脗聸脗麓脙娄脗聨脗楼脙篓脗卤脗隆脙楼脗戮脗聛脙娄脗颅脗陇脙搂脗卤脗禄脙楼脗聠脗聸脙陇脗潞脗聥脙篓脗聝脗聹脙楼脗聢脗漏脙陇脗赂脗聨脙搂脗楼脗聻脙楼脗聹脗拢脙篓脗碌脗聬脙搂脗娄脗聫脙拢脗聙脗聜脙篓脗聝脗聦脙漏脗聺脗垄 Arethusa 脙楼脗陇脗麓脙楼脗聝脗聫脙篓脗垄脗芦脙楼脗聸脗聸脙楼脗聫脗陋脙娄脗碌脗路脙篓脗卤脗職脙搂脗聨脗炉脙搂脗禄脗聲脙垄脗聙脗聰脙垄脗聙脗聰脙娄脗碌脗路脙篓脗卤脗職脙娄脗聵脗炉 Syracuse 脙楼脗禄脗露脙搂脗禄脗颅脙娄脗聲脗掳脙搂脗聶脗戮脙楼脗鹿脗麓脙搂脗職脗聞脙楼脗聼脗聨脙楼脗戮脗陆脙炉脗录脗聦脙楼脗炉脗聯脙娄脗聞脗聫脙楼脗聼脗聨脙楼脗赂脗聜脙篓脗垄脗芦脙娄脗碌脗路脙娄脗麓脗聥脙娄脗聥脗楼脙娄脗聤脗卤脙搂脗職脗聞脙楼脗聹脗掳脙搂脗聬脗聠脙陇脗赂脗聨脙娄脗聳脗聡脙楼脗聦脗聳脙楼脗聫脗聦脙漏脗聡脗聧脙篓脗潞脗芦脙陇脗禄脗陆脙拢脗聙脗聜脙娄脗颅脗陇脙楼脗赂脗聛脙楼脗卤脗聻 Boehringer 115 脙娄脗聽脗聡脙楼脗聡脗聠脙搂脗聣脗聢脙楼脗录脗聫脙炉脗录脗聦脙陇脗禄脗拢脙篓脗隆脗篓脙楼脗聫脗陇脙楼脗聟脗赂脙篓脗楼脗驴脙篓脗楼脗驴脙漏脗聡脗聦脙篓脗聣脗潞脙娄脗聹脗炉脙楼脗路脗聟脙楼脗鲁脗掳脙搂脗職脗聞脙楼脗聣脗聧脙楼脗陇脗聹脙拢脗聙脗聜</p>
     </div>
     <div class="obv-rev">
-      <div class="obv" contenteditable="true">Ã¦Â­Â£Ã©ÂÂ¢: Ã¥ÂÂÃ©Â©Â¬Ã¦ÂÂÃ¨Â½Â¦+NikeÃ©Â£ÂÃ©ÂÂÃ¥ÂÂ Ã¥ÂÂ</div>
-      <div class="rev" contenteditable="true">Ã¨ÂÂÃ©ÂÂ¢: ÃÂ£VRAKOÃÂ£ION / Arethusa+Ã¥ÂÂÃ¦ÂµÂ·Ã¨Â±Â</div>
+      <div class="obv" contenteditable="true">脙娄脗颅脗拢脙漏脗聺脗垄: 脙楼脗聸脗聸脙漏脗漏脗卢脙娄脗聢脗聵脙篓脗陆脗娄+Nike脙漏脗拢脗聻脙漏脗聶脗聧脙楼脗聤脗聽脙楼脗聠脗聲</div>
+      <div class="rev" contenteditable="true">脙篓脗聝脗聦脙漏脗聺脗垄: 脙聨脗拢VRAKO脙聨脗拢ION / Arethusa+脙楼脗聸脗聸脙娄脗碌脗路脙篓脗卤脗職</div>
     </div>
-    <span class="tag" contenteditable="true">Ã¨Â¥Â¿Ã¨Â¥Â¿Ã©ÂÂ</span><span class="tag" contenteditable="true">Ã¥ÂÂ­Ã¤Â¸Â»Ã¦ÂÂ¶Ã¦ÂÂ</span><span class="tag" contenteditable="true">Ã¥ÂÂ¤Ã¥ÂÂ¸Ã¦ÂÂ©Ã¦ÂÂ</span>
+    <span class="tag" contenteditable="true">脙篓脗楼脗驴脙篓脗楼脗驴脙漏脗聡脗聦</span><span class="tag" contenteditable="true">脙楼脗聝脗颅脙陇脗赂脗禄脙娄脗聴脗露脙娄脗聹脗聼</span><span class="tag" contenteditable="true">脙楼脗聫脗陇脙楼脗聟脗赂脙娄脗聴脗漏脙娄脗聹脗聼</span>
     <div class="bottom-row">
-      <div><div class="price-value" contenteditable="true">Ã¢ÂÂ¬1,308</div><div class="price-label" contenteditable="true">Ã¦ÂÂÃ¤ÂºÂ¤Ã¤Â»Â·</div></div>
-      <div class="prov-compact" contenteditable="true"><strong>Auctionaes AG</strong> ÃÂ· Auction 7 ÃÂ· Lot 80 ÃÂ· 1977<br>Ã¥ÂÂÃ©ÂÂ <strong>Numismatik Naumann</strong> ÃÂ· 2025</div>
+      <div><div class="price-value" contenteditable="true">脙垄脗聜脗卢1,308</div><div class="price-label" contenteditable="true">脙娄脗聢脗聬脙陇脗潞脗陇脙陇脗禄脗路</div></div>
+      <div class="prov-compact" contenteditable="true"><strong>Auctionaes AG</strong> 脙聜脗路 Auction 7 脙聜脗路 Lot 80 脙聜脗路 1977<br>脙楼脗聠脗聧脙漏脗聙脗聮 <strong>Numismatik Naumann</strong> 脙聜脗路 2025</div>
     </div>
   </div>
 </div>
 
 <!-- ROM-001 -->
 <div class="coin-card" data-category="romaeg" draggable="true">
-  <div class="drag-handle">Ã¢Â Â¿ Ã¦ÂÂÃ¦ÂÂ½Ã¦ÂÂÃ¥ÂºÂ</div>
+  <div class="drag-handle">脙垄脗聽脗驴 脙娄脗聥脗聳脙娄脗聥脗陆脙娄脗聨脗聮脙楼脗潞脗聫</div>
   <div class="coin-image">
     <span class="coin-number" contenteditable="true">ROM-001</span>
     <span class="coin-grade" contenteditable="true">GVF</span>
-    <img src="images/ROM-001.jpg" alt="Ã¥ÂÂÃ¥ÂÂÃÂ·Ã¥Â°Â¼Ã§Â¦ÂÃ¥ÂÂÃ¥Â¾Â·Ã¦ÂÂÃ¥ÂÂÃ©Â©Â¬" data-path="images/ROM-001.jpg" onerror="this.style.display='none'">
-    <div class="placeholder" onclick="triggerUpload(this)" style="display:none">Ã°ÂÂªÂ</div>
+    <img src="images/ROM-001.jpg" alt="脙楼脗聼脗聝脙楼脗聫脗聤脙聜脗路脙楼脗掳脗录脙搂脗娄脗聞脙楼脗聸脗聸脙楼脗戮脗路脙娄脗聥脗聣脙楼脗聟脗聥脙漏脗漏脗卢" data-path="images/ROM-001.jpg" onerror="this.style.display='none'">
+    <div class="placeholder" onclick="triggerUpload(this)" style="display:none">脙掳脗聼脗陋脗聶</div>
     <div class="img-overlay">
-      <button class="img-btn" onclick="triggerUpload(this)">Ã°ÂÂÂ· Ã¤Â¸ÂÃ¤Â¼Â Ã¥ÂÂ¾Ã§ÂÂ</button>
-      <button class="img-btn" onclick="editImgPath(this)">Ã°ÂÂÂ Ã¦ÂÂ¹Ã¨Â·Â¯Ã¥Â¾Â</button>
+      <button class="img-btn" onclick="triggerUpload(this)">脙掳脗聼脗聯脗路 脙陇脗赂脗聤脙陇脗录脗聽脙楼脗聸脗戮脙搂脗聣脗聡</button>
+      <button class="img-btn" onclick="editImgPath(this)">脙掳脗聼脗聰脗聴 脙娄脗聰脗鹿脙篓脗路脗炉脙楼脗戮脗聞</button>
     </div>
   </div>
   <div class="coin-info">
-    <h2 class="coin-title" contenteditable="true">Ã¥ÂÂÃ¥ÂÂÃÂ·Ã¥Â°Â¼Ã§Â¦ÂÃ¥ÂÂÃ¥Â¾Â·Ã¦ÂÂÃ¥ÂÂÃ©Â©Â¬</h2>
-    <p class="coin-subtitle" contenteditable="true">EGYPT ÃÂ· Alexandria ÃÂ· Nero</p>
+    <h2 class="coin-title" contenteditable="true">脙楼脗聼脗聝脙楼脗聫脗聤脙聜脗路脙楼脗掳脗录脙搂脗娄脗聞脙楼脗聸脗聸脙楼脗戮脗路脙娄脗聥脗聣脙楼脗聟脗聥脙漏脗漏脗卢</h2>
+    <p class="coin-subtitle" contenteditable="true">EGYPT 脙聜脗路 Alexandria 脙聜脗路 Nero</p>
     <div class="coin-detail">
-      <div class="detail-item"><div class="detail-label" contenteditable="true">Ã¥Â¹Â´Ã¤Â»Â£</div><div class="detail-value" contenteditable="true">AD 54-68</div></div>
-      <div class="detail-item"><div class="detail-label" contenteditable="true">Ã©ÂÂ¢Ã¥ÂÂ¼</div><div class="detail-value" contenteditable="true">Tetradrachm Ã¥ÂÂÃ¥Â¾Â·Ã¦ÂÂÃ¥ÂÂÃ©Â©Â¬</div></div>
-      <div class="detail-item"><div class="detail-label" contenteditable="true">Ã¦ÂÂÃ¨Â´Â¨</div><div class="detail-value" contenteditable="true">BI Ã©ÂÂ¶Ã¥ÂÂÃ©ÂÂ ÃÂ· 24mm ÃÂ· 11.70g</div></div>
-      <div class="detail-item"><div class="detail-label" contenteditable="true">Ã¥ÂÂÃ¨ÂÂ</div><div class="detail-value" contenteditable="true">RPC I 5315</div></div>
+      <div class="detail-item"><div class="detail-label" contenteditable="true">脙楼脗鹿脗麓脙陇脗禄脗拢</div><div class="detail-value" contenteditable="true">AD 54-68</div></div>
+      <div class="detail-item"><div class="detail-label" contenteditable="true">脙漏脗聺脗垄脙楼脗聙脗录</div><div class="detail-value" contenteditable="true">Tetradrachm 脙楼脗聸脗聸脙楼脗戮脗路脙娄脗聥脗聣脙楼脗聟脗聥脙漏脗漏脗卢</div></div>
+      <div class="detail-item"><div class="detail-label" contenteditable="true">脙娄脗聺脗聬脙篓脗麓脗篓</div><div class="detail-value" contenteditable="true">BI 脙漏脗聯脗露脙楼脗聬脗聢脙漏脗聡脗聭 脙聜脗路 24mm 脙聜脗路 11.70g</div></div>
+      <div class="detail-item"><div class="detail-label" contenteditable="true">脙楼脗聫脗聜脙篓脗聙脗聝</div><div class="detail-value" contenteditable="true">RPC I 5315</div></div>
     </div>
     <div class="description">
-      <h4 contenteditable="true">Ã°ÂÂÂ Ã¥ÂÂÃ¥ÂÂ²Ã¨ÂÂÃ¦ÂÂ¯</h4>
-      <p contenteditable="true">Ã¤ÂºÂÃ¥ÂÂÃ¥Â±Â±Ã¥Â¤Â§Ã©ÂÂ Ã¥Â¸ÂÃ¥ÂÂÃ¦ÂÂ¯Ã§Â½ÂÃ©Â©Â¬Ã¥Â¸ÂÃ¥ÂÂ½Ã¥ÂÂÃ¦ÂÂÃ§ÂÂ¹Ã¦Â®ÂÃ§ÂÂÃ¨Â´Â§Ã¥Â¸ÂÃ¥ÂÂÃ¨Â¡ÂÃ¥ÂÂ°Ã¢ÂÂÃ¢ÂÂÃ¥Â¥Â¥Ã¥ÂÂ¤Ã¦ÂÂ¯Ã©ÂÂ½Ã¥Â¾ÂÃ¦ÂÂÃ¦ÂÂÃ¥ÂÂÃ¥Â¯ÂÃ¥ÂÂÃ¥ÂÂÃ¥ÂÂÃ¯Â¼ÂÃ¥ÂÂ»Ã¦ÂÂÃ¤Â¿ÂÃ§ÂÂÃ¥ÂÂ¶Ã¥Â¸ÂÃ¨ÂÂÃ¥ÂÂÃ©ÂÂ Ã¥Â¸ÂÃ¤Â¼Â Ã§Â»ÂÃ¯Â¼ÂÃ¤Â»Â¥Ã¥Â¸ÂÃ¨ÂÂÃ©ÂÂ­Ã¦ÂÂÃ¥ÂÂÃ§Â¥ÂÃ§Â¥ÂÃ¤Â¸ÂºÃ¤Â¸Â»Ã¥ÂÂ¾Ã¯Â¼ÂÃ¤Â¸ÂÃ¦ÂÂÃ¤Â¸ÂÃ¤Â¼Â Ã§Â»ÂÃ¥Â½Â¢Ã¦ÂÂÃ©Â²ÂÃ¦ÂÂÃ¥Â¯Â¹Ã¦Â¯ÂÃ£ÂÂÃ¤Â»ÂÃ¦ÂÂÃ¦Â¯ÂÃ§ÂÂ¥Ã¨ÂµÂ·Ã¯Â¼ÂÃ¨Â¡ÂÃ§ÂÂÃ¥ÂÂÃ¥ÂÂÃ¥Â¸ÂÃ¦Â¯ÂÃ¤Â½ÂÃ§ÂÂÃ¥Â¸ÂÃ¥ÂÂÃ¦ÂÂÃ©ÂÂ¸Ã©ÂÂ Ã¯Â¼ÂÃ¤Â¸ÂÃ¦Â¯ÂÃ¥Â¹Â´Ã¦ÂÂ´Ã¦ÂÂ¢Ã§ÂºÂªÃ¥Â¹Â´Ã§ÂÂÃ¥Â¼ÂÃ£ÂÂÃ¦Â­Â¤Ã¦ÂÂÃ¤Â¸ÂºÃ¥Â°Â¼Ã§Â¦ÂÃ§Â¬Â¬14Ã¥Â¹Â´Ã¯Â¼ÂL IÃÂ = RY 14 = AD 67/68Ã¯Â¼ÂÃ¯Â¼ÂÃ¥Â¯Â¹Ã¥ÂºÂÃ¥ÂÂ¶Ã¥Â¸ÂÃ¨ÂÂÃ¥Â·Â¡Ã¦Â¸Â¸Ã¦ÂÂÃ©ÂÂ´Ã£ÂÂÃ¥Â°Â¼Ã§Â¦ÂÃ¨Â¾ÂÃ¥Â°ÂÃ¥ÂÂ Ã¥Â¤Â´Ã¥ÂÂÃ¥Â·Â¦Ã¥ÂÂÃ¯Â¼ÂÃ¥Â¼ÂºÃ¨Â°ÂÃ§ÂÂÃ¥Â¸ÂÃ¤Â¸ÂÃ¥Â¤ÂªÃ©ÂÂ³Ã§Â¥ÂÃ§ÂÂÃ¨ÂÂÃ§Â³Â»Ã¢ÂÂÃ¢ÂÂÃ¥Â°Â¼Ã§Â¦ÂÃ¦ÂÂÃ¥Â¹Â´Ã¥Â°Â¤Ã¥ÂÂ¶Ã¨ÂÂ´Ã¥ÂÂÃ¥Â»ÂºÃ¦ÂÂÃ£ÂÂÃ¥Â¤ÂªÃ©ÂÂ³Ã§Â¥ÂÃ£ÂÂÃ¨ÂºÂ«Ã¤Â»Â½Ã£ÂÂÃ¨ÂÂ©Ã¦ÂÂ« Aegis Ã¥ÂÂÃ¤Â¸ÂºÃ©ÂÂÃ¥ÂÂ¸Ã¥Â¨ÂÃ¦ÂÂ¤Ã¨ÂÂ¸Ã§ÂÂ²Ã¯Â¼ÂÃ¨Â¢Â«Ã§Â½ÂÃ©Â©Â¬Ã§ÂÂÃ¥Â¸ÂÃ¥ÂÂÃ§ÂÂ¨Ã¤Â»Â¥Ã¨Â±Â¡Ã¥Â¾ÂÃ§Â¥ÂÃ¤Â½ÂÃ¯Â¼Âdivine protectionÃ¯Â¼ÂÃ£ÂÂÃ¨ÂÂÃ©ÂÂ¢Ã¥Â¤Â©Ã¥ÂÂÃ¨ÂµÂ«Ã¦ÂÂÃ¯Â¼ÂHeraÃ¯Â¼ÂÃ¦ÂÂ´Ã¥ÂÂ Ã¦ÂÂ«Ã¥Â·Â¾Ã¥Â¤Â´Ã¥ÂÂÃ¥ÂÂ³Ã¥ÂÂÃ¯Â¼ÂÃ¥Â»Â¶Ã§Â»Â­Ã¥Â¸ÂÃ¨ÂÂÃ¥ÂÂÃ¦ÂÂ¶Ã¤Â»Â£Ã¤ÂºÂÃ¥ÂÂÃ¥Â±Â±Ã¥Â¤Â§Ã¥Â¯Â¹Ã¥ÂÂÃ¥Â¸ÂÃ¥Â®ÂÃ¦ÂÂ¤Ã§Â¥ÂÃ§ÂÂÃ¥Â´ÂÃ¦ÂÂÃ¤Â¼Â Ã§Â»ÂÃ£ÂÂ</p>
+      <h4 contenteditable="true">脙掳脗聼脗聯脗聹 脙楼脗聨脗聠脙楼脗聫脗虏脙篓脗聝脗聦脙娄脗聶脗炉</h4>
+      <p contenteditable="true">脙陇脗潞脗職脙楼脗聨脗聠脙楼脗卤脗卤脙楼脗陇脗搂脙漏脗聙脗聽脙楼脗赂脗聛脙楼脗聨脗聜脙娄脗聵脗炉脙搂脗陆脗聴脙漏脗漏脗卢脙楼脗赂脗聺脙楼脗聸脗陆脙楼脗聠脗聟脙娄脗聹脗聙脙搂脗聣脗鹿脙娄脗庐脗聤脙搂脗職脗聞脙篓脗麓脗搂脙楼脗赂脗聛脙楼脗聫脗聭脙篓脗隆脗聦脙楼脗聹脗掳脙垄脗聙脗聰脙垄脗聙脗聰脙楼脗楼脗楼脙楼脗聫脗陇脙娄脗聳脗炉脙漏脗聝脗陆脙楼脗戮脗聛脙娄脗聹脗聧脙娄脗聣脗聵脙楼脗聥脗聮脙楼脗炉脗聠脙楼脗聼脗聝脙楼脗聫脗聤脙楼脗聬脗聨脙炉脗录脗聦脙楼脗聢脗禄脙娄脗聞脗聫脙陇脗驴脗聺脙搂脗聲脗聶脙楼脗聟脗露脙楼脗赂脗聦脙篓脗聟脗聤脙楼脗聦脗聳脙漏脗聙脗聽脙楼脗赂脗聛脙陇脗录脗聽脙搂脗禄脗聼脙炉脗录脗聦脙陇脗禄脗楼脙楼脗赂脗聦脙篓脗聟脗聤脙漏脗聯脗颅脙娄脗聳脗聡脙楼脗聮脗聦脙搂脗楼脗聻脙搂脗楼脗聡脙陇脗赂脗潞脙陇脗赂脗禄脙楼脗聸脗戮脙炉脗录脗聦脙陇脗赂脗聨脙娄脗聥脗聣脙陇脗赂脗聛脙陇脗录脗聽脙搂脗禄脗聼脙楼脗陆脗垄脙娄脗聢脗聬脙漏脗虏脗聹脙娄脗聵脗聨脙楼脗炉脗鹿脙娄脗炉脗聰脙拢脗聙脗聜脙陇脗禄脗聨脙娄脗聫脗聬脙娄脗炉脗聰脙搂脗聲脗楼脙篓脗碌脗路脙炉脗录脗聦脙篓脗隆脗聦脙搂脗聹脗聛脙楼脗聼脗聝脙楼脗聫脗聤脙楼脗赂脗聛脙娄脗炉脗聫脙陇脗陆脗聧脙搂脗職脗聡脙楼脗赂脗聺脙楼脗聺脗聡脙娄脗聹脗聣脙漏脗聯脗赂脙漏脗聙脗聽脙炉脗录脗聦脙陇脗赂脗聰脙娄脗炉脗聫脙楼脗鹿脗麓脙娄脗聸脗麓脙娄脗聧脗垄脙搂脗潞脗陋脙楼脗鹿脗麓脙搂脗聣脗聢脙楼脗录脗聫脙拢脗聙脗聜脙娄脗颅脗陇脙娄脗聻脗職脙陇脗赂脗潞脙楼脗掳脗录脙搂脗娄脗聞脙搂脗卢脗卢14脙楼脗鹿脗麓脙炉脗录脗聢L I脙聨脗聰 = RY 14 = AD 67/68脙炉脗录脗聣脙炉脗录脗聦脙楼脗炉脗鹿脙楼脗潞脗聰脙楼脗聟脗露脙楼脗赂脗聦脙篓脗聟脗聤脙楼脗路脗隆脙娄脗赂脗赂脙娄脗聹脗聼脙漏脗聴脗麓脙拢脗聙脗聜脙楼脗掳脗录脙搂脗娄脗聞脙篓脗戮脗聬脙楼脗掳脗聞脙楼脗聠脗聽脙楼脗陇脗麓脙楼脗聝脗聫脙楼脗路脗娄脙楼脗聬脗聭脙炉脗录脗聦脙楼脗录脗潞脙篓脗掳脗聝脙搂脗職脗聡脙楼脗赂脗聺脙陇脗赂脗聨脙楼脗陇脗陋脙漏脗聵脗鲁脙搂脗楼脗聻脙搂脗職脗聞脙篓脗聛脗聰脙搂脗鲁脗禄脙垄脗聙脗聰脙垄脗聙脗聰脙楼脗掳脗录脙搂脗娄脗聞脙娄脗聶脗職脙楼脗鹿脗麓脙楼脗掳脗陇脙楼脗聟脗露脙篓脗聡脗麓脙楼脗聤脗聸脙楼脗禄脗潞脙娄脗聻脗聞脙拢脗聙脗聦脙楼脗陇脗陋脙漏脗聵脗鲁脙搂脗楼脗聻脙拢脗聙脗聧脙篓脗潞脗芦脙陇脗禄脗陆脙拢脗聙脗聜脙篓脗聜脗漏脙娄脗聤脗芦 Aegis 脙楼脗聨脗聼脙陇脗赂脗潞脙漏脗聸脗聟脙楼脗聟脗赂脙楼脗篓脗聹脙娄脗聤脗陇脙篓脗聝脗赂脙搂脗聰脗虏脙炉脗录脗聦脙篓脗垄脗芦脙搂脗陆脗聴脙漏脗漏脗卢脙搂脗職脗聡脙楼脗赂脗聺脙楼脗聙脗聼脙搂脗聰脗篓脙陇脗禄脗楼脙篓脗卤脗隆脙楼脗戮脗聛脙搂脗楼脗聻脙陇脗陆脗聭脙炉脗录脗聢divine protection脙炉脗录脗聣脙拢脗聙脗聜脙篓脗聝脗聦脙漏脗聺脗垄脙楼脗陇脗漏脙楼脗聬脗聨脙篓脗碌脗芦脙娄脗聥脗聣脙炉脗录脗聢Hera脙炉脗录脗聣脙娄脗聢脗麓脙楼脗聠脗聽脙娄脗聤脗芦脙楼脗路脗戮脙楼脗陇脗麓脙楼脗聝脗聫脙楼脗聫脗鲁脙楼脗聬脗聭脙炉脗录脗聦脙楼脗禄脗露脙搂脗禄脗颅脙楼脗赂脗聦脙篓脗聟脗聤脙楼脗聦脗聳脙娄脗聴脗露脙陇脗禄脗拢脙陇脗潞脗職脙楼脗聨脗聠脙楼脗卤脗卤脙楼脗陇脗搂脙楼脗炉脗鹿脙楼脗聼脗聨脙楼脗赂脗聜脙楼脗庐脗聢脙娄脗聤脗陇脙搂脗楼脗聻脙搂脗職脗聞脙楼脗麓脗聡脙娄脗聥脗聹脙陇脗录脗聽脙搂脗禄脗聼脙拢脗聙脗聜</p>
     </div>
     <div class="obv-rev">
-      <div class="obv" contenteditable="true">Ã¦Â­Â£Ã©ÂÂ¢: NEPÃÂ© KÃÂAV KAIÃÂ£ ÃÂ£EÃÂ ÃÂEP AV ÃÂ· Ã¥Â°Â¼Ã§Â¦ÂÃ¨Â¾ÂÃ¥Â°ÂÃ¥ÂÂ Ã¥Â·Â¦Ã¥ÂÂÃ¦ÂÂ«Aegis ÃÂ· L IÃÂ</div>
-      <div class="rev" contenteditable="true">Ã¨ÂÂÃ©ÂÂ¢: HPA APÃÂEIA ÃÂ· HeraÃ¦ÂÂ´Ã¥ÂÂ Ã¦ÂÂ«Ã¥Â·Â¾Ã¥ÂÂ³Ã¥ÂÂ ÃÂ· Ã¥ÂÂ­Ã¨Â§ÂÃ¦ÂÂ</div>
+      <div class="obv" contenteditable="true">脙娄脗颅脗拢脙漏脗聺脗垄: NEP脙聨脗漏 K脙聨脗聸AV KAI脙聨脗拢 脙聨脗拢E脙聨脗聮 脙聨脗聯EP AV 脙聜脗路 脙楼脗掳脗录脙搂脗娄脗聞脙篓脗戮脗聬脙楼脗掳脗聞脙楼脗聠脗聽脙楼脗路脗娄脙楼脗聬脗聭脙娄脗聤脗芦Aegis 脙聜脗路 L I脙聨脗聰</div>
+      <div class="rev" contenteditable="true">脙篓脗聝脗聦脙漏脗聺脗垄: HPA AP脙聨脗聯EIA 脙聜脗路 Hera脙娄脗聢脗麓脙楼脗聠脗聽脙娄脗聤脗芦脙楼脗路脗戮脙楼脗聫脗鲁脙楼脗聬脗聭 脙聜脗路 脙楼脗聟脗颅脙篓脗搂脗聮脙娄脗聵脗聼</div>
     </div>
-    <span class="tag" contenteditable="true">Ã§Â½ÂÃ©Â©Â¬Ã¨Â¡ÂÃ§ÂÂÃ¥ÂÂÃ¥ÂÂ</span><span class="tag" contenteditable="true">Ã¥Â°Â¼Ã§Â¦Â</span><span class="tag" contenteditable="true">Ã¤ÂºÂÃ¥ÂÂÃ¥Â±Â±Ã¥Â¤Â§Ã©ÂÂ Ã¥Â¸ÂÃ¥ÂÂ</span><span class="tag" contenteditable="true">BIÃ©ÂÂ¶Ã¥ÂÂÃ©ÂÂ</span>
+    <span class="tag" contenteditable="true">脙搂脗陆脗聴脙漏脗漏脗卢脙篓脗隆脗聦脙搂脗聹脗聛脙楼脗聼脗聝脙楼脗聫脗聤</span><span class="tag" contenteditable="true">脙楼脗掳脗录脙搂脗娄脗聞</span><span class="tag" contenteditable="true">脙陇脗潞脗職脙楼脗聨脗聠脙楼脗卤脗卤脙楼脗陇脗搂脙漏脗聙脗聽脙楼脗赂脗聛脙楼脗聨脗聜</span><span class="tag" contenteditable="true">BI脙漏脗聯脗露脙楼脗聬脗聢脙漏脗聡脗聭</span>
     <div class="bottom-row">
-      <div><div class="price-value" contenteditable="true">Ã¢ÂÂ¬63</div><div class="price-label" contenteditable="true">Ã¦ÂÂÃ¤ÂºÂ¤Ã¤Â»Â·</div></div>
-      <div class="prov-compact" contenteditable="true"><strong>Biga Numismatics</strong> ÃÂ· Online Auction 38 ÃÂ· 2025</div>
+      <div><div class="price-value" contenteditable="true">脙垄脗聜脗卢63</div><div class="price-label" contenteditable="true">脙娄脗聢脗聬脙陇脗潞脗陇脙陇脗禄脗路</div></div>
+      <div class="prov-compact" contenteditable="true"><strong>Biga Numismatics</strong> 脙聜脗路 Online Auction 38 脙聜脗路 2025</div>
     </div>
   </div>
 </div>
 
 <!-- GK-002 -->
 <div class="coin-card" data-category="greek" draggable="true">
-  <div class="drag-handle">Ã¢Â Â¿ Ã¦ÂÂÃ¦ÂÂ½Ã¦ÂÂÃ¥ÂºÂ</div>
+  <div class="drag-handle">脙垄脗聽脗驴 脙娄脗聥脗聳脙娄脗聥脗陆脙娄脗聨脗聮脙楼脗潞脗聫</div>
   <div class="coin-image">
     <span class="coin-number" contenteditable="true">GK-002</span>
     <span class="coin-grade" contenteditable="true">F</span>
-    <img src="images/GK-002.jpg" alt="Ã¦ÂÂ¬Ã©ÂÂ½ÃÂ·Ã©ÂÂ¿Ã§Â±Â³Ã§Â´Â¢Ã¦ÂÂ¯Ã©ÂÂÃ¥Â¸Â" data-path="images/GK-002.jpg" onerror="this.style.display='none'">
-    <div class="placeholder" onclick="triggerUpload(this)" style="display:none">Ã°ÂÂªÂ</div>
+    <img src="images/GK-002.jpg" alt="脙娄脗聹脗卢脙漏脗聝脗陆脙聜脗路脙漏脗聵脗驴脙搂脗卤脗鲁脙搂脗麓脗垄脙娄脗聳脗炉脙漏脗聯脗聹脙楼脗赂脗聛" data-path="images/GK-002.jpg" onerror="this.style.display='none'">
+    <div class="placeholder" onclick="triggerUpload(this)" style="display:none">脙掳脗聼脗陋脗聶</div>
     <div class="img-overlay">
-      <button class="img-btn" onclick="triggerUpload(this)">Ã°ÂÂÂ· Ã¤Â¸ÂÃ¤Â¼Â Ã¥ÂÂ¾Ã§ÂÂ</button>
-      <button class="img-btn" onclick="editImgPath(this)">Ã°ÂÂÂ Ã¦ÂÂ¹Ã¨Â·Â¯Ã¥Â¾Â</button>
+      <button class="img-btn" onclick="triggerUpload(this)">脙掳脗聼脗聯脗路 脙陇脗赂脗聤脙陇脗录脗聽脙楼脗聸脗戮脙搂脗聣脗聡</button>
+      <button class="img-btn" onclick="editImgPath(this)">脙掳脗聼脗聰脗聴 脙娄脗聰脗鹿脙篓脗路脗炉脙楼脗戮脗聞</button>
     </div>
   </div>
   <div class="coin-info">
-    <h2 class="coin-title" contenteditable="true">Ã¦ÂÂ¬Ã©ÂÂ½ÃÂ·Ã©ÂÂ¿Ã§Â±Â³Ã§Â´Â¢Ã¦ÂÂ¯ Ã§ÂÂÃ¥Â°ÂÃ¤Â¿Â®Ã¦ÂÂ¯ / Ã©Â£ÂÃ©Â©Â¬Ã©ÂÂÃ¥Â¸Â</h2>
-    <p class="coin-subtitle" contenteditable="true">PONTUS ÃÂ· Amisos ÃÂ· Mithradates VI Eupator</p>
+    <h2 class="coin-title" contenteditable="true">脙娄脗聹脗卢脙漏脗聝脗陆脙聜脗路脙漏脗聵脗驴脙搂脗卤脗鲁脙搂脗麓脗垄脙娄脗聳脗炉 脙搂脗聫脗聙脙楼脗掳脗聰脙陇脗驴脗庐脙娄脗聳脗炉 / 脙漏脗拢脗聻脙漏脗漏脗卢脙漏脗聯脗聹脙楼脗赂脗聛</h2>
+    <p class="coin-subtitle" contenteditable="true">PONTUS 脙聜脗路 Amisos 脙聜脗路 Mithradates VI Eupator</p>
     <div class="coin-detail">
-      <div class="detail-item"><div class="detail-label" contenteditable="true">Ã¥Â¹Â´Ã¤Â»Â£</div><div class="detail-value" contenteditable="true">c. BC 85-65</div></div>
-      <div class="detail-item"><div class="detail-label" contenteditable="true">Ã©ÂÂ¢Ã¥ÂÂ¼</div><div class="detail-value" contenteditable="true">AE Ã©ÂÂÃ©ÂÂ</div></div>
-      <div class="detail-item"><div class="detail-label" contenteditable="true">Ã¦ÂÂÃ¨Â´Â¨</div><div class="detail-value" contenteditable="true">AE Ã©ÂÂÃ©ÂÂ ÃÂ· 22mm ÃÂ· 11.38g ÃÂ· Ã¨Â½Â´ 12h</div></div>
-      <div class="detail-item"><div class="detail-label" contenteditable="true">Ã¥ÂÂÃ¨ÂÂ</div><div class="detail-value" contenteditable="true">Waddington RG 32; cf. SNG BM Black Sea 1212-1217</div></div>
+      <div class="detail-item"><div class="detail-label" contenteditable="true">脙楼脗鹿脗麓脙陇脗禄脗拢</div><div class="detail-value" contenteditable="true">c. BC 85-65</div></div>
+      <div class="detail-item"><div class="detail-label" contenteditable="true">脙漏脗聺脗垄脙楼脗聙脗录</div><div class="detail-value" contenteditable="true">AE 脙漏脗聺脗聮脙漏脗聯脗聹</div></div>
+      <div class="detail-item"><div class="detail-label" contenteditable="true">脙娄脗聺脗聬脙篓脗麓脗篓</div><div class="detail-value" contenteditable="true">AE 脙漏脗聺脗聮脙漏脗聯脗聹 脙聜脗路 22mm 脙聜脗路 11.38g 脙聜脗路 脙篓脗陆脗麓 12h</div></div>
+      <div class="detail-item"><div class="detail-label" contenteditable="true">脙楼脗聫脗聜脙篓脗聙脗聝</div><div class="detail-value" contenteditable="true">Waddington RG 32; cf. SNG BM Black Sea 1212-1217</div></div>
     </div>
     <div class="description">
-      <h4 contenteditable="true">Ã°ÂÂÂ Ã¥ÂÂÃ¥ÂÂ²Ã¨ÂÂÃ¦ÂÂ¯</h4>
-      <p contenteditable="true">Ã¦ÂÂ¬Ã©ÂÂ½Ã¯Â¼ÂPontusÃ¯Â¼ÂÃ¦ÂÂ¯Ã©Â»ÂÃ¦ÂµÂ·Ã¥ÂÂÃ¥Â²Â¸Ã§ÂÂÃ¥Â¸ÂÃ¨ÂÂÃ¥ÂÂÃ§ÂÂÃ¥ÂÂ½Ã¯Â¼ÂÃ¤Â»Â¥Ã©ÂÂ¿Ã§Â±Â³Ã§Â´Â¢Ã¦ÂÂ¯Ã¯Â¼ÂAmisosÃ¯Â¼ÂÃ¤Â»ÂÃ¥ÂÂÃ¨ÂÂ³Ã¥ÂÂ¶SamsunÃ¯Â¼ÂÃ¤Â¸ÂºÃ©ÂÂÃ¨Â¦ÂÃ©ÂÂ Ã¥Â¸ÂÃ¤Â¸ÂÃ¥ÂÂÃ¤Â¸ÂÃ¤Â¸Â­Ã¥Â¿ÂÃ£ÂÂÃ§Â±Â³Ã§ÂÂ¹Ã¦ÂÂÃ¨Â¾Â¾Ã¦Â¢Â¯Ã¥ÂÂ­Ã¤Â¸ÂÃ¯Â¼Â<b>Mithradates VI Eupator</b>Ã¯Â¼ÂÃ§ÂºÂ¦ 120-63 BCÃ¯Â¼ÂÃ¦ÂÂ¯Ã¦ÂÂ¬Ã©ÂÂ½Ã¦ÂÂÃ¤Â¼ÂÃ¥Â¤Â§Ã§ÂÂÃ¥ÂÂ½Ã§ÂÂÃ¯Â¼ÂÃ¥ÂÂ²Ã§Â§Â°"Ã§Â±Â³Ã§ÂÂ¹Ã¦ÂÂÃ¨Â¾Â¾Ã¦Â¢Â¯Ã¥Â¤Â§Ã¥Â¸Â"Ã¢ÂÂÃ¢ÂÂÃ¥ÂÂÃ¥ÂÂÃ¤Â¸ÂÃ¦Â¬Â¡Ã¥ÂÂÃ¥ÂÂ¨Ã¥Â¯Â¹Ã§Â½ÂÃ©Â©Â¬Ã§ÂÂÃ¦ÂÂÃ¤ÂºÂÃ¯Â¼ÂÃ¥ÂÂ 88-Ã¥ÂÂ 63 Ã¥Â¹Â´"Ã§Â±Â³Ã§ÂÂ¹Ã¦ÂÂÃ¨Â¾Â¾Ã¦Â¢Â¯Ã¦ÂÂÃ¤ÂºÂ"Ã¯Â¼ÂÃ¯Â¼ÂÃ¤Â¸ÂÃ¥ÂºÂ¦Ã¥Â¾ÂÃ¦ÂÂÃ¥Â°ÂÃ¤ÂºÂÃ§Â»ÂÃ¤ÂºÂÃ£ÂÂÃ¥Â¸ÂÃ¨ÂÂÃ¥ÂÂÃ§ÂÂ±Ã§ÂÂ´Ã¦ÂµÂ·Ã¨Â¯Â¸Ã¥Â²ÂÃ¯Â¼ÂÃ¥ÂÂ Ã¤Â¹ÂÃ¦ÂÂ¨Ã§Â¿Â»Ã§Â½ÂÃ©Â©Â¬Ã¥ÂÂ¨Ã¤Â¸ÂÃ¦ÂÂ¹Ã§ÂÂÃ©ÂÂ¸Ã¦ÂÂÃ£ÂÂÃ¦ÂÂÃ§Â»ÂÃ¨Â¢Â«Ã¥ÂºÂÃ¥ÂÂ¹Ã¥ÂÂ»Ã¨Â´Â¥Ã¯Â¼ÂÃ©ÂÂÃ¥Â¾ÂÃ¥ÂÂÃ©ÂÂÃ§Â±Â³Ã¤ÂºÂÃ¥ÂÂÃ¨ÂÂªÃ¦ÂÂÃ£ÂÂ<br><br>Ã¦Â­Â¤Ã¥Â¸ÂÃ§ÂÂ<b>Ã§ÂÂÃ¥Â°ÂÃ¤Â¿Â®Ã¦ÂÂ¯Ã¦ÂÂ´Ã¥Â¼ÂÃ©ÂÂÃ¥ÂÂÃ¤ÂºÂÃ¥Â¸Â½Ã¯Â¼ÂPileus / Phrygian capÃ¯Â¼Â</b>Ã¥Â½Â¢Ã¨Â±Â¡Ã¦ÂÂÃ¥Â¼ÂºÃ§ÂÂÃ§ÂÂÃ¦ÂÂ¿Ã¦Â²Â»Ã§Â¥ÂÃ¨Â¯ÂÃ¥ÂÂ«Ã¤Â¹ÂÃ¯Â¼ÂÃ§Â±Â³Ã§ÂÂ¹Ã¦ÂÂÃ¨Â¾Â¾Ã¦Â¢Â¯Ã§ÂÂÃ¥Â®Â¤Ã¨ÂÂªÃ¨Â¯Â©Ã¤Â¸ÂºÃ¥Â¸ÂÃ¨ÂÂÃ¨ÂÂ±Ã©ÂÂÃ§ÂÂÃ¥Â°ÂÃ¤Â¿Â®Ã¦ÂÂ¯Ã¯Â¼ÂÃ¦ÂÂ©Ã¦ÂÂÃ§Â¾ÂÃ¦ÂÂÃ¨ÂÂÃ£ÂÂÃ¦ÂÂÃ¨ÂµÂÃ¥Â®ÂÃ¥Â¾Â·Ã¦Â´ÂÃ¥Â¢Â¨Ã¨Â¾Â¾Ã¯Â¼ÂÃ¥ÂÂÃ¨Â£ÂÃ¢ÂÂÃ¢ÂÂÃ§ÂÂÃ¥Â°ÂÃ¤Â¿Â®Ã¦ÂÂ¯Ã¤Â¹ÂÃ¥Â­Â<b>Perses</b>Ã¨Â¢Â«Ã¨Â®Â¤Ã¤Â¸ÂºÃ¦Â³Â¢Ã¦ÂÂ¯Ã¤Â¸ÂÃ¦ÂÂ¬Ã©ÂÂ½Ã§ÂÂÃ¦ÂÂÃ§ÂÂÃ¥Â§ÂÃ§Â¥ÂÃ£ÂÂÃ¥Â¼ÂÃ©ÂÂÃ¥ÂÂÃ¤ÂºÂÃ¥Â¸Â½Ã¥ÂÂ¨Ã¥Â¸ÂÃ¨ÂÂÃ§Â½ÂÃ©Â©Â¬Ã¨Â¯Â­Ã¥Â¢ÂÃ¤Â¸Â­Ã¨Â±Â¡Ã¥Â¾Â<b>Ã¨ÂÂªÃ§ÂÂ±</b>Ã¯Â¼ÂÃ¨ÂÂÃ¥Â¸Â½Ã¤Â¸ÂÃ§ÂÂ<b>Ã§ÂÂ®Ã©Â¹Â«Ã¨Â£ÂÃ©Â¥Â°Ã¯Â¼Âgriffin-crestÃ¯Â¼Â</b>Ã¥ÂÂÃ¥ÂÂ¼Ã¥ÂºÂÃ¦Â³Â¢Ã¦ÂÂ¯/Ã¤Â¸ÂÃ¦ÂÂ¹Ã¤Â¼Â Ã§Â»ÂÃ¯Â¼ÂÃ¤Â½ÂÃ§ÂÂ°Ã§Â±Â³Ã§ÂÂ¹Ã¦ÂÂÃ¨Â¾Â¾Ã¦Â¢Â¯Ã¦Â¨ÂªÃ¨Â·Â¨Ã¤Â¸ÂÃ¨Â¥Â¿Ã¦ÂÂ¹Ã§ÂÂÃ§Â»ÂÃ¦Â²Â»Ã¥ÂÂÃ¦Â³ÂÃ¦ÂÂ§Ã£ÂÂ<br><br>Ã¨ÂÂÃ©ÂÂ¢Ã§ÂÂ<b>Ã©Â£ÂÃ©Â©Â¬ Pegasus</b>Ã¦ÂÂ¯Ã©ÂÂ¿Ã§Â±Â³Ã§Â´Â¢Ã¦ÂÂ¯Ã¥Â»ÂºÃ¥ÂÂÃ§Â¥ÂÃ¨Â¯ÂÃ§ÂÂÃ¦Â Â¸Ã¥Â¿ÂÃ¥ÂÂÃ§Â´Â Ã¯Â¼ÂÃ©Â£ÂÃ©Â©Â¬Ã§ÂÂ¨Ã¨Â¹ÂÃ¨Â¸Â¢Ã¥ÂÂº Hippene Ã¦Â³ÂÃ¯Â¼ÂÃ¯Â¼ÂÃ¤Â¹ÂÃ¦ÂÂ¯Ã¨Â¯Â¥Ã¥ÂÂÃ¦ÂÂ°Ã§ÂÂ¾Ã¥Â¹Â´Ã¦ÂÂ¥Ã§ÂÂÃ¥ÂÂºÃ¥Â®ÂÃ¥Â¸ÂÃ©ÂÂ¢Ã¤Â¸Â»Ã©Â¢ÂÃ£ÂÂÃ¨Â¿ÂÃ¦ÂÂÃ©ÂÂÃ¥Â¸ÂÃ¦ÂÂ¯Ã¥Â¸ÂÃ¨ÂÂÃ¥ÂÂÃ§ÂÂÃ¥ÂÂ½Ã¦ÂÂ¿Ã¦Â²Â»Ã¥Â®Â£Ã¤Â¼Â Ã¤Â¸ÂÃ¥ÂÂ°Ã¦ÂÂ¹Ã¤Â¼Â Ã§Â»ÂÃ§Â»ÂÃ¥ÂÂÃ§ÂÂÃ¥ÂÂ¸Ã¥ÂÂÃ¦Â Â·Ã¦ÂÂ¬Ã£ÂÂ</p>
+      <h4 contenteditable="true">脙掳脗聼脗聯脗聹 脙楼脗聨脗聠脙楼脗聫脗虏脙篓脗聝脗聦脙娄脗聶脗炉</h4>
+      <p contenteditable="true">脙娄脗聹脗卢脙漏脗聝脗陆脙炉脗录脗聢Pontus脙炉脗录脗聣脙娄脗聵脗炉脙漏脗禄脗聭脙娄脗碌脗路脙楼脗聧脗聴脙楼脗虏脗赂脙搂脗職脗聞脙楼脗赂脗聦脙篓脗聟脗聤脙楼脗聦脗聳脙搂脗聨脗聥脙楼脗聸脗陆脙炉脗录脗聦脙陇脗禄脗楼脙漏脗聵脗驴脙搂脗卤脗鲁脙搂脗麓脗垄脙娄脗聳脗炉脙炉脗录脗聢Amisos脙炉脗录脗聦脙陇脗禄脗聤脙楼脗聹脗聼脙篓脗聙脗鲁脙楼脗聟脗露Samsun脙炉脗录脗聣脙陇脗赂脗潞脙漏脗聡脗聧脙篓脗娄脗聛脙漏脗聙脗聽脙楼脗赂脗聛脙陇脗赂脗聨脙楼脗聲脗聠脙陇脗赂脗職脙陇脗赂脗颅脙楼脗驴脗聝脙拢脗聙脗聜脙搂脗卤脗鲁脙搂脗聣脗鹿脙娄脗聥脗聣脙篓脗戮脗戮脙娄脗垄脗炉脙楼脗聟脗颅脙陇脗赂脗聳脙炉脗录脗聢<b>Mithradates VI Eupator</b>脙炉脗录脗聦脙搂脗潞脗娄 120-63 BC脙炉脗录脗聣脙娄脗聵脗炉脙娄脗聹脗卢脙漏脗聝脗陆脙娄脗聹脗聙脙陇脗录脗聼脙楼脗陇脗搂脙搂脗職脗聞脙楼脗聸脗陆脙搂脗聨脗聥脙炉脗录脗聦脙楼脗聫脗虏脙搂脗搂脗掳"脙搂脗卤脗鲁脙搂脗聣脗鹿脙娄脗聥脗聣脙篓脗戮脗戮脙娄脗垄脗炉脙楼脗陇脗搂脙楼脗赂脗聺"脙垄脗聙脗聰脙垄脗聙脗聰脙楼脗聟脗聢脙楼脗聬脗聨脙陇脗赂脗聣脙娄脗卢脗隆脙楼脗聫脗聭脙楼脗聤脗篓脙楼脗炉脗鹿脙搂脗陆脗聴脙漏脗漏脗卢脙搂脗職脗聞脙娄脗聢脗聵脙陇脗潞脗聣脙炉脗录脗聢脙楼脗聣脗聧 88-脙楼脗聣脗聧 63 脙楼脗鹿脗麓"脙搂脗卤脗鲁脙搂脗聣脗鹿脙娄脗聥脗聣脙篓脗戮脗戮脙娄脗垄脗炉脙娄脗聢脗聵脙陇脗潞脗聣"脙炉脗录脗聣脙炉脗录脗聦脙陇脗赂脗聙脙楼脗潞脗娄脙楼脗戮脗聛脙娄脗聹脗聧脙楼脗掳脗聫脙陇脗潞脗職脙搂脗禄脗聠脙陇脗潞脗職脙拢脗聙脗聛脙楼脗赂脗聦脙篓脗聟脗聤脙楼脗聮脗聦脙搂脗聢脗卤脙搂脗聬脗麓脙娄脗碌脗路脙篓脗炉脗赂脙楼脗虏脗聸脙炉脗录脗聦脙楼脗聡脗聽脙陇脗鹿脗聨脙娄脗聨脗篓脙搂脗驴脗禄脙搂脗陆脗聴脙漏脗漏脗卢脙楼脗聹脗篓脙陇脗赂脗聹脙娄脗聳脗鹿脙搂脗職脗聞脙漏脗聹脗赂脙娄脗聺脗聝脙拢脗聙脗聜脙娄脗聹脗聙脙搂脗禄脗聢脙篓脗垄脗芦脙楼脗潞脗聻脙楼脗聼脗鹿脙楼脗聡脗禄脙篓脗麓脗楼脙炉脗录脗聦脙漏脗聙脗聝脙楼脗戮脗聙脙楼脗聟脗聥脙漏脗聡脗聦脙搂脗卤脗鲁脙陇脗潞脗職脙楼脗聬脗聨脙篓脗聡脗陋脙娄脗聺脗聙脙拢脗聙脗聜<br><br>脙娄脗颅脗陇脙楼脗赂脗聛脙搂脗職脗聞<b>脙搂脗聫脗聙脙楼脗掳脗聰脙陇脗驴脗庐脙娄脗聳脗炉脙娄脗聢脗麓脙楼脗录脗聴脙漏脗聡脗聦脙楼脗聬脗聣脙陇脗潞脗職脙楼脗赂脗陆脙炉脗录脗聢Pileus / Phrygian cap脙炉脗录脗聣</b>脙楼脗陆脗垄脙篓脗卤脗隆脙娄脗聹脗聣脙楼脗录脗潞脙搂脗聝脗聢脙搂脗職脗聞脙娄脗聰脗驴脙娄脗虏脗禄脙搂脗楼脗聻脙篓脗炉脗聺脙楼脗聬脗芦脙陇脗鹿脗聣脙炉脗录脗職脙搂脗卤脗鲁脙搂脗聣脗鹿脙娄脗聥脗聣脙篓脗戮脗戮脙娄脗垄脗炉脙搂脗聨脗聥脙楼脗庐脗陇脙篓脗聡脗陋脙篓脗炉脗漏脙陇脗赂脗潞脙楼脗赂脗聦脙篓脗聟脗聤脙篓脗聥脗卤脙漏脗聸脗聞脙搂脗聫脗聙脙楼脗掳脗聰脙陇脗驴脗庐脙娄脗聳脗炉脙炉脗录脗聢脙娄脗聳脗漏脙娄脗聺脗聙脙搂脗戮脗聨脙娄脗聺脗聹脙篓脗聨脗聨脙拢脗聙脗聛脙娄脗聲脗聭脙篓脗碌脗聨脙楼脗庐脗聣脙楼脗戮脗路脙娄脗麓脗聸脙楼脗垄脗篓脙篓脗戮脗戮脙炉脗录脗聣脙楼脗聬脗聨脙篓脗拢脗聰脙垄脗聙脗聰脙垄脗聙脗聰脙搂脗聫脗聙脙楼脗掳脗聰脙陇脗驴脗庐脙娄脗聳脗炉脙陇脗鹿脗聥脙楼脗颅脗聬<b>Perses</b>脙篓脗垄脗芦脙篓脗庐脗陇脙陇脗赂脗潞脙娄脗鲁脗垄脙娄脗聳脗炉脙陇脗赂脗聨脙娄脗聹脗卢脙漏脗聝脗陆脙搂脗聨脗聥脙娄脗聴脗聫脙搂脗職脗聞脙楼脗搂脗聥脙搂脗楼脗聳脙拢脗聙脗聜脙楼脗录脗聴脙漏脗聡脗聦脙楼脗聬脗聣脙陇脗潞脗職脙楼脗赂脗陆脙楼脗聹脗篓脙楼脗赂脗聦脙篓脗聟脗聤脙搂脗陆脗聴脙漏脗漏脗卢脙篓脗炉脗颅脙楼脗垄脗聝脙陇脗赂脗颅脙篓脗卤脗隆脙楼脗戮脗聛<b>脙篓脗聡脗陋脙搂脗聰脗卤</b>脙炉脗录脗聦脙篓脗聙脗聦脙楼脗赂脗陆脙陇脗赂脗聤脙搂脗職脗聞<b>脙搂脗聥脗庐脙漏脗鹿脗芦脙篓脗拢脗聟脙漏脗楼脗掳脙炉脗录脗聢griffin-crest脙炉脗录脗聣</b>脙楼脗聢脗聶脙楼脗聭脗录脙楼脗潞脗聰脙娄脗鲁脗垄脙娄脗聳脗炉/脙陇脗赂脗聹脙娄脗聳脗鹿脙陇脗录脗聽脙搂脗禄脗聼脙炉脗录脗聦脙陇脗陆脗聯脙搂脗聨脗掳脙搂脗卤脗鲁脙搂脗聣脗鹿脙娄脗聥脗聣脙篓脗戮脗戮脙娄脗垄脗炉脙娄脗篓脗陋脙篓脗路脗篓脙陇脗赂脗聹脙篓脗楼脗驴脙娄脗聳脗鹿脙搂脗職脗聞脙搂脗禄脗聼脙娄脗虏脗禄脙楼脗聬脗聢脙娄脗鲁脗聲脙娄脗聙脗搂脙拢脗聙脗聜<br><br>脙篓脗聝脗聦脙漏脗聺脗垄脙搂脗職脗聞<b>脙漏脗拢脗聻脙漏脗漏脗卢 Pegasus</b>脙娄脗聵脗炉脙漏脗聵脗驴脙搂脗卤脗鲁脙搂脗麓脗垄脙娄脗聳脗炉脙楼脗禄脗潞脙楼脗聼脗聨脙搂脗楼脗聻脙篓脗炉脗聺脙搂脗職脗聞脙娄脗聽脗赂脙楼脗驴脗聝脙楼脗聟脗聝脙搂脗麓脗聽脙炉脗录脗聢脙漏脗拢脗聻脙漏脗漏脗卢脙搂脗聰脗篓脙篓脗鹿脗聞脙篓脗赂脗垄脙楼脗聡脗潞 Hippene 脙娄脗鲁脗聣脙炉脗录脗聣脙炉脗录脗聦脙陇脗鹿脗聼脙娄脗聵脗炉脙篓脗炉脗楼脙楼脗聼脗聨脙娄脗聲脗掳脙搂脗聶脗戮脙楼脗鹿脗麓脙娄脗聺脗楼脙搂脗職脗聞脙楼脗聸脗潞脙楼脗庐脗職脙楼脗赂脗聛脙漏脗聺脗垄脙陇脗赂脗禄脙漏脗垄脗聵脙拢脗聙脗聜脙篓脗驴脗聶脙娄脗聻脗職脙漏脗聯脗聹脙楼脗赂脗聛脙娄脗聵脗炉脙楼脗赂脗聦脙篓脗聟脗聤脙楼脗聦脗聳脙搂脗聨脗聥脙楼脗聸脗陆脙娄脗聰脗驴脙娄脗虏脗禄脙楼脗庐脗拢脙陇脗录脗聽脙陇脗赂脗聨脙楼脗聹脗掳脙娄脗聳脗鹿脙陇脗录脗聽脙搂脗禄脗聼脙搂脗禄脗聯脙楼脗聬脗聢脙搂脗職脗聞脙楼脗聟脗赂脙楼脗聻脗聥脙娄脗聽脗路脙娄脗聹脗卢脙拢脗聙脗聜</p>
     </div>
     <div class="obv-rev">
-      <div class="obv" contenteditable="true">Ã¦Â­Â£Ã©ÂÂ¢: Ã§ÂÂÃ¥Â°ÂÃ¤Â¿Â®Ã¦ÂÂ¯Ã¥ÂÂ³Ã¥ÂÂÃ¥Â¤Â´Ã¥ÂÂÃ¯Â¼ÂÃ¦ÂÂ´Ã¥Â¼ÂÃ©ÂÂÃ¥ÂÂÃ¤ÂºÂÃ¥Â¸Â½Ã¯Â¼ÂÃ§ÂÂ®Ã©Â¹Â«Ã¨Â£ÂÃ©Â¥Â°Ã¯Â¼ÂÃ¯Â¼ÂAegis Ã¦ÂÂ¤Ã§Â¬Â¦</div>
-      <div class="rev" contenteditable="true">Ã¨ÂÂÃ©ÂÂ¢: ÃÂÃÂÃÂÃÂ£ÃÂÃÂ¥ ÃÂ· Ã©Â£ÂÃ©Â©Â¬ Pegasus Ã¥Â·Â¦Ã¥ÂÂÃ©Â¥Â®Ã¦Â°Â´Ã¯Â¼Âexergue Ã¥ÂÂÃ¥Â¾Â½Ã¨Â®Â°</div>
+      <div class="obv" contenteditable="true">脙娄脗颅脗拢脙漏脗聺脗垄: 脙搂脗聫脗聙脙楼脗掳脗聰脙陇脗驴脗庐脙娄脗聳脗炉脙楼脗聫脗鲁脙楼脗聬脗聭脙楼脗陇脗麓脙楼脗聝脗聫脙炉脗录脗聦脙娄脗聢脗麓脙楼脗录脗聴脙漏脗聡脗聦脙楼脗聬脗聣脙陇脗潞脗職脙楼脗赂脗陆脙炉脗录脗聢脙搂脗聥脗庐脙漏脗鹿脗芦脙篓脗拢脗聟脙漏脗楼脗掳脙炉脗录脗聣脙炉脗录脗聸Aegis 脙娄脗聤脗陇脙搂脗卢脗娄</div>
+      <div class="rev" contenteditable="true">脙篓脗聝脗聦脙漏脗聺脗垄: 脙聨脗聭脙聨脗聹脙聨脗聶脙聨脗拢脙聨脗聼脙聨脗楼 脙聜脗路 脙漏脗拢脗聻脙漏脗漏脗卢 Pegasus 脙楼脗路脗娄脙楼脗聬脗聭脙漏脗楼脗庐脙娄脗掳脗麓脙炉脗录脗聸exergue 脙楼脗聠脗聟脙楼脗戮脗陆脙篓脗庐脗掳</div>
     </div>
-    <span class="tag" contenteditable="true">Ã¦ÂÂ¬Ã©ÂÂ½</span><span class="tag" contenteditable="true">Ã©ÂÂ¿Ã§Â±Â³Ã§Â´Â¢Ã¦ÂÂ¯</span><span class="tag" contenteditable="true">Ã§Â±Â³Ã§ÂÂ¹Ã¦ÂÂÃ¨Â¾Â¾Ã¦Â¢Â¯Ã¥ÂÂ­Ã¤Â¸Â</span><span class="tag" contenteditable="true">Ã§ÂÂÃ¥Â°ÂÃ¤Â¿Â®Ã¦ÂÂ¯Ã§Â¥ÂÃ¨Â¯Â</span><span class="tag" contenteditable="true">Ã¥Â¸ÂÃ¨ÂÂÃ¥ÂÂÃ§ÂÂÃ¥ÂÂ½</span>
+    <span class="tag" contenteditable="true">脙娄脗聹脗卢脙漏脗聝脗陆</span><span class="tag" contenteditable="true">脙漏脗聵脗驴脙搂脗卤脗鲁脙搂脗麓脗垄脙娄脗聳脗炉</span><span class="tag" contenteditable="true">脙搂脗卤脗鲁脙搂脗聣脗鹿脙娄脗聥脗聣脙篓脗戮脗戮脙娄脗垄脗炉脙楼脗聟脗颅脙陇脗赂脗聳</span><span class="tag" contenteditable="true">脙搂脗聫脗聙脙楼脗掳脗聰脙陇脗驴脗庐脙娄脗聳脗炉脙搂脗楼脗聻脙篓脗炉脗聺</span><span class="tag" contenteditable="true">脙楼脗赂脗聦脙篓脗聟脗聤脙楼脗聦脗聳脙搂脗聨脗聥脙楼脗聸脗陆</span>
     <div class="bottom-row">
-      <div><div class="price-value" contenteditable="true">Ã¢ÂÂ¬35</div><div class="price-label" contenteditable="true">Ã¦ÂÂÃ¤ÂºÂ¤Ã¤Â»Â·</div></div>
-      <div class="prov-compact" contenteditable="true"><strong>Biga Numismatics</strong> ÃÂ· Online Auction 38 ÃÂ· 2025</div>
+      <div><div class="price-value" contenteditable="true">脙垄脗聜脗卢35</div><div class="price-label" contenteditable="true">脙娄脗聢脗聬脙陇脗潞脗陇脙陇脗禄脗路</div></div>
+      <div class="prov-compact" contenteditable="true"><strong>Biga Numismatics</strong> 脙聜脗路 Online Auction 38 脙聜脗路 2025</div>
     </div>
   </div>
 </div>
 
 <!-- ROM-002 -->
 <div class="coin-card" data-category="romaeg" draggable="true">
-  <div class="drag-handle">Ã¢Â Â¿ Ã¦ÂÂÃ¦ÂÂ½Ã¦ÂÂÃ¥ÂºÂ</div>
+  <div class="drag-handle">脙垄脗聽脗驴 脙娄脗聥脗聳脙娄脗聥脗陆脙娄脗聨脗聮脙楼脗潞脗聫</div>
   <div class="coin-image">
     <span class="coin-number" contenteditable="true">ROM-002</span>
     <span class="coin-grade" contenteditable="true">NVF</span>
-    <img src="images/ROM-002.jpg" alt="Ã¥ÂÂÃ¥ÂÂÃÂ·Ã¥Â°Â¼Ã§Â¦ÂÃ¥ÂÂÃ¥Â¾Â·Ã¦ÂÂÃ¥ÂÂÃ©Â©Â¬" data-path="images/ROM-002.jpg" onerror="this.style.display='none'">
-    <div class="placeholder" onclick="triggerUpload(this)" style="display:none">Ã°ÂÂªÂ</div>
+    <img src="images/ROM-002.jpg" alt="脙楼脗聼脗聝脙楼脗聫脗聤脙聜脗路脙楼脗掳脗录脙搂脗娄脗聞脙楼脗聸脗聸脙楼脗戮脗路脙娄脗聥脗聣脙楼脗聟脗聥脙漏脗漏脗卢" data-path="images/ROM-002.jpg" onerror="this.style.display='none'">
+    <div class="placeholder" onclick="triggerUpload(this)" style="display:none">脙掳脗聼脗陋脗聶</div>
     <div class="img-overlay">
-      <button class="img-btn" onclick="triggerUpload(this)">Ã°ÂÂÂ· Ã¤Â¸ÂÃ¤Â¼Â Ã¥ÂÂ¾Ã§ÂÂ</button>
-      <button class="img-btn" onclick="editImgPath(this)">Ã°ÂÂÂ Ã¦ÂÂ¹Ã¨Â·Â¯Ã¥Â¾Â</button>
+      <button class="img-btn" onclick="triggerUpload(this)">脙掳脗聼脗聯脗路 脙陇脗赂脗聤脙陇脗录脗聽脙楼脗聸脗戮脙搂脗聣脗聡</button>
+      <button class="img-btn" onclick="editImgPath(this)">脙掳脗聼脗聰脗聴 脙娄脗聰脗鹿脙篓脗路脗炉脙楼脗戮脗聞</button>
     </div>
   </div>
   <div class="coin-info">
-    <h2 class="coin-title" contenteditable="true">Ã¥ÂÂÃ¥ÂÂÃÂ·Ã¥Â°Â¼Ã§Â¦ÂÃ¥ÂÂÃ¥Â¾Â·Ã¦ÂÂÃ¥ÂÂÃ©Â©Â¬</h2>
-    <p class="coin-subtitle" contenteditable="true">EGYPT ÃÂ· Alexandria ÃÂ· Nero (RY 14)</p>
+    <h2 class="coin-title" contenteditable="true">脙楼脗聼脗聝脙楼脗聫脗聤脙聜脗路脙楼脗掳脗录脙搂脗娄脗聞脙楼脗聸脗聸脙楼脗戮脗路脙娄脗聥脗聣脙楼脗聟脗聥脙漏脗漏脗卢</h2>
+    <p class="coin-subtitle" contenteditable="true">EGYPT 脙聜脗路 Alexandria 脙聜脗路 Nero (RY 14)</p>
     <div class="coin-detail">
-      <div class="detail-item"><div class="detail-label" contenteditable="true">Ã¥Â¹Â´Ã¤Â»Â£</div><div class="detail-value" contenteditable="true">AD 67-68 (RY 14)</div></div>
-      <div class="detail-item"><div class="detail-label" contenteditable="true">Ã©ÂÂ¢Ã¥ÂÂ¼</div><div class="detail-value" contenteditable="true">Tetradrachm Ã¥ÂÂÃ¥Â¾Â·Ã¦ÂÂÃ¥ÂÂÃ©Â©Â¬</div></div>
-      <div class="detail-item"><div class="detail-label" contenteditable="true">Ã¦ÂÂÃ¨Â´Â¨</div><div class="detail-value" contenteditable="true">BI Ã©ÂÂ¶Ã¥ÂÂÃ©ÂÂ ÃÂ· 25mm ÃÂ· 13.20g</div></div>
-      <div class="detail-item"><div class="detail-label" contenteditable="true">Ã¥ÂÂÃ¨ÂÂ</div><div class="detail-value" contenteditable="true">RPC I 5317; Dattari 207; Emmett 111.14</div></div>
+      <div class="detail-item"><div class="detail-label" contenteditable="true">脙楼脗鹿脗麓脙陇脗禄脗拢</div><div class="detail-value" contenteditable="true">AD 67-68 (RY 14)</div></div>
+      <div class="detail-item"><div class="detail-label" contenteditable="true">脙漏脗聺脗垄脙楼脗聙脗录</div><div class="detail-value" contenteditable="true">Tetradrachm 脙楼脗聸脗聸脙楼脗戮脗路脙娄脗聥脗聣脙楼脗聟脗聥脙漏脗漏脗卢</div></div>
+      <div class="detail-item"><div class="detail-label" contenteditable="true">脙娄脗聺脗聬脙篓脗麓脗篓</div><div class="detail-value" contenteditable="true">BI 脙漏脗聯脗露脙楼脗聬脗聢脙漏脗聡脗聭 脙聜脗路 25mm 脙聜脗路 13.20g</div></div>
+      <div class="detail-item"><div class="detail-label" contenteditable="true">脙楼脗聫脗聜脙篓脗聙脗聝</div><div class="detail-value" contenteditable="true">RPC I 5317; Dattari 207; Emmett 111.14</div></div>
     </div>
     <div class="description">
-      <h4 contenteditable="true">Ã°ÂÂÂ Ã¥ÂÂÃ¥ÂÂ²Ã¨ÂÂÃ¦ÂÂ¯</h4>
-      <p contenteditable="true">Ã§Â½ÂÃ©Â©Â¬Ã¨Â¡ÂÃ§ÂÂÃ¥ÂÂÃ¥ÂÂÃ¦ÂÂ¯Ã¥Â¸ÂÃ¥ÂÂ½Ã¥ÂÂÃ¥ÂÂ¯Ã¤Â¸ÂÃ¨Â¢Â«Ã¥Â¥Â¥Ã¥ÂÂ¤Ã¦ÂÂ¯Ã©ÂÂ½Ã§Â¦ÂÃ¦Â­Â¢Ã©ÂÂ¸Ã©ÂÂ "Ã§ÂÂÃ¥Â¸ÂÃ¨ÂÂÃ¥ÂÂ"Ã¥ÂÂ"Ã¦ÂÂÃ¤Â¸ÂÃ©ÂÂ­Ã¦ÂÂ"Ã§ÂÂÃ¨Â¡ÂÃ§ÂÂÃ¢ÂÂÃ¢ÂÂÃ¥Â¥Â¥Ã¥ÂÂ¤Ã¦ÂÂ¯Ã©ÂÂ½Ã¥Â¾ÂÃ¦ÂÂÃ¦ÂÂÃ¥ÂÂÃ¥Â¯ÂÃ¥ÂÂÃ¥ÂÂÃ¥ÂÂÃ¯Â¼ÂÃ¥ÂÂ»Ã¦ÂÂÃ¤Â¿ÂÃ§ÂÂÃ¥Â½ÂÃ¥ÂÂ°Ã¥Â¸ÂÃ¨ÂÂÃ¤Â¼Â Ã§Â»ÂÃ¤Â»Â¥Ã¥Â®ÂÃ¦ÂÂÃ¤ÂºÂÃ¥ÂÂÃ¥Â±Â±Ã¥Â¤Â§Ã©ÂÂÃ¤ÂºÂÃ¦Â°ÂÃ¤Â¼ÂÃ£ÂÂÃ¤ÂºÂÃ¥ÂÂÃ¥Â±Â±Ã¥Â¤Â§Ã©ÂÂ Ã¥Â¸ÂÃ¥ÂÂÃ¦Â²Â¿Ã¨Â¢Â­Ã¥Â¸ÂÃ¨ÂÂÃ¥ÂÂÃ¤Â¼Â Ã§Â»ÂÃ¯Â¼ÂÃ¤Â»Â¥Ã¥Â¸ÂÃ¨ÂÂÃ©ÂÂ­Ã¦ÂÂÃ¥ÂÂÃ§Â¥ÂÃ§Â¥ÂÃ¤Â¸ÂºÃ¤Â¸Â»Ã¥ÂÂ¾Ã¯Â¼ÂÃ¤Â¸Â<b>Ã¦Â¯ÂÃ¥Â¹Â´Ã¦ÂÂ´Ã¦ÂÂ¢Ã§ÂÂÃ¥Â¼Â</b>Ã£ÂÂÃ¥Â¹Â´Ã¤Â»Â½Ã¦Â ÂÃ¨Â®Â° L IÃÂ Ã©ÂÂÃ§ÂÂ¨"Ã¥Â¥Â¥Ã¥ÂÂ¤Ã¦ÂÂ¯Ã©ÂÂ½Ã§ÂºÂªÃ¥Â¹Â´+Ã§ÂÂÃ¥Â¸ÂÃ¥ÂÂ¨Ã¤Â½ÂÃ¥Â¹Â´"Ã¥ÂÂÃ¨Â½Â¨Ã¥ÂÂ¶Ã¯Â¼ÂÃ¥ÂÂ³Ã¥Â¥Â¥Ã¥ÂÂ¤Ã¦ÂÂ¯Ã©ÂÂ½Ã§ÂºÂªÃ¥Â¹Â´ 14 + Ã¥Â°Â¼Ã§Â¦Â RY 14 = Ã¥ÂÂ¬Ã¥ÂÂ 67/68 Ã¥Â¹Â´Ã£ÂÂ
+      <h4 contenteditable="true">脙掳脗聼脗聯脗聹 脙楼脗聨脗聠脙楼脗聫脗虏脙篓脗聝脗聦脙娄脗聶脗炉</h4>
+      <p contenteditable="true">脙搂脗陆脗聴脙漏脗漏脗卢脙篓脗隆脗聦脙搂脗聹脗聛脙楼脗聼脗聝脙楼脗聫脗聤脙娄脗聵脗炉脙楼脗赂脗聺脙楼脗聸脗陆脙楼脗聠脗聟脙楼脗聰脗炉脙陇脗赂脗聙脙篓脗垄脗芦脙楼脗楼脗楼脙楼脗聫脗陇脙娄脗聳脗炉脙漏脗聝脗陆脙搂脗娄脗聛脙娄脗颅脗垄脙漏脗聯脗赂脙漏脗聙脗聽"脙搂脗職脗聡脙楼脗赂脗聺脙篓脗聜脗聳脙楼脗聝脗聫"脙楼脗聮脗聦"脙娄脗聥脗聣脙陇脗赂脗聛脙漏脗聯脗颅脙娄脗聳脗聡"脙搂脗職脗聞脙篓脗隆脗聦脙搂脗聹脗聛脙垄脗聙脗聰脙垄脗聙脗聰脙楼脗楼脗楼脙楼脗聫脗陇脙娄脗聳脗炉脙漏脗聝脗陆脙楼脗戮脗聛脙娄脗聹脗聧脙娄脗聣脗聵脙楼脗聥脗聮脙楼脗炉脗聠脙楼脗聼脗聝脙楼脗聫脗聤脙楼脗聬脗聨脙炉脗录脗聦脙楼脗聢脗禄脙娄脗聞脗聫脙陇脗驴脗聺脙搂脗聲脗聶脙楼脗陆脗聯脙楼脗聹脗掳脙楼脗赂脗聦脙篓脗聟脗聤脙陇脗录脗聽脙搂脗禄脗聼脙陇脗禄脗楼脙楼脗庐脗聣脙娄脗聤脗職脙陇脗潞脗職脙楼脗聨脗聠脙楼脗卤脗卤脙楼脗陇脗搂脙漏脗聡脗聦脙陇脗潞脗職脙娄脗掳脗聭脙陇脗录脗聴脙拢脗聙脗聜脙陇脗潞脗職脙楼脗聨脗聠脙楼脗卤脗卤脙楼脗陇脗搂脙漏脗聙脗聽脙楼脗赂脗聛脙楼脗聨脗聜脙娄脗虏脗驴脙篓脗垄脗颅脙楼脗赂脗聦脙篓脗聟脗聤脙楼脗聦脗聳脙陇脗录脗聽脙搂脗禄脗聼脙炉脗录脗聦脙陇脗禄脗楼脙楼脗赂脗聦脙篓脗聟脗聤脙漏脗聯脗颅脙娄脗聳脗聡脙楼脗聮脗聦脙搂脗楼脗聻脙搂脗楼脗聡脙陇脗赂脗潞脙陇脗赂脗禄脙楼脗聸脗戮脙炉脗录脗聦脙陇脗赂脗聰<b>脙娄脗炉脗聫脙楼脗鹿脗麓脙娄脗聸脗麓脙娄脗聧脗垄脙搂脗聣脗聢脙楼脗录脗聫</b>脙拢脗聙脗聜脙楼脗鹿脗麓脙陇脗禄脗陆脙娄脗聽脗聡脙篓脗庐脗掳 L I脙聨脗聰 脙漏脗聡脗聡脙搂脗聰脗篓"脙楼脗楼脗楼脙楼脗聫脗陇脙娄脗聳脗炉脙漏脗聝脗陆脙搂脗潞脗陋脙楼脗鹿脗麓+脙搂脗職脗聡脙楼脗赂脗聺脙楼脗聹脗篓脙陇脗陆脗聧脙楼脗鹿脗麓"脙楼脗聫脗聦脙篓脗陆脗篓脙楼脗聢脗露脙炉脗录脗聦脙楼脗聧脗鲁脙楼脗楼脗楼脙楼脗聫脗陇脙娄脗聳脗炉脙漏脗聝脗陆脙搂脗潞脗陋脙楼脗鹿脗麓 14 + 脙楼脗掳脗录脙搂脗娄脗聞 RY 14 = 脙楼脗聟脗卢脙楼脗聟脗聝 67/68 脙楼脗鹿脗麓脙拢脗聙脗聜
 
-Ã¨ÂÂÃ©ÂÂ¢ AKTIOÃÂ£ AÃÂ OÃÂÃÂÃÂ©NÃ¯Â¼ÂÃ©ÂÂ¿Ã¥ÂÂÃ¦ÂÂÃ¤Â¹ÂÃ¦ÂÂ¯ÃÂ·Ã©ÂÂ¿Ã¦Â³Â¢Ã§Â½ÂÃ¯Â¼ÂÃ¦ÂÂ¯Ã¥Â¥Â¥Ã¥ÂÂ¤Ã¦ÂÂ¯Ã©ÂÂ½Ã§ÂºÂªÃ¥Â¿ÂµÃ¥ÂÂ¬Ã¥ÂÂÃ¥ÂÂ 31 Ã¥Â¹Â´Ã©ÂÂ¿Ã¥ÂÂÃ¦ÂÂÃ¤Â¹ÂÃ¥Â§ÂÃ¦ÂµÂ·Ã¦ÂÂÃ¥ÂÂ»Ã¨Â´Â¥Ã¥Â®ÂÃ¤Â¸ÂÃ¥Â°Â¼Ã¤Â¸ÂÃ¥ÂÂÃ¥Â¨ÂÃ¥Â·Â´Ã§ÂÂ¹Ã¦ÂÂÃ§ÂÂÃ§Â¥ÂÃ§Â¥ÂÃ£ÂÂÃ¥Â°Â¼Ã§Â¦Â RY 14Ã¯Â¼Â67 ADÃ¯Â¼ÂÃ¦Â­Â£Ã¥ÂÂ¼Ã¥ÂÂ¶Ã¥Â¸ÂÃ¨ÂÂÃ¥Â·Â¡Ã¦Â¸Â¸Ã¦ÂÂÃ©ÂÂ´Ã£ÂÂÃ¥Â®Â£Ã¥Â¸Â"Ã¥Â¸ÂÃ¨ÂÂÃ¨ÂÂªÃ§ÂÂ±"Ã§ÂÂÃ¥ÂÂÃ¤Â¸ÂÃ¥Â¹Â´Ã¯Â¼ÂÃ¥ÂÂÃ¥ÂÂÃ¥Â¸ÂÃ¤Â¸ÂÃ¤Â»ÂÃ¥Â»Â¶Ã§Â»Â­Ã¨Â¿ÂÃ¤Â¸ÂÃ¥ÂÂ¾Ã¥Â¼ÂÃ¯Â¼ÂÃ¥ÂÂÃ¦ÂÂ Ã¥ÂÂºÃ§Â½ÂÃ©Â©Â¬Ã¥Â¯Â¹Ã¨Â¡ÂÃ§ÂÂÃ¨Â´Â§Ã¥Â¸ÂÃ¤Â¼Â Ã§Â»ÂÃ§ÂÂÃ¦ÂÂ¿Ã¦Â²Â»Ã¥Â»Â¶Ã§Â»Â­Ã¦ÂÂ§Ã£ÂÂ
+脙篓脗聝脗聦脙漏脗聺脗垄 AKTIO脙聨脗拢 A脙聨脗聽O脙聨脗聸脙聨脗聸脙聨脗漏N脙炉脗录脗聢脙漏脗聵脗驴脙楼脗聟脗聥脙娄脗聫脗聬脙陇脗鹿脗聦脙娄脗聳脗炉脙聜脗路脙漏脗聵脗驴脙娄脗鲁脗垄脙搂脗陆脗聴脙炉脗录脗聣脙娄脗聵脗炉脙楼脗楼脗楼脙楼脗聫脗陇脙娄脗聳脗炉脙漏脗聝脗陆脙搂脗潞脗陋脙楼脗驴脗碌脙楼脗聟脗卢脙楼脗聟脗聝脙楼脗聣脗聧 31 脙楼脗鹿脗麓脙漏脗聵脗驴脙楼脗聟脗聥脙娄脗聫脗聬脙陇脗鹿脗聦脙楼脗搂脗聠脙娄脗碌脗路脙娄脗聢脗聵脙楼脗聡脗禄脙篓脗麓脗楼脙楼脗庐脗聣脙陇脗赂脗聹脙楼脗掳脗录脙陇脗赂脗聨脙楼脗聟脗聥脙楼脗篓脗聞脙楼脗路脗麓脙搂脗聣脗鹿脙娄脗聥脗聣脙搂脗職脗聞脙搂脗楼脗聻脙搂脗楼脗聡脙拢脗聙脗聜脙楼脗掳脗录脙搂脗娄脗聞 RY 14脙炉脗录脗聢67 AD脙炉脗录脗聣脙娄脗颅脗拢脙楼脗聙脗录脙楼脗聟脗露脙楼脗赂脗聦脙篓脗聟脗聤脙楼脗路脗隆脙娄脗赂脗赂脙娄脗聹脗聼脙漏脗聴脗麓脙拢脗聙脗聛脙楼脗庐脗拢脙楼脗赂脗聝"脙楼脗赂脗聦脙篓脗聟脗聤脙篓脗聡脗陋脙搂脗聰脗卤"脙搂脗職脗聞脙楼脗聬脗聦脙陇脗赂脗聙脙楼脗鹿脗麓脙炉脗录脗聦脙楼脗聼脗聝脙楼脗聫脗聤脙楼脗赂脗聛脙陇脗赂脗聤脙陇脗禄脗聧脙楼脗禄脗露脙搂脗禄脗颅脙篓脗驴脗聶脙陇脗赂脗聙脙楼脗聸脗戮脙楼脗录脗聫脙炉脗录脗聦脙楼脗聫脗聧脙娄脗聵脗聽脙楼脗聡脗潞脙搂脗陆脗聴脙漏脗漏脗卢脙楼脗炉脗鹿脙篓脗隆脗聦脙搂脗聹脗聛脙篓脗麓脗搂脙楼脗赂脗聛脙陇脗录脗聽脙搂脗禄脗聼脙搂脗職脗聞脙娄脗聰脗驴脙娄脗虏脗禄脙楼脗禄脗露脙搂脗禄脗颅脙娄脗聙脗搂脙拢脗聙脗聜
 
-Ã¥ÂÂ³Ã¤ÂºÂ"BI"Ã¯Â¼ÂBillon Ã¦ÂÂ¯Ã¥ÂÂ«Ã©ÂÂ¶Ã©ÂÂÃ¤Â»ÂÃ§ÂºÂ¦ 18Ã¢ÂÂ25% Ã§ÂÂÃ©ÂÂ¶Ã©ÂÂÃ¥ÂÂÃ©ÂÂÃ£ÂÂÃ§Â½ÂÃ©Â©Â¬Ã¦ÂÂ¿Ã¥ÂºÂÃ¦ÂÂÃ¦ÂÂÃ©ÂÂÃ¤Â½ÂÃ¥ÂÂÃ¥ÂÂÃ¥Â¸ÂÃ¦ÂÂÃ¨ÂÂ²Ã¤Â»Â¥Ã©ÂÂÃ¥ÂÂ¶Ã¨Â´ÂµÃ©ÂÂÃ¥Â±ÂÃ¥Â¤ÂÃ¦ÂµÂÃ¢ÂÂÃ¢ÂÂÃ§Â½ÂÃ©Â©Â¬Ã¦ÂÂ¬Ã¥ÂÂÃ§ÂÂ"Ã©ÂÂ¶Ã¥Â¸Â"Ã¯Â¼ÂdenariusÃ¯Â¼ÂÃ¥ÂÂ«Ã©ÂÂ¶Ã©ÂÂÃ§ÂºÂ¦ 80%Ã¯Â¼ÂÃ¨ÂÂÃ¥ÂÂÃ¥ÂÂÃ¥ÂÂÃ¥Â¾Â·Ã¦ÂÂÃ¥ÂÂÃ©Â©Â¬Ã¥ÂÂªÃ¥ÂÂ¼Ã¥ÂÂ¶ 1/3 Ã¤Â¸ÂÃ¥ÂÂ°Ã£ÂÂÃ¨Â¿ÂÃ¤Â½Â¿Ã¨Â¡ÂÃ§ÂÂÃ¥ÂÂÃ¥ÂÂÃ¥Â¸ÂÃ¦ÂÂÃ¤Â¸ÂºÃ§Â ÂÃ§Â©Â¶Ã§Â½ÂÃ©Â©Â¬Ã§Â»ÂÃ¦ÂµÂÃ¥ÂÂÃ¥Â±ÂÃ§ÂÂÃ§ÂÂ¬Ã§ÂÂ¹Ã¦Â Â·Ã¦ÂÂ¬Ã£ÂÂ</p>
+脙楼脗聟脗鲁脙陇脗潞脗聨"BI"脙炉脗录脗職Billon 脙娄脗聵脗炉脙楼脗聬脗芦脙漏脗聯脗露脙漏脗聡脗聫脙陇脗禄脗聟脙搂脗潞脗娄 18脙垄脗聙脗聯25% 脙搂脗職脗聞脙漏脗聯脗露脙漏脗聯脗聹脙楼脗聬脗聢脙漏脗聡脗聭脙拢脗聙脗聜脙搂脗陆脗聴脙漏脗漏脗卢脙娄脗聰脗驴脙楼脗潞脗聹脙娄脗聹脗聣脙娄脗聞脗聫脙漏脗聶脗聧脙陇脗陆脗聨脙楼脗聼脗聝脙楼脗聫脗聤脙楼脗赂脗聛脙娄脗聢脗聬脙篓脗聣脗虏脙陇脗禄脗楼脙漏脗聛脗聫脙楼脗聢脗露脙篓脗麓脗碌脙漏脗聡脗聭脙楼脗卤脗聻脙楼脗陇脗聳脙娄脗碌脗聛脙垄脗聙脗聰脙垄脗聙脗聰脙搂脗陆脗聴脙漏脗漏脗卢脙娄脗聹脗卢脙楼脗聹脗聼脙搂脗職脗聞"脙漏脗聯脗露脙楼脗赂脗聛"脙炉脗录脗聢denarius脙炉脗录脗聣脙楼脗聬脗芦脙漏脗聯脗露脙漏脗聡脗聫脙搂脗潞脗娄 80%脙炉脗录脗聦脙篓脗聙脗聦脙楼脗聼脗聝脙楼脗聫脗聤脙楼脗聸脗聸脙楼脗戮脗路脙娄脗聥脗聣脙楼脗聟脗聥脙漏脗漏脗卢脙楼脗聫脗陋脙楼脗聙脗录脙楼脗聟脗露 1/3 脙陇脗赂脗聧脙楼脗聢脗掳脙拢脗聙脗聜脙篓脗驴脗聶脙陇脗陆脗驴脙篓脗隆脗聦脙搂脗聹脗聛脙楼脗聼脗聝脙楼脗聫脗聤脙楼脗赂脗聛脙娄脗聢脗聬脙陇脗赂脗潞脙搂脗聽脗聰脙搂脗漏脗露脙搂脗陆脗聴脙漏脗漏脗卢脙搂脗禄脗聫脙娄脗碌脗聨脙楼脗聢脗聠脙楼脗卤脗聜脙搂脗職脗聞脙搂脗聥脗卢脙搂脗聣脗鹿脙娄脗聽脗路脙娄脗聹脗卢脙拢脗聙脗聜</p>
     </div>
     <div class="obv-rev">
-      <div class="obv" contenteditable="true">Ã¦Â­Â£Ã©ÂÂ¢: NEPÃÂ© KÃÂAV KAIÃÂ£ ÃÂ£EB ÃÂEP AV ÃÂ· Ã¥Â°Â¼Ã§Â¦ÂÃ¥Â¤Â´Ã¦ÂÂ´Ã¥ÂÂÃ¨ÂÂÃ¥ÂÂ Ã¥Â·Â¦Ã¥ÂÂÃ¨ÂÂ¸Ã¥ÂÂÃ¯Â¼ÂÃ¤Â½Â©Ã¦ÂÂ´AegisÃ¯Â¼ÂL IÃÂ</div>
-      <div class="rev" contenteditable="true">Ã¨ÂÂÃ©ÂÂ¢: AKTIOÃÂ£ AÃÂ OÃÂÃÂÃÂ©N ÃÂ· Ã©ÂÂ¿Ã¦Â³Â¢Ã§Â½ÂÃ¥ÂÂ³Ã¥ÂÂÃ¨ÂÂ¸Ã¥ÂÂÃ¯Â¼ÂÃ¨ÂÂ©Ã¦ÂÂÃ§Â®Â­Ã¨Â¢ÂÃ¯Â¼ÂÃ¦ÂÂÃ¥Â½Â¢Ã¦Â ÂÃ¨Â®Â°</div>
+      <div class="obv" contenteditable="true">脙娄脗颅脗拢脙漏脗聺脗垄: NEP脙聨脗漏 K脙聨脗聸AV KAI脙聨脗拢 脙聨脗拢EB 脙聨脗聯EP AV 脙聜脗路 脙楼脗掳脗录脙搂脗娄脗聞脙楼脗陇脗麓脙娄脗聢脗麓脙楼脗聟脗聣脙篓脗聤脗聮脙楼脗聠脗聽脙楼脗路脗娄脙楼脗聬脗聭脙篓脗聝脗赂脙楼脗聝脗聫脙炉脗录脗聦脙陇脗陆脗漏脙娄脗聢脗麓Aegis脙炉脗录脗聸L I脙聨脗聰</div>
+      <div class="rev" contenteditable="true">脙篓脗聝脗聦脙漏脗聺脗垄: AKTIO脙聨脗拢 A脙聨脗聽O脙聨脗聸脙聨脗聸脙聨脗漏N 脙聜脗路 脙漏脗聵脗驴脙娄脗鲁脗垄脙搂脗陆脗聴脙楼脗聫脗鲁脙楼脗聬脗聭脙篓脗聝脗赂脙楼脗聝脗聫脙炉脗录脗聦脙篓脗聜脗漏脙娄脗聣脗聸脙搂脗庐脗颅脙篓脗垄脗聥脙炉脗录脗聸脙娄脗聵脗聼脙楼脗陆脗垄脙娄脗聽脗聡脙篓脗庐脗掳</div>
     </div>
-    <span class="tag" contenteditable="true">Ã§Â½ÂÃ©Â©Â¬Ã¨Â¡ÂÃ§ÂÂ</span><span class="tag" contenteditable="true">Ã¥ÂÂÃ¥ÂÂ</span><span class="tag" contenteditable="true">RY 14</span><span class="tag" contenteditable="true">Actium Apollo</span>
+    <span class="tag" contenteditable="true">脙搂脗陆脗聴脙漏脗漏脗卢脙篓脗隆脗聦脙搂脗聹脗聛</span><span class="tag" contenteditable="true">脙楼脗聼脗聝脙楼脗聫脗聤</span><span class="tag" contenteditable="true">RY 14</span><span class="tag" contenteditable="true">Actium Apollo</span>
     <div class="bottom-row">
-      <div><div class="price-value" contenteditable="true">Ã¢ÂÂ¬64</div><div class="price-label" contenteditable="true">Ã¦ÂÂÃ¤ÂºÂ¤Ã¤Â»Â·</div></div>
-      <div class="prov-compact" contenteditable="true"><strong>Numismatik Naumann</strong> ÃÂ· Auction 154 ÃÂ· 2025</div>
+      <div><div class="price-value" contenteditable="true">脙垄脗聜脗卢64</div><div class="price-label" contenteditable="true">脙娄脗聢脗聬脙陇脗潞脗陇脙陇脗禄脗路</div></div>
+      <div class="prov-compact" contenteditable="true"><strong>Numismatik Naumann</strong> 脙聜脗路 Auction 154 脙聜脗路 2025</div>
     </div>
   </div>
 </div>
 
 <!-- ROM-003 -->
 <div class="coin-card" data-category="romanemp" draggable="true">
-  <div class="drag-handle">Ã¢Â Â¿ Ã¦ÂÂÃ¦ÂÂ½Ã¦ÂÂÃ¥ÂºÂ</div>
+  <div class="drag-handle">脙垄脗聽脗驴 脙娄脗聥脗聳脙娄脗聥脗陆脙娄脗聨脗聮脙楼脗潞脗聫</div>
   <div class="coin-image">
     <span class="coin-number" contenteditable="true">ROM-003</span>
     <span class="coin-grade" contenteditable="true">GF</span>
-    <img src="images/ROM-003.jpg" alt="Ã¥Â®ÂÃ¤Â¸ÂÃ¥Â°Â¼ÃÂ·Ã¥ÂºÂÃ¦ÂÂ¤Ã¥Â¡ÂÃ¦ÂÂ¯Ã§ÂÂ¹Ã¦ÂÂÃ¤Â¹ÂÃ¦ÂÂ¯" data-path="images/ROM-003.jpg" onerror="this.style.display='none'">
-    <div class="placeholder" onclick="triggerUpload(this)" style="display:none">Ã°ÂÂªÂ</div>
+    <img src="images/ROM-003.jpg" alt="脙楼脗庐脗聣脙陇脗赂脗聹脙楼脗掳脗录脙聜脗路脙楼脗潞脗聡脙娄脗聤脗陇脙楼脗隆脗聻脙娄脗聳脗炉脙搂脗聣脗鹿脙娄脗聫脗聬脙陇脗鹿脗聦脙娄脗聳脗炉" data-path="images/ROM-003.jpg" onerror="this.style.display='none'">
+    <div class="placeholder" onclick="triggerUpload(this)" style="display:none">脙掳脗聼脗陋脗聶</div>
     <div class="img-overlay">
-      <button class="img-btn" onclick="triggerUpload(this)">Ã°ÂÂÂ· Ã¤Â¸ÂÃ¤Â¼Â Ã¥ÂÂ¾Ã§ÂÂ</button>
-      <button class="img-btn" onclick="editImgPath(this)">Ã°ÂÂÂ Ã¦ÂÂ¹Ã¨Â·Â¯Ã¥Â¾Â</button>
+      <button class="img-btn" onclick="triggerUpload(this)">脙掳脗聼脗聯脗路 脙陇脗赂脗聤脙陇脗录脗聽脙楼脗聸脗戮脙搂脗聣脗聡</button>
+      <button class="img-btn" onclick="editImgPath(this)">脙掳脗聼脗聰脗聴 脙娄脗聰脗鹿脙篓脗路脗炉脙楼脗戮脗聞</button>
     </div>
   </div>
   <div class="coin-info">
-    <h2 class="coin-title" contenteditable="true">Ã¥Â®ÂÃ¤Â¸ÂÃ¥Â°Â¼ÃÂ·Ã¥ÂºÂÃ¦ÂÂ¤ Ã¥Â¡ÂÃ¦ÂÂ¯Ã§ÂÂ¹Ã¦ÂÂÃ¤Â¹ÂÃ¦ÂÂ¯Ã¯Â¼ÂLIBERTAS COS IIIIÃ¯Â¼Â</h2>
-    <p class="coin-subtitle" contenteditable="true">ROMA ÃÂ· Antoninus Pius ÃÂ· AD 145-161</p>
+    <h2 class="coin-title" contenteditable="true">脙楼脗庐脗聣脙陇脗赂脗聹脙楼脗掳脗录脙聜脗路脙楼脗潞脗聡脙娄脗聤脗陇 脙楼脗隆脗聻脙娄脗聳脗炉脙搂脗聣脗鹿脙娄脗聫脗聬脙陇脗鹿脗聦脙娄脗聳脗炉脙炉脗录脗聢LIBERTAS COS IIII脙炉脗录脗聣</h2>
+    <p class="coin-subtitle" contenteditable="true">ROMA 脙聜脗路 Antoninus Pius 脙聜脗路 AD 145-161</p>
     <div class="coin-detail">
-      <div class="detail-item"><div class="detail-label" contenteditable="true">Ã¥Â¹Â´Ã¤Â»Â£</div><div class="detail-value" contenteditable="true">AD 145-161Ã¯Â¼ÂTR P XVIII = AD 155/6Ã¯Â¼Â</div></div>
-      <div class="detail-item"><div class="detail-label" contenteditable="true">Ã©ÂÂ¢Ã¥ÂÂ¼</div><div class="detail-value" contenteditable="true">Sestertius Ã¥Â¡ÂÃ¦ÂÂ¯Ã§ÂÂ¹Ã¦ÂÂÃ¤Â¹ÂÃ¦ÂÂ¯</div></div>
-      <div class="detail-item"><div class="detail-label" contenteditable="true">Ã¦ÂÂÃ¨Â´Â¨</div><div class="detail-value" contenteditable="true">AE Ã©ÂÂÃ¥ÂÂÃ©ÂÂ ÃÂ· 31mm ÃÂ· 22.40g</div></div>
-      <div class="detail-item"><div class="detail-label" contenteditable="true">Ã¥ÂÂÃ¨ÂÂ</div><div class="detail-value" contenteditable="true">RIC III 929; Strack 1308</div></div>
+      <div class="detail-item"><div class="detail-label" contenteditable="true">脙楼脗鹿脗麓脙陇脗禄脗拢</div><div class="detail-value" contenteditable="true">AD 145-161脙炉脗录脗聢TR P XVIII = AD 155/6脙炉脗录脗聣</div></div>
+      <div class="detail-item"><div class="detail-label" contenteditable="true">脙漏脗聺脗垄脙楼脗聙脗录</div><div class="detail-value" contenteditable="true">Sestertius 脙楼脗隆脗聻脙娄脗聳脗炉脙搂脗聣脗鹿脙娄脗聫脗聬脙陇脗鹿脗聦脙娄脗聳脗炉</div></div>
+      <div class="detail-item"><div class="detail-label" contenteditable="true">脙娄脗聺脗聬脙篓脗麓脗篓</div><div class="detail-value" contenteditable="true">AE 脙漏脗聯脗聹脙楼脗聬脗聢脙漏脗聡脗聭 脙聜脗路 31mm 脙聜脗路 22.40g</div></div>
+      <div class="detail-item"><div class="detail-label" contenteditable="true">脙楼脗聫脗聜脙篓脗聙脗聝</div><div class="detail-value" contenteditable="true">RIC III 929; Strack 1308</div></div>
     </div>
     <div class="description">
-      <h4 contenteditable="true">Ã°ÂÂÂ Ã¥ÂÂÃ¥ÂÂ²Ã¨ÂÂÃ¦ÂÂ¯</h4>
-      <p contenteditable="true">Ã¥Â®ÂÃ¤Â¸ÂÃ¥Â°Â¼ÃÂ·Ã¥ÂºÂÃ¦ÂÂ¤Ã¯Â¼ÂAntoninus PiusÃ¯Â¼Â138-161 ADÃ¯Â¼ÂÃ¦ÂÂ¯Ã§Â½ÂÃ©Â©Â¬Ã¥Â¸ÂÃ¥ÂÂ½"Ã¤ÂºÂÃ¨Â´Â¤Ã¥Â¸Â"Ã§ÂÂÃ§Â¬Â¬Ã¥ÂÂÃ¤Â½ÂÃ¯Â¼ÂÃ¤Â»Â¥Ã¥ÂÂÃ¥Â¹Â³Ã£ÂÂÃ¤Â¸ÂÃ¦ÂÂ©Ã¥Â¼Â Ã£ÂÂÃ©ÂÂÃ¦Â³ÂÃ¥Â¾ÂÃ¨ÂÂÃ§Â§Â°Ã£ÂÂÃ¦Â­Â¤Ã¥Â¸ÂÃ¥ÂÂÃ¨Â¡ÂÃ¤ÂºÂÃ¥ÂÂ¶Ã§Â»ÂÃ¦Â²Â»Ã¦ÂÂÃ¦ÂÂÃ¯Â¼ÂTR P XVIII = AD 155/6Ã¯Â¼ÂÃ¯Â¼ÂÃ¨Â·ÂÃ§Â½ÂÃ©Â©Â¬Ã¥Â¤Â§Ã§ÂÂ«Ã¥Â·Â²Ã§ÂºÂ¦ 11 Ã¥Â¹Â´Ã¯Â¼Â64 AD Ã¥Â°Â¼Ã§Â¦ÂÃ¦ÂÂ¶Ã¦ÂÂÃ¯Â¼ÂÃ¯Â¼ÂÃ¨Â·ÂÃ¥ÂÂÃ¥Â¾Â·Ã¨ÂÂ¯Ã©ÂÂ¿Ã¥ÂÂÃ¥Â»ÂºÃ¦ÂÂÃ§ÂºÂ¦ 20 Ã¥Â¹Â´Ã¯Â¼ÂÃ§ÂºÂ¦ 142 ADÃ¯Â¼ÂÃ£ÂÂ
+      <h4 contenteditable="true">脙掳脗聼脗聯脗聹 脙楼脗聨脗聠脙楼脗聫脗虏脙篓脗聝脗聦脙娄脗聶脗炉</h4>
+      <p contenteditable="true">脙楼脗庐脗聣脙陇脗赂脗聹脙楼脗掳脗录脙聜脗路脙楼脗潞脗聡脙娄脗聤脗陇脙炉脗录脗聢Antoninus Pius脙炉脗录脗聦138-161 AD脙炉脗录脗聣脙娄脗聵脗炉脙搂脗陆脗聴脙漏脗漏脗卢脙楼脗赂脗聺脙楼脗聸脗陆"脙陇脗潞脗聰脙篓脗麓脗陇脙楼脗赂脗聺"脙搂脗職脗聞脙搂脗卢脗卢脙楼脗聸脗聸脙陇脗陆脗聧脙炉脗录脗聦脙陇脗禄脗楼脙楼脗聮脗聦脙楼脗鹿脗鲁脙拢脗聙脗聛脙陇脗赂脗聧脙娄脗聣脗漏脙楼脗录脗聽脙拢脗聙脗聛脙漏脗聡脗聧脙娄脗鲁脗聲脙楼脗戮脗聥脙篓脗聭脗聴脙搂脗搂脗掳脙拢脗聙脗聜脙娄脗颅脗陇脙楼脗赂脗聛脙楼脗聫脗聭脙篓脗隆脗聦脙陇脗潞脗聨脙楼脗聟脗露脙搂脗禄脗聼脙娄脗虏脗禄脙娄脗聶脗職脙娄脗聹脗聼脙炉脗录脗聢TR P XVIII = AD 155/6脙炉脗录脗聣脙炉脗录脗聦脙篓脗路脗聺脙搂脗陆脗聴脙漏脗漏脗卢脙楼脗陇脗搂脙搂脗聛脗芦脙楼脗路脗虏脙搂脗潞脗娄 11 脙楼脗鹿脗麓脙炉脗录脗聢64 AD 脙楼脗掳脗录脙搂脗娄脗聞脙娄脗聴脗露脙娄脗聹脗聼脙炉脗录脗聣脙炉脗录脗聦脙篓脗路脗聺脙楼脗聯脗聢脙楼脗戮脗路脙篓脗聣脗炉脙漏脗聲脗驴脙楼脗聼脗聨脙楼脗禄脗潞脙娄脗聢脗聬脙搂脗潞脗娄 20 脙楼脗鹿脗麓脙炉脗录脗聢脙搂脗潞脗娄 142 AD脙炉脗录脗聣脙拢脗聙脗聜
 
-<b>LIBERTAS</b>Ã¯Â¼ÂÃ¨ÂÂªÃ§ÂÂ±Ã¥Â¥Â³Ã§Â¥ÂÃ¯Â¼ÂÃ¦ÂÂ¯Ã¤ÂºÂÃ¨Â´Â¤Ã¥Â¸ÂÃ¦ÂÂ¶Ã¦ÂÂÃ¥ÂÂÃ¥Â¤ÂÃ¥ÂÂºÃ§ÂÂ°Ã§ÂÂÃ¤Â¸Â»Ã©Â¢ÂÃ¯Â¼ÂÃ¨ÂÂªÃ§ÂÂ±Ã¥Â¥Â³Ã§Â¥ÂÃ§Â«ÂÃ§Â«ÂÃ¯Â¼ÂÃ¥Â·Â¦Ã¦ÂÂÃ¦ÂÂÃ¨ÂÂªÃ§ÂÂ±Ã¥Â¸Â½Ã¯Â¼Â<b>pileus</b>Ã¯Â¼ÂÃ¯Â¼ÂÃ¥ÂÂ³Ã¦ÂÂÃ¦ÂÂ"vindicta"Ã¯Â¼Â<b>liberty rod Ã¨ÂÂªÃ§ÂÂ±Ã¦ÂÂÃ¦ÂÂ</b>Ã¯Â¼ÂÃ£ÂÂÃ¨Â¿ÂÃ¤Â¸ÂªÃ§Â»ÂÃ¥ÂÂÃ¦ÂºÂÃ¨ÂÂªÃ§Â½ÂÃ©Â©Â¬Ã¨Â§Â£Ã¦ÂÂ¾Ã¥Â¥Â´Ã©ÂÂ¶Ã¤Â»ÂªÃ¥Â¼ÂÃ¯Â¼ÂmanumissioÃ¯Â¼ÂÃ¯Â¼ÂÃ¤Â¸Â»Ã¤ÂºÂºÃ§ÂÂ¨Ã¦ÂÂÃ¦ÂÂÃ¨Â§Â¦Ã¥Â¥Â´Ã©ÂÂ¶Ã¥Â¤Â´Ã¯Â¼ÂÃ¥Â®Â£Ã¥Â¸Â"hunc hominem liberum esse volo"Ã¯Â¼ÂÃ¦ÂÂÃ¦ÂÂ¿Ã¦Â­Â¤Ã¤ÂºÂºÃ¨ÂÂªÃ§ÂÂ±Ã¯Â¼ÂÃ¯Â¼ÂÃ¥Â¥Â´Ã©ÂÂ¶Ã¦ÂÂ´Ã¤Â¸ÂÃ¨ÂÂªÃ§ÂÂ±Ã¥Â¸Â½Ã£ÂÂ
+<b>LIBERTAS</b>脙炉脗录脗聢脙篓脗聡脗陋脙搂脗聰脗卤脙楼脗楼脗鲁脙搂脗楼脗聻脙炉脗录脗聣脙娄脗聵脗炉脙陇脗潞脗聰脙篓脗麓脗陇脙楼脗赂脗聺脙娄脗聴脗露脙娄脗聹脗聼脙楼脗聫脗聧脙楼脗陇脗聧脙楼脗聡脗潞脙搂脗聨脗掳脙搂脗職脗聞脙陇脗赂脗禄脙漏脗垄脗聵脙炉脗录脗職脙篓脗聡脗陋脙搂脗聰脗卤脙楼脗楼脗鲁脙搂脗楼脗聻脙搂脗芦脗聶脙搂脗芦脗聥脙炉脗录脗聦脙楼脗路脗娄脙娄脗聣脗聥脙娄脗聦脗聛脙篓脗聡脗陋脙搂脗聰脗卤脙楼脗赂脗陆脙炉脗录脗聢<b>pileus</b>脙炉脗录脗聣脙炉脗录脗聦脙楼脗聫脗鲁脙娄脗聣脗聥脙娄脗聦脗聛"vindicta"脙炉脗录脗聢<b>liberty rod 脙篓脗聡脗陋脙搂脗聰脗卤脙娄脗聺脗聝脙娄脗聺脗聳</b>脙炉脗录脗聣脙拢脗聙脗聜脙篓脗驴脗聶脙陇脗赂脗陋脙搂脗禄脗聞脙楼脗聬脗聢脙娄脗潞脗聬脙篓脗聡脗陋脙搂脗陆脗聴脙漏脗漏脗卢脙篓脗搂脗拢脙娄脗聰脗戮脙楼脗楼脗麓脙漏脗職脗露脙陇脗禄脗陋脙楼脗录脗聫脙炉脗录脗聢manumissio脙炉脗录脗聣脙炉脗录脗職脙陇脗赂脗禄脙陇脗潞脗潞脙搂脗聰脗篓脙娄脗聺脗聝脙娄脗聺脗聳脙篓脗搂脗娄脙楼脗楼脗麓脙漏脗職脗露脙楼脗陇脗麓脙炉脗录脗聦脙楼脗庐脗拢脙楼脗赂脗聝"hunc hominem liberum esse volo"脙炉脗录脗聢脙娄脗聢脗聭脙娄脗聞脗驴脙娄脗颅脗陇脙陇脗潞脗潞脙篓脗聡脗陋脙搂脗聰脗卤脙炉脗录脗聣脙炉脗录脗聦脙楼脗楼脗麓脙漏脗職脗露脙娄脗聢脗麓脙陇脗赂脗聤脙篓脗聡脗陋脙搂脗聰脗卤脙楼脗赂脗陆脙拢脗聙脗聜
 
-Ã¤ÂºÂÃ¨Â´Â¤Ã¥Â¸ÂÃ¥ÂÂ»Ã¦ÂÂÃ©ÂÂ¸Ã©ÂÂ  LIBERTAS Ã¤Â¸Â»Ã©Â¢ÂÃ¯Â¼ÂÃ¦ÂÂÃ¥ÂÂ¨Ã¥Â¼ÂºÃ¨Â°Â<b>Ã¥ÂÂÃ¨ÂÂÃ©ÂÂ¢Ã¤Â¸ÂÃ§ÂÂÃ¥Â¸ÂÃ¥ÂÂ±Ã¦Â²Â»</b>Ã§ÂÂ"Ã¥ÂÂ±Ã¥ÂÂÃ¨Â¡Â¨Ã¨Â±Â¡"Ã¢ÂÂÃ¢ÂÂÃ¨ÂÂ½Ã§ÂÂ¶Ã¥Â®ÂÃ¨Â¡ÂÃ¥Â¸ÂÃ¥ÂÂ¶Ã¯Â¼ÂÃ¤Â½ÂÃ§ÂÂÃ¨Â®ÂºÃ¤Â¸Â"Ã§Â½ÂÃ©Â©Â¬Ã¥ÂÂ¬Ã¦Â°ÂÃ¨ÂÂªÃ§ÂÂ±"Ã¤Â»ÂÃ¥ÂÂ¨Ã£ÂÂÃ¥Â®ÂÃ¤Â¸ÂÃ¥Â°Â¼ÃÂ·Ã¥ÂºÂÃ¦ÂÂ¤Ã¥Â°Â¤Ã¥ÂÂ¶Ã©ÂÂÃ¨Â§ÂÃ¦Â­Â¤Ã¦ÂÂÃ¨Â±Â¡Ã¯Â¼ÂÃ¥ÂÂ Ã¤Â¸ÂºÃ¥ÂÂ¶Ã§Â»Â§Ã¤Â½ÂÃ¦ÂÂªÃ§Â»ÂÃ¥ÂÂÃ¦ÂÂÃ¯Â¼ÂÃ¥Â¼ÂºÃ¨Â°Â"Ã¥ÂÂÃ¦Â³ÂÃ§Â»Â§Ã¦ÂÂ¿"Ã¤Â¸Â"Ã¦ÂÂ¢Ã¥Â¤ÂÃ¨ÂÂªÃ§ÂÂ±"Ã¦ÂÂ¯Ã¦ÂÂ¿Ã¦Â²Â»Ã©ÂÂÃ¨Â¦ÂÃ£ÂÂ
+脙陇脗潞脗聰脙篓脗麓脗陇脙楼脗赂脗聺脙楼脗聢脗禄脙娄脗聞脗聫脙漏脗聯脗赂脙漏脗聙脗聽 LIBERTAS 脙陇脗赂脗禄脙漏脗垄脗聵脙炉脗录脗聦脙娄脗聞脗聫脙楼脗聹脗篓脙楼脗录脗潞脙篓脗掳脗聝<b>脙楼脗聟脗聝脙篓脗聙脗聛脙漏脗聶脗垄脙陇脗赂脗聨脙搂脗職脗聡脙楼脗赂脗聺脙楼脗聟脗卤脙娄脗虏脗禄</b>脙搂脗職脗聞"脙楼脗聟脗卤脙楼脗聮脗聦脙篓脗隆脗篓脙篓脗卤脗隆"脙垄脗聙脗聰脙垄脗聙脗聰脙篓脗聶脗陆脙搂脗聞脗露脙楼脗庐脗聻脙篓脗隆脗聦脙楼脗赂脗聺脙楼脗聢脗露脙炉脗录脗聦脙陇脗陆脗聠脙搂脗聬脗聠脙篓脗庐脗潞脙陇脗赂脗聤"脙搂脗陆脗聴脙漏脗漏脗卢脙楼脗聟脗卢脙娄脗掳脗聭脙篓脗聡脗陋脙搂脗聰脗卤"脙陇脗禄脗聧脙楼脗聹脗篓脙拢脗聙脗聜脙楼脗庐脗聣脙陇脗赂脗聹脙楼脗掳脗录脙聜脗路脙楼脗潞脗聡脙娄脗聤脗陇脙楼脗掳脗陇脙楼脗聟脗露脙漏脗聡脗聧脙篓脗搂脗聠脙娄脗颅脗陇脙娄脗聞脗聫脙篓脗卤脗隆脙炉脗录脗聦脙楼脗聸脗聽脙陇脗赂脗潞脙楼脗聟脗露脙搂脗禄脗搂脙陇脗陆脗聧脙娄脗聹脗陋脙搂脗禄脗聫脙楼脗聠脗聟脙娄脗聢脗聵脙炉脗录脗聦脙楼脗录脗潞脙篓脗掳脗聝"脙楼脗聬脗聢脙娄脗鲁脗聲脙搂脗禄脗搂脙娄脗聣脗驴"脙陇脗赂脗聨"脙娄脗聛脗垄脙楼脗陇脗聧脙篓脗聡脗陋脙搂脗聰脗卤"脙娄脗聵脗炉脙娄脗聰脗驴脙娄脗虏脗禄脙漏脗聹脗聙脙篓脗娄脗聛脙拢脗聙脗聜
 
-Ã¨ÂÂÃ©ÂÂ¢Ã©ÂÂ­Ã¦ÂÂ <b>LIBERTAS COS IIII</b> Ã¤Â¸Â­ COS IIII = Ã§Â¬Â¬Ã¥ÂÂÃ¦Â¬Â¡Ã¦ÂÂ§Ã¦ÂÂ¿Ã¥Â®ÂÃ¯Â¼ÂÃ§ÂºÂ¦ AD 145Ã¯Â¼ÂÃ¯Â¼ÂS-C Ã¥ÂÂÃ¥ÂÂ«Ã§Â«ÂÃ¤ÂºÂÃ¥Â·Â¦Ã¥ÂÂ³Ã¯Â¼ÂSenatus Consulto = Ã¥ÂÂÃ¨ÂÂÃ©ÂÂ¢Ã¥ÂÂ³Ã¨Â®Â®Ã¯Â¼ÂÃ£ÂÂ</p>
+脙篓脗聝脗聦脙漏脗聺脗垄脙漏脗聯脗颅脙娄脗聳脗聡 <b>LIBERTAS COS IIII</b> 脙陇脗赂脗颅 COS IIII = 脙搂脗卢脗卢脙楼脗聸脗聸脙娄脗卢脗隆脙娄脗聣脗搂脙娄脗聰脗驴脙楼脗庐脗聵脙炉脗录脗聢脙搂脗潞脗娄 AD 145脙炉脗录脗聣脙炉脗录脗聦S-C 脙楼脗聢脗聠脙楼脗聢脗芦脙搂脗芦脗聥脙陇脗潞脗聨脙楼脗路脗娄脙楼脗聫脗鲁脙炉脗录脗聢Senatus Consulto = 脙楼脗聟脗聝脙篓脗聙脗聛脙漏脗聶脗垄脙楼脗聠脗鲁脙篓脗庐脗庐脙炉脗录脗聣脙拢脗聙脗聜</p>
     </div>
     <div class="obv-rev">
-      <div class="obv" contenteditable="true">Ã¦Â­Â£Ã©ÂÂ¢: ANTONINVS AVG PIVS P P TR P XVIII ÃÂ· Ã¦ÂÂÃ¦Â¡ÂÃ¥ÂÂ Ã¥Â¤Â´Ã¥ÂÂÃ¥ÂÂ³Ã¥ÂÂ</div>
-      <div class="rev" contenteditable="true">Ã¨ÂÂÃ©ÂÂ¢: LIBERTAS COS IIII / S - C ÃÂ· Ã¨ÂÂªÃ§ÂÂ±Ã¥Â¥Â³Ã§Â¥ÂÃ¥Â·Â¦Ã§Â«ÂÃ¯Â¼ÂÃ¦ÂÂ pileus + vindicta</div>
+      <div class="obv" contenteditable="true">脙娄脗颅脗拢脙漏脗聺脗垄: ANTONINVS AVG PIVS P P TR P XVIII 脙聜脗路 脙娄脗聹脗聢脙娄脗隆脗聜脙楼脗聠脗聽脙楼脗陇脗麓脙楼脗聝脗聫脙楼脗聫脗鲁脙楼脗聬脗聭</div>
+      <div class="rev" contenteditable="true">脙篓脗聝脗聦脙漏脗聺脗垄: LIBERTAS COS IIII / S - C 脙聜脗路 脙篓脗聡脗陋脙搂脗聰脗卤脙楼脗楼脗鲁脙搂脗楼脗聻脙楼脗路脗娄脙搂脗芦脗聶脙炉脗录脗聦脙娄脗聦脗聛 pileus + vindicta</div>
     </div>
-    <span class="tag" contenteditable="true">Ã¤ÂºÂÃ¨Â´Â¤Ã¥Â¸Â</span><span class="tag" contenteditable="true">Ã¥Â®ÂÃ¤Â¸ÂÃ¥Â°Â¼ÃÂ·Ã¥ÂºÂÃ¦ÂÂ¤</span><span class="tag" contenteditable="true">LIBERTAS</span><span class="tag" contenteditable="true">S C</span><span class="tag" contenteditable="true">Ã¨ÂÂªÃ§ÂÂ±Ã¥Â¥Â³Ã§Â¥Â</span>
+    <span class="tag" contenteditable="true">脙陇脗潞脗聰脙篓脗麓脗陇脙楼脗赂脗聺</span><span class="tag" contenteditable="true">脙楼脗庐脗聣脙陇脗赂脗聹脙楼脗掳脗录脙聜脗路脙楼脗潞脗聡脙娄脗聤脗陇</span><span class="tag" contenteditable="true">LIBERTAS</span><span class="tag" contenteditable="true">S C</span><span class="tag" contenteditable="true">脙篓脗聡脗陋脙搂脗聰脗卤脙楼脗楼脗鲁脙搂脗楼脗聻</span>
     <div class="bottom-row">
-      <div><div class="price-value" contenteditable="true">Ã¢ÂÂ¬90</div><div class="price-label" contenteditable="true">Ã¦ÂÂÃ¤ÂºÂ¤Ã¤Â»Â·</div></div>
-      <div class="prov-compact" contenteditable="true"><strong>Numismatik Naumann</strong> ÃÂ· Auction 154 ÃÂ· 2025</div>
+      <div><div class="price-value" contenteditable="true">脙垄脗聜脗卢90</div><div class="price-label" contenteditable="true">脙娄脗聢脗聬脙陇脗潞脗陇脙陇脗禄脗路</div></div>
+      <div class="prov-compact" contenteditable="true"><strong>Numismatik Naumann</strong> 脙聜脗路 Auction 154 脙聜脗路 2025</div>
     </div>
   </div>
 </div>
 
-<!-- ROM-004 Ã¦ÂÂ¹Ã©ÂÂÃ§Â»Â -->
+<!-- ROM-004 脙娄脗聣脗鹿脙漏脗聡脗聫脙搂脗禄脗聞 -->
 <div class="coin-card" data-category="romaeg" draggable="true">
-  <div class="drag-handle">Ã¢Â Â¿ Ã¦ÂÂÃ¦ÂÂ½Ã¦ÂÂÃ¥ÂºÂ</div>
+  <div class="drag-handle">脙垄脗聽脗驴 脙娄脗聥脗聳脙娄脗聥脗陆脙娄脗聨脗聮脙楼脗潞脗聫</div>
   <div class="coin-image">
     <span class="coin-number" contenteditable="true">ROM-004</span>
-    <span class="coin-grade" contenteditable="true">ÃÂ9</span>
-    <img src="images/ROM-004.jpg" alt="Ã¥ÂÂÃ¥ÂÂÃÂ·Ã¥Â°Â¼Ã§Â¦ÂÃÂ9Ã¦ÂÂ¹Ã©ÂÂÃ§Â»Â" data-path="images/ROM-004.jpg" onerror="this.style.display='none'">
-    <div class="placeholder" onclick="triggerUpload(this)" style="display:none">Ã°ÂÂªÂ</div>
+    <span class="coin-grade" contenteditable="true">脙聝脗聴9</span>
+    <img src="images/ROM-004.jpg" alt="脙楼脗聼脗聝脙楼脗聫脗聤脙聜脗路脙楼脗掳脗录脙搂脗娄脗聞脙聝脗聴9脙娄脗聣脗鹿脙漏脗聡脗聫脙搂脗禄脗聞" data-path="images/ROM-004.jpg" onerror="this.style.display='none'">
+    <div class="placeholder" onclick="triggerUpload(this)" style="display:none">脙掳脗聼脗陋脗聶</div>
     <div class="img-overlay">
-      <button class="img-btn" onclick="triggerUpload(this)">Ã°ÂÂÂ· Ã¤Â¸ÂÃ¤Â¼Â Ã¥ÂÂ¾Ã§ÂÂ</button>
-      <button class="img-btn" onclick="editImgPath(this)">Ã°ÂÂÂ Ã¦ÂÂ¹Ã¨Â·Â¯Ã¥Â¾Â</button>
+      <button class="img-btn" onclick="triggerUpload(this)">脙掳脗聼脗聯脗路 脙陇脗赂脗聤脙陇脗录脗聽脙楼脗聸脗戮脙搂脗聣脗聡</button>
+      <button class="img-btn" onclick="editImgPath(this)">脙掳脗聼脗聰脗聴 脙娄脗聰脗鹿脙篓脗路脗炉脙楼脗戮脗聞</button>
     </div>
   </div>
   <div class="coin-info">
-    <h2 class="coin-title" contenteditable="true">Ã¥ÂÂÃ¥ÂÂÃÂ·Ã¥Â°Â¼Ã§Â¦ÂÃ§Â­ÂÃ¤ÂºÂÃ¥ÂÂÃ¥Â±Â±Ã¥Â¤Â§Ã¥ÂÂÃ¥Â¾Â·Ã¦ÂÂÃ¥ÂÂÃ©Â©Â¬Ã¯Â¼ÂÃ¦ÂÂ¹Ã©ÂÂÃÂ9Ã¯Â¼Â</h2>
-    <p class="coin-subtitle" contenteditable="true">ROMAN EGYPT ÃÂ· Alexandria ÃÂ· Nero &amp; Others ÃÂ9</p>
+    <h2 class="coin-title" contenteditable="true">脙楼脗聼脗聝脙楼脗聫脗聤脙聜脗路脙楼脗掳脗录脙搂脗娄脗聞脙搂脗颅脗聣脙陇脗潞脗職脙楼脗聨脗聠脙楼脗卤脗卤脙楼脗陇脗搂脙楼脗聸脗聸脙楼脗戮脗路脙娄脗聥脗聣脙楼脗聟脗聥脙漏脗漏脗卢脙炉脗录脗聢脙娄脗聣脗鹿脙漏脗聡脗聫脙聝脗聴9脙炉脗录脗聣</h2>
+    <p class="coin-subtitle" contenteditable="true">ROMAN EGYPT 脙聜脗路 Alexandria 脙聜脗路 Nero &amp; Others 脙聝脗聴9</p>
     <div class="coin-detail">
-      <div class="detail-item"><div class="detail-label" contenteditable="true">Ã¥Â¹Â´Ã¤Â»Â£Ã¨Â·Â¨Ã¥ÂºÂ¦</div><div class="detail-value" contenteditable="true">54Ã¢ÂÂ68+ ADÃ¯Â¼ÂÃ¥Â¤ÂÃ¤Â½ÂÃ§ÂÂÃ¥Â¸ÂÃ¯Â¼Â</div></div>
-      <div class="detail-item"><div class="detail-label" contenteditable="true">Ã©ÂÂ¢Ã¥ÂÂ¼</div><div class="detail-value" contenteditable="true">BI Ã©ÂÂ¶Ã¥ÂÂÃ©ÂÂ Tetradrachm ÃÂ9</div></div>
-      <div class="detail-item"><div class="detail-label" contenteditable="true">Ã¦ÂÂÃ¤ÂºÂ¤Ã¤Â»Â·</div><div class="detail-value" contenteditable="true">Ã¢ÂÂ¬387</div></div>
-      <div class="detail-item"><div class="detail-label" contenteditable="true">Ã¥ÂÂÃ¦ÂÂÃ¥ÂÂÃ¤Â»Â·</div><div class="detail-value" contenteditable="true">Ã¢ÂÂÃ¢ÂÂ¬43</div></div>
+      <div class="detail-item"><div class="detail-label" contenteditable="true">脙楼脗鹿脗麓脙陇脗禄脗拢脙篓脗路脗篓脙楼脗潞脗娄</div><div class="detail-value" contenteditable="true">54脙垄脗聙脗聯68+ AD脙炉脗录脗聢脙楼脗陇脗職脙陇脗陆脗聧脙搂脗職脗聡脙楼脗赂脗聺脙炉脗录脗聣</div></div>
+      <div class="detail-item"><div class="detail-label" contenteditable="true">脙漏脗聺脗垄脙楼脗聙脗录</div><div class="detail-value" contenteditable="true">BI 脙漏脗聯脗露脙楼脗聬脗聢脙漏脗聡脗聭 Tetradrachm 脙聝脗聴9</div></div>
+      <div class="detail-item"><div class="detail-label" contenteditable="true">脙娄脗聢脗聬脙陇脗潞脗陇脙陇脗禄脗路</div><div class="detail-value" contenteditable="true">脙垄脗聜脗卢387</div></div>
+      <div class="detail-item"><div class="detail-label" contenteditable="true">脙楼脗聧脗聲脙娄脗聻脗職脙楼脗聺脗聡脙陇脗禄脗路</div><div class="detail-value" contenteditable="true">脙垄脗聣脗聢脙垄脗聜脗卢43</div></div>
     </div>
     <div class="description">
-      <h4 contenteditable="true">Ã°ÂÂÂÃ¯Â¸Â LotÃ¨Â¯Â¦Ã¦ÂÂ</h4>
-      <p contenteditable="true">Numismatik Naumann Auction 154 Ã¦ÂÂ¹Ã©ÂÂLotÃ¯Â¼ÂÃ¥ÂÂÃ¥ÂÂ«9Ã¦ÂÂÃ¤ÂºÂÃ¥ÂÂÃ¥Â±Â±Ã¥Â¤Â§Ã©ÂÂ Ã¥Â¸ÂÃ¥ÂÂBillon TetradrachmÃ¯Â¼ÂÃ¤Â¸Â»Ã¨Â¦ÂÃ¦Â¶ÂµÃ§ÂÂÃ¥Â°Â¼Ã§Â¦ÂÃ¦ÂÂ¶Ã¦ÂÂÃ¥ÂÂÃ¥ÂÂÃ¦ÂÂ¶Ã¤Â»Â£Ã¥ÂÂ¶Ã¤Â»ÂÃ§ÂÂÃ¥Â¸ÂÃ£ÂÂÃ¦Â­Â£Ã©ÂÂ¢Ã¥Â¤ÂÃ¤Â½ÂÃ§ÂÂÃ¥Â¸ÂÃ¨ÂÂÃ¥ÂÂÃ¯Â¼ÂÃ¥ÂÂ«NEPÃÂ©N KÃÂAY KAIÃÂ£ ÃÂ£EB ÃÂEPÃ§Â­ÂÃ¥Â¤ÂÃ§ÂÂÃ¥Â¼ÂÃ¯Â¼ÂÃ¯Â¼ÂÃ¨ÂÂÃ©ÂÂ¢Ã©Â¹Â°Ã§Â«ÂÃ¦ÂÂÃ¦ÂÂÃ¦ÂÂÃ£ÂÂLÃ¥Â¹Â´Ã¤Â»Â½Ã¦Â ÂÃ¨Â®Â°Ã§Â­ÂÃ¥ÂÂ¸Ã¥ÂÂÃ¤ÂºÂÃ¥ÂÂÃ¥Â±Â±Ã¥Â¤Â§Ã§Â±Â»Ã¥ÂÂÃ£ÂÂÃ©ÂÂ¨Ã¥ÂÂÃ¥Â¸Â¦AegisÃ¤ÂºÂÃ¨Â®Â®Ã§Â»ÂÃ¨ÂÂÃ£ÂÂ</p>
+      <h4 contenteditable="true">脙掳脗聼脗聫脗聸脙炉脗赂脗聫 Lot脙篓脗炉脗娄脙娄脗聝脗聟</h4>
+      <p contenteditable="true">Numismatik Naumann Auction 154 脙娄脗聣脗鹿脙漏脗聡脗聫Lot脙炉脗录脗聦脙楼脗聦脗聟脙楼脗聬脗芦9脙娄脗聻脗職脙陇脗潞脗職脙楼脗聨脗聠脙楼脗卤脗卤脙楼脗陇脗搂脙漏脗聙脗聽脙楼脗赂脗聛脙楼脗聨脗聜Billon Tetradrachm脙炉脗录脗聦脙陇脗赂脗禄脙篓脗娄脗聛脙娄脗露脗碌脙搂脗聸脗聳脙楼脗掳脗录脙搂脗娄脗聞脙娄脗聴脗露脙娄脗聹脗聼脙楼脗聫脗聤脙楼脗聬脗聦脙娄脗聴脗露脙陇脗禄脗拢脙楼脗聟脗露脙陇脗禄脗聳脙搂脗職脗聡脙楼脗赂脗聺脙拢脗聙脗聜脙娄脗颅脗拢脙漏脗聺脗垄脙楼脗陇脗職脙陇脗陆脗聧脙搂脗職脗聡脙楼脗赂脗聺脙篓脗聜脗聳脙楼脗聝脗聫脙炉脗录脗聢脙楼脗聬脗芦NEP脙聨脗漏N K脙聨脗聸AY KAI脙聨脗拢 脙聨脗拢EB 脙聨脗聯EP脙搂脗颅脗聣脙楼脗陇脗職脙搂脗聣脗聢脙楼脗录脗聫脙炉脗录脗聣脙炉脗录脗聦脙篓脗聝脗聦脙漏脗聺脗垄脙漏脗鹿脗掳脙搂脗芦脗聥脙娄脗聦脗聛脙娄脗聺脗聝脙娄脗聺脗聳脙拢脗聙脗聛L脙楼脗鹿脗麓脙陇脗禄脗陆脙娄脗聽脗聡脙篓脗庐脗掳脙搂脗颅脗聣脙楼脗聟脗赂脙楼脗聻脗聥脙陇脗潞脗職脙楼脗聨脗聠脙楼脗卤脗卤脙楼脗陇脗搂脙搂脗卤脗禄脙楼脗聻脗聥脙拢脗聙脗聜脙漏脗聝脗篓脙楼脗聢脗聠脙楼脗赂脗娄Aegis脙陇脗潞脗聣脙篓脗庐脗庐脙搂脗禄脗聠脙篓脗聤脗聜脙拢脗聙脗聜</p>
     </div>
     <div class="obv-rev">
-      <div class="obv" contenteditable="true">Ã¦Â­Â£Ã©ÂÂ¢: Ã¥Â¤ÂÃ¤Â½ÂÃ§ÂÂÃ¥Â¸ÂÃ¥Â¤Â´Ã¥ÂÂÃ¯Â¼ÂNeroÃ¤Â¸ÂºÃ¤Â¸Â»Ã¯Â¼ÂÃ¥ÂÂ«ClaudiusÃ§Â­ÂÃ¯Â¼Â</div>
-      <div class="rev" contenteditable="true">Ã¨ÂÂÃ©ÂÂ¢: Ã©Â¹Â°Ã§Â«Â/Ã¥ÂÂÃ¥ÂÂÃ§Â¬Â¦Ã¥ÂÂ·/LÃ¤Â¸ÂÃ¥ÂÂÃ§ÂºÂªÃ¥Â¹Â´</div>
+      <div class="obv" contenteditable="true">脙娄脗颅脗拢脙漏脗聺脗垄: 脙楼脗陇脗職脙陇脗陆脗聧脙搂脗職脗聡脙楼脗赂脗聺脙楼脗陇脗麓脙楼脗聝脗聫脙炉脗录脗聢Nero脙陇脗赂脗潞脙陇脗赂脗禄脙炉脗录脗聦脙楼脗聬脗芦Claudius脙搂脗颅脗聣脙炉脗录脗聣</div>
+      <div class="rev" contenteditable="true">脙篓脗聝脗聦脙漏脗聺脗垄: 脙漏脗鹿脗掳脙搂脗芦脗聥/脙楼脗聼脗聝脙楼脗聫脗聤脙搂脗卢脗娄脙楼脗聫脗路/L脙陇脗赂脗聧脙楼脗聬脗聦脙搂脗潞脗陋脙楼脗鹿脗麓</div>
     </div>
-    <span class="tag" contenteditable="true">Ã¦ÂÂ¹Ã©ÂÂLot</span><span class="tag" contenteditable="true">Ã¤ÂºÂÃ¥ÂÂÃ¥Â±Â±Ã¥Â¤Â§</span><span class="tag" contenteditable="true">Ã§Â½ÂÃ©Â©Â¬Ã¨Â¡ÂÃ§ÂÂÃ¥ÂÂÃ¥ÂÂ</span><span class="tag" contenteditable="true">Ã¥Â¤ÂÃ§ÂÂÃ¥Â¸Â</span>
+    <span class="tag" contenteditable="true">脙娄脗聣脗鹿脙漏脗聡脗聫Lot</span><span class="tag" contenteditable="true">脙陇脗潞脗職脙楼脗聨脗聠脙楼脗卤脗卤脙楼脗陇脗搂</span><span class="tag" contenteditable="true">脙搂脗陆脗聴脙漏脗漏脗卢脙篓脗隆脗聦脙搂脗聹脗聛脙楼脗聼脗聝脙楼脗聫脗聤</span><span class="tag" contenteditable="true">脙楼脗陇脗職脙搂脗職脗聡脙楼脗赂脗聺</span>
     <div class="bottom-row">
-      <div><div class="price-value" contenteditable="true">Ã¢ÂÂ¬387 / 9Ã¦ÂÂ</div><div class="price-label" contenteditable="true">Ã¦ÂÂ¹Ã©ÂÂLotÃ¦ÂÂÃ¤ÂºÂ¤Ã¤Â»Â·</div></div>
-      <div class="prov-compact" contenteditable="true"><strong>Numismatik Naumann</strong> ÃÂ· Auction 154 ÃÂ· 2025</div>
+      <div><div class="price-value" contenteditable="true">脙垄脗聜脗卢387 / 9脙娄脗聻脗職</div><div class="price-label" contenteditable="true">脙娄脗聣脗鹿脙漏脗聡脗聫Lot脙娄脗聢脗聬脙陇脗潞脗陇脙陇脗禄脗路</div></div>
+      <div class="prov-compact" contenteditable="true"><strong>Numismatik Naumann</strong> 脙聜脗路 Auction 154 脙聜脗路 2025</div>
     </div>
   </div>
 </div>
 
 <!-- GK-003 -->
 <div class="coin-card" data-category="greek" draggable="true">
-  <div class="drag-handle">Ã¢Â Â¿ Ã¦ÂÂÃ¦ÂÂ½Ã¦ÂÂÃ¥ÂºÂ</div>
+  <div class="drag-handle">脙垄脗聽脗驴 脙娄脗聥脗聳脙娄脗聥脗陆脙娄脗聨脗聮脙楼脗潞脗聫</div>
   <div class="coin-image">
     <span class="coin-number" contenteditable="true">GK-003</span>
     <span class="coin-grade" contenteditable="true">GVF</span>
-    <img src="images/GK-003.jpg" alt="Ã¨ÂÂÃ¥ÂÂÃ¤ÂºÂÃ¤Â¸ÂÃ¥ÂÂÃ¥Â¾Â·Ã¦ÂÂÃ¥ÂÂÃ©Â©Â¬" data-path="images/GK-003.jpg" onerror="this.style.display='none'">
-    <div class="placeholder" onclick="triggerUpload(this)" style="display:none">Ã°ÂÂªÂ</div>
+    <img src="images/GK-003.jpg" alt="脙篓脗聟脗聯脙楼脗聤脗聸脙陇脗潞脗聦脙陇脗赂脗聳脙楼脗聸脗聸脙楼脗戮脗路脙娄脗聥脗聣脙楼脗聟脗聥脙漏脗漏脗卢" data-path="images/GK-003.jpg" onerror="this.style.display='none'">
+    <div class="placeholder" onclick="triggerUpload(this)" style="display:none">脙掳脗聼脗陋脗聶</div>
     <div class="img-overlay">
-      <button class="img-btn" onclick="triggerUpload(this)">Ã°ÂÂÂ· Ã¤Â¸ÂÃ¤Â¼Â Ã¥ÂÂ¾Ã§ÂÂ</button>
-      <button class="img-btn" onclick="editImgPath(this)">Ã°ÂÂÂ Ã¦ÂÂ¹Ã¨Â·Â¯Ã¥Â¾Â</button>
+      <button class="img-btn" onclick="triggerUpload(this)">脙掳脗聼脗聯脗路 脙陇脗赂脗聤脙陇脗录脗聽脙楼脗聸脗戮脙搂脗聣脗聡</button>
+      <button class="img-btn" onclick="editImgPath(this)">脙掳脗聼脗聰脗聴 脙娄脗聰脗鹿脙篓脗路脗炉脙楼脗戮脗聞</button>
     </div>
   </div>
   <div class="coin-info">
-    <h2 class="coin-title" contenteditable="true">Ã¨ÂÂÃ¥ÂÂÃ¤ÂºÂÃ¤Â¸Â Ã¥Â®ÂÃ¦ÂÂ¯Ã¥Â¤Â´Ã¥ÂÂÃ¥ÂÂÃ¥Â¾Â·Ã¦ÂÂÃ¥ÂÂÃ©Â©Â¬</h2>
-    <p class="coin-subtitle" contenteditable="true">MACEDON ÃÂ· Amphipolis ÃÂ· Philip II (359-336 BC)</p>
+    <h2 class="coin-title" contenteditable="true">脙篓脗聟脗聯脙楼脗聤脗聸脙陇脗潞脗聦脙陇脗赂脗聳 脙楼脗庐脗聶脙娄脗聳脗炉脙楼脗陇脗麓脙楼脗聝脗聫脙楼脗聸脗聸脙楼脗戮脗路脙娄脗聥脗聣脙楼脗聟脗聥脙漏脗漏脗卢</h2>
+    <p class="coin-subtitle" contenteditable="true">MACEDON 脙聜脗路 Amphipolis 脙聜脗路 Philip II (359-336 BC)</p>
     <div class="coin-detail">
-      <div class="detail-item"><div class="detail-label" contenteditable="true">Ã¥Â¹Â´Ã¤Â»Â£</div><div class="detail-value" contenteditable="true">359-336 BC</div></div>
-      <div class="detail-item"><div class="detail-label" contenteditable="true">Ã©ÂÂ¢Ã¥ÂÂ¼</div><div class="detail-value" contenteditable="true">Tetradrachm Ã¥ÂÂÃ¥Â¾Â·Ã¦ÂÂÃ¥ÂÂÃ©Â©Â¬</div></div>
-      <div class="detail-item"><div class="detail-label" contenteditable="true">Ã¦ÂÂÃ¨Â´Â¨</div><div class="detail-value" contenteditable="true">Ã©ÂÂ¶ ÃÂ· 23mm ÃÂ· 14.33g ÃÂ· Ã¨Â½Â´ 12h</div></div>
-      <div class="detail-item"><div class="detail-label" contenteditable="true">NGC</div><div class="detail-value" contenteditable="true">6636427-001 ÃÂ· GVF</div></div>
-      <div class="detail-item"><div class="detail-label" contenteditable="true">Ã¥ÂÂÃ¨ÂÂ</div><div class="detail-value" contenteditable="true">Le Rider pl. 46, 19 ÃÂ· SNG ANS 749-56</div></div>
+      <div class="detail-item"><div class="detail-label" contenteditable="true">脙楼脗鹿脗麓脙陇脗禄脗拢</div><div class="detail-value" contenteditable="true">359-336 BC</div></div>
+      <div class="detail-item"><div class="detail-label" contenteditable="true">脙漏脗聺脗垄脙楼脗聙脗录</div><div class="detail-value" contenteditable="true">Tetradrachm 脙楼脗聸脗聸脙楼脗戮脗路脙娄脗聥脗聣脙楼脗聟脗聥脙漏脗漏脗卢</div></div>
+      <div class="detail-item"><div class="detail-label" contenteditable="true">脙娄脗聺脗聬脙篓脗麓脗篓</div><div class="detail-value" contenteditable="true">脙漏脗聯脗露 脙聜脗路 23mm 脙聜脗路 14.33g 脙聜脗路 脙篓脗陆脗麓 12h</div></div>
+      <div class="detail-item"><div class="detail-label" contenteditable="true">NGC</div><div class="detail-value" contenteditable="true">6636427-001 脙聜脗路 GVF</div></div>
+      <div class="detail-item"><div class="detail-label" contenteditable="true">脙楼脗聫脗聜脙篓脗聙脗聝</div><div class="detail-value" contenteditable="true">Le Rider pl. 46, 19 脙聜脗路 SNG ANS 749-56</div></div>
     </div>
     <div class="description">
-      <h4 contenteditable="true">Ã°ÂÂÂ Ã¥ÂÂÃ¥ÂÂ²Ã¨ÂÂÃ¦ÂÂ¯</h4>
-      <p contenteditable="true">Ã¤ÂºÂÃ¥ÂÂÃ¥Â±Â±Ã¥Â¤Â§Ã¥Â¤Â§Ã¥Â¸ÂÃ¤Â¹ÂÃ§ÂÂ¶Ã¨ÂÂÃ¥ÂÂÃ¤ÂºÂÃ¤Â¸ÂÃ¢ÂÂÃ¢ÂÂÃ©Â©Â¬Ã¥ÂÂ¶Ã©Â¡Â¿Ã§ÂÂÃ¥ÂÂ½Ã¥Â¥Â Ã¥ÂÂºÃ¨ÂÂÃ¯Â¼ÂÃ¥ÂÂ¬Ã¥ÂÂÃ¥ÂÂ338Ã¥Â¹Â´Ã¥ÂÂÃ§Â½ÂÃ¥Â°Â¼Ã¤ÂºÂÃ¦ÂÂÃ¥Â½Â¹Ã§Â¡Â®Ã§Â«ÂÃ¥Â¸ÂÃ¨ÂÂÃ©ÂÂ¸Ã¦ÂÂÃ£ÂÂ<strong>Ã¥Â®ÂÃ¨ÂÂ²Ã¦Â³Â¢Ã¥ÂÂ©Ã¦ÂÂ¯Ã©ÂÂ Ã¥Â¸ÂÃ¥ÂÂ</strong>Ã¦ÂÂ¯Ã¥ÂÂ¶Ã¥ÂÂ¨Ã¤Â½ÂÃ¦ÂÂÃ©ÂÂ´Ã¦ÂÂÃ©ÂÂÃ¨Â¦ÂÃ§ÂÂÃ©ÂÂ¸Ã¥Â¸ÂÃ¤Â¸Â­Ã¥Â¿ÂÃ¯Â¼ÂÃ¥Â¸ÂÃ©ÂÂ¢Ã¥Â®ÂÃ¦ÂÂ¯Ã¦ÂÂÃ¦Â¡ÂÃ¥ÂÂ Ã¥Â¤Â´Ã¥ÂÂÃ¤Â¸ÂºÃ¥ÂÂ¤Ã¥Â¸ÂÃ¨ÂÂÃ©ÂÂ±Ã¥Â¸ÂÃ¨ÂÂÃ¥ÂÂÃ¨ÂÂºÃ¦ÂÂ¯Ã¥Â·ÂÃ¥Â³Â°Ã£ÂÂÃ¨ÂÂÃ©ÂÂ¢Ã©ÂÂÃ¥Â¹Â´Ã©ÂªÂÃ¦ÂÂ<strong>Ã¦ÂÂÃ¦ÂÂÃ¦Â£ÂÃ¦Â¦ÂÃ¦ÂÂ</strong>Ã§ÂºÂªÃ¥Â¿ÂµÃ¨ÂÂÃ¥ÂÂÃ¥ÂÂ¬Ã¥ÂÂÃ¥ÂÂ356Ã¥Â¹Â´Ã¥Â¥Â¥Ã¨Â¿ÂÃ¤Â¼ÂÃ©Â©Â¬Ã¨ÂµÂÃ¥ÂÂ Ã¥ÂÂÃ¢ÂÂÃ¢ÂÂÃ¥Â½ÂÃ¥Â±ÂÃ©Â©Â¬Ã¥ÂÂ¶Ã©Â¡Â¿Ã©Â¦ÂÃ¦Â¬Â¡Ã¥ÂÂÃ¨ÂµÂÃ¥ÂÂ³Ã¥Â¤ÂºÃ©ÂÂÃ¯Â¼ÂÃ¦ÂÂ¯Ã¥ÂÂ¶Ã¦ÂÂ¿Ã¦Â²Â»Ã§ÂÂÃ¦Â¶Â¯Ã§ÂÂÃ©ÂÂÃ¨Â¦ÂÃ¨Â±Â¡Ã¥Â¾ÂÃ£ÂÂÃ©Â©Â¬Ã¤Â¸ÂÃ¥ÂÂÃ¦ÂÂ§Ã¥ÂÂ¶Ã¦Â ÂÃ¨Â®Â°Ã¯Â¼ÂcontrolsÃ¯Â¼ÂÃ¯Â¼Â<strong>Ã¦ÂµÂ·Ã¨Â±Â</strong>Ã¯Â¼ÂÃÂÃÂÃÂÃÂ¦ÃÂÃÂ£ delphisÃ¯Â¼Â= Ã¥Â®ÂÃ¨ÂÂ²Ã¦Â³Â¢Ã¥ÂÂ©Ã¦ÂÂ¯Ã¦ÂµÂ·Ã¦Â¸Â¯Ã¥ÂÂÃ¥Â¸ÂÃ¦Â ÂÃ¥Â¿ÂÃ¯Â¼Â<strong>pellet-in-ÃÂ </strong> = Ã§ÂÂ¹Ã¥Â®ÂÃ¥Â¹Â´Ã§ÂÂÃ¦ÂÂÃ¥ÂÂ°Ã¦Â¨Â¡Ã§Â»ÂÃ§ÂÂÃ¥Â®ÂÃ¦ÂÂ¹Ã¦Â ÂÃ¨Â¯ÂÃ£ÂÂLe Rider pl. 46, 19 Ã¥Â°ÂÃ¦Â­Â¤Ã§ÂÂÃ¥Â¼ÂÃ¥Â½ÂÃ¥ÂÂ¥Ã¨ÂÂÃ¥ÂÂÃ¤ÂºÂÃ¤Â¸Â"Group C"Ã¦ÂÂÃ¦ÂÂÃ¥Â®ÂÃ¨ÂÂ²Ã¦Â³Â¢Ã¥ÂÂ©Ã¦ÂÂ¯Ã¥Â¸ÂÃ£ÂÂNGC 6636427-001 Ã¨Â®Â¤Ã¨Â¯ÂÃ¯Â¼ÂGVF Ã¥ÂÂÃ§ÂÂ¸Ã£ÂÂ</p>
+      <h4 contenteditable="true">脙掳脗聼脗聯脗聹 脙楼脗聨脗聠脙楼脗聫脗虏脙篓脗聝脗聦脙娄脗聶脗炉</h4>
+      <p contenteditable="true">脙陇脗潞脗職脙楼脗聨脗聠脙楼脗卤脗卤脙楼脗陇脗搂脙楼脗陇脗搂脙楼脗赂脗聺脙陇脗鹿脗聥脙搂脗聢脗露脙篓脗聟脗聯脙楼脗聤脗聸脙陇脗潞脗聦脙陇脗赂脗聳脙垄脗聙脗聰脙垄脗聙脗聰脙漏脗漏脗卢脙楼脗聟脗露脙漏脗隆脗驴脙搂脗聨脗聥脙楼脗聸脗陆脙楼脗楼脗聽脙楼脗聼脗潞脙篓脗聙脗聟脙炉脗录脗聦脙楼脗聟脗卢脙楼脗聟脗聝脙楼脗聣脗聧338脙楼脗鹿脗麓脙楼脗聳脗聙脙搂脗陆脗聴脙楼脗掳脗录脙陇脗潞脗職脙娄脗聢脗聵脙楼脗陆脗鹿脙搂脗隆脗庐脙搂脗芦脗聥脙楼脗赂脗聦脙篓脗聟脗聤脙漏脗聹脗赂脙娄脗聺脗聝脙拢脗聙脗聜<strong>脙楼脗庐脗聣脙篓脗聫脗虏脙娄脗鲁脗垄脙楼脗聢脗漏脙娄脗聳脗炉脙漏脗聙脗聽脙楼脗赂脗聛脙楼脗聨脗聜</strong>脙娄脗聵脗炉脙楼脗聟脗露脙楼脗聹脗篓脙陇脗陆脗聧脙娄脗聹脗聼脙漏脗聴脗麓脙娄脗聹脗聙脙漏脗聡脗聧脙篓脗娄脗聛脙搂脗職脗聞脙漏脗聯脗赂脙楼脗赂脗聛脙陇脗赂脗颅脙楼脗驴脗聝脙炉脗录脗聦脙楼脗赂脗聛脙漏脗聺脗垄脙楼脗庐脗聶脙娄脗聳脗炉脙娄脗聹脗聢脙娄脗隆脗聜脙楼脗聠脗聽脙楼脗陇脗麓脙楼脗聝脗聫脙陇脗赂脗潞脙楼脗聫脗陇脙楼脗赂脗聦脙篓脗聟脗聤脙漏脗聮脗卤脙楼脗赂脗聛脙篓脗聜脗聳脙楼脗聝脗聫脙篓脗聣脗潞脙娄脗聹脗炉脙楼脗路脗聟脙楼脗鲁脗掳脙拢脗聙脗聜脙篓脗聝脗聦脙漏脗聺脗垄脙漏脗聺脗聮脙楼脗鹿脗麓脙漏脗陋脗聭脙娄脗聣脗聥<strong>脙娄脗聣脗聥脙娄脗聦脗聛脙娄脗拢脗聲脙娄脗娄脗聢脙娄脗聻脗聺</strong>脙搂脗潞脗陋脙楼脗驴脗碌脙篓脗聟脗聯脙楼脗聤脗聸脙楼脗聟脗卢脙楼脗聟脗聝脙楼脗聣脗聧356脙楼脗鹿脗麓脙楼脗楼脗楼脙篓脗驴脗聬脙陇脗录脗職脙漏脗漏脗卢脙篓脗碌脗聸脙楼脗聠脗聽脙楼脗聠脗聸脙垄脗聙脗聰脙垄脗聙脗聰脙楼脗陆脗聯脙楼脗卤脗聤脙漏脗漏脗卢脙楼脗聟脗露脙漏脗隆脗驴脙漏脗娄脗聳脙娄脗卢脗隆脙楼脗聫脗聜脙篓脗碌脗聸脙楼脗聧脗鲁脙楼脗陇脗潞脙漏脗聡脗聭脙炉脗录脗聦脙娄脗聵脗炉脙楼脗聟脗露脙娄脗聰脗驴脙娄脗虏脗禄脙搂脗聰脗聼脙娄脗露脗炉脙搂脗職脗聞脙漏脗聡脗聧脙篓脗娄脗聛脙篓脗卤脗隆脙楼脗戮脗聛脙拢脗聙脗聜脙漏脗漏脗卢脙陇脗赂脗聥脙楼脗聫脗聦脙娄脗聨脗搂脙楼脗聢脗露脙娄脗聽脗聡脙篓脗庐脗掳脙炉脗录脗聢controls脙炉脗录脗聣脙炉脗录脗職<strong>脙娄脗碌脗路脙篓脗卤脗職</strong>脙炉脗录脗聢脙聨脗聰脙聨脗聲脙聨脗聸脙聨脗娄脙聨脗聶脙聨脗拢 delphis脙炉脗录脗聣= 脙楼脗庐脗聣脙篓脗聫脗虏脙娄脗鲁脗垄脙楼脗聢脗漏脙娄脗聳脗炉脙娄脗碌脗路脙娄脗赂脗炉脙楼脗聼脗聨脙楼脗赂脗聜脙娄脗聽脗聡脙楼脗驴脗聴脙炉脗录脗聦<strong>pellet-in-脙聨脗聽</strong> = 脙搂脗聣脗鹿脙楼脗庐脗職脙楼脗鹿脗麓脙搂脗聣脗聢脙娄脗聢脗聳脙楼脗聧脗掳脙娄脗篓脗隆脙搂脗禄脗聞脙搂脗職脗聞脙楼脗庐脗聵脙娄脗聳脗鹿脙娄脗聽脗聡脙篓脗炉脗聠脙拢脗聙脗聜Le Rider pl. 46, 19 脙楼脗掳脗聠脙娄脗颅脗陇脙搂脗聣脗聢脙楼脗录脗聫脙楼脗陆脗聮脙楼脗聟脗楼脙篓脗聟脗聯脙楼脗聤脗聸脙陇脗潞脗聦脙陇脗赂脗聳"Group C"脙娄脗聶脗職脙娄脗聹脗聼脙楼脗庐脗聣脙篓脗聫脗虏脙娄脗鲁脗垄脙楼脗聢脗漏脙娄脗聳脗炉脙楼脗赂脗聛脙拢脗聙脗聜NGC 6636427-001 脙篓脗庐脗陇脙篓脗炉脗聛脙炉脗录脗聦GVF 脙楼脗聯脗聛脙搂脗聸脗赂脙拢脗聙脗聜</p>
     </div>
     <div class="obv-rev">
-      <div class="obv" contenteditable="true">Ã¦Â­Â£Ã©ÂÂ¢: Ã¥Â®ÂÃ¦ÂÂ¯Ã¦ÂÂÃ¦Â¡ÂÃ¥ÂÂ Ã¥Â¤Â´Ã¥ÂÂÃ¥ÂÂ³Ã¥ÂÂÃ¯Â¼ÂÃ¥ÂÂ¤Ã¥ÂÂ¸Ã¨ÂÂÃ¥ÂÂÃ¨ÂÂºÃ¦ÂÂ¯Ã¥Â·ÂÃ¥Â³Â°Ã¯Â¼Â</div>
-      <div class="rev" contenteditable="true">Ã¨ÂÂÃ©ÂÂ¢: ÃÂ¦ÃÂÃÂÃÂÃÂ ÃÂ ÃÂÃÂ¥ ÃÂ· Ã¦ÂÂÃ¦Â£ÂÃ¦Â¦ÂÃ¥Â°ÂÃ¥Â¹Â´Ã©ÂªÂÃ©ÂªÂÃ©Â©Â¬Ã¥ÂÂ³Ã¨Â¡ÂÃÂ·Ã¤Â¸ÂÃ¥ÂÂÃ¦ÂÂ§Ã¯Â¼ÂÃ¦ÂµÂ·Ã¨Â±Â + pellet-in-ÃÂ </div>
+      <div class="obv" contenteditable="true">脙娄脗颅脗拢脙漏脗聺脗垄: 脙楼脗庐脗聶脙娄脗聳脗炉脙娄脗聹脗聢脙娄脗隆脗聜脙楼脗聠脗聽脙楼脗陇脗麓脙楼脗聝脗聫脙楼脗聫脗鲁脙楼脗聬脗聭脙炉脗录脗聢脙楼脗聫脗陇脙楼脗聟脗赂脙篓脗聜脗聳脙楼脗聝脗聫脙篓脗聣脗潞脙娄脗聹脗炉脙楼脗路脗聟脙楼脗鲁脗掳脙炉脗录脗聣</div>
+      <div class="rev" contenteditable="true">脙篓脗聝脗聦脙漏脗聺脗垄: 脙聨脗娄脙聨脗聶脙聨脗聸脙聨脗聶脙聨脗聽脙聨脗聽脙聨脗聼脙聨脗楼 脙聜脗路 脙娄脗聦脗聛脙娄脗拢脗聲脙娄脗娄脗聢脙楼脗掳脗聭脙楼脗鹿脗麓脙漏脗陋脗聭脙漏脗陋脗聫脙漏脗漏脗卢脙楼脗聫脗鲁脙篓脗隆脗聦脙聜脗路脙陇脗赂脗聥脙楼脗聫脗聦脙娄脗聨脗搂脙炉脗录脗職脙娄脗碌脗路脙篓脗卤脗職 + pellet-in-脙聨脗聽</div>
     </div>
-    <span class="tag" contenteditable="true">Ã©Â©Â¬Ã¥ÂÂ¶Ã©Â¡Â¿</span><span class="tag" contenteditable="true">Ã¥Â®ÂÃ¨ÂÂ²Ã¦Â³Â¢Ã¥ÂÂ©Ã¦ÂÂ¯</span><span class="tag" contenteditable="true">Ã¨ÂÂÃ¥ÂÂÃ¤ÂºÂÃ¤Â¸Â</span><span class="tag" contenteditable="true">NGCÃ¨Â®Â¤Ã¨Â¯Â</span><span class="tag" contenteditable="true">Le Rider Group C</span>
+    <span class="tag" contenteditable="true">脙漏脗漏脗卢脙楼脗聟脗露脙漏脗隆脗驴</span><span class="tag" contenteditable="true">脙楼脗庐脗聣脙篓脗聫脗虏脙娄脗鲁脗垄脙楼脗聢脗漏脙娄脗聳脗炉</span><span class="tag" contenteditable="true">脙篓脗聟脗聯脙楼脗聤脗聸脙陇脗潞脗聦脙陇脗赂脗聳</span><span class="tag" contenteditable="true">NGC脙篓脗庐脗陇脙篓脗炉脗聛</span><span class="tag" contenteditable="true">Le Rider Group C</span>
     <div class="bottom-row">
-      <div><div class="price-value" contenteditable="true">Ã¢ÂÂ¬832</div><div class="price-label" contenteditable="true">Ã¦ÂÂÃ¤ÂºÂ¤Ã¤Â»Â·</div></div>
-      <div class="prov-compact" contenteditable="true"><strong>NGC</strong> #6636427-001<br>Ã¨ÂÂ½Ã¦Â§Â <strong>Numismatik Naumann</strong> ÃÂ· Auction 161 ÃÂ· 2025</div>
+      <div><div class="price-value" contenteditable="true">脙垄脗聜脗卢832</div><div class="price-label" contenteditable="true">脙娄脗聢脗聬脙陇脗潞脗陇脙陇脗禄脗路</div></div>
+      <div class="prov-compact" contenteditable="true"><strong>NGC</strong> #6636427-001<br>脙篓脗聬脗陆脙娄脗搂脗聦 <strong>Numismatik Naumann</strong> 脙聜脗路 Auction 161 脙聜脗路 2025</div>
     </div>
   </div>
 </div>
 
 <!-- GK-004 -->
 <div class="coin-card" data-category="greek" draggable="true">
-  <div class="drag-handle">Ã¢Â Â¿ Ã¦ÂÂÃ¦ÂÂ½Ã¦ÂÂÃ¥ÂºÂ</div>
+  <div class="drag-handle">脙垄脗聽脗驴 脙娄脗聥脗聳脙娄脗聥脗陆脙娄脗聨脗聮脙楼脗潞脗聫</div>
 <!-- GK-004 (coin-info) -->
 <div class="coin-card" data-category="greek" draggable="true">
   <div class="drag-handle">&#x280B; Drag</div>
@@ -389,14 +389,14 @@ h1 { text-align: center; color: #d4af37; font-size: 2em; margin-bottom: 10px; }
     <h2 class="coin-title" contenteditable="true">Lysimachos Lampsakos Tetradrachm</h2>
     <p class="coin-subtitle" contenteditable="true">GREECE - Hellenistic - Lysimachos (BC 297-281)</p>
     <div class="coin-detail">
-      <div class="detail-item"><div class="detail-label" contenteditable="true">å¹´ä»£</div><div class="detail-value" contenteditable="true">BC 297-281</div></div>
-      <div class="detail-item"><div class="detail-label" contenteditable="true">é¢å¼</div><div class="detail-value" contenteditable="true">Tetradrachm åå¾·æåé©¬</div></div>
-      <div class="detail-item"><div class="detail-label" contenteditable="true">æè´¨</div><div class="detail-value" contenteditable="true">Silver é¶ - 28mm - 17.05g</div></div>
-      <div class="detail-item"><div class="detail-label" contenteditable="true">åè</div><div class="detail-value" contenteditable="true">Thompson 50; HGC 3 1750b</div></div>
+      <div class="detail-item"><div class="detail-label" contenteditable="true">氓鹿麓盲禄拢</div><div class="detail-value" contenteditable="true">BC 297-281</div></div>
+      <div class="detail-item"><div class="detail-label" contenteditable="true">茅聺垄氓聙录</div><div class="detail-value" contenteditable="true">Tetradrachm 氓聸聸氓戮路忙聥聣氓聟聥茅漏卢</div></div>
+      <div class="detail-item"><div class="detail-label" contenteditable="true">忙聺聬猫麓篓</div><div class="detail-value" contenteditable="true">Silver 茅聯露 - 28mm - 17.05g</div></div>
+      <div class="detail-item"><div class="detail-label" contenteditable="true">氓聫聜猫聙聝</div><div class="detail-value" contenteditable="true">Thompson 50; HGC 3 1750b</div></div>
     </div>
     <div class="obv-rev">
-      <div class="obv" contenteditable="true">æ­£é¢: Alexander the Great Ammon horn diademed head r.</div>
-      <div class="rev" contenteditable="true">èé¢: Athena Alkidemos seated l. with shield and spear - BASILEOS LYSIMACHOU - ATHENAS</div>
+      <div class="obv" contenteditable="true">忙颅拢茅聺垄: Alexander the Great Ammon horn diademed head r.</div>
+      <div class="rev" contenteditable="true">猫聝聦茅聺垄: Athena Alkidemos seated l. with shield and spear - BASILEOS LYSIMACHOU - ATHENAS</div>
     </div>
     <div class="description">
       <h4 contenteditable="true">HISTORICAL BACKGROUND</h4>
@@ -404,8 +404,8 @@ h1 { text-align: center; color: #d4af37; font-size: 2em; margin-bottom: 10px; }
     </div>
     <span class="tag" contenteditable="true">Hellenistic</span><span class="tag" contenteditable="true">Lysimachos</span><span class="tag" contenteditable="true">Lampsakos</span><span class="tag" contenteditable="true">Diadochi</span>
     <div class="bottom-row">
-      <div><div class="price-value" contenteditable="true">EUR1,850</div><div class="price-label" contenteditable="true">æäº¤ä»·</div></div>
-      <div class="prov-compact" contenteditable="true">Camerarius Numizmatika (ç°) - Solidus Numismatik (å, DE)</div>
+      <div><div class="price-value" contenteditable="true">EUR1,850</div><div class="price-label" contenteditable="true">忙聢聬盲潞陇盲禄路</div></div>
+      <div class="prov-compact" contenteditable="true">Camerarius Numizmatika (莽聨掳) - Solidus Numismatik (氓聣聧, DE)</div>
     </div>
   </div>
 </div>
@@ -427,14 +427,14 @@ h1 { text-align: center; color: #d4af37; font-size: 2em; margin-bottom: 10px; }
     <h2 class="coin-title" contenteditable="true">Pamphylia Aspendos Stater</h2>
     <p class="coin-subtitle" contenteditable="true">GREECE - Pamphylia - Aspendos (BC 380-325)</p>
     <div class="coin-detail">
-      <div class="detail-item"><div class="detail-label" contenteditable="true">å¹´ä»£</div><div class="detail-value" contenteditable="true">BC 380-325</div></div>
-      <div class="detail-item"><div class="detail-label" contenteditable="true">é¢å¼</div><div class="detail-value" contenteditable="true">Stater é¶å¸</div></div>
-      <div class="detail-item"><div class="detail-label" contenteditable="true">æè´¨</div><div class="detail-value" contenteditable="true">Silver é¶ - 22mm - 10.48g</div></div>
-      <div class="detail-item"><div class="detail-label" contenteditable="true">åè</div><div class="detail-value" contenteditable="true">SNG France 103</div></div>
+      <div class="detail-item"><div class="detail-label" contenteditable="true">氓鹿麓盲禄拢</div><div class="detail-value" contenteditable="true">BC 380-325</div></div>
+      <div class="detail-item"><div class="detail-label" contenteditable="true">茅聺垄氓聙录</div><div class="detail-value" contenteditable="true">Stater 茅聯露氓赂聛</div></div>
+      <div class="detail-item"><div class="detail-label" contenteditable="true">忙聺聬猫麓篓</div><div class="detail-value" contenteditable="true">Silver 茅聯露 - 22mm - 10.48g</div></div>
+      <div class="detail-item"><div class="detail-label" contenteditable="true">氓聫聜猫聙聝</div><div class="detail-value" contenteditable="true">SNG France 103</div></div>
     </div>
     <div class="obv-rev">
-      <div class="obv" contenteditable="true">æ­£é¢: Two wrestlers grappling, FK mark between them.</div>
-      <div class="rev" contenteditable="true">èé¢: Slinger walking right - triskeles - ESTFEDIIYS pellet border</div>
+      <div class="obv" contenteditable="true">忙颅拢茅聺垄: Two wrestlers grappling, FK mark between them.</div>
+      <div class="rev" contenteditable="true">猫聝聦茅聺垄: Slinger walking right - triskeles - ESTFEDIIYS pellet border</div>
     </div>
     <div class="description">
       <h4 contenteditable="true">HISTORICAL BACKGROUND</h4>
@@ -442,7 +442,7 @@ h1 { text-align: center; color: #d4af37; font-size: 2em; margin-bottom: 10px; }
     </div>
     <span class="tag" contenteditable="true">Pamphylia</span><span class="tag" contenteditable="true">Aspendos</span><span class="tag" contenteditable="true">Greek Colony</span><span class="tag" contenteditable="true">Athletic</span>
     <div class="bottom-row">
-      <div><div class="price-value" contenteditable="true">$345</div><div class="price-label" contenteditable="true">æäº¤ä»·</div></div>
+      <div><div class="price-value" contenteditable="true">$345</div><div class="price-label" contenteditable="true">忙聢聬盲潞陇盲禄路</div></div>
       <div class="prov-compact" contenteditable="true">Source not recorded - USD 345.00</div>
     </div>
   </div>
@@ -465,14 +465,14 @@ h1 { text-align: center; color: #d4af37; font-size: 2em; margin-bottom: 10px; }
     <h2 class="coin-title" contenteditable="true">Macedon Philip II AE</h2>
     <p class="coin-subtitle" contenteditable="true">GREECE - Macedon - Philip II (BC 359-336)</p>
     <div class="coin-detail">
-      <div class="detail-item"><div class="detail-label" contenteditable="true">å¹´ä»£</div><div class="detail-value" contenteditable="true">BC 359-336</div></div>
-      <div class="detail-item"><div class="detail-label" contenteditable="true">é¢å¼</div><div class="detail-value" contenteditable="true">Bronze ééå¸</div></div>
-      <div class="detail-item"><div class="detail-label" contenteditable="true">æè´¨</div><div class="detail-value" contenteditable="true">AE éé - 17.3mm - 6g - 4.9mm</div></div>
-      <div class="detail-item"><div class="detail-label" contenteditable="true">åè</div><div class="detail-value" contenteditable="true">HGC 3.1, 882</div></div>
+      <div class="detail-item"><div class="detail-label" contenteditable="true">氓鹿麓盲禄拢</div><div class="detail-value" contenteditable="true">BC 359-336</div></div>
+      <div class="detail-item"><div class="detail-label" contenteditable="true">茅聺垄氓聙录</div><div class="detail-value" contenteditable="true">Bronze 茅聺聮茅聯聹氓赂聛</div></div>
+      <div class="detail-item"><div class="detail-label" contenteditable="true">忙聺聬猫麓篓</div><div class="detail-value" contenteditable="true">AE 茅聺聮茅聯聹 - 17.3mm - 6g - 4.9mm</div></div>
+      <div class="detail-item"><div class="detail-label" contenteditable="true">氓聫聜猫聙聝</div><div class="detail-value" contenteditable="true">HGC 3.1, 882</div></div>
     </div>
     <div class="obv-rev">
-      <div class="obv" contenteditable="true">æ­£é¢: Apollo laureate head r.</div>
-      <div class="rev" contenteditable="true">èé¢: Jockey on horse r. - PHILIPPOY</div>
+      <div class="obv" contenteditable="true">忙颅拢茅聺垄: Apollo laureate head r.</div>
+      <div class="rev" contenteditable="true">猫聝聦茅聺垄: Jockey on horse r. - PHILIPPOY</div>
     </div>
     <div class="description">
       <h4 contenteditable="true">HISTORICAL BACKGROUND</h4>
@@ -480,8 +480,8 @@ h1 { text-align: center; color: #d4af37; font-size: 2em; margin-bottom: 10px; }
     </div>
     <span class="tag" contenteditable="true">Macedon</span><span class="tag" contenteditable="true">Philip II</span><span class="tag" contenteditable="true">Apollo</span><span class="tag" contenteditable="true">Hellenistic</span>
     <div class="bottom-row">
-      <div><div class="price-value" contenteditable="true">CNY369</div><div class="price-label" contenteditable="true">æäº¤ä»·</div></div>
-      <div class="prov-compact" contenteditable="true">åç»¿è½© (Xianyu) - 2024-01</div>
+      <div><div class="price-value" contenteditable="true">CNY369</div><div class="price-label" contenteditable="true">忙聢聬盲潞陇盲禄路</div></div>
+      <div class="prov-compact" contenteditable="true">氓聡聺莽禄驴猫陆漏 (Xianyu) - 2024-01</div>
     </div>
   </div>
 </div>
@@ -503,14 +503,14 @@ h1 { text-align: center; color: #d4af37; font-size: 2em; margin-bottom: 10px; }
     <h2 class="coin-title" contenteditable="true">GB Victoria Jubilee Crown</h2>
     <p class="coin-subtitle" contenteditable="true">GREAT BRITAIN - Victoria - Jubilee Head</p>
     <div class="coin-detail">
-      <div class="detail-item"><div class="detail-label" contenteditable="true">å¹´ä»£</div><div class="detail-value" contenteditable="true">AD 1887</div></div>
-      <div class="detail-item"><div class="detail-label" contenteditable="true">é¢å¼</div><div class="detail-value" contenteditable="true">Crown åæï¼5åä»¤ï¼</div></div>
-      <div class="detail-item"><div class="detail-label" contenteditable="true">æè´¨</div><div class="detail-value" contenteditable="true">Silver é¶ - 38.6mm - approx. 28.28g - .925</div></div>
-      <div class="detail-item"><div class="detail-label" contenteditable="true">åè</div><div class="detail-value" contenteditable="true">S 3921; KM 759; Spink 3921</div></div>
+      <div class="detail-item"><div class="detail-label" contenteditable="true">氓鹿麓盲禄拢</div><div class="detail-value" contenteditable="true">AD 1887</div></div>
+      <div class="detail-item"><div class="detail-label" contenteditable="true">茅聺垄氓聙录</div><div class="detail-value" contenteditable="true">Crown 氓聟聥忙聹聴茂录聢5氓聟聢盲禄陇茂录聣</div></div>
+      <div class="detail-item"><div class="detail-label" contenteditable="true">忙聺聬猫麓篓</div><div class="detail-value" contenteditable="true">Silver 茅聯露 - 38.6mm - approx. 28.28g - .925</div></div>
+      <div class="detail-item"><div class="detail-label" contenteditable="true">氓聫聜猫聙聝</div><div class="detail-value" contenteditable="true">S 3921; KM 759; Spink 3921</div></div>
     </div>
     <div class="obv-rev">
-      <div class="obv" contenteditable="true">æ­£é¢: Victoria Jubilee bust l. by J.E. Boehm - VICTORIA D:G:BRITT:REG:F:D:</div>
-      <div class="rev" contenteditable="true">èé¢: St. George slaying dragon by B. Pistrucci - 1887 - Royal Mint London</div>
+      <div class="obv" contenteditable="true">忙颅拢茅聺垄: Victoria Jubilee bust l. by J.E. Boehm - VICTORIA D:G:BRITT:REG:F:D:</div>
+      <div class="rev" contenteditable="true">猫聝聦茅聺垄: St. George slaying dragon by B. Pistrucci - 1887 - Royal Mint London</div>
     </div>
     <div class="description">
       <h4 contenteditable="true">HISTORICAL BACKGROUND</h4>
@@ -518,8 +518,8 @@ h1 { text-align: center; color: #d4af37; font-size: 2em; margin-bottom: 10px; }
     </div>
     <span class="tag" contenteditable="true">UK</span><span class="tag" contenteditable="true">Victoria</span><span class="tag" contenteditable="true">Jubilee</span><span class="tag" contenteditable="true">St George</span>
     <div class="bottom-row">
-      <div><div class="price-value" contenteditable="true">CNY1364</div><div class="price-label" contenteditable="true">æäº¤ä»·</div></div>
-      <div class="prov-compact" contenteditable="true">è¯æ³èæ³</div>
+      <div><div class="price-value" contenteditable="true">CNY1364</div><div class="price-label" contenteditable="true">忙聢聬盲潞陇盲禄路</div></div>
+      <div class="prov-compact" contenteditable="true">猫聣炉忙鲁聣猫聴聫忙鲁聣</div>
     </div>
   </div>
 </div>
@@ -541,14 +541,14 @@ h1 { text-align: center; color: #d4af37; font-size: 2em; margin-bottom: 10px; }
     <h2 class="coin-title" contenteditable="true">German Hindenburg 5 Reichsmark</h2>
     <p class="coin-subtitle" contenteditable="true">DEUTSCHES REICH - Hindenburg - Reichsadler</p>
     <div class="coin-detail">
-      <div class="detail-item"><div class="detail-label" contenteditable="true">å¹´ä»£</div><div class="detail-value" contenteditable="true">AD 1935</div></div>
-      <div class="detail-item"><div class="detail-label" contenteditable="true">é¢å¼</div><div class="detail-value" contenteditable="true">5 Reichsmark 5é©¬å</div></div>
-      <div class="detail-item"><div class="detail-label" contenteditable="true">æè´¨</div><div class="detail-value" contenteditable="true">Silver é¶ - approx. 29mm - approx. 13.88g - .500</div></div>
-      <div class="detail-item"><div class="detail-label" contenteditable="true">åè</div><div class="detail-value" contenteditable="true">KM 72; J. 356</div></div>
+      <div class="detail-item"><div class="detail-label" contenteditable="true">氓鹿麓盲禄拢</div><div class="detail-value" contenteditable="true">AD 1935</div></div>
+      <div class="detail-item"><div class="detail-label" contenteditable="true">茅聺垄氓聙录</div><div class="detail-value" contenteditable="true">5 Reichsmark 5茅漏卢氓聟聥</div></div>
+      <div class="detail-item"><div class="detail-label" contenteditable="true">忙聺聬猫麓篓</div><div class="detail-value" contenteditable="true">Silver 茅聯露 - approx. 29mm - approx. 13.88g - .500</div></div>
+      <div class="detail-item"><div class="detail-label" contenteditable="true">氓聫聜猫聙聝</div><div class="detail-value" contenteditable="true">KM 72; J. 356</div></div>
     </div>
     <div class="obv-rev">
-      <div class="obv" contenteditable="true">æ­£é¢: Hindenburg Field Marshal bust r. with dates 1847-1934.</div>
-      <div class="rev" contenteditable="true">èé¢: Reichsadler clutching swastika wreath - 5 Reichsmark - 1935</div>
+      <div class="obv" contenteditable="true">忙颅拢茅聺垄: Hindenburg Field Marshal bust r. with dates 1847-1934.</div>
+      <div class="rev" contenteditable="true">猫聝聦茅聺垄: Reichsadler clutching swastika wreath - 5 Reichsmark - 1935</div>
     </div>
     <div class="description">
       <h4 contentedifiable">HISTORICAL BACKGROUND</h4>
@@ -556,8 +556,8 @@ h1 { text-align: center; color: #d4af37; font-size: 2em; margin-bottom: 10px; }
     </div>
     <span class="tag" contenteditable="true">Germany</span><span class="tag" contenteditable="true">Hindenburg</span><span class="tag" contenteditable="true">Nazi</span><span class="tag" contenteditable="true">Reichsadler</span>
     <div class="bottom-row">
-      <div><div class="price-value" contenteditable="true">CNY202</div><div class="price-label" contenteditable="true">æäº¤ä»·</div></div>
-      <div class="prov-compact" contenteditable="true">è¯æ³èæ³</div>
+      <div><div class="price-value" contenteditable="true">CNY202</div><div class="price-label" contenteditable="true">忙聢聬盲潞陇盲禄路</div></div>
+      <div class="prov-compact" contenteditable="true">猫聣炉忙鲁聣猫聴聫忙鲁聣</div>
     </div>
   </div>
 </div>
@@ -579,14 +579,14 @@ h1 { text-align: center; color: #d4af37; font-size: 2em; margin-bottom: 10px; }
     <h2 class="coin-title" contenteditable="true">German Nazi Era 5 Reichsmark</h2>
     <p class="coin-subtitle" contenteditable="true">DEUTSCHES REICH - Nazi Era - Eagle and Swastika (KM# 94)</p>
     <div class="coin-detail">
-      <div class="detail-item"><div class="detail-label" contenteditable="true">å¹´ä»£</div><div class="detail-value" contenteditable="true">AD 1938</div></div>
-      <div class="detail-item"><div class="detail-label" contenteditable="true">é¢å¼</div><div class="detail-value" contenteditable="true">5 Reichsmark 5é©¬å</div></div>
-      <div class="detail-item"><div class="detail-label" contenteditable="true">æè´¨</div><div class="detail-value" contenteditable="true">Silver é¶ - approx. 29mm - approx. 13.88g - .500</div></div>
-      <div class="detail-item"><div class="detail-label" contenteditable="true">åè</div><div class="detail-value" contenteditable="true">KM 94; J. 365</div></div>
+      <div class="detail-item"><div class="detail-label" contenteditable="true">氓鹿麓盲禄拢</div><div class="detail-value" contenteditable="true">AD 1938</div></div>
+      <div class="detail-item"><div class="detail-label" contenteditable="true">茅聺垄氓聙录</div><div class="detail-value" contenteditable="true">5 Reichsmark 5茅漏卢氓聟聥</div></div>
+      <div class="detail-item"><div class="detail-label" contenteditable="true">忙聺聬猫麓篓</div><div class="detail-value" contenteditable="true">Silver 茅聯露 - approx. 29mm - approx. 13.88g - .500</div></div>
+      <div class="detail-item"><div class="detail-label" contenteditable="true">氓聫聜猫聙聝</div><div class="detail-value" contenteditable="true">KM 94; J. 365</div></div>
     </div>
     <div class="obv-rev">
-      <div class="obv" contenteditable="true">æ­£é¢: Parteiadler clutching swastika in wreath - Deutsches Reich 1938 - 5 Reichsmark</div>
-      <div class="rev" contenteditable="true">èé¢: Hindenburg Field Marshal portrait (1847-1934)</div>
+      <div class="obv" contenteditable="true">忙颅拢茅聺垄: Parteiadler clutching swastika in wreath - Deutsches Reich 1938 - 5 Reichsmark</div>
+      <div class="rev" contenteditable="true">猫聝聦茅聺垄: Hindenburg Field Marshal portrait (1847-1934)</div>
     </div>
     <div class="description">
       <h4 contenteditable="true">HISTORICAL BACKGROUND</h4>
@@ -594,8 +594,8 @@ h1 { text-align: center; color: #d4af37; font-size: 2em; margin-bottom: 10px; }
     </div>
     <span class="tag" contenteditable="true">Germany</span><span class="tag" contenteditable="true">Nazi</span><span class="tag" contenteditable="true">Stuttgart</span><span class="tag" contenteditable="true">Reichsadler</span>
     <div class="bottom-row">
-      <div><div class="price-value" contenteditable="true">CNY137</div><div class="price-label" contenteditable="true">æäº¤ä»·</div></div>
-      <div class="prov-compact" contenteditable="true">è¯æ³èæ³</div>
+      <div><div class="price-value" contenteditable="true">CNY137</div><div class="price-label" contenteditable="true">忙聢聬盲潞陇盲禄路</div></div>
+      <div class="prov-compact" contenteditable="true">猫聣炉忙鲁聣猫聴聫忙鲁聣</div>
     </div>
   </div>
 </div>
@@ -606,7 +606,7 @@ h1 { text-align: center; color: #d4af37; font-size: 2em; margin-bottom: 10px; }
   <div class="coin-image">
     <span class="coin-number" contenteditable="true">GK-007</span>
     <span class="coin-grade" contenteditable="true">VF</span>
-    <img src="images/GK007_combined.jpg" alt="GK-007" data-path="images/GK007_combined.jpg" onerror="this.style.display='none'">
+    <img src="images/GK-007.jpg" alt="GK-007" data-path="images/GK-007.jpg" onerror="this.style.display='none'">
     <div class="placeholder" onclick="triggerUpload(this)" style="display:none">IMG</div>
     <div class="img-overlay">
       <button class="img-btn" onclick="triggerUpload(this)">Upload</button>
@@ -617,14 +617,14 @@ h1 { text-align: center; color: #d4af37; font-size: 2em; margin-bottom: 10px; }
     <h2 class="coin-title" contenteditable="true">Thrace Maroneia Tetradrachm</h2>
     <p class="coin-subtitle" contenteditable="true">GREECE - Thrace - Maroneia (ca. BC 189/8-49/5)</p>
     <div class="coin-detail">
-      <div class="detail-item"><div class="detail-label" contenteditable="true">å¹´ä»£</div><div class="detail-value" contenteditable="true">BC ca. 189/8-49/5</div></div>
-      <div class="detail-item"><div class="detail-label" contenteditable="true">é¢å¼</div><div class="detail-value" contenteditable="true">Tetradrachm åå¾·æåé©¬</div></div>
-      <div class="detail-item"><div class="detail-label" contenteditable="true">æè´¨</div><div class="detail-value" contenteditable="true">Silver é¶ - 32mm - 16.2g</div></div>
-      <div class="detail-item"><div class="detail-label" contenteditable="true">åè</div><div class="detail-value" contenteditable="true">-</div></div>
+      <div class="detail-item"><div class="detail-label" contenteditable="true">氓鹿麓盲禄拢</div><div class="detail-value" contenteditable="true">BC ca. 189/8-49/5</div></div>
+      <div class="detail-item"><div class="detail-label" contenteditable="true">茅聺垄氓聙录</div><div class="detail-value" contenteditable="true">Tetradrachm 氓聸聸氓戮路忙聥聣氓聟聥茅漏卢</div></div>
+      <div class="detail-item"><div class="detail-label" contenteditable="true">忙聺聬猫麓篓</div><div class="detail-value" contenteditable="true">Silver 茅聯露 - 32mm - 16.2g</div></div>
+      <div class="detail-item"><div class="detail-label" contenteditable="true">氓聫聜猫聙聝</div><div class="detail-value" contenteditable="true">-</div></div>
     </div>
     <div class="obv-rev">
-      <div class="obv" contenteditable="true">æ­£é¢: Young Dionysos laureate head r. wearing ivy wreath.</div>
-      <div class="rev" contenteditable="true">èé¢: Dionysos nude standing l. holding grapes - DIONYSOU SOPHRONOS MARONEITON - double emblema mark</div>
+      <div class="obv" contenteditable="true">忙颅拢茅聺垄: Young Dionysos laureate head r. wearing ivy wreath.</div>
+      <div class="rev" contenteditable="true">猫聝聦茅聺垄: Dionysos nude standing l. holding grapes - DIONYSOU SOPHRONOS MARONEITON - double emblema mark</div>
     </div>
     <div class="description">
       <h4 contenteditable="true">HISTORICAL BACKGROUND</h4>
@@ -632,8 +632,8 @@ h1 { text-align: center; color: #d4af37; font-size: 2em; margin-bottom: 10px; }
     </div>
     <span class="tag" contenteditable="true">Greece</span><span class="tag" contenteditable="true">Thrace</span><span class="tag" contenteditable="true">Maroneia</span><span class="tag" contenteditable="true">Dionysos</span>
     <div class="bottom-row">
-      <div><div class="price-value" contenteditable="true">CNY2588</div><div class="price-label" contenteditable="true">æäº¤ä»·</div></div>
-      <div class="prov-compact" contenteditable="true">å¤§ä¹é¾è¡æ (Xianyu) - 2024-02</div>
+      <div><div class="price-value" contenteditable="true">CNY2588</div><div class="price-label" contenteditable="true">忙聢聬盲潞陇盲禄路</div></div>
+      <div class="prov-compact" contenteditable="true">氓陇搂盲鹿聦茅戮聼猫隆聦忙聵聼 (Xianyu) - 2024-02</div>
     </div>
   </div>
 </div>

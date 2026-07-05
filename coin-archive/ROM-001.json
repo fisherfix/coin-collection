@@ -1,0 +1,31 @@
+{
+  "id": "ROM-001",
+  "category": "romaeg",
+  "grade": "GVF",
+  "title": "埃及·尼禄四德拉克马",
+  "subtitle": "EGYPT · Alexandria · Nero",
+  "image": "images/ROM-001.jpg",
+  "era": "AD 54-68",
+  "denomination": "Tetradrachm 四德拉克马",
+  "material": "BI 银合金 · 24mm · 11.70g",
+  "reference": "RPC I 5315",
+  "description": "亚历山大造币厂是罗马帝国内最特殊的货币发行地——奥古斯都征服托勒密埃及后，刻意保留其希腊化造币传统，以希腊铭文和神祇为主图，与拉丁传统形成鲜明对比。从提比略起，行省埃及币每位皇帝均有铸造，且每年更换纪年版式。此枚为尼禄第14年（L IΔ = RY 14 = AD 67/68），对应其希腊巡游期间。尼禄辐射冠头像左向，强调皇帝与太阳神的联系——尼禄晚年尤其致力建构「太阳神」身份。肩披 Aegis 原为雅典娜护胸甲，被罗马皇帝借用以象征神佑（divine protection）。背面天后赫拉（Hera）戴冠披巾头像右向，延续希腊化时代亚历山大对城市守护神的崇拜传统。",
+  "obverse": "正面: NEPΩ KΛAV KAIΣ ΣEΒ ΓEP AV · 尼禄辐射冠左向披Aegis · L IΔ",
+  "reverse": "背面: HPA APΓEIA · Hera戴冠披巾右向 · 六角星",
+  "tags": [
+    "罗马行省埃及",
+    "尼禄",
+    "亚历山大造币厂",
+    "BI银合金"
+  ],
+  "price": "€63",
+  "price_currency": "EUR",
+  "price_cny": 491,
+  "seller": "Biga Numismatics",
+  "auction": "Online Auction 38",
+  "lot": "",
+  "year": "2025",
+  "provenance_raw": "<strong>Biga Numismatics</strong> · Online Auction 38 · 2025",
+  "created_at": "2026-07-05T19:10:14",
+  "image_size": 701236
+}

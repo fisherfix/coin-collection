@@ -1,0 +1,32 @@
+{
+  "id": "ROM-003",
+  "category": "romanemp",
+  "grade": "GF",
+  "title": "安东尼·庇护 塞斯特提乌斯（LIBERTAS COS IIII）",
+  "subtitle": "ROMA · Antoninus Pius · AD 145-161",
+  "image": "images/ROM-003.jpg",
+  "era": "AD 145-161（TR P XVIII = AD 155/6）",
+  "denomination": "Sestertius 塞斯特提乌斯",
+  "material": "AE 铜合金 · 31mm · 22.40g",
+  "reference": "RIC III 929; Strack 1308",
+  "description": "安东尼·庇护（Antoninus Pius，138-161 AD）是罗马帝国\"五贤帝\"的第四位，以和平、不扩张、重法律著称。此币发行于其统治晚期（TR P XVIII = AD 155/6），距罗马大火已约 11 年（64 AD 尼禄时期），距哈德良长城建成约 20 年（约 142 AD）。 <b>LIBERTAS</b>（自由女神）是五贤帝时期反复出现的主题：自由女神站立，左手持自由帽（<b>pileus</b>），右手持\"vindicta\"（<b>liberty rod 自由权杖</b>）。这个组合源自罗马解放奴隶仪式（manumissio）：主人用权杖触奴隶头，宣布\"hunc hominem liberum esse volo\"（我愿此人自由），奴隶戴上自由帽。 五贤帝刻意铸造 LIBERTAS 主题，意在强调<b>元老院与皇帝共治</b>的\"共和表象\"——虽然实行帝制，但理论上\"罗马公民自由\"仍在。安东尼·庇护尤其重视此意象，因为其继位未经内战，强调\"合法继承\"与\"恢复自由\"是政治需要。 背面铭文 <b>LIBERTAS COS IIII</b> 中 COS IIII = 第四次执政官（约 AD 145），S-C 分别立于左右（Senatus Consulto = 元老院决议）。",
+  "obverse": "正面: ANTONINVS AVG PIVS P P TR P XVIII · 月桂冠头像右向",
+  "reverse": "背面: LIBERTAS COS IIII / S - C · 自由女神左站，持 pileus + vindicta",
+  "tags": [
+    "五贤帝",
+    "安东尼·庇护",
+    "LIBERTAS",
+    "S C",
+    "自由女神"
+  ],
+  "price": "€90",
+  "price_currency": "EUR",
+  "price_cny": 702,
+  "seller": "Numismatik Naumann",
+  "auction": "Auction 154",
+  "lot": "",
+  "year": "2025",
+  "provenance_raw": "<strong>Numismatik Naumann</strong> · Auction 154 · 2025",
+  "created_at": "2026-07-05T19:10:14",
+  "image_size": 1099067
+}

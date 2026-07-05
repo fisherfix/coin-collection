@@ -7,6 +7,20 @@ __pycache__/
 _*.py
 _*.js
 _*.log
+*.bak
+*.tmp
+
+# 归档目录
+_archive/
+
+# 基线指纹（每次会变，不入版本控制）
+.protect-baseline.json
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
 # 注意：保留 _ref_gr001.html 作为标准模板参考
 
 # 测试用文件

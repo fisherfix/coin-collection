@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>🏛️ 钱币收藏数据库</title>
+<title>Ã°ÂÂÂÃ¯Â¸Â Ã©ÂÂ±Ã¥Â¸ÂÃ¦ÂÂ¶Ã¨ÂÂÃ¦ÂÂ°Ã¦ÂÂ®Ã¥ÂºÂ</title>
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body { font-family: 'Segoe UI', 'PingFang SC', sans-serif; background: #1a1a2e; color: #eee; min-height: 100vh; padding: 20px 40px 60px; }
@@ -63,806 +63,582 @@ h1 { text-align: center; color: #d4af37; font-size: 2em; margin-bottom: 10px; }
 </head>
 <body>
 
-<h1 contenteditable="true">🏛️ 钱币收藏数据库</h1>
+<h1 contenteditable="true">Ã°ÂÂÂÃ¯Â¸Â Ã©ÂÂ±Ã¥Â¸ÂÃ¦ÂÂ¶Ã¨ÂÂÃ¦ÂÂ°Ã¦ÂÂ®Ã¥ÂºÂ</h1>
 <p class="subtitle" contenteditable="true">NumisMaster Collection Catalog</p>
 
 <div class="stats">
-  <div class="stat stat-count"><div class="stat-value">7</div><div class="stat-label">藏品总数（自动计算）</div></div>
-  <div class="stat stat-total"><div class="stat-value">€0</div><div class="stat-label">总估值（自动计算）</div></div>
-  <div class="stat stat-cats"><div class="stat-value">0</div><div class="stat-label">专题分类（自动计算）</div></div>
+  <div class="stat stat-count"><div class="stat-value">7</div><div class="stat-label">Ã¨ÂÂÃ¥ÂÂÃ¦ÂÂ»Ã¦ÂÂ°Ã¯Â¼ÂÃ¨ÂÂªÃ¥ÂÂ¨Ã¨Â®Â¡Ã§Â®ÂÃ¯Â¼Â</div></div>
+  <div class="stat stat-total"><div class="stat-value">Ã¢ÂÂ¬0</div><div class="stat-label">Ã¦ÂÂ»Ã¤Â¼Â°Ã¥ÂÂ¼Ã¯Â¼ÂÃ¨ÂÂªÃ¥ÂÂ¨Ã¨Â®Â¡Ã§Â®ÂÃ¯Â¼Â</div></div>
+  <div class="stat stat-cats"><div class="stat-value">0</div><div class="stat-label">Ã¤Â¸ÂÃ©Â¢ÂÃ¥ÂÂÃ§Â±Â»Ã¯Â¼ÂÃ¨ÂÂªÃ¥ÂÂ¨Ã¨Â®Â¡Ã§Â®ÂÃ¯Â¼Â</div></div>
   <div class="stat" id="saveIndicator" style="color:#d4af37;font-size:0.75em;margin-top:4px;"></div>
 </div>
 
 <div class="filters">
-  <button class="filter-btn active" onclick="filter('all')">全部</button>
-  <button class="filter-btn" onclick="filter('greek')">🇬🇷 古希腊</button>
-  <button class="filter-btn" onclick="filter('roman')">🏛️ 古罗马</button>
-  <button class="filter-btn" onclick="filter('romanemp')">👑 五贤帝</button>
-  <button class="filter-btn" onclick="filter('romaeg')">🇪🇬 行省埃及</button>
+  <button class="filter-btn active" onclick="filter('all')">Ã¥ÂÂ¨Ã©ÂÂ¨</button>
+  <button class="filter-btn" onclick="filter('greek')">Ã°ÂÂÂ¬Ã°ÂÂÂ· Ã¥ÂÂ¤Ã¥Â¸ÂÃ¨ÂÂ</button>
+  <button class="filter-btn" onclick="filter('roman')">Ã°ÂÂÂÃ¯Â¸Â Ã¥ÂÂ¤Ã§Â½ÂÃ©Â©Â¬</button>
+  <button class="filter-btn" onclick="filter('romanemp')">Ã°ÂÂÂ Ã¤ÂºÂÃ¨Â´Â¤Ã¥Â¸Â</button>
+  <button class="filter-btn" onclick="filter('romaeg')">Ã°ÂÂÂªÃ°ÂÂÂ¬ Ã¨Â¡ÂÃ§ÂÂÃ¥ÂÂÃ¥ÂÂ</button>
 </div>
 
 <div class="toolbar">
-  <button class="tool-btn" onclick="restoreLocal()">↩️ 恢复本地编辑</button>
-  <button class="tool-btn" onclick="saveToLocalFile()" style="border-color:#4c4;color:#4c4">💾 保存到文件</button>
-  <button class="tool-btn" onclick="exportCSV()">📋 导出CSV</button>
-  <button class="tool-btn github" onclick="openGithubPanel()">⚙️ GitHub 同步</button>
-  <button class="tool-btn github" onclick="syncToGithub()">🔄 同步到 GitHub</button>
-  <button class="tool-btn" onclick="resetLocal()" style="border-color:#c66;color:#c66">🗑️ 重置本地</button>
+  <button class="tool-btn" onclick="restoreLocal()">Ã¢ÂÂ©Ã¯Â¸Â Ã¦ÂÂ¢Ã¥Â¤ÂÃ¦ÂÂ¬Ã¥ÂÂ°Ã§Â¼ÂÃ¨Â¾Â</button>
+  <button class="tool-btn" onclick="saveToLocalFile()" style="border-color:#4c4;color:#4c4">Ã°ÂÂÂ¾ Ã¤Â¿ÂÃ¥Â­ÂÃ¥ÂÂ°Ã¦ÂÂÃ¤Â»Â¶</button>
+  <button class="tool-btn" onclick="exportCSV()">Ã°ÂÂÂ Ã¥Â¯Â¼Ã¥ÂÂºCSV</button>
+  <button class="tool-btn github" onclick="openGithubPanel()">Ã¢ÂÂÃ¯Â¸Â GitHub Ã¥ÂÂÃ¦Â­Â¥</button>
+  <button class="tool-btn github" onclick="syncToGithub()">Ã°ÂÂÂ Ã¥ÂÂÃ¦Â­Â¥Ã¥ÂÂ° GitHub</button>
+  <button class="tool-btn" onclick="resetLocal()" style="border-color:#c66;color:#c66">Ã°ÂÂÂÃ¯Â¸Â Ã©ÂÂÃ§Â½Â®Ã¦ÂÂ¬Ã¥ÂÂ°</button>
 </div>
 
 <div class="coin-grid" id="coinGrid">
 
 <!-- GR-001 -->
 <div class="coin-card" data-category="greek" draggable="true">
-  <div class="drag-handle">⠿ 拖拽排序</div>
+  <div class="drag-handle">Ã¢Â Â¿ Ã¦ÂÂÃ¦ÂÂ½Ã¦ÂÂÃ¥ÂºÂ</div>
   <div class="coin-image">
     <span class="coin-number" contenteditable="true">GR-001</span>
     <span class="coin-grade" contenteditable="true">VF</span>
-    <img src="images/GR-001.jpg" alt="锡拉库萨四德拉克马" data-path="images/GR-001.jpg" onerror="this.style.display='none'">
-    <div class="placeholder" onclick="triggerUpload(this)" style="display:none">🪙</div>
+    <img src="images/GR-001.jpg" alt="Ã©ÂÂ¡Ã¦ÂÂÃ¥ÂºÂÃ¨ÂÂ¨Ã¥ÂÂÃ¥Â¾Â·Ã¦ÂÂÃ¥ÂÂÃ©Â©Â¬" data-path="images/GR-001.jpg" onerror="this.style.display='none'">
+    <div class="placeholder" onclick="triggerUpload(this)" style="display:none">Ã°ÂÂªÂ</div>
     <div class="img-overlay">
-      <button class="img-btn" onclick="triggerUpload(this)">📷 上传图片</button>
-      <button class="img-btn" onclick="editImgPath(this)">🔗 改路径</button>
+      <button class="img-btn" onclick="triggerUpload(this)">Ã°ÂÂÂ· Ã¤Â¸ÂÃ¤Â¼Â Ã¥ÂÂ¾Ã§ÂÂ</button>
+      <button class="img-btn" onclick="editImgPath(this)">Ã°ÂÂÂ Ã¦ÂÂ¹Ã¨Â·Â¯Ã¥Â¾Â</button>
     </div>
   </div>
   <div class="coin-info">
-    <h2 class="coin-title" contenteditable="true">锡拉库萨·Deinomenid 僭主 四德拉克马</h2>
-    <p class="coin-subtitle" contenteditable="true">SICILY · Syracuse · Deinomenid Tyranny</p>
+    <h2 class="coin-title" contenteditable="true">Ã©ÂÂ¡Ã¦ÂÂÃ¥ÂºÂÃ¨ÂÂ¨ÃÂ·Deinomenid Ã¥ÂÂ­Ã¤Â¸Â» Ã¥ÂÂÃ¥Â¾Â·Ã¦ÂÂÃ¥ÂÂÃ©Â©Â¬</h2>
+    <p class="coin-subtitle" contenteditable="true">SICILY ÃÂ· Syracuse ÃÂ· Deinomenid Tyranny</p>
     <div class="coin-detail">
-      <div class="detail-item"><div class="detail-label" contenteditable="true">年代</div><div class="detail-value" contenteditable="true">BC 485-466</div></div>
-      <div class="detail-item"><div class="detail-label" contenteditable="true">面值</div><div class="detail-value" contenteditable="true">Tetradrachm 四德拉克马</div></div>
-      <div class="detail-item"><div class="detail-label" contenteditable="true">材质</div><div class="detail-value" contenteditable="true">银 · 24mm · 16.72g</div></div>
-      <div class="detail-item"><div class="detail-label" contenteditable="true">参考</div><div class="detail-value" contenteditable="true">Boehringer 115; HGC 2 1306</div></div>
+      <div class="detail-item"><div class="detail-label" contenteditable="true">Ã¥Â¹Â´Ã¤Â»Â£</div><div class="detail-value" contenteditable="true">BC 485-466</div></div>
+      <div class="detail-item"><div class="detail-label" contenteditable="true">Ã©ÂÂ¢Ã¥ÂÂ¼</div><div class="detail-value" contenteditable="true">Tetradrachm Ã¥ÂÂÃ¥Â¾Â·Ã¦ÂÂÃ¥ÂÂÃ©Â©Â¬</div></div>
+      <div class="detail-item"><div class="detail-label" contenteditable="true">Ã¦ÂÂÃ¨Â´Â¨</div><div class="detail-value" contenteditable="true">Ã©ÂÂ¶ ÃÂ· 24mm ÃÂ· 16.72g</div></div>
+      <div class="detail-item"><div class="detail-label" contenteditable="true">Ã¥ÂÂÃ¨ÂÂ</div><div class="detail-value" contenteditable="true">Boehringer 115; HGC 2 1306</div></div>
     </div>
     <div class="description">
-      <h4 contenteditable="true">📜 历史背景</h4>
-      <p contenteditable="true">Deinomenid 四兄弟（Gelon、Hieron、Thrasybulus、Polyzelus）于 BC 485 年建立僭主统治，Syracuse 由此跃升为西地中海最强希腊城邦。BC 480 年希梅拉战役（Himera）—— Gelon 联合 Akragas 城大败迦太基，古典作家希罗多德将其与同年的萨拉米斯海战并列为希腊人东西方战略的标志性胜利。四马战车（Quadriga）向右疾驰、Nike 飞降加冕，直接象征此类军事胜利与神圣赐福。背面 Arethusa 头像被四只海豚环绕——海豚是 Syracuse 延续数百年的城徽，寓意城市被海洋拥抱的地理与文化双重身份。此币属 Boehringer 115 标准版式，代表古典西西里艺术巅峰的前夜。</p>
+      <h4 contenteditable="true">Ã°ÂÂÂ Ã¥ÂÂÃ¥ÂÂ²Ã¨ÂÂÃ¦ÂÂ¯</h4>
+      <p contenteditable="true">Deinomenid Ã¥ÂÂÃ¥ÂÂÃ¥Â¼ÂÃ¯Â¼ÂGelonÃ£ÂÂHieronÃ£ÂÂThrasybulusÃ£ÂÂPolyzelusÃ¯Â¼ÂÃ¤ÂºÂ BC 485 Ã¥Â¹Â´Ã¥Â»ÂºÃ§Â«ÂÃ¥ÂÂ­Ã¤Â¸Â»Ã§Â»ÂÃ¦Â²Â»Ã¯Â¼ÂSyracuse Ã§ÂÂ±Ã¦Â­Â¤Ã¨Â·ÂÃ¥ÂÂÃ¤Â¸ÂºÃ¨Â¥Â¿Ã¥ÂÂ°Ã¤Â¸Â­Ã¦ÂµÂ·Ã¦ÂÂÃ¥Â¼ÂºÃ¥Â¸ÂÃ¨ÂÂÃ¥ÂÂÃ©ÂÂ¦Ã£ÂÂBC 480 Ã¥Â¹Â´Ã¥Â¸ÂÃ¦Â¢ÂÃ¦ÂÂÃ¦ÂÂÃ¥Â½Â¹Ã¯Â¼ÂHimeraÃ¯Â¼ÂÃ¢ÂÂÃ¢ÂÂ Gelon Ã¨ÂÂÃ¥ÂÂ Akragas Ã¥ÂÂÃ¥Â¤Â§Ã¨Â´Â¥Ã¨Â¿Â¦Ã¥Â¤ÂªÃ¥ÂÂºÃ¯Â¼ÂÃ¥ÂÂ¤Ã¥ÂÂ¸Ã¤Â½ÂÃ¥Â®Â¶Ã¥Â¸ÂÃ§Â½ÂÃ¥Â¤ÂÃ¥Â¾Â·Ã¥Â°ÂÃ¥ÂÂ¶Ã¤Â¸ÂÃ¥ÂÂÃ¥Â¹Â´Ã§ÂÂÃ¨ÂÂ¨Ã¦ÂÂÃ§Â±Â³Ã¦ÂÂ¯Ã¦ÂµÂ·Ã¦ÂÂÃ¥Â¹Â¶Ã¥ÂÂÃ¤Â¸ÂºÃ¥Â¸ÂÃ¨ÂÂÃ¤ÂºÂºÃ¤Â¸ÂÃ¨Â¥Â¿Ã¦ÂÂ¹Ã¦ÂÂÃ§ÂÂ¥Ã§ÂÂÃ¦Â ÂÃ¥Â¿ÂÃ¦ÂÂ§Ã¨ÂÂÃ¥ÂÂ©Ã£ÂÂÃ¥ÂÂÃ©Â©Â¬Ã¦ÂÂÃ¨Â½Â¦Ã¯Â¼ÂQuadrigaÃ¯Â¼ÂÃ¥ÂÂÃ¥ÂÂ³Ã§ÂÂ¾Ã©Â©Â°Ã£ÂÂNike Ã©Â£ÂÃ©ÂÂÃ¥ÂÂ Ã¥ÂÂÃ¯Â¼ÂÃ§ÂÂ´Ã¦ÂÂ¥Ã¨Â±Â¡Ã¥Â¾ÂÃ¦Â­Â¤Ã§Â±Â»Ã¥ÂÂÃ¤ÂºÂÃ¨ÂÂÃ¥ÂÂ©Ã¤Â¸ÂÃ§Â¥ÂÃ¥ÂÂ£Ã¨ÂµÂÃ§Â¦ÂÃ£ÂÂÃ¨ÂÂÃ©ÂÂ¢ Arethusa Ã¥Â¤Â´Ã¥ÂÂÃ¨Â¢Â«Ã¥ÂÂÃ¥ÂÂªÃ¦ÂµÂ·Ã¨Â±ÂÃ§ÂÂ¯Ã§Â»ÂÃ¢ÂÂÃ¢ÂÂÃ¦ÂµÂ·Ã¨Â±ÂÃ¦ÂÂ¯ Syracuse Ã¥Â»Â¶Ã§Â»Â­Ã¦ÂÂ°Ã§ÂÂ¾Ã¥Â¹Â´Ã§ÂÂÃ¥ÂÂÃ¥Â¾Â½Ã¯Â¼ÂÃ¥Â¯ÂÃ¦ÂÂÃ¥ÂÂÃ¥Â¸ÂÃ¨Â¢Â«Ã¦ÂµÂ·Ã¦Â´ÂÃ¦ÂÂ¥Ã¦ÂÂ±Ã§ÂÂÃ¥ÂÂ°Ã§ÂÂÃ¤Â¸ÂÃ¦ÂÂÃ¥ÂÂÃ¥ÂÂÃ©ÂÂÃ¨ÂºÂ«Ã¤Â»Â½Ã£ÂÂÃ¦Â­Â¤Ã¥Â¸ÂÃ¥Â±Â Boehringer 115 Ã¦Â ÂÃ¥ÂÂÃ§ÂÂÃ¥Â¼ÂÃ¯Â¼ÂÃ¤Â»Â£Ã¨Â¡Â¨Ã¥ÂÂ¤Ã¥ÂÂ¸Ã¨Â¥Â¿Ã¨Â¥Â¿Ã©ÂÂÃ¨ÂÂºÃ¦ÂÂ¯Ã¥Â·ÂÃ¥Â³Â°Ã§ÂÂÃ¥ÂÂÃ¥Â¤ÂÃ£ÂÂ</p>
     </div>
     <div class="obv-rev">
-      <div class="obv" contenteditable="true">正面: 四马战车+Nike飞降加冕</div>
-      <div class="rev" contenteditable="true">背面: ΣVRAKOΣION / Arethusa+四海豚</div>
+      <div class="obv" contenteditable="true">Ã¦Â­Â£Ã©ÂÂ¢: Ã¥ÂÂÃ©Â©Â¬Ã¦ÂÂÃ¨Â½Â¦+NikeÃ©Â£ÂÃ©ÂÂÃ¥ÂÂ Ã¥ÂÂ</div>
+      <div class="rev" contenteditable="true">Ã¨ÂÂÃ©ÂÂ¢: ÃÂ£VRAKOÃÂ£ION / Arethusa+Ã¥ÂÂÃ¦ÂµÂ·Ã¨Â±Â</div>
     </div>
-    <span class="tag" contenteditable="true">西西里</span><span class="tag" contenteditable="true">僭主时期</span><span class="tag" contenteditable="true">古典早期</span>
+    <span class="tag" contenteditable="true">Ã¨Â¥Â¿Ã¨Â¥Â¿Ã©ÂÂ</span><span class="tag" contenteditable="true">Ã¥ÂÂ­Ã¤Â¸Â»Ã¦ÂÂ¶Ã¦ÂÂ</span><span class="tag" contenteditable="true">Ã¥ÂÂ¤Ã¥ÂÂ¸Ã¦ÂÂ©Ã¦ÂÂ</span>
     <div class="bottom-row">
-      <div><div class="price-value" contenteditable="true">€1,308</div><div class="price-label" contenteditable="true">成交价</div></div>
-      <div class="prov-compact" contenteditable="true"><strong>Auctionaes AG</strong> · Auction 7 · Lot 80 · 1977<br>再递 <strong>Numismatik Naumann</strong> · 2025</div>
+      <div><div class="price-value" contenteditable="true">Ã¢ÂÂ¬1,308</div><div class="price-label" contenteditable="true">Ã¦ÂÂÃ¤ÂºÂ¤Ã¤Â»Â·</div></div>
+      <div class="prov-compact" contenteditable="true"><strong>Auctionaes AG</strong> ÃÂ· Auction 7 ÃÂ· Lot 80 ÃÂ· 1977<br>Ã¥ÂÂÃ©ÂÂ <strong>Numismatik Naumann</strong> ÃÂ· 2025</div>
     </div>
   </div>
 </div>
 
 <!-- ROM-001 -->
 <div class="coin-card" data-category="romaeg" draggable="true">
-  <div class="drag-handle">⠿ 拖拽排序</div>
+  <div class="drag-handle">Ã¢Â Â¿ Ã¦ÂÂÃ¦ÂÂ½Ã¦ÂÂÃ¥ÂºÂ</div>
   <div class="coin-image">
     <span class="coin-number" contenteditable="true">ROM-001</span>
     <span class="coin-grade" contenteditable="true">GVF</span>
-    <img src="images/ROM-001.jpg" alt="埃及·尼禄四德拉克马" data-path="images/ROM-001.jpg" onerror="this.style.display='none'">
-    <div class="placeholder" onclick="triggerUpload(this)" style="display:none">🪙</div>
+    <img src="images/ROM-001.jpg" alt="Ã¥ÂÂÃ¥ÂÂÃÂ·Ã¥Â°Â¼Ã§Â¦ÂÃ¥ÂÂÃ¥Â¾Â·Ã¦ÂÂÃ¥ÂÂÃ©Â©Â¬" data-path="images/ROM-001.jpg" onerror="this.style.display='none'">
+    <div class="placeholder" onclick="triggerUpload(this)" style="display:none">Ã°ÂÂªÂ</div>
     <div class="img-overlay">
-      <button class="img-btn" onclick="triggerUpload(this)">📷 上传图片</button>
-      <button class="img-btn" onclick="editImgPath(this)">🔗 改路径</button>
+      <button class="img-btn" onclick="triggerUpload(this)">Ã°ÂÂÂ· Ã¤Â¸ÂÃ¤Â¼Â Ã¥ÂÂ¾Ã§ÂÂ</button>
+      <button class="img-btn" onclick="editImgPath(this)">Ã°ÂÂÂ Ã¦ÂÂ¹Ã¨Â·Â¯Ã¥Â¾Â</button>
     </div>
   </div>
   <div class="coin-info">
-    <h2 class="coin-title" contenteditable="true">埃及·尼禄四德拉克马</h2>
-    <p class="coin-subtitle" contenteditable="true">EGYPT · Alexandria · Nero</p>
+    <h2 class="coin-title" contenteditable="true">Ã¥ÂÂÃ¥ÂÂÃÂ·Ã¥Â°Â¼Ã§Â¦ÂÃ¥ÂÂÃ¥Â¾Â·Ã¦ÂÂÃ¥ÂÂÃ©Â©Â¬</h2>
+    <p class="coin-subtitle" contenteditable="true">EGYPT ÃÂ· Alexandria ÃÂ· Nero</p>
     <div class="coin-detail">
-      <div class="detail-item"><div class="detail-label" contenteditable="true">年代</div><div class="detail-value" contenteditable="true">AD 54-68</div></div>
-      <div class="detail-item"><div class="detail-label" contenteditable="true">面值</div><div class="detail-value" contenteditable="true">Tetradrachm 四德拉克马</div></div>
-      <div class="detail-item"><div class="detail-label" contenteditable="true">材质</div><div class="detail-value" contenteditable="true">BI 银合金 · 24mm · 11.70g</div></div>
-      <div class="detail-item"><div class="detail-label" contenteditable="true">参考</div><div class="detail-value" contenteditable="true">RPC I 5315</div></div>
+      <div class="detail-item"><div class="detail-label" contenteditable="true">Ã¥Â¹Â´Ã¤Â»Â£</div><div class="detail-value" contenteditable="true">AD 54-68</div></div>
+      <div class="detail-item"><div class="detail-label" contenteditable="true">Ã©ÂÂ¢Ã¥ÂÂ¼</div><div class="detail-value" contenteditable="true">Tetradrachm Ã¥ÂÂÃ¥Â¾Â·Ã¦ÂÂÃ¥ÂÂÃ©Â©Â¬</div></div>
+      <div class="detail-item"><div class="detail-label" contenteditable="true">Ã¦ÂÂÃ¨Â´Â¨</div><div class="detail-value" contenteditable="true">BI Ã©ÂÂ¶Ã¥ÂÂÃ©ÂÂ ÃÂ· 24mm ÃÂ· 11.70g</div></div>
+      <div class="detail-item"><div class="detail-label" contenteditable="true">Ã¥ÂÂÃ¨ÂÂ</div><div class="detail-value" contenteditable="true">RPC I 5315</div></div>
     </div>
     <div class="description">
-      <h4 contenteditable="true">📜 历史背景</h4>
-      <p contenteditable="true">亚历山大造币厂是罗马帝国内最特殊的货币发行地——奥古斯都征服托勒密埃及后，刻意保留其希腊化造币传统，以希腊铭文和神祇为主图，与拉丁传统形成鲜明对比。从提比略起，行省埃及币每位皇帝均有铸造，且每年更换纪年版式。此枚为尼禄第14年（L IΔ = RY 14 = AD 67/68），对应其希腊巡游期间。尼禄辐射冠头像左向，强调皇帝与太阳神的联系——尼禄晚年尤其致力建构「太阳神」身份。肩披 Aegis 原为雅典娜护胸甲，被罗马皇帝借用以象征神佑（divine protection）。背面天后赫拉（Hera）戴冠披巾头像右向，延续希腊化时代亚历山大对城市守护神的崇拜传统。</p>
+      <h4 contenteditable="true">Ã°ÂÂÂ Ã¥ÂÂÃ¥ÂÂ²Ã¨ÂÂÃ¦ÂÂ¯</h4>
+      <p contenteditable="true">Ã¤ÂºÂÃ¥ÂÂÃ¥Â±Â±Ã¥Â¤Â§Ã©ÂÂ Ã¥Â¸ÂÃ¥ÂÂÃ¦ÂÂ¯Ã§Â½ÂÃ©Â©Â¬Ã¥Â¸ÂÃ¥ÂÂ½Ã¥ÂÂÃ¦ÂÂÃ§ÂÂ¹Ã¦Â®ÂÃ§ÂÂÃ¨Â´Â§Ã¥Â¸ÂÃ¥ÂÂÃ¨Â¡ÂÃ¥ÂÂ°Ã¢ÂÂÃ¢ÂÂÃ¥Â¥Â¥Ã¥ÂÂ¤Ã¦ÂÂ¯Ã©ÂÂ½Ã¥Â¾ÂÃ¦ÂÂÃ¦ÂÂÃ¥ÂÂÃ¥Â¯ÂÃ¥ÂÂÃ¥ÂÂÃ¥ÂÂÃ¯Â¼ÂÃ¥ÂÂ»Ã¦ÂÂÃ¤Â¿ÂÃ§ÂÂÃ¥ÂÂ¶Ã¥Â¸ÂÃ¨ÂÂÃ¥ÂÂÃ©ÂÂ Ã¥Â¸ÂÃ¤Â¼Â Ã§Â»ÂÃ¯Â¼ÂÃ¤Â»Â¥Ã¥Â¸ÂÃ¨ÂÂÃ©ÂÂ­Ã¦ÂÂÃ¥ÂÂÃ§Â¥ÂÃ§Â¥ÂÃ¤Â¸ÂºÃ¤Â¸Â»Ã¥ÂÂ¾Ã¯Â¼ÂÃ¤Â¸ÂÃ¦ÂÂÃ¤Â¸ÂÃ¤Â¼Â Ã§Â»ÂÃ¥Â½Â¢Ã¦ÂÂÃ©Â²ÂÃ¦ÂÂÃ¥Â¯Â¹Ã¦Â¯ÂÃ£ÂÂÃ¤Â»ÂÃ¦ÂÂÃ¦Â¯ÂÃ§ÂÂ¥Ã¨ÂµÂ·Ã¯Â¼ÂÃ¨Â¡ÂÃ§ÂÂÃ¥ÂÂÃ¥ÂÂÃ¥Â¸ÂÃ¦Â¯ÂÃ¤Â½ÂÃ§ÂÂÃ¥Â¸ÂÃ¥ÂÂÃ¦ÂÂÃ©ÂÂ¸Ã©ÂÂ Ã¯Â¼ÂÃ¤Â¸ÂÃ¦Â¯ÂÃ¥Â¹Â´Ã¦ÂÂ´Ã¦ÂÂ¢Ã§ÂºÂªÃ¥Â¹Â´Ã§ÂÂÃ¥Â¼ÂÃ£ÂÂÃ¦Â­Â¤Ã¦ÂÂÃ¤Â¸ÂºÃ¥Â°Â¼Ã§Â¦ÂÃ§Â¬Â¬14Ã¥Â¹Â´Ã¯Â¼ÂL IÃÂ = RY 14 = AD 67/68Ã¯Â¼ÂÃ¯Â¼ÂÃ¥Â¯Â¹Ã¥ÂºÂÃ¥ÂÂ¶Ã¥Â¸ÂÃ¨ÂÂÃ¥Â·Â¡Ã¦Â¸Â¸Ã¦ÂÂÃ©ÂÂ´Ã£ÂÂÃ¥Â°Â¼Ã§Â¦ÂÃ¨Â¾ÂÃ¥Â°ÂÃ¥ÂÂ Ã¥Â¤Â´Ã¥ÂÂÃ¥Â·Â¦Ã¥ÂÂÃ¯Â¼ÂÃ¥Â¼ÂºÃ¨Â°ÂÃ§ÂÂÃ¥Â¸ÂÃ¤Â¸ÂÃ¥Â¤ÂªÃ©ÂÂ³Ã§Â¥ÂÃ§ÂÂÃ¨ÂÂÃ§Â³Â»Ã¢ÂÂÃ¢ÂÂÃ¥Â°Â¼Ã§Â¦ÂÃ¦ÂÂÃ¥Â¹Â´Ã¥Â°Â¤Ã¥ÂÂ¶Ã¨ÂÂ´Ã¥ÂÂÃ¥Â»ÂºÃ¦ÂÂÃ£ÂÂÃ¥Â¤ÂªÃ©ÂÂ³Ã§Â¥ÂÃ£ÂÂÃ¨ÂºÂ«Ã¤Â»Â½Ã£ÂÂÃ¨ÂÂ©Ã¦ÂÂ« Aegis Ã¥ÂÂÃ¤Â¸ÂºÃ©ÂÂÃ¥ÂÂ¸Ã¥Â¨ÂÃ¦ÂÂ¤Ã¨ÂÂ¸Ã§ÂÂ²Ã¯Â¼ÂÃ¨Â¢Â«Ã§Â½ÂÃ©Â©Â¬Ã§ÂÂÃ¥Â¸ÂÃ¥ÂÂÃ§ÂÂ¨Ã¤Â»Â¥Ã¨Â±Â¡Ã¥Â¾ÂÃ§Â¥ÂÃ¤Â½ÂÃ¯Â¼Âdivine protectionÃ¯Â¼ÂÃ£ÂÂÃ¨ÂÂÃ©ÂÂ¢Ã¥Â¤Â©Ã¥ÂÂÃ¨ÂµÂ«Ã¦ÂÂÃ¯Â¼ÂHeraÃ¯Â¼ÂÃ¦ÂÂ´Ã¥ÂÂ Ã¦ÂÂ«Ã¥Â·Â¾Ã¥Â¤Â´Ã¥ÂÂÃ¥ÂÂ³Ã¥ÂÂÃ¯Â¼ÂÃ¥Â»Â¶Ã§Â»Â­Ã¥Â¸ÂÃ¨ÂÂÃ¥ÂÂÃ¦ÂÂ¶Ã¤Â»Â£Ã¤ÂºÂÃ¥ÂÂÃ¥Â±Â±Ã¥Â¤Â§Ã¥Â¯Â¹Ã¥ÂÂÃ¥Â¸ÂÃ¥Â®ÂÃ¦ÂÂ¤Ã§Â¥ÂÃ§ÂÂÃ¥Â´ÂÃ¦ÂÂÃ¤Â¼Â Ã§Â»ÂÃ£ÂÂ</p>
     </div>
     <div class="obv-rev">
-      <div class="obv" contenteditable="true">正面: NEPΩ KΛAV KAIΣ ΣEΒ ΓEP AV · 尼禄辐射冠左向披Aegis · L IΔ</div>
-      <div class="rev" contenteditable="true">背面: HPA APΓEIA · Hera戴冠披巾右向 · 六角星</div>
+      <div class="obv" contenteditable="true">Ã¦Â­Â£Ã©ÂÂ¢: NEPÃÂ© KÃÂAV KAIÃÂ£ ÃÂ£EÃÂ ÃÂEP AV ÃÂ· Ã¥Â°Â¼Ã§Â¦ÂÃ¨Â¾ÂÃ¥Â°ÂÃ¥ÂÂ Ã¥Â·Â¦Ã¥ÂÂÃ¦ÂÂ«Aegis ÃÂ· L IÃÂ</div>
+      <div class="rev" contenteditable="true">Ã¨ÂÂÃ©ÂÂ¢: HPA APÃÂEIA ÃÂ· HeraÃ¦ÂÂ´Ã¥ÂÂ Ã¦ÂÂ«Ã¥Â·Â¾Ã¥ÂÂ³Ã¥ÂÂ ÃÂ· Ã¥ÂÂ­Ã¨Â§ÂÃ¦ÂÂ</div>
     </div>
-    <span class="tag" contenteditable="true">罗马行省埃及</span><span class="tag" contenteditable="true">尼禄</span><span class="tag" contenteditable="true">亚历山大造币厂</span><span class="tag" contenteditable="true">BI银合金</span>
+    <span class="tag" contenteditable="true">Ã§Â½ÂÃ©Â©Â¬Ã¨Â¡ÂÃ§ÂÂÃ¥ÂÂÃ¥ÂÂ</span><span class="tag" contenteditable="true">Ã¥Â°Â¼Ã§Â¦Â</span><span class="tag" contenteditable="true">Ã¤ÂºÂÃ¥ÂÂÃ¥Â±Â±Ã¥Â¤Â§Ã©ÂÂ Ã¥Â¸ÂÃ¥ÂÂ</span><span class="tag" contenteditable="true">BIÃ©ÂÂ¶Ã¥ÂÂÃ©ÂÂ</span>
     <div class="bottom-row">
-      <div><div class="price-value" contenteditable="true">€63</div><div class="price-label" contenteditable="true">成交价</div></div>
-      <div class="prov-compact" contenteditable="true"><strong>Biga Numismatics</strong> · Online Auction 38 · 2025</div>
+      <div><div class="price-value" contenteditable="true">Ã¢ÂÂ¬63</div><div class="price-label" contenteditable="true">Ã¦ÂÂÃ¤ÂºÂ¤Ã¤Â»Â·</div></div>
+      <div class="prov-compact" contenteditable="true"><strong>Biga Numismatics</strong> ÃÂ· Online Auction 38 ÃÂ· 2025</div>
     </div>
   </div>
 </div>
 
 <!-- GK-002 -->
 <div class="coin-card" data-category="greek" draggable="true">
-  <div class="drag-handle">⠿ 拖拽排序</div>
+  <div class="drag-handle">Ã¢Â Â¿ Ã¦ÂÂÃ¦ÂÂ½Ã¦ÂÂÃ¥ÂºÂ</div>
   <div class="coin-image">
     <span class="coin-number" contenteditable="true">GK-002</span>
     <span class="coin-grade" contenteditable="true">F</span>
-    <img src="images/GK-002.jpg" alt="本都·阿米索斯铜币" data-path="images/GK-002.jpg" onerror="this.style.display='none'">
-    <div class="placeholder" onclick="triggerUpload(this)" style="display:none">🪙</div>
+    <img src="images/GK-002.jpg" alt="Ã¦ÂÂ¬Ã©ÂÂ½ÃÂ·Ã©ÂÂ¿Ã§Â±Â³Ã§Â´Â¢Ã¦ÂÂ¯Ã©ÂÂÃ¥Â¸Â" data-path="images/GK-002.jpg" onerror="this.style.display='none'">
+    <div class="placeholder" onclick="triggerUpload(this)" style="display:none">Ã°ÂÂªÂ</div>
     <div class="img-overlay">
-      <button class="img-btn" onclick="triggerUpload(this)">📷 上传图片</button>
-      <button class="img-btn" onclick="editImgPath(this)">🔗 改路径</button>
+      <button class="img-btn" onclick="triggerUpload(this)">Ã°ÂÂÂ· Ã¤Â¸ÂÃ¤Â¼Â Ã¥ÂÂ¾Ã§ÂÂ</button>
+      <button class="img-btn" onclick="editImgPath(this)">Ã°ÂÂÂ Ã¦ÂÂ¹Ã¨Â·Â¯Ã¥Â¾Â</button>
     </div>
   </div>
   <div class="coin-info">
-    <h2 class="coin-title" contenteditable="true">本都·阿米索斯 珀尔修斯 / 飞马铜币</h2>
-    <p class="coin-subtitle" contenteditable="true">PONTUS · Amisos · Mithradates VI Eupator</p>
+    <h2 class="coin-title" contenteditable="true">Ã¦ÂÂ¬Ã©ÂÂ½ÃÂ·Ã©ÂÂ¿Ã§Â±Â³Ã§Â´Â¢Ã¦ÂÂ¯ Ã§ÂÂÃ¥Â°ÂÃ¤Â¿Â®Ã¦ÂÂ¯ / Ã©Â£ÂÃ©Â©Â¬Ã©ÂÂÃ¥Â¸Â</h2>
+    <p class="coin-subtitle" contenteditable="true">PONTUS ÃÂ· Amisos ÃÂ· Mithradates VI Eupator</p>
     <div class="coin-detail">
-      <div class="detail-item"><div class="detail-label" contenteditable="true">年代</div><div class="detail-value" contenteditable="true">c. BC 85-65</div></div>
-      <div class="detail-item"><div class="detail-label" contenteditable="true">面值</div><div class="detail-value" contenteditable="true">AE 青铜</div></div>
-      <div class="detail-item"><div class="detail-label" contenteditable="true">材质</div><div class="detail-value" contenteditable="true">AE 青铜 · 22mm · 11.38g · 轴 12h</div></div>
-      <div class="detail-item"><div class="detail-label" contenteditable="true">参考</div><div class="detail-value" contenteditable="true">Waddington RG 32; cf. SNG BM Black Sea 1212-1217</div></div>
+      <div class="detail-item"><div class="detail-label" contenteditable="true">Ã¥Â¹Â´Ã¤Â»Â£</div><div class="detail-value" contenteditable="true">c. BC 85-65</div></div>
+      <div class="detail-item"><div class="detail-label" contenteditable="true">Ã©ÂÂ¢Ã¥ÂÂ¼</div><div class="detail-value" contenteditable="true">AE Ã©ÂÂÃ©ÂÂ</div></div>
+      <div class="detail-item"><div class="detail-label" contenteditable="true">Ã¦ÂÂÃ¨Â´Â¨</div><div class="detail-value" contenteditable="true">AE Ã©ÂÂÃ©ÂÂ ÃÂ· 22mm ÃÂ· 11.38g ÃÂ· Ã¨Â½Â´ 12h</div></div>
+      <div class="detail-item"><div class="detail-label" contenteditable="true">Ã¥ÂÂÃ¨ÂÂ</div><div class="detail-value" contenteditable="true">Waddington RG 32; cf. SNG BM Black Sea 1212-1217</div></div>
     </div>
     <div class="description">
-      <h4 contenteditable="true">📜 历史背景</h4>
-      <p contenteditable="true">本都（Pontus）是黑海南岸的希腊化王国，以阿米索斯（Amisos，今土耳其Samsun）为重要造币与商业中心。米特拉达梯六世（<b>Mithradates VI Eupator</b>，约 120-63 BC）是本都最伟大的国王，史称"米特拉达梯大帝"——先后三次发动对罗马的战争（前 88-前 63 年"米特拉达梯战争"），一度征服小亚细亚、希腊和爱琴海诸岛，几乎推翻罗马在东方的霸权。最终被庞培击败，逃往克里米亚后自杀。<br><br>此币的<b>珀尔修斯戴弗里吉亚帽（Pileus / Phrygian cap）</b>形象有强烈的政治神话含义：米特拉达梯王室自诩为希腊英雄珀尔修斯（斩杀美杜莎、救赎安德洛墨达）后裔——珀尔修斯之子<b>Perses</b>被认为波斯与本都王族的始祖。弗里吉亚帽在希腊罗马语境中象征<b>自由</b>，而帽上的<b>狮鹫装饰（griffin-crest）</b>则呼应波斯/东方传统，体现米特拉达梯横跨东西方的统治合法性。<br><br>背面的<b>飞马 Pegasus</b>是阿米索斯建城神话的核心元素（飞马用蹄踢出 Hippene 泉），也是该城数百年来的固定币面主题。这枚铜币是希腊化王国政治宣传与地方传统结合的典型样本。</p>
+      <h4 contenteditable="true">Ã°ÂÂÂ Ã¥ÂÂÃ¥ÂÂ²Ã¨ÂÂÃ¦ÂÂ¯</h4>
+      <p contenteditable="true">Ã¦ÂÂ¬Ã©ÂÂ½Ã¯Â¼ÂPontusÃ¯Â¼ÂÃ¦ÂÂ¯Ã©Â»ÂÃ¦ÂµÂ·Ã¥ÂÂÃ¥Â²Â¸Ã§ÂÂÃ¥Â¸ÂÃ¨ÂÂÃ¥ÂÂÃ§ÂÂÃ¥ÂÂ½Ã¯Â¼ÂÃ¤Â»Â¥Ã©ÂÂ¿Ã§Â±Â³Ã§Â´Â¢Ã¦ÂÂ¯Ã¯Â¼ÂAmisosÃ¯Â¼ÂÃ¤Â»ÂÃ¥ÂÂÃ¨ÂÂ³Ã¥ÂÂ¶SamsunÃ¯Â¼ÂÃ¤Â¸ÂºÃ©ÂÂÃ¨Â¦ÂÃ©ÂÂ Ã¥Â¸ÂÃ¤Â¸ÂÃ¥ÂÂÃ¤Â¸ÂÃ¤Â¸Â­Ã¥Â¿ÂÃ£ÂÂÃ§Â±Â³Ã§ÂÂ¹Ã¦ÂÂÃ¨Â¾Â¾Ã¦Â¢Â¯Ã¥ÂÂ­Ã¤Â¸ÂÃ¯Â¼Â<b>Mithradates VI Eupator</b>Ã¯Â¼ÂÃ§ÂºÂ¦ 120-63 BCÃ¯Â¼ÂÃ¦ÂÂ¯Ã¦ÂÂ¬Ã©ÂÂ½Ã¦ÂÂÃ¤Â¼ÂÃ¥Â¤Â§Ã§ÂÂÃ¥ÂÂ½Ã§ÂÂÃ¯Â¼ÂÃ¥ÂÂ²Ã§Â§Â°"Ã§Â±Â³Ã§ÂÂ¹Ã¦ÂÂÃ¨Â¾Â¾Ã¦Â¢Â¯Ã¥Â¤Â§Ã¥Â¸Â"Ã¢ÂÂÃ¢ÂÂÃ¥ÂÂÃ¥ÂÂÃ¤Â¸ÂÃ¦Â¬Â¡Ã¥ÂÂÃ¥ÂÂ¨Ã¥Â¯Â¹Ã§Â½ÂÃ©Â©Â¬Ã§ÂÂÃ¦ÂÂÃ¤ÂºÂÃ¯Â¼ÂÃ¥ÂÂ 88-Ã¥ÂÂ 63 Ã¥Â¹Â´"Ã§Â±Â³Ã§ÂÂ¹Ã¦ÂÂÃ¨Â¾Â¾Ã¦Â¢Â¯Ã¦ÂÂÃ¤ÂºÂ"Ã¯Â¼ÂÃ¯Â¼ÂÃ¤Â¸ÂÃ¥ÂºÂ¦Ã¥Â¾ÂÃ¦ÂÂÃ¥Â°ÂÃ¤ÂºÂÃ§Â»ÂÃ¤ÂºÂÃ£ÂÂÃ¥Â¸ÂÃ¨ÂÂÃ¥ÂÂÃ§ÂÂ±Ã§ÂÂ´Ã¦ÂµÂ·Ã¨Â¯Â¸Ã¥Â²ÂÃ¯Â¼ÂÃ¥ÂÂ Ã¤Â¹ÂÃ¦ÂÂ¨Ã§Â¿Â»Ã§Â½ÂÃ©Â©Â¬Ã¥ÂÂ¨Ã¤Â¸ÂÃ¦ÂÂ¹Ã§ÂÂÃ©ÂÂ¸Ã¦ÂÂÃ£ÂÂÃ¦ÂÂÃ§Â»ÂÃ¨Â¢Â«Ã¥ÂºÂÃ¥ÂÂ¹Ã¥ÂÂ»Ã¨Â´Â¥Ã¯Â¼ÂÃ©ÂÂÃ¥Â¾ÂÃ¥ÂÂÃ©ÂÂÃ§Â±Â³Ã¤ÂºÂÃ¥ÂÂÃ¨ÂÂªÃ¦ÂÂÃ£ÂÂ<br><br>Ã¦Â­Â¤Ã¥Â¸ÂÃ§ÂÂ<b>Ã§ÂÂÃ¥Â°ÂÃ¤Â¿Â®Ã¦ÂÂ¯Ã¦ÂÂ´Ã¥Â¼ÂÃ©ÂÂÃ¥ÂÂÃ¤ÂºÂÃ¥Â¸Â½Ã¯Â¼ÂPileus / Phrygian capÃ¯Â¼Â</b>Ã¥Â½Â¢Ã¨Â±Â¡Ã¦ÂÂÃ¥Â¼ÂºÃ§ÂÂÃ§ÂÂÃ¦ÂÂ¿Ã¦Â²Â»Ã§Â¥ÂÃ¨Â¯ÂÃ¥ÂÂ«Ã¤Â¹ÂÃ¯Â¼ÂÃ§Â±Â³Ã§ÂÂ¹Ã¦ÂÂÃ¨Â¾Â¾Ã¦Â¢Â¯Ã§ÂÂÃ¥Â®Â¤Ã¨ÂÂªÃ¨Â¯Â©Ã¤Â¸ÂºÃ¥Â¸ÂÃ¨ÂÂÃ¨ÂÂ±Ã©ÂÂÃ§ÂÂÃ¥Â°ÂÃ¤Â¿Â®Ã¦ÂÂ¯Ã¯Â¼ÂÃ¦ÂÂ©Ã¦ÂÂÃ§Â¾ÂÃ¦ÂÂÃ¨ÂÂÃ£ÂÂÃ¦ÂÂÃ¨ÂµÂÃ¥Â®ÂÃ¥Â¾Â·Ã¦Â´ÂÃ¥Â¢Â¨Ã¨Â¾Â¾Ã¯Â¼ÂÃ¥ÂÂÃ¨Â£ÂÃ¢ÂÂÃ¢ÂÂÃ§ÂÂÃ¥Â°ÂÃ¤Â¿Â®Ã¦ÂÂ¯Ã¤Â¹ÂÃ¥Â­Â<b>Perses</b>Ã¨Â¢Â«Ã¨Â®Â¤Ã¤Â¸ÂºÃ¦Â³Â¢Ã¦ÂÂ¯Ã¤Â¸ÂÃ¦ÂÂ¬Ã©ÂÂ½Ã§ÂÂÃ¦ÂÂÃ§ÂÂÃ¥Â§ÂÃ§Â¥ÂÃ£ÂÂÃ¥Â¼ÂÃ©ÂÂÃ¥ÂÂÃ¤ÂºÂÃ¥Â¸Â½Ã¥ÂÂ¨Ã¥Â¸ÂÃ¨ÂÂÃ§Â½ÂÃ©Â©Â¬Ã¨Â¯Â­Ã¥Â¢ÂÃ¤Â¸Â­Ã¨Â±Â¡Ã¥Â¾Â<b>Ã¨ÂÂªÃ§ÂÂ±</b>Ã¯Â¼ÂÃ¨ÂÂÃ¥Â¸Â½Ã¤Â¸ÂÃ§ÂÂ<b>Ã§ÂÂ®Ã©Â¹Â«Ã¨Â£ÂÃ©Â¥Â°Ã¯Â¼Âgriffin-crestÃ¯Â¼Â</b>Ã¥ÂÂÃ¥ÂÂ¼Ã¥ÂºÂÃ¦Â³Â¢Ã¦ÂÂ¯/Ã¤Â¸ÂÃ¦ÂÂ¹Ã¤Â¼Â Ã§Â»ÂÃ¯Â¼ÂÃ¤Â½ÂÃ§ÂÂ°Ã§Â±Â³Ã§ÂÂ¹Ã¦ÂÂÃ¨Â¾Â¾Ã¦Â¢Â¯Ã¦Â¨ÂªÃ¨Â·Â¨Ã¤Â¸ÂÃ¨Â¥Â¿Ã¦ÂÂ¹Ã§ÂÂÃ§Â»ÂÃ¦Â²Â»Ã¥ÂÂÃ¦Â³ÂÃ¦ÂÂ§Ã£ÂÂ<br><br>Ã¨ÂÂÃ©ÂÂ¢Ã§ÂÂ<b>Ã©Â£ÂÃ©Â©Â¬ Pegasus</b>Ã¦ÂÂ¯Ã©ÂÂ¿Ã§Â±Â³Ã§Â´Â¢Ã¦ÂÂ¯Ã¥Â»ÂºÃ¥ÂÂÃ§Â¥ÂÃ¨Â¯ÂÃ§ÂÂÃ¦Â Â¸Ã¥Â¿ÂÃ¥ÂÂÃ§Â´Â Ã¯Â¼ÂÃ©Â£ÂÃ©Â©Â¬Ã§ÂÂ¨Ã¨Â¹ÂÃ¨Â¸Â¢Ã¥ÂÂº Hippene Ã¦Â³ÂÃ¯Â¼ÂÃ¯Â¼ÂÃ¤Â¹ÂÃ¦ÂÂ¯Ã¨Â¯Â¥Ã¥ÂÂÃ¦ÂÂ°Ã§ÂÂ¾Ã¥Â¹Â´Ã¦ÂÂ¥Ã§ÂÂÃ¥ÂÂºÃ¥Â®ÂÃ¥Â¸ÂÃ©ÂÂ¢Ã¤Â¸Â»Ã©Â¢ÂÃ£ÂÂÃ¨Â¿ÂÃ¦ÂÂÃ©ÂÂÃ¥Â¸ÂÃ¦ÂÂ¯Ã¥Â¸ÂÃ¨ÂÂÃ¥ÂÂÃ§ÂÂÃ¥ÂÂ½Ã¦ÂÂ¿Ã¦Â²Â»Ã¥Â®Â£Ã¤Â¼Â Ã¤Â¸ÂÃ¥ÂÂ°Ã¦ÂÂ¹Ã¤Â¼Â Ã§Â»ÂÃ§Â»ÂÃ¥ÂÂÃ§ÂÂÃ¥ÂÂ¸Ã¥ÂÂÃ¦Â Â·Ã¦ÂÂ¬Ã£ÂÂ</p>
     </div>
     <div class="obv-rev">
-      <div class="obv" contenteditable="true">正面: 珀尔修斯右向头像，戴弗里吉亚帽（狮鹫装饰）；Aegis 护符</div>
-      <div class="rev" contenteditable="true">背面: ΑΜΙΣΟΥ · 飞马 Pegasus 左向饮水；exergue 内徽记</div>
+      <div class="obv" contenteditable="true">Ã¦Â­Â£Ã©ÂÂ¢: Ã§ÂÂÃ¥Â°ÂÃ¤Â¿Â®Ã¦ÂÂ¯Ã¥ÂÂ³Ã¥ÂÂÃ¥Â¤Â´Ã¥ÂÂÃ¯Â¼ÂÃ¦ÂÂ´Ã¥Â¼ÂÃ©ÂÂÃ¥ÂÂÃ¤ÂºÂÃ¥Â¸Â½Ã¯Â¼ÂÃ§ÂÂ®Ã©Â¹Â«Ã¨Â£ÂÃ©Â¥Â°Ã¯Â¼ÂÃ¯Â¼ÂAegis Ã¦ÂÂ¤Ã§Â¬Â¦</div>
+      <div class="rev" contenteditable="true">Ã¨ÂÂÃ©ÂÂ¢: ÃÂÃÂÃÂÃÂ£ÃÂÃÂ¥ ÃÂ· Ã©Â£ÂÃ©Â©Â¬ Pegasus Ã¥Â·Â¦Ã¥ÂÂÃ©Â¥Â®Ã¦Â°Â´Ã¯Â¼Âexergue Ã¥ÂÂÃ¥Â¾Â½Ã¨Â®Â°</div>
     </div>
-    <span class="tag" contenteditable="true">本都</span><span class="tag" contenteditable="true">阿米索斯</span><span class="tag" contenteditable="true">米特拉达梯六世</span><span class="tag" contenteditable="true">珀尔修斯神话</span><span class="tag" contenteditable="true">希腊化王国</span>
+    <span class="tag" contenteditable="true">Ã¦ÂÂ¬Ã©ÂÂ½</span><span class="tag" contenteditable="true">Ã©ÂÂ¿Ã§Â±Â³Ã§Â´Â¢Ã¦ÂÂ¯</span><span class="tag" contenteditable="true">Ã§Â±Â³Ã§ÂÂ¹Ã¦ÂÂÃ¨Â¾Â¾Ã¦Â¢Â¯Ã¥ÂÂ­Ã¤Â¸Â</span><span class="tag" contenteditable="true">Ã§ÂÂÃ¥Â°ÂÃ¤Â¿Â®Ã¦ÂÂ¯Ã§Â¥ÂÃ¨Â¯Â</span><span class="tag" contenteditable="true">Ã¥Â¸ÂÃ¨ÂÂÃ¥ÂÂÃ§ÂÂÃ¥ÂÂ½</span>
     <div class="bottom-row">
-      <div><div class="price-value" contenteditable="true">€35</div><div class="price-label" contenteditable="true">成交价</div></div>
-      <div class="prov-compact" contenteditable="true"><strong>Biga Numismatics</strong> · Online Auction 38 · 2025</div>
+      <div><div class="price-value" contenteditable="true">Ã¢ÂÂ¬35</div><div class="price-label" contenteditable="true">Ã¦ÂÂÃ¤ÂºÂ¤Ã¤Â»Â·</div></div>
+      <div class="prov-compact" contenteditable="true"><strong>Biga Numismatics</strong> ÃÂ· Online Auction 38 ÃÂ· 2025</div>
     </div>
   </div>
 </div>
 
 <!-- ROM-002 -->
 <div class="coin-card" data-category="romaeg" draggable="true">
-  <div class="drag-handle">⠿ 拖拽排序</div>
+  <div class="drag-handle">Ã¢Â Â¿ Ã¦ÂÂÃ¦ÂÂ½Ã¦ÂÂÃ¥ÂºÂ</div>
   <div class="coin-image">
     <span class="coin-number" contenteditable="true">ROM-002</span>
     <span class="coin-grade" contenteditable="true">NVF</span>
-    <img src="images/ROM-002.jpg" alt="埃及·尼禄四德拉克马" data-path="images/ROM-002.jpg" onerror="this.style.display='none'">
-    <div class="placeholder" onclick="triggerUpload(this)" style="display:none">🪙</div>
+    <img src="images/ROM-002.jpg" alt="Ã¥ÂÂÃ¥ÂÂÃÂ·Ã¥Â°Â¼Ã§Â¦ÂÃ¥ÂÂÃ¥Â¾Â·Ã¦ÂÂÃ¥ÂÂÃ©Â©Â¬" data-path="images/ROM-002.jpg" onerror="this.style.display='none'">
+    <div class="placeholder" onclick="triggerUpload(this)" style="display:none">Ã°ÂÂªÂ</div>
     <div class="img-overlay">
-      <button class="img-btn" onclick="triggerUpload(this)">📷 上传图片</button>
-      <button class="img-btn" onclick="editImgPath(this)">🔗 改路径</button>
+      <button class="img-btn" onclick="triggerUpload(this)">Ã°ÂÂÂ· Ã¤Â¸ÂÃ¤Â¼Â Ã¥ÂÂ¾Ã§ÂÂ</button>
+      <button class="img-btn" onclick="editImgPath(this)">Ã°ÂÂÂ Ã¦ÂÂ¹Ã¨Â·Â¯Ã¥Â¾Â</button>
     </div>
   </div>
   <div class="coin-info">
-    <h2 class="coin-title" contenteditable="true">埃及·尼禄四德拉克马</h2>
-    <p class="coin-subtitle" contenteditable="true">EGYPT · Alexandria · Nero (RY 14)</p>
+    <h2 class="coin-title" contenteditable="true">Ã¥ÂÂÃ¥ÂÂÃÂ·Ã¥Â°Â¼Ã§Â¦ÂÃ¥ÂÂÃ¥Â¾Â·Ã¦ÂÂÃ¥ÂÂÃ©Â©Â¬</h2>
+    <p class="coin-subtitle" contenteditable="true">EGYPT ÃÂ· Alexandria ÃÂ· Nero (RY 14)</p>
     <div class="coin-detail">
-      <div class="detail-item"><div class="detail-label" contenteditable="true">年代</div><div class="detail-value" contenteditable="true">AD 67-68 (RY 14)</div></div>
-      <div class="detail-item"><div class="detail-label" contenteditable="true">面值</div><div class="detail-value" contenteditable="true">Tetradrachm 四德拉克马</div></div>
-      <div class="detail-item"><div class="detail-label" contenteditable="true">材质</div><div class="detail-value" contenteditable="true">BI 银合金 · 25mm · 13.20g</div></div>
-      <div class="detail-item"><div class="detail-label" contenteditable="true">参考</div><div class="detail-value" contenteditable="true">RPC I 5317; Dattari 207; Emmett 111.14</div></div>
+      <div class="detail-item"><div class="detail-label" contenteditable="true">Ã¥Â¹Â´Ã¤Â»Â£</div><div class="detail-value" contenteditable="true">AD 67-68 (RY 14)</div></div>
+      <div class="detail-item"><div class="detail-label" contenteditable="true">Ã©ÂÂ¢Ã¥ÂÂ¼</div><div class="detail-value" contenteditable="true">Tetradrachm Ã¥ÂÂÃ¥Â¾Â·Ã¦ÂÂÃ¥ÂÂÃ©Â©Â¬</div></div>
+      <div class="detail-item"><div class="detail-label" contenteditable="true">Ã¦ÂÂÃ¨Â´Â¨</div><div class="detail-value" contenteditable="true">BI Ã©ÂÂ¶Ã¥ÂÂÃ©ÂÂ ÃÂ· 25mm ÃÂ· 13.20g</div></div>
+      <div class="detail-item"><div class="detail-label" contenteditable="true">Ã¥ÂÂÃ¨ÂÂ</div><div class="detail-value" contenteditable="true">RPC I 5317; Dattari 207; Emmett 111.14</div></div>
     </div>
     <div class="description">
-      <h4 contenteditable="true">📜 历史背景</h4>
-      <p contenteditable="true">罗马行省埃及是帝国内唯一被奥古斯都禁止铸造"皇帝肖像"和"拉丁铭文"的行省——奥古斯都征服托勒密埃及后，刻意保留当地希腊传统以安抚亚历山大里亚民众。亚历山大造币厂沿袭希腊化传统，以希腊铭文和神祇为主图，且<b>每年更换版式</b>。年份标记 L IΔ 采用"奥古斯都纪年+皇帝在位年"双轨制，即奥古斯都纪年 14 + 尼禄 RY 14 = 公元 67/68 年。
+      <h4 contenteditable="true">Ã°ÂÂÂ Ã¥ÂÂÃ¥ÂÂ²Ã¨ÂÂÃ¦ÂÂ¯</h4>
+      <p contenteditable="true">Ã§Â½ÂÃ©Â©Â¬Ã¨Â¡ÂÃ§ÂÂÃ¥ÂÂÃ¥ÂÂÃ¦ÂÂ¯Ã¥Â¸ÂÃ¥ÂÂ½Ã¥ÂÂÃ¥ÂÂ¯Ã¤Â¸ÂÃ¨Â¢Â«Ã¥Â¥Â¥Ã¥ÂÂ¤Ã¦ÂÂ¯Ã©ÂÂ½Ã§Â¦ÂÃ¦Â­Â¢Ã©ÂÂ¸Ã©ÂÂ "Ã§ÂÂÃ¥Â¸ÂÃ¨ÂÂÃ¥ÂÂ"Ã¥ÂÂ"Ã¦ÂÂÃ¤Â¸ÂÃ©ÂÂ­Ã¦ÂÂ"Ã§ÂÂÃ¨Â¡ÂÃ§ÂÂÃ¢ÂÂÃ¢ÂÂÃ¥Â¥Â¥Ã¥ÂÂ¤Ã¦ÂÂ¯Ã©ÂÂ½Ã¥Â¾ÂÃ¦ÂÂÃ¦ÂÂÃ¥ÂÂÃ¥Â¯ÂÃ¥ÂÂÃ¥ÂÂÃ¥ÂÂÃ¯Â¼ÂÃ¥ÂÂ»Ã¦ÂÂÃ¤Â¿ÂÃ§ÂÂÃ¥Â½ÂÃ¥ÂÂ°Ã¥Â¸ÂÃ¨ÂÂÃ¤Â¼Â Ã§Â»ÂÃ¤Â»Â¥Ã¥Â®ÂÃ¦ÂÂÃ¤ÂºÂÃ¥ÂÂÃ¥Â±Â±Ã¥Â¤Â§Ã©ÂÂÃ¤ÂºÂÃ¦Â°ÂÃ¤Â¼ÂÃ£ÂÂÃ¤ÂºÂÃ¥ÂÂÃ¥Â±Â±Ã¥Â¤Â§Ã©ÂÂ Ã¥Â¸ÂÃ¥ÂÂÃ¦Â²Â¿Ã¨Â¢Â­Ã¥Â¸ÂÃ¨ÂÂÃ¥ÂÂÃ¤Â¼Â Ã§Â»ÂÃ¯Â¼ÂÃ¤Â»Â¥Ã¥Â¸ÂÃ¨ÂÂÃ©ÂÂ­Ã¦ÂÂÃ¥ÂÂÃ§Â¥ÂÃ§Â¥ÂÃ¤Â¸ÂºÃ¤Â¸Â»Ã¥ÂÂ¾Ã¯Â¼ÂÃ¤Â¸Â<b>Ã¦Â¯ÂÃ¥Â¹Â´Ã¦ÂÂ´Ã¦ÂÂ¢Ã§ÂÂÃ¥Â¼Â</b>Ã£ÂÂÃ¥Â¹Â´Ã¤Â»Â½Ã¦Â ÂÃ¨Â®Â° L IÃÂ Ã©ÂÂÃ§ÂÂ¨"Ã¥Â¥Â¥Ã¥ÂÂ¤Ã¦ÂÂ¯Ã©ÂÂ½Ã§ÂºÂªÃ¥Â¹Â´+Ã§ÂÂÃ¥Â¸ÂÃ¥ÂÂ¨Ã¤Â½ÂÃ¥Â¹Â´"Ã¥ÂÂÃ¨Â½Â¨Ã¥ÂÂ¶Ã¯Â¼ÂÃ¥ÂÂ³Ã¥Â¥Â¥Ã¥ÂÂ¤Ã¦ÂÂ¯Ã©ÂÂ½Ã§ÂºÂªÃ¥Â¹Â´ 14 + Ã¥Â°Â¼Ã§Â¦Â RY 14 = Ã¥ÂÂ¬Ã¥ÂÂ 67/68 Ã¥Â¹Â´Ã£ÂÂ
 
-背面 AKTIOΣ AΠOΛΛΩN（阿克提乌斯·阿波罗）是奥古斯都纪念公元前 31 年阿克提乌姆海战击败安东尼与克娄巴特拉的神祇。尼禄 RY 14（67 AD）正值其希腊巡游期间、宣布"希腊自由"的同一年，埃及币上仍延续这一图式，反映出罗马对行省货币传统的政治延续性。
+Ã¨ÂÂÃ©ÂÂ¢ AKTIOÃÂ£ AÃÂ OÃÂÃÂÃÂ©NÃ¯Â¼ÂÃ©ÂÂ¿Ã¥ÂÂÃ¦ÂÂÃ¤Â¹ÂÃ¦ÂÂ¯ÃÂ·Ã©ÂÂ¿Ã¦Â³Â¢Ã§Â½ÂÃ¯Â¼ÂÃ¦ÂÂ¯Ã¥Â¥Â¥Ã¥ÂÂ¤Ã¦ÂÂ¯Ã©ÂÂ½Ã§ÂºÂªÃ¥Â¿ÂµÃ¥ÂÂ¬Ã¥ÂÂÃ¥ÂÂ 31 Ã¥Â¹Â´Ã©ÂÂ¿Ã¥ÂÂÃ¦ÂÂÃ¤Â¹ÂÃ¥Â§ÂÃ¦ÂµÂ·Ã¦ÂÂÃ¥ÂÂ»Ã¨Â´Â¥Ã¥Â®ÂÃ¤Â¸ÂÃ¥Â°Â¼Ã¤Â¸ÂÃ¥ÂÂÃ¥Â¨ÂÃ¥Â·Â´Ã§ÂÂ¹Ã¦ÂÂÃ§ÂÂÃ§Â¥ÂÃ§Â¥ÂÃ£ÂÂÃ¥Â°Â¼Ã§Â¦Â RY 14Ã¯Â¼Â67 ADÃ¯Â¼ÂÃ¦Â­Â£Ã¥ÂÂ¼Ã¥ÂÂ¶Ã¥Â¸ÂÃ¨ÂÂÃ¥Â·Â¡Ã¦Â¸Â¸Ã¦ÂÂÃ©ÂÂ´Ã£ÂÂÃ¥Â®Â£Ã¥Â¸Â"Ã¥Â¸ÂÃ¨ÂÂÃ¨ÂÂªÃ§ÂÂ±"Ã§ÂÂÃ¥ÂÂÃ¤Â¸ÂÃ¥Â¹Â´Ã¯Â¼ÂÃ¥ÂÂÃ¥ÂÂÃ¥Â¸ÂÃ¤Â¸ÂÃ¤Â»ÂÃ¥Â»Â¶Ã§Â»Â­Ã¨Â¿ÂÃ¤Â¸ÂÃ¥ÂÂ¾Ã¥Â¼ÂÃ¯Â¼ÂÃ¥ÂÂÃ¦ÂÂ Ã¥ÂÂºÃ§Â½ÂÃ©Â©Â¬Ã¥Â¯Â¹Ã¨Â¡ÂÃ§ÂÂÃ¨Â´Â§Ã¥Â¸ÂÃ¤Â¼Â Ã§Â»ÂÃ§ÂÂÃ¦ÂÂ¿Ã¦Â²Â»Ã¥Â»Â¶Ã§Â»Â­Ã¦ÂÂ§Ã£ÂÂ
 
-关于"BI"：Billon 是含银量仅约 18–25% 的银铜合金。罗马政府有意降低埃及币成色以遏制贵金属外流——罗马本土的"银币"（denarius）含银量约 80%，而埃及四德拉克马只值其 1/3 不到。这使行省埃及币成为研究罗马经济分层的独特样本。</p>
+Ã¥ÂÂ³Ã¤ÂºÂ"BI"Ã¯Â¼ÂBillon Ã¦ÂÂ¯Ã¥ÂÂ«Ã©ÂÂ¶Ã©ÂÂÃ¤Â»ÂÃ§ÂºÂ¦ 18Ã¢ÂÂ25% Ã§ÂÂÃ©ÂÂ¶Ã©ÂÂÃ¥ÂÂÃ©ÂÂÃ£ÂÂÃ§Â½ÂÃ©Â©Â¬Ã¦ÂÂ¿Ã¥ÂºÂÃ¦ÂÂÃ¦ÂÂÃ©ÂÂÃ¤Â½ÂÃ¥ÂÂÃ¥ÂÂÃ¥Â¸ÂÃ¦ÂÂÃ¨ÂÂ²Ã¤Â»Â¥Ã©ÂÂÃ¥ÂÂ¶Ã¨Â´ÂµÃ©ÂÂÃ¥Â±ÂÃ¥Â¤ÂÃ¦ÂµÂÃ¢ÂÂÃ¢ÂÂÃ§Â½ÂÃ©Â©Â¬Ã¦ÂÂ¬Ã¥ÂÂÃ§ÂÂ"Ã©ÂÂ¶Ã¥Â¸Â"Ã¯Â¼ÂdenariusÃ¯Â¼ÂÃ¥ÂÂ«Ã©ÂÂ¶Ã©ÂÂÃ§ÂºÂ¦ 80%Ã¯Â¼ÂÃ¨ÂÂÃ¥ÂÂÃ¥ÂÂÃ¥ÂÂÃ¥Â¾Â·Ã¦ÂÂÃ¥ÂÂÃ©Â©Â¬Ã¥ÂÂªÃ¥ÂÂ¼Ã¥ÂÂ¶ 1/3 Ã¤Â¸ÂÃ¥ÂÂ°Ã£ÂÂÃ¨Â¿ÂÃ¤Â½Â¿Ã¨Â¡ÂÃ§ÂÂÃ¥ÂÂÃ¥ÂÂÃ¥Â¸ÂÃ¦ÂÂÃ¤Â¸ÂºÃ§Â ÂÃ§Â©Â¶Ã§Â½ÂÃ©Â©Â¬Ã§Â»ÂÃ¦ÂµÂÃ¥ÂÂÃ¥Â±ÂÃ§ÂÂÃ§ÂÂ¬Ã§ÂÂ¹Ã¦Â Â·Ã¦ÂÂ¬Ã£ÂÂ</p>
     </div>
     <div class="obv-rev">
-      <div class="obv" contenteditable="true">正面: NEPΩ KΛAV KAIΣ ΣEB ΓEP AV · 尼禄头戴光芒冠左向胸像，佩戴Aegis；L IΔ</div>
-      <div class="rev" contenteditable="true">背面: AKTIOΣ AΠOΛΛΩN · 阿波罗右向胸像，肩扛箭袋；星形标记</div>
+      <div class="obv" contenteditable="true">Ã¦Â­Â£Ã©ÂÂ¢: NEPÃÂ© KÃÂAV KAIÃÂ£ ÃÂ£EB ÃÂEP AV ÃÂ· Ã¥Â°Â¼Ã§Â¦ÂÃ¥Â¤Â´Ã¦ÂÂ´Ã¥ÂÂÃ¨ÂÂÃ¥ÂÂ Ã¥Â·Â¦Ã¥ÂÂÃ¨ÂÂ¸Ã¥ÂÂÃ¯Â¼ÂÃ¤Â½Â©Ã¦ÂÂ´AegisÃ¯Â¼ÂL IÃÂ</div>
+      <div class="rev" contenteditable="true">Ã¨ÂÂÃ©ÂÂ¢: AKTIOÃÂ£ AÃÂ OÃÂÃÂÃÂ©N ÃÂ· Ã©ÂÂ¿Ã¦Â³Â¢Ã§Â½ÂÃ¥ÂÂ³Ã¥ÂÂÃ¨ÂÂ¸Ã¥ÂÂÃ¯Â¼ÂÃ¨ÂÂ©Ã¦ÂÂÃ§Â®Â­Ã¨Â¢ÂÃ¯Â¼ÂÃ¦ÂÂÃ¥Â½Â¢Ã¦Â ÂÃ¨Â®Â°</div>
     </div>
-    <span class="tag" contenteditable="true">罗马行省</span><span class="tag" contenteditable="true">埃及</span><span class="tag" contenteditable="true">RY 14</span><span class="tag" contenteditable="true">Actium Apollo</span>
+    <span class="tag" contenteditable="true">Ã§Â½ÂÃ©Â©Â¬Ã¨Â¡ÂÃ§ÂÂ</span><span class="tag" contenteditable="true">Ã¥ÂÂÃ¥ÂÂ</span><span class="tag" contenteditable="true">RY 14</span><span class="tag" contenteditable="true">Actium Apollo</span>
     <div class="bottom-row">
-      <div><div class="price-value" contenteditable="true">€64</div><div class="price-label" contenteditable="true">成交价</div></div>
-      <div class="prov-compact" contenteditable="true"><strong>Numismatik Naumann</strong> · Auction 154 · 2025</div>
+      <div><div class="price-value" contenteditable="true">Ã¢ÂÂ¬64</div><div class="price-label" contenteditable="true">Ã¦ÂÂÃ¤ÂºÂ¤Ã¤Â»Â·</div></div>
+      <div class="prov-compact" contenteditable="true"><strong>Numismatik Naumann</strong> ÃÂ· Auction 154 ÃÂ· 2025</div>
     </div>
   </div>
 </div>
 
 <!-- ROM-003 -->
 <div class="coin-card" data-category="romanemp" draggable="true">
-  <div class="drag-handle">⠿ 拖拽排序</div>
+  <div class="drag-handle">Ã¢Â Â¿ Ã¦ÂÂÃ¦ÂÂ½Ã¦ÂÂÃ¥ÂºÂ</div>
   <div class="coin-image">
     <span class="coin-number" contenteditable="true">ROM-003</span>
     <span class="coin-grade" contenteditable="true">GF</span>
-    <img src="images/ROM-003.jpg" alt="安东尼·庇护塞斯特提乌斯" data-path="images/ROM-003.jpg" onerror="this.style.display='none'">
-    <div class="placeholder" onclick="triggerUpload(this)" style="display:none">🪙</div>
+    <img src="images/ROM-003.jpg" alt="Ã¥Â®ÂÃ¤Â¸ÂÃ¥Â°Â¼ÃÂ·Ã¥ÂºÂÃ¦ÂÂ¤Ã¥Â¡ÂÃ¦ÂÂ¯Ã§ÂÂ¹Ã¦ÂÂÃ¤Â¹ÂÃ¦ÂÂ¯" data-path="images/ROM-003.jpg" onerror="this.style.display='none'">
+    <div class="placeholder" onclick="triggerUpload(this)" style="display:none">Ã°ÂÂªÂ</div>
     <div class="img-overlay">
-      <button class="img-btn" onclick="triggerUpload(this)">📷 上传图片</button>
-      <button class="img-btn" onclick="editImgPath(this)">🔗 改路径</button>
+      <button class="img-btn" onclick="triggerUpload(this)">Ã°ÂÂÂ· Ã¤Â¸ÂÃ¤Â¼Â Ã¥ÂÂ¾Ã§ÂÂ</button>
+      <button class="img-btn" onclick="editImgPath(this)">Ã°ÂÂÂ Ã¦ÂÂ¹Ã¨Â·Â¯Ã¥Â¾Â</button>
     </div>
   </div>
   <div class="coin-info">
-    <h2 class="coin-title" contenteditable="true">安东尼·庇护 塞斯特提乌斯（LIBERTAS COS IIII）</h2>
-    <p class="coin-subtitle" contenteditable="true">ROMA · Antoninus Pius · AD 145-161</p>
+    <h2 class="coin-title" contenteditable="true">Ã¥Â®ÂÃ¤Â¸ÂÃ¥Â°Â¼ÃÂ·Ã¥ÂºÂÃ¦ÂÂ¤ Ã¥Â¡ÂÃ¦ÂÂ¯Ã§ÂÂ¹Ã¦ÂÂÃ¤Â¹ÂÃ¦ÂÂ¯Ã¯Â¼ÂLIBERTAS COS IIIIÃ¯Â¼Â</h2>
+    <p class="coin-subtitle" contenteditable="true">ROMA ÃÂ· Antoninus Pius ÃÂ· AD 145-161</p>
     <div class="coin-detail">
-      <div class="detail-item"><div class="detail-label" contenteditable="true">年代</div><div class="detail-value" contenteditable="true">AD 145-161（TR P XVIII = AD 155/6）</div></div>
-      <div class="detail-item"><div class="detail-label" contenteditable="true">面值</div><div class="detail-value" contenteditable="true">Sestertius 塞斯特提乌斯</div></div>
-      <div class="detail-item"><div class="detail-label" contenteditable="true">材质</div><div class="detail-value" contenteditable="true">AE 铜合金 · 31mm · 22.40g</div></div>
-      <div class="detail-item"><div class="detail-label" contenteditable="true">参考</div><div class="detail-value" contenteditable="true">RIC III 929; Strack 1308</div></div>
+      <div class="detail-item"><div class="detail-label" contenteditable="true">Ã¥Â¹Â´Ã¤Â»Â£</div><div class="detail-value" contenteditable="true">AD 145-161Ã¯Â¼ÂTR P XVIII = AD 155/6Ã¯Â¼Â</div></div>
+      <div class="detail-item"><div class="detail-label" contenteditable="true">Ã©ÂÂ¢Ã¥ÂÂ¼</div><div class="detail-value" contenteditable="true">Sestertius Ã¥Â¡ÂÃ¦ÂÂ¯Ã§ÂÂ¹Ã¦ÂÂÃ¤Â¹ÂÃ¦ÂÂ¯</div></div>
+      <div class="detail-item"><div class="detail-label" contenteditable="true">Ã¦ÂÂÃ¨Â´Â¨</div><div class="detail-value" contenteditable="true">AE Ã©ÂÂÃ¥ÂÂÃ©ÂÂ ÃÂ· 31mm ÃÂ· 22.40g</div></div>
+      <div class="detail-item"><div class="detail-label" contenteditable="true">Ã¥ÂÂÃ¨ÂÂ</div><div class="detail-value" contenteditable="true">RIC III 929; Strack 1308</div></div>
     </div>
     <div class="description">
-      <h4 contenteditable="true">📜 历史背景</h4>
-      <p contenteditable="true">安东尼·庇护（Antoninus Pius，138-161 AD）是罗马帝国"五贤帝"的第四位，以和平、不扩张、重法律著称。此币发行于其统治晚期（TR P XVIII = AD 155/6），距罗马大火已约 11 年（64 AD 尼禄时期），距哈德良长城建成约 20 年（约 142 AD）。
+      <h4 contenteditable="true">Ã°ÂÂÂ Ã¥ÂÂÃ¥ÂÂ²Ã¨ÂÂÃ¦ÂÂ¯</h4>
+      <p contenteditable="true">Ã¥Â®ÂÃ¤Â¸ÂÃ¥Â°Â¼ÃÂ·Ã¥ÂºÂÃ¦ÂÂ¤Ã¯Â¼ÂAntoninus PiusÃ¯Â¼Â138-161 ADÃ¯Â¼ÂÃ¦ÂÂ¯Ã§Â½ÂÃ©Â©Â¬Ã¥Â¸ÂÃ¥ÂÂ½"Ã¤ÂºÂÃ¨Â´Â¤Ã¥Â¸Â"Ã§ÂÂÃ§Â¬Â¬Ã¥ÂÂÃ¤Â½ÂÃ¯Â¼ÂÃ¤Â»Â¥Ã¥ÂÂÃ¥Â¹Â³Ã£ÂÂÃ¤Â¸ÂÃ¦ÂÂ©Ã¥Â¼Â Ã£ÂÂÃ©ÂÂÃ¦Â³ÂÃ¥Â¾ÂÃ¨ÂÂÃ§Â§Â°Ã£ÂÂÃ¦Â­Â¤Ã¥Â¸ÂÃ¥ÂÂÃ¨Â¡ÂÃ¤ÂºÂÃ¥ÂÂ¶Ã§Â»ÂÃ¦Â²Â»Ã¦ÂÂÃ¦ÂÂÃ¯Â¼ÂTR P XVIII = AD 155/6Ã¯Â¼ÂÃ¯Â¼ÂÃ¨Â·ÂÃ§Â½ÂÃ©Â©Â¬Ã¥Â¤Â§Ã§ÂÂ«Ã¥Â·Â²Ã§ÂºÂ¦ 11 Ã¥Â¹Â´Ã¯Â¼Â64 AD Ã¥Â°Â¼Ã§Â¦ÂÃ¦ÂÂ¶Ã¦ÂÂÃ¯Â¼ÂÃ¯Â¼ÂÃ¨Â·ÂÃ¥ÂÂÃ¥Â¾Â·Ã¨ÂÂ¯Ã©ÂÂ¿Ã¥ÂÂÃ¥Â»ÂºÃ¦ÂÂÃ§ÂºÂ¦ 20 Ã¥Â¹Â´Ã¯Â¼ÂÃ§ÂºÂ¦ 142 ADÃ¯Â¼ÂÃ£ÂÂ
 
-<b>LIBERTAS</b>（自由女神）是五贤帝时期反复出现的主题：自由女神站立，左手持自由帽（<b>pileus</b>），右手持"vindicta"（<b>liberty rod 自由权杖</b>）。这个组合源自罗马解放奴隶仪式（manumissio）：主人用权杖触奴隶头，宣布"hunc hominem liberum esse volo"（我愿此人自由），奴隶戴上自由帽。
+<b>LIBERTAS</b>Ã¯Â¼ÂÃ¨ÂÂªÃ§ÂÂ±Ã¥Â¥Â³Ã§Â¥ÂÃ¯Â¼ÂÃ¦ÂÂ¯Ã¤ÂºÂÃ¨Â´Â¤Ã¥Â¸ÂÃ¦ÂÂ¶Ã¦ÂÂÃ¥ÂÂÃ¥Â¤ÂÃ¥ÂÂºÃ§ÂÂ°Ã§ÂÂÃ¤Â¸Â»Ã©Â¢ÂÃ¯Â¼ÂÃ¨ÂÂªÃ§ÂÂ±Ã¥Â¥Â³Ã§Â¥ÂÃ§Â«ÂÃ§Â«ÂÃ¯Â¼ÂÃ¥Â·Â¦Ã¦ÂÂÃ¦ÂÂÃ¨ÂÂªÃ§ÂÂ±Ã¥Â¸Â½Ã¯Â¼Â<b>pileus</b>Ã¯Â¼ÂÃ¯Â¼ÂÃ¥ÂÂ³Ã¦ÂÂÃ¦ÂÂ"vindicta"Ã¯Â¼Â<b>liberty rod Ã¨ÂÂªÃ§ÂÂ±Ã¦ÂÂÃ¦ÂÂ</b>Ã¯Â¼ÂÃ£ÂÂÃ¨Â¿ÂÃ¤Â¸ÂªÃ§Â»ÂÃ¥ÂÂÃ¦ÂºÂÃ¨ÂÂªÃ§Â½ÂÃ©Â©Â¬Ã¨Â§Â£Ã¦ÂÂ¾Ã¥Â¥Â´Ã©ÂÂ¶Ã¤Â»ÂªÃ¥Â¼ÂÃ¯Â¼ÂmanumissioÃ¯Â¼ÂÃ¯Â¼ÂÃ¤Â¸Â»Ã¤ÂºÂºÃ§ÂÂ¨Ã¦ÂÂÃ¦ÂÂÃ¨Â§Â¦Ã¥Â¥Â´Ã©ÂÂ¶Ã¥Â¤Â´Ã¯Â¼ÂÃ¥Â®Â£Ã¥Â¸Â"hunc hominem liberum esse volo"Ã¯Â¼ÂÃ¦ÂÂÃ¦ÂÂ¿Ã¦Â­Â¤Ã¤ÂºÂºÃ¨ÂÂªÃ§ÂÂ±Ã¯Â¼ÂÃ¯Â¼ÂÃ¥Â¥Â´Ã©ÂÂ¶Ã¦ÂÂ´Ã¤Â¸ÂÃ¨ÂÂªÃ§ÂÂ±Ã¥Â¸Â½Ã£ÂÂ
 
-五贤帝刻意铸造 LIBERTAS 主题，意在强调<b>元老院与皇帝共治</b>的"共和表象"——虽然实行帝制，但理论上"罗马公民自由"仍在。安东尼·庇护尤其重视此意象，因为其继位未经内战，强调"合法继承"与"恢复自由"是政治需要。
+Ã¤ÂºÂÃ¨Â´Â¤Ã¥Â¸ÂÃ¥ÂÂ»Ã¦ÂÂÃ©ÂÂ¸Ã©ÂÂ  LIBERTAS Ã¤Â¸Â»Ã©Â¢ÂÃ¯Â¼ÂÃ¦ÂÂÃ¥ÂÂ¨Ã¥Â¼ÂºÃ¨Â°Â<b>Ã¥ÂÂÃ¨ÂÂÃ©ÂÂ¢Ã¤Â¸ÂÃ§ÂÂÃ¥Â¸ÂÃ¥ÂÂ±Ã¦Â²Â»</b>Ã§ÂÂ"Ã¥ÂÂ±Ã¥ÂÂÃ¨Â¡Â¨Ã¨Â±Â¡"Ã¢ÂÂÃ¢ÂÂÃ¨ÂÂ½Ã§ÂÂ¶Ã¥Â®ÂÃ¨Â¡ÂÃ¥Â¸ÂÃ¥ÂÂ¶Ã¯Â¼ÂÃ¤Â½ÂÃ§ÂÂÃ¨Â®ÂºÃ¤Â¸Â"Ã§Â½ÂÃ©Â©Â¬Ã¥ÂÂ¬Ã¦Â°ÂÃ¨ÂÂªÃ§ÂÂ±"Ã¤Â»ÂÃ¥ÂÂ¨Ã£ÂÂÃ¥Â®ÂÃ¤Â¸ÂÃ¥Â°Â¼ÃÂ·Ã¥ÂºÂÃ¦ÂÂ¤Ã¥Â°Â¤Ã¥ÂÂ¶Ã©ÂÂÃ¨Â§ÂÃ¦Â­Â¤Ã¦ÂÂÃ¨Â±Â¡Ã¯Â¼ÂÃ¥ÂÂ Ã¤Â¸ÂºÃ¥ÂÂ¶Ã§Â»Â§Ã¤Â½ÂÃ¦ÂÂªÃ§Â»ÂÃ¥ÂÂÃ¦ÂÂÃ¯Â¼ÂÃ¥Â¼ÂºÃ¨Â°Â"Ã¥ÂÂÃ¦Â³ÂÃ§Â»Â§Ã¦ÂÂ¿"Ã¤Â¸Â"Ã¦ÂÂ¢Ã¥Â¤ÂÃ¨ÂÂªÃ§ÂÂ±"Ã¦ÂÂ¯Ã¦ÂÂ¿Ã¦Â²Â»Ã©ÂÂÃ¨Â¦ÂÃ£ÂÂ
 
-背面铭文 <b>LIBERTAS COS IIII</b> 中 COS IIII = 第四次执政官（约 AD 145），S-C 分别立于左右（Senatus Consulto = 元老院决议）。</p>
+Ã¨ÂÂÃ©ÂÂ¢Ã©ÂÂ­Ã¦ÂÂ <b>LIBERTAS COS IIII</b> Ã¤Â¸Â­ COS IIII = Ã§Â¬Â¬Ã¥ÂÂÃ¦Â¬Â¡Ã¦ÂÂ§Ã¦ÂÂ¿Ã¥Â®ÂÃ¯Â¼ÂÃ§ÂºÂ¦ AD 145Ã¯Â¼ÂÃ¯Â¼ÂS-C Ã¥ÂÂÃ¥ÂÂ«Ã§Â«ÂÃ¤ÂºÂÃ¥Â·Â¦Ã¥ÂÂ³Ã¯Â¼ÂSenatus Consulto = Ã¥ÂÂÃ¨ÂÂÃ©ÂÂ¢Ã¥ÂÂ³Ã¨Â®Â®Ã¯Â¼ÂÃ£ÂÂ</p>
     </div>
     <div class="obv-rev">
-      <div class="obv" contenteditable="true">正面: ANTONINVS AVG PIVS P P TR P XVIII · 月桂冠头像右向</div>
-      <div class="rev" contenteditable="true">背面: LIBERTAS COS IIII / S - C · 自由女神左站，持 pileus + vindicta</div>
+      <div class="obv" contenteditable="true">Ã¦Â­Â£Ã©ÂÂ¢: ANTONINVS AVG PIVS P P TR P XVIII ÃÂ· Ã¦ÂÂÃ¦Â¡ÂÃ¥ÂÂ Ã¥Â¤Â´Ã¥ÂÂÃ¥ÂÂ³Ã¥ÂÂ</div>
+      <div class="rev" contenteditable="true">Ã¨ÂÂÃ©ÂÂ¢: LIBERTAS COS IIII / S - C ÃÂ· Ã¨ÂÂªÃ§ÂÂ±Ã¥Â¥Â³Ã§Â¥ÂÃ¥Â·Â¦Ã§Â«ÂÃ¯Â¼ÂÃ¦ÂÂ pileus + vindicta</div>
     </div>
-    <span class="tag" contenteditable="true">五贤帝</span><span class="tag" contenteditable="true">安东尼·庇护</span><span class="tag" contenteditable="true">LIBERTAS</span><span class="tag" contenteditable="true">S C</span><span class="tag" contenteditable="true">自由女神</span>
+    <span class="tag" contenteditable="true">Ã¤ÂºÂÃ¨Â´Â¤Ã¥Â¸Â</span><span class="tag" contenteditable="true">Ã¥Â®ÂÃ¤Â¸ÂÃ¥Â°Â¼ÃÂ·Ã¥ÂºÂÃ¦ÂÂ¤</span><span class="tag" contenteditable="true">LIBERTAS</span><span class="tag" contenteditable="true">S C</span><span class="tag" contenteditable="true">Ã¨ÂÂªÃ§ÂÂ±Ã¥Â¥Â³Ã§Â¥Â</span>
     <div class="bottom-row">
-      <div><div class="price-value" contenteditable="true">€90</div><div class="price-label" contenteditable="true">成交价</div></div>
-      <div class="prov-compact" contenteditable="true"><strong>Numismatik Naumann</strong> · Auction 154 · 2025</div>
+      <div><div class="price-value" contenteditable="true">Ã¢ÂÂ¬90</div><div class="price-label" contenteditable="true">Ã¦ÂÂÃ¤ÂºÂ¤Ã¤Â»Â·</div></div>
+      <div class="prov-compact" contenteditable="true"><strong>Numismatik Naumann</strong> ÃÂ· Auction 154 ÃÂ· 2025</div>
     </div>
   </div>
 </div>
 
-<!-- ROM-004 批量组 -->
+<!-- ROM-004 Ã¦ÂÂ¹Ã©ÂÂÃ§Â»Â -->
 <div class="coin-card" data-category="romaeg" draggable="true">
-  <div class="drag-handle">⠿ 拖拽排序</div>
+  <div class="drag-handle">Ã¢Â Â¿ Ã¦ÂÂÃ¦ÂÂ½Ã¦ÂÂÃ¥ÂºÂ</div>
   <div class="coin-image">
     <span class="coin-number" contenteditable="true">ROM-004</span>
-    <span class="coin-grade" contenteditable="true">×9</span>
-    <img src="images/ROM-004.jpg" alt="埃及·尼禄×9批量组" data-path="images/ROM-004.jpg" onerror="this.style.display='none'">
-    <div class="placeholder" onclick="triggerUpload(this)" style="display:none">🪙</div>
+    <span class="coin-grade" contenteditable="true">ÃÂ9</span>
+    <img src="images/ROM-004.jpg" alt="Ã¥ÂÂÃ¥ÂÂÃÂ·Ã¥Â°Â¼Ã§Â¦ÂÃÂ9Ã¦ÂÂ¹Ã©ÂÂÃ§Â»Â" data-path="images/ROM-004.jpg" onerror="this.style.display='none'">
+    <div class="placeholder" onclick="triggerUpload(this)" style="display:none">Ã°ÂÂªÂ</div>
     <div class="img-overlay">
-      <button class="img-btn" onclick="triggerUpload(this)">📷 上传图片</button>
-      <button class="img-btn" onclick="editImgPath(this)">🔗 改路径</button>
+      <button class="img-btn" onclick="triggerUpload(this)">Ã°ÂÂÂ· Ã¤Â¸ÂÃ¤Â¼Â Ã¥ÂÂ¾Ã§ÂÂ</button>
+      <button class="img-btn" onclick="editImgPath(this)">Ã°ÂÂÂ Ã¦ÂÂ¹Ã¨Â·Â¯Ã¥Â¾Â</button>
     </div>
   </div>
   <div class="coin-info">
-    <h2 class="coin-title" contenteditable="true">埃及·尼禄等亚历山大四德拉克马（批量×9）</h2>
-    <p class="coin-subtitle" contenteditable="true">ROMAN EGYPT · Alexandria · Nero &amp; Others ×9</p>
+    <h2 class="coin-title" contenteditable="true">Ã¥ÂÂÃ¥ÂÂÃÂ·Ã¥Â°Â¼Ã§Â¦ÂÃ§Â­ÂÃ¤ÂºÂÃ¥ÂÂÃ¥Â±Â±Ã¥Â¤Â§Ã¥ÂÂÃ¥Â¾Â·Ã¦ÂÂÃ¥ÂÂÃ©Â©Â¬Ã¯Â¼ÂÃ¦ÂÂ¹Ã©ÂÂÃÂ9Ã¯Â¼Â</h2>
+    <p class="coin-subtitle" contenteditable="true">ROMAN EGYPT ÃÂ· Alexandria ÃÂ· Nero &amp; Others ÃÂ9</p>
     <div class="coin-detail">
-      <div class="detail-item"><div class="detail-label" contenteditable="true">年代跨度</div><div class="detail-value" contenteditable="true">54–68+ AD（多位皇帝）</div></div>
-      <div class="detail-item"><div class="detail-label" contenteditable="true">面值</div><div class="detail-value" contenteditable="true">BI 银合金 Tetradrachm ×9</div></div>
-      <div class="detail-item"><div class="detail-label" contenteditable="true">成交价</div><div class="detail-value" contenteditable="true">€387</div></div>
-      <div class="detail-item"><div class="detail-label" contenteditable="true">单枚均价</div><div class="detail-value" contenteditable="true">≈€43</div></div>
+      <div class="detail-item"><div class="detail-label" contenteditable="true">Ã¥Â¹Â´Ã¤Â»Â£Ã¨Â·Â¨Ã¥ÂºÂ¦</div><div class="detail-value" contenteditable="true">54Ã¢ÂÂ68+ ADÃ¯Â¼ÂÃ¥Â¤ÂÃ¤Â½ÂÃ§ÂÂÃ¥Â¸ÂÃ¯Â¼Â</div></div>
+      <div class="detail-item"><div class="detail-label" contenteditable="true">Ã©ÂÂ¢Ã¥ÂÂ¼</div><div class="detail-value" contenteditable="true">BI Ã©ÂÂ¶Ã¥ÂÂÃ©ÂÂ Tetradrachm ÃÂ9</div></div>
+      <div class="detail-item"><div class="detail-label" contenteditable="true">Ã¦ÂÂÃ¤ÂºÂ¤Ã¤Â»Â·</div><div class="detail-value" contenteditable="true">Ã¢ÂÂ¬387</div></div>
+      <div class="detail-item"><div class="detail-label" contenteditable="true">Ã¥ÂÂÃ¦ÂÂÃ¥ÂÂÃ¤Â»Â·</div><div class="detail-value" contenteditable="true">Ã¢ÂÂÃ¢ÂÂ¬43</div></div>
     </div>
     <div class="description">
-      <h4 contenteditable="true">🏛️ Lot详情</h4>
-      <p contenteditable="true">Numismatik Naumann Auction 154 批量Lot，包含9枚亚历山大造币厂Billon Tetradrachm，主要涵盖尼禄时期及同时代其他皇帝。正面多位皇帝肖像（含NEPΩN KΛAY KAIΣ ΣEB ΓEP等多版式），背面鹰立持权杖、L年份标记等典型亚历山大类型。部分带Aegis争议细节。</p>
+      <h4 contenteditable="true">Ã°ÂÂÂÃ¯Â¸Â LotÃ¨Â¯Â¦Ã¦ÂÂ</h4>
+      <p contenteditable="true">Numismatik Naumann Auction 154 Ã¦ÂÂ¹Ã©ÂÂLotÃ¯Â¼ÂÃ¥ÂÂÃ¥ÂÂ«9Ã¦ÂÂÃ¤ÂºÂÃ¥ÂÂÃ¥Â±Â±Ã¥Â¤Â§Ã©ÂÂ Ã¥Â¸ÂÃ¥ÂÂBillon TetradrachmÃ¯Â¼ÂÃ¤Â¸Â»Ã¨Â¦ÂÃ¦Â¶ÂµÃ§ÂÂÃ¥Â°Â¼Ã§Â¦ÂÃ¦ÂÂ¶Ã¦ÂÂÃ¥ÂÂÃ¥ÂÂÃ¦ÂÂ¶Ã¤Â»Â£Ã¥ÂÂ¶Ã¤Â»ÂÃ§ÂÂÃ¥Â¸ÂÃ£ÂÂÃ¦Â­Â£Ã©ÂÂ¢Ã¥Â¤ÂÃ¤Â½ÂÃ§ÂÂÃ¥Â¸ÂÃ¨ÂÂÃ¥ÂÂÃ¯Â¼ÂÃ¥ÂÂ«NEPÃÂ©N KÃÂAY KAIÃÂ£ ÃÂ£EB ÃÂEPÃ§Â­ÂÃ¥Â¤ÂÃ§ÂÂÃ¥Â¼ÂÃ¯Â¼ÂÃ¯Â¼ÂÃ¨ÂÂÃ©ÂÂ¢Ã©Â¹Â°Ã§Â«ÂÃ¦ÂÂÃ¦ÂÂÃ¦ÂÂÃ£ÂÂLÃ¥Â¹Â´Ã¤Â»Â½Ã¦Â ÂÃ¨Â®Â°Ã§Â­ÂÃ¥ÂÂ¸Ã¥ÂÂÃ¤ÂºÂÃ¥ÂÂÃ¥Â±Â±Ã¥Â¤Â§Ã§Â±Â»Ã¥ÂÂÃ£ÂÂÃ©ÂÂ¨Ã¥ÂÂÃ¥Â¸Â¦AegisÃ¤ÂºÂÃ¨Â®Â®Ã§Â»ÂÃ¨ÂÂÃ£ÂÂ</p>
     </div>
     <div class="obv-rev">
-      <div class="obv" contenteditable="true">正面: 多位皇帝头像（Nero为主，含Claudius等）</div>
-      <div class="rev" contenteditable="true">背面: 鹰立/埃及符号/L不同纪年</div>
+      <div class="obv" contenteditable="true">Ã¦Â­Â£Ã©ÂÂ¢: Ã¥Â¤ÂÃ¤Â½ÂÃ§ÂÂÃ¥Â¸ÂÃ¥Â¤Â´Ã¥ÂÂÃ¯Â¼ÂNeroÃ¤Â¸ÂºÃ¤Â¸Â»Ã¯Â¼ÂÃ¥ÂÂ«ClaudiusÃ§Â­ÂÃ¯Â¼Â</div>
+      <div class="rev" contenteditable="true">Ã¨ÂÂÃ©ÂÂ¢: Ã©Â¹Â°Ã§Â«Â/Ã¥ÂÂÃ¥ÂÂÃ§Â¬Â¦Ã¥ÂÂ·/LÃ¤Â¸ÂÃ¥ÂÂÃ§ÂºÂªÃ¥Â¹Â´</div>
     </div>
-    <span class="tag" contenteditable="true">批量Lot</span><span class="tag" contenteditable="true">亚历山大</span><span class="tag" contenteditable="true">罗马行省埃及</span><span class="tag" contenteditable="true">多皇帝</span>
+    <span class="tag" contenteditable="true">Ã¦ÂÂ¹Ã©ÂÂLot</span><span class="tag" contenteditable="true">Ã¤ÂºÂÃ¥ÂÂÃ¥Â±Â±Ã¥Â¤Â§</span><span class="tag" contenteditable="true">Ã§Â½ÂÃ©Â©Â¬Ã¨Â¡ÂÃ§ÂÂÃ¥ÂÂÃ¥ÂÂ</span><span class="tag" contenteditable="true">Ã¥Â¤ÂÃ§ÂÂÃ¥Â¸Â</span>
     <div class="bottom-row">
-      <div><div class="price-value" contenteditable="true">€387 / 9枚</div><div class="price-label" contenteditable="true">批量Lot成交价</div></div>
-      <div class="prov-compact" contenteditable="true"><strong>Numismatik Naumann</strong> · Auction 154 · 2025</div>
+      <div><div class="price-value" contenteditable="true">Ã¢ÂÂ¬387 / 9Ã¦ÂÂ</div><div class="price-label" contenteditable="true">Ã¦ÂÂ¹Ã©ÂÂLotÃ¦ÂÂÃ¤ÂºÂ¤Ã¤Â»Â·</div></div>
+      <div class="prov-compact" contenteditable="true"><strong>Numismatik Naumann</strong> ÃÂ· Auction 154 ÃÂ· 2025</div>
     </div>
   </div>
 </div>
 
 <!-- GK-003 -->
 <div class="coin-card" data-category="greek" draggable="true">
-  <div class="drag-handle">⠿ 拖拽排序</div>
+  <div class="drag-handle">Ã¢Â Â¿ Ã¦ÂÂÃ¦ÂÂ½Ã¦ÂÂÃ¥ÂºÂ</div>
   <div class="coin-image">
     <span class="coin-number" contenteditable="true">GK-003</span>
     <span class="coin-grade" contenteditable="true">GVF</span>
-    <img src="images/GK-003.jpg" alt="腓力二世四德拉克马" data-path="images/GK-003.jpg" onerror="this.style.display='none'">
-    <div class="placeholder" onclick="triggerUpload(this)" style="display:none">🪙</div>
+    <img src="images/GK-003.jpg" alt="Ã¨ÂÂÃ¥ÂÂÃ¤ÂºÂÃ¤Â¸ÂÃ¥ÂÂÃ¥Â¾Â·Ã¦ÂÂÃ¥ÂÂÃ©Â©Â¬" data-path="images/GK-003.jpg" onerror="this.style.display='none'">
+    <div class="placeholder" onclick="triggerUpload(this)" style="display:none">Ã°ÂÂªÂ</div>
     <div class="img-overlay">
-      <button class="img-btn" onclick="triggerUpload(this)">📷 上传图片</button>
-      <button class="img-btn" onclick="editImgPath(this)">🔗 改路径</button>
+      <button class="img-btn" onclick="triggerUpload(this)">Ã°ÂÂÂ· Ã¤Â¸ÂÃ¤Â¼Â Ã¥ÂÂ¾Ã§ÂÂ</button>
+      <button class="img-btn" onclick="editImgPath(this)">Ã°ÂÂÂ Ã¦ÂÂ¹Ã¨Â·Â¯Ã¥Â¾Â</button>
     </div>
   </div>
   <div class="coin-info">
-    <h2 class="coin-title" contenteditable="true">腓力二世 宙斯头像四德拉克马</h2>
-    <p class="coin-subtitle" contenteditable="true">MACEDON · Amphipolis · Philip II (359-336 BC)</p>
+    <h2 class="coin-title" contenteditable="true">Ã¨ÂÂÃ¥ÂÂÃ¤ÂºÂÃ¤Â¸Â Ã¥Â®ÂÃ¦ÂÂ¯Ã¥Â¤Â´Ã¥ÂÂÃ¥ÂÂÃ¥Â¾Â·Ã¦ÂÂÃ¥ÂÂÃ©Â©Â¬</h2>
+    <p class="coin-subtitle" contenteditable="true">MACEDON ÃÂ· Amphipolis ÃÂ· Philip II (359-336 BC)</p>
     <div class="coin-detail">
-      <div class="detail-item"><div class="detail-label" contenteditable="true">年代</div><div class="detail-value" contenteditable="true">359-336 BC</div></div>
-      <div class="detail-item"><div class="detail-label" contenteditable="true">面值</div><div class="detail-value" contenteditable="true">Tetradrachm 四德拉克马</div></div>
-      <div class="detail-item"><div class="detail-label" contenteditable="true">材质</div><div class="detail-value" contenteditable="true">银 · 23mm · 14.33g · 轴 12h</div></div>
-      <div class="detail-item"><div class="detail-label" contenteditable="true">NGC</div><div class="detail-value" contenteditable="true">6636427-001 · GVF</div></div>
-      <div class="detail-item"><div class="detail-label" contenteditable="true">参考</div><div class="detail-value" contenteditable="true">Le Rider pl. 46, 19 · SNG ANS 749-56</div></div>
+      <div class="detail-item"><div class="detail-label" contenteditable="true">Ã¥Â¹Â´Ã¤Â»Â£</div><div class="detail-value" contenteditable="true">359-336 BC</div></div>
+      <div class="detail-item"><div class="detail-label" contenteditable="true">Ã©ÂÂ¢Ã¥ÂÂ¼</div><div class="detail-value" contenteditable="true">Tetradrachm Ã¥ÂÂÃ¥Â¾Â·Ã¦ÂÂÃ¥ÂÂÃ©Â©Â¬</div></div>
+      <div class="detail-item"><div class="detail-label" contenteditable="true">Ã¦ÂÂÃ¨Â´Â¨</div><div class="detail-value" contenteditable="true">Ã©ÂÂ¶ ÃÂ· 23mm ÃÂ· 14.33g ÃÂ· Ã¨Â½Â´ 12h</div></div>
+      <div class="detail-item"><div class="detail-label" contenteditable="true">NGC</div><div class="detail-value" contenteditable="true">6636427-001 ÃÂ· GVF</div></div>
+      <div class="detail-item"><div class="detail-label" contenteditable="true">Ã¥ÂÂÃ¨ÂÂ</div><div class="detail-value" contenteditable="true">Le Rider pl. 46, 19 ÃÂ· SNG ANS 749-56</div></div>
     </div>
     <div class="description">
-      <h4 contenteditable="true">📜 历史背景</h4>
-      <p contenteditable="true">亚历山大大帝之父腓力二世——马其顿王国奠基者，公元前338年喀罗尼亚战役确立希腊霸权。<strong>安菲波利斯造币厂</strong>是其在位期间最重要的铸币中心，币面宙斯月桂冠头像为古希腊钱币肖像艺术巅峰。背面青年骑手<strong>手持棕榈枝</strong>纪念腓力公元前356年奥运会马赛冠军——当届马其顿首次参赛即夺金，是其政治生涯的重要象征。马下双控制标记（controls）：<strong>海豚</strong>（ΔΕΛΦΙΣ delphis）= 安菲波利斯海港城市标志，<strong>pellet-in-Π</strong> = 特定年版或印模组的官方标识。Le Rider pl. 46, 19 将此版式归入腓力二世"Group C"晚期安菲波利斯币。NGC 6636427-001 认证，GVF 品相。</p>
+      <h4 contenteditable="true">Ã°ÂÂÂ Ã¥ÂÂÃ¥ÂÂ²Ã¨ÂÂÃ¦ÂÂ¯</h4>
+      <p contenteditable="true">Ã¤ÂºÂÃ¥ÂÂÃ¥Â±Â±Ã¥Â¤Â§Ã¥Â¤Â§Ã¥Â¸ÂÃ¤Â¹ÂÃ§ÂÂ¶Ã¨ÂÂÃ¥ÂÂÃ¤ÂºÂÃ¤Â¸ÂÃ¢ÂÂÃ¢ÂÂÃ©Â©Â¬Ã¥ÂÂ¶Ã©Â¡Â¿Ã§ÂÂÃ¥ÂÂ½Ã¥Â¥Â Ã¥ÂÂºÃ¨ÂÂÃ¯Â¼ÂÃ¥ÂÂ¬Ã¥ÂÂÃ¥ÂÂ338Ã¥Â¹Â´Ã¥ÂÂÃ§Â½ÂÃ¥Â°Â¼Ã¤ÂºÂÃ¦ÂÂÃ¥Â½Â¹Ã§Â¡Â®Ã§Â«ÂÃ¥Â¸ÂÃ¨ÂÂÃ©ÂÂ¸Ã¦ÂÂÃ£ÂÂ<strong>Ã¥Â®ÂÃ¨ÂÂ²Ã¦Â³Â¢Ã¥ÂÂ©Ã¦ÂÂ¯Ã©ÂÂ Ã¥Â¸ÂÃ¥ÂÂ</strong>Ã¦ÂÂ¯Ã¥ÂÂ¶Ã¥ÂÂ¨Ã¤Â½ÂÃ¦ÂÂÃ©ÂÂ´Ã¦ÂÂÃ©ÂÂÃ¨Â¦ÂÃ§ÂÂÃ©ÂÂ¸Ã¥Â¸ÂÃ¤Â¸Â­Ã¥Â¿ÂÃ¯Â¼ÂÃ¥Â¸ÂÃ©ÂÂ¢Ã¥Â®ÂÃ¦ÂÂ¯Ã¦ÂÂÃ¦Â¡ÂÃ¥ÂÂ Ã¥Â¤Â´Ã¥ÂÂÃ¤Â¸ÂºÃ¥ÂÂ¤Ã¥Â¸ÂÃ¨ÂÂÃ©ÂÂ±Ã¥Â¸ÂÃ¨ÂÂÃ¥ÂÂÃ¨ÂÂºÃ¦ÂÂ¯Ã¥Â·ÂÃ¥Â³Â°Ã£ÂÂÃ¨ÂÂÃ©ÂÂ¢Ã©ÂÂÃ¥Â¹Â´Ã©ÂªÂÃ¦ÂÂ<strong>Ã¦ÂÂÃ¦ÂÂÃ¦Â£ÂÃ¦Â¦ÂÃ¦ÂÂ</strong>Ã§ÂºÂªÃ¥Â¿ÂµÃ¨ÂÂÃ¥ÂÂÃ¥ÂÂ¬Ã¥ÂÂÃ¥ÂÂ356Ã¥Â¹Â´Ã¥Â¥Â¥Ã¨Â¿ÂÃ¤Â¼ÂÃ©Â©Â¬Ã¨ÂµÂÃ¥ÂÂ Ã¥ÂÂÃ¢ÂÂÃ¢ÂÂÃ¥Â½ÂÃ¥Â±ÂÃ©Â©Â¬Ã¥ÂÂ¶Ã©Â¡Â¿Ã©Â¦ÂÃ¦Â¬Â¡Ã¥ÂÂÃ¨ÂµÂÃ¥ÂÂ³Ã¥Â¤ÂºÃ©ÂÂÃ¯Â¼ÂÃ¦ÂÂ¯Ã¥ÂÂ¶Ã¦ÂÂ¿Ã¦Â²Â»Ã§ÂÂÃ¦Â¶Â¯Ã§ÂÂÃ©ÂÂÃ¨Â¦ÂÃ¨Â±Â¡Ã¥Â¾ÂÃ£ÂÂÃ©Â©Â¬Ã¤Â¸ÂÃ¥ÂÂÃ¦ÂÂ§Ã¥ÂÂ¶Ã¦Â ÂÃ¨Â®Â°Ã¯Â¼ÂcontrolsÃ¯Â¼ÂÃ¯Â¼Â<strong>Ã¦ÂµÂ·Ã¨Â±Â</strong>Ã¯Â¼ÂÃÂÃÂÃÂÃÂ¦ÃÂÃÂ£ delphisÃ¯Â¼Â= Ã¥Â®ÂÃ¨ÂÂ²Ã¦Â³Â¢Ã¥ÂÂ©Ã¦ÂÂ¯Ã¦ÂµÂ·Ã¦Â¸Â¯Ã¥ÂÂÃ¥Â¸ÂÃ¦Â ÂÃ¥Â¿ÂÃ¯Â¼Â<strong>pellet-in-ÃÂ </strong> = Ã§ÂÂ¹Ã¥Â®ÂÃ¥Â¹Â´Ã§ÂÂÃ¦ÂÂÃ¥ÂÂ°Ã¦Â¨Â¡Ã§Â»ÂÃ§ÂÂÃ¥Â®ÂÃ¦ÂÂ¹Ã¦Â ÂÃ¨Â¯ÂÃ£ÂÂLe Rider pl. 46, 19 Ã¥Â°ÂÃ¦Â­Â¤Ã§ÂÂÃ¥Â¼ÂÃ¥Â½ÂÃ¥ÂÂ¥Ã¨ÂÂÃ¥ÂÂÃ¤ÂºÂÃ¤Â¸Â"Group C"Ã¦ÂÂÃ¦ÂÂÃ¥Â®ÂÃ¨ÂÂ²Ã¦Â³Â¢Ã¥ÂÂ©Ã¦ÂÂ¯Ã¥Â¸ÂÃ£ÂÂNGC 6636427-001 Ã¨Â®Â¤Ã¨Â¯ÂÃ¯Â¼ÂGVF Ã¥ÂÂÃ§ÂÂ¸Ã£ÂÂ</p>
     </div>
     <div class="obv-rev">
-      <div class="obv" contenteditable="true">正面: 宙斯月桂冠头像右向（古典肖像艺术巅峰）</div>
-      <div class="rev" contenteditable="true">背面: ΦΙΛΙΠΠΟΥ · 持棕榈少年骑骏马右行·下双控：海豚 + pellet-in-Π</div>
+      <div class="obv" contenteditable="true">Ã¦Â­Â£Ã©ÂÂ¢: Ã¥Â®ÂÃ¦ÂÂ¯Ã¦ÂÂÃ¦Â¡ÂÃ¥ÂÂ Ã¥Â¤Â´Ã¥ÂÂÃ¥ÂÂ³Ã¥ÂÂÃ¯Â¼ÂÃ¥ÂÂ¤Ã¥ÂÂ¸Ã¨ÂÂÃ¥ÂÂÃ¨ÂÂºÃ¦ÂÂ¯Ã¥Â·ÂÃ¥Â³Â°Ã¯Â¼Â</div>
+      <div class="rev" contenteditable="true">Ã¨ÂÂÃ©ÂÂ¢: ÃÂ¦ÃÂÃÂÃÂÃÂ ÃÂ ÃÂÃÂ¥ ÃÂ· Ã¦ÂÂÃ¦Â£ÂÃ¦Â¦ÂÃ¥Â°ÂÃ¥Â¹Â´Ã©ÂªÂÃ©ÂªÂÃ©Â©Â¬Ã¥ÂÂ³Ã¨Â¡ÂÃÂ·Ã¤Â¸ÂÃ¥ÂÂÃ¦ÂÂ§Ã¯Â¼ÂÃ¦ÂµÂ·Ã¨Â±Â + pellet-in-ÃÂ </div>
     </div>
-    <span class="tag" contenteditable="true">马其顿</span><span class="tag" contenteditable="true">安菲波利斯</span><span class="tag" contenteditable="true">腓力二世</span><span class="tag" contenteditable="true">NGC认证</span><span class="tag" contenteditable="true">Le Rider Group C</span>
+    <span class="tag" contenteditable="true">Ã©Â©Â¬Ã¥ÂÂ¶Ã©Â¡Â¿</span><span class="tag" contenteditable="true">Ã¥Â®ÂÃ¨ÂÂ²Ã¦Â³Â¢Ã¥ÂÂ©Ã¦ÂÂ¯</span><span class="tag" contenteditable="true">Ã¨ÂÂÃ¥ÂÂÃ¤ÂºÂÃ¤Â¸Â</span><span class="tag" contenteditable="true">NGCÃ¨Â®Â¤Ã¨Â¯Â</span><span class="tag" contenteditable="true">Le Rider Group C</span>
     <div class="bottom-row">
-      <div><div class="price-value" contenteditable="true">€832</div><div class="price-label" contenteditable="true">成交价</div></div>
-      <div class="prov-compact" contenteditable="true"><strong>NGC</strong> #6636427-001<br>落槌 <strong>Numismatik Naumann</strong> · Auction 161 · 2025</div>
+      <div><div class="price-value" contenteditable="true">Ã¢ÂÂ¬832</div><div class="price-label" contenteditable="true">Ã¦ÂÂÃ¤ÂºÂ¤Ã¤Â»Â·</div></div>
+      <div class="prov-compact" contenteditable="true"><strong>NGC</strong> #6636427-001<br>Ã¨ÂÂ½Ã¦Â§Â <strong>Numismatik Naumann</strong> ÃÂ· Auction 161 ÃÂ· 2025</div>
     </div>
   </div>
 </div>
 
 <!-- GK-004 -->
 <div class="coin-card" data-category="greek" draggable="true">
-  <div class="drag-handle">⠿ 拖拽排序</div>
+  <div class="drag-handle">Ã¢Â Â¿ Ã¦ÂÂÃ¦ÂÂ½Ã¦ÂÂÃ¥ÂºÂ</div>
+<!-- GK-004 (coin-info) -->
+<div class="coin-card" data-category="greek" draggable="true">
+  <div class="drag-handle">&#x280B; Drag</div>
   <div class="coin-image">
     <span class="coin-number" contenteditable="true">GK-004</span>
     <span class="coin-grade" contenteditable="true">gVF</span>
-    <img src="images/GK-004.jpg" alt="吕西马科斯四德拉克马" data-path="images/GK-004.jpg" onerror="this.style.display='none'">
-    <div class="placeholder" onclick="triggerUpload(this)" style="display:none">🪙</div>
+    <img src="images/GK-004.jpg" alt="GK-004" data-path="images/GK-004.jpg" onerror="this.style.display='none'">
+    <div class="placeholder" onclick="triggerUpload(this)" style="display:none">IMG</div>
     <div class="img-overlay">
-      <button class="img-btn" onclick="triggerUpload(this)">📷 上传图片</button>
-      <button class="img-btn" onclick="editImgPath(this)">🔗 改路径</button>
+      <button class="img-btn" onclick="triggerUpload(this)">Upload</button>
+      <button class="img-btn" onclick="editImgPath(this)">Path</button>
     </div>
   </div>
-  <div class="card-content">
-    <div class="title-row">
-      <h3 contenteditable="true">吕西马科斯 Lampsakos 四德拉克马</h3>
-      <span class="subtitle" contenteditable="true">GREECE · Hellenistic · Lysimachos (BC 297-281)</span>
-    </div>
-    <div class="specs-row">
-      <div class="detail-item"><div class="detail-label" contenteditable="true">年代</div><div class="detail-value" contenteditable="true">BC 297-281</div></div>
-      <div class="detail-item"><div class="detail-label" contenteditable="true">面值</div><div class="detail-value" contenteditable="true">Tetradrachm 四德拉克马</div></div>
-      <div class="detail-item"><div class="detail-label" contenteditable="true">材质</div><div class="detail-value" contenteditable="true">Silver 银 · 28mm · 17.05g</div></div>
-      <div class="detail-item"><div class="detail-label" contenteditable="true">轴</div><div class="detail-value" contenteditable="true">12h</div></div>
-      <div class="detail-item"><div class="detail-label" contenteditable="true">参考</div><div class="detail-value" contenteditable="true">Thompson 50; HGC 3 1750b</div></div>
+  <div class="coin-info">
+    <h2 class="coin-title" contenteditable="true">Lysimachos Lampsakos Tetradrachm</h2>
+    <p class="coin-subtitle" contenteditable="true">GREECE - Hellenistic - Lysimachos (BC 297-281)</p>
+    <div class="coin-detail">
+      <div class="detail-item"><div class="detail-label" contenteditable="true">å¹´ä»£</div><div class="detail-value" contenteditable="true">BC 297-281</div></div>
+      <div class="detail-item"><div class="detail-label" contenteditable="true">é¢å¼</div><div class="detail-value" contenteditable="true">Tetradrachm åå¾·æåé©¬</div></div>
+      <div class="detail-item"><div class="detail-label" contenteditable="true">æè´¨</div><div class="detail-value" contenteditable="true">Silver é¶ - 28mm - 17.05g</div></div>
+      <div class="detail-item"><div class="detail-label" contenteditable="true">åè</div><div class="detail-value" contenteditable="true">Thompson 50; HGC 3 1750b</div></div>
     </div>
     <div class="obv-rev">
-      <div class="obv" contenteditable="true">正面: ΑΛΕΞΑΝΔΡΟΥ · 亚历山大大帝戴阿蒙（Ammon）角状头饰头像右</div>
-      <div class="rev" contenteditable="true">背面: ΑΘΗΝΑ · 雅典娜戴盔持盾矛立像右 · ΒΑΣΙΛΕΩΣ ΛΥΣΙΜΑΧΟΥ · ΑΘΗΝΑΣ（造币厂控制标记）</div>
+      <div class="obv" contenteditable="true">æ­£é¢: Alexander the Great Ammon horn diademed head r.</div>
+      <div class="rev" contenteditable="true">èé¢: Athena Alkidemos seated l. with shield and spear - BASILEOS LYSIMACHOU - ATHENAS</div>
     </div>
     <div class="description">
-      <h4 contenteditable="true">📜 历史背景</h4>
-      <p contenteditable="true">吕西马科斯（Lysimachos，BC 360-281）是亚历山大大帝的六位近身侍卫（Somatophylax）之一，于BC 306/305年在色雷斯自立为王，建都莱普提昂杜斯（Lysimotelia），随后在其治下的色雷斯及小亚细亚地区大规模铸造四德拉克马金币。Lampsakos（兰普萨科斯）位于达达尼尔海峡入口，是吕西马科斯王国最重要的造币中心之一，掌控着从本都-潘提卡彭至爱琴海的贵金属流通命脉。<br><br>吕西马科斯四德拉克马正面沿用经典的亚历山大阿蒙之角（Ammon Horn）形象——这一肖像自BC 336年起便随亚历山大的军事扩张流通于整个希腊化世界，是最早、最具辨识度的希腊化君主肖像。亚历山大通过宣称自己是埃及阿蒙神之子（Jupiter Ammon）来建构其神性血统，吕西马科斯沿用这一肖像，既是政治宣传，也是对亚历山大开创的希腊化君主制iconography（肖像体系）的直接继承。<br><br>背面雅典娜·阿尔基德莫斯（Athena Alkidemos）是马其顿及亚历山大继承者们偏爱的战神形象——手持阿尔基（Alche，阿克顿的神盾）和矛，身披盔甲配狮皮头盔。Lampsakos造币厂以ΑΘΗΝΑΣ作为控制标记（control mark），用于区分不同批次和工匠。吕西马科斯四德拉克马是希腊化时期发行量最大、流通最广的硬币版式之一。</p>
+      <h4 contenteditable="true">HISTORICAL BACKGROUND</h4>
+      <p contenteditable="true">Lysimachos (BC 360-281) was one of Alexander the Great's six Somatophylakes. He declared himself king in Thrace in BC 306/305, establishing his capital at Lysimotelia. The Lampsakos mint was one of the most important in his kingdom, controlling the flow of precious metals from Pontus-Panticapaeum to the Aegean.</p>
     </div>
-    <span class="tag" contenteditable="true">希腊化</span><span class="tag" contenteditable="true">吕西马科斯</span><span class="tag" contenteditable="true">Lampsakos</span><span class="tag" contenteditable="true">亚历山大继承者</span>
+    <span class="tag" contenteditable="true">Hellenistic</span><span class="tag" contenteditable="true">Lysimachos</span><span class="tag" contenteditable="true">Lampsakos</span><span class="tag" contenteditable="true">Diadochi</span>
     <div class="bottom-row">
-      <div><div class="price-value" contenteditable="true">€1,850</div><div class="price-label" contenteditable="true">成交价</div></div>
-      <div class="prov-compact" contenteditable="true"><strong>Camerarius Numizmatika</strong>（现）<br><strong>Solidus Numismatik</strong>（前，德国）</div>
+      <div><div class="price-value" contenteditable="true">EUR1,850</div><div class="price-label" contenteditable="true">æäº¤ä»·</div></div>
+      <div class="prov-compact" contenteditable="true">Camerarius Numizmatika (ç°) - Solidus Numismatik (å, DE)</div>
     </div>
   </div>
 </div>
 
-</div><!-- end coin-grid -->
-
-<script>
-// ===== GitHub 配置 =====
-const GITHUB_REPO = 'fisherfix/coin-collection';
-const GITHUB_BRANCH = 'master';
-let githubToken = localStorage.getItem('gh_token') || '';
-let autoSyncEnabled = localStorage.getItem('gh_autoSync') === 'true';
-let _syncPending = false;
-let _syncTimer = null;
-
-// ===== Toast提示 =====
-function showToast(msg) {
-  const existing = document.getElementById('toast');
-  if (existing) existing.remove();
-  const bar = document.createElement('div');
-  bar.id = 'toast';
-  bar.textContent = msg;
-  bar.style.cssText = 'position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:#d4af37;color:#1a1a2e;padding:10px 24px;border-radius:20px;font-size:0.9em;z-index:9999;opacity:1;transition:opacity 1s;';
-  document.body.appendChild(bar);
-  setTimeout(() => { bar.style.opacity='0'; setTimeout(()=>bar.remove(),1000); }, 2500);
-}
-
-// ===== GitHub API 通用请求 =====
-async function ghApi(method, path, body) {
-  const res = await fetch(`https://api.github.com${path}`, {
-    method,
-    headers: {
-      'Authorization': `Bearer ${githubToken}`,
-      'Accept': 'application/vnd.github+json',
-      'Content-Type': 'application/json',
-    },
-    body: body ? JSON.stringify(body) : undefined,
-  });
-  if (!res.ok) {
-    const err = await res.json().catch(()=>({}));
-    throw new Error(err.message || `HTTP ${res.status}`);
-  }
-  return res.json();
-}
-
-
-// ===== 重置本地编辑 =====
-function resetLocal() {
-  if (!confirm('确定要清空所有本地编辑记录吗？此操作会从 localStorage 移除保存的内容并刷新页面，恢复到 HTML 默认状态。')) return;
-  localStorage.removeItem('coinCat_v4');
-  location.reload();
-}
-// ===== GitHub 上传图片 =====
-async function uploadImage(file) {
-  if (!githubToken) { showToast('⚠️ 请先设置 GitHub Token'); openGithubPanel(); return; }
-  showToast('📤 正在上传图片到 GitHub...');
-  try {
-    const content = await file.arrayBuffer();
-    let sha;
-    try {
-      const existing = await ghApi('GET', `/repos/${GITHUB_REPO}/contents/images/${file.name}?ref=${GITHUB_BRANCH}`);
-      sha = existing.sha;
-    } catch(e) { /* 新文件 */ }
-    const putBody = { message: `Upload ${file.name}`, content, branch: GITHUB_BRANCH };
-    if (sha) putBody.sha = sha;
-    await ghApi('PUT', `/repos/${GITHUB_REPO}/contents/images/${file.name}`, putBody);
-    showToast(`✅ ${file.name} 已上传`);
-  } catch(e) { showToast('❌ 上传失败: ' + e.message); }
-}
-
-// ===== 同步 catalog.csv 到 GitHub =====
-async function syncToGithub() {
-  if (!githubToken) { showToast('⚠️ 请先设置 GitHub Token'); openGithubPanel(); return; }
-  showToast('🔄 正在同步完整页面...');
-  try {
-    // 克隆完整 HTML，清理敏感/临时内容
-    const doc = document.documentElement.cloneNode(true);
-
-    // 移除 token 面板
-    const tk = doc.querySelector('#gh-panel');
-    if (tk) tk.remove();
-
-    // 移除功能性按钮（这些只在浏览器里有效）
-    const removeBtnTexts = ['恢复本地编辑', '重置本地', 'GitHub 同步', '同步到 GitHub'];
-    doc.querySelectorAll('.tool-btn').forEach(btn => {
-      if (removeBtnTexts.some(t => btn.textContent.includes(t))) btn.remove();
-    });
-
-    // 清理 onclick 属性（避免残留）
-    doc.querySelectorAll('[onclick]').forEach(el => {
-      const fn = el.getAttribute('onclick');
-      if (fn && (fn.includes('syncToGithub') || fn.includes('openGithubPanel') || fn.includes('resetLocal') || fn.includes('restoreLocal') || fn.includes('uploadImage') || fn.includes('editImgPath') || fn.includes('triggerUpload'))) {
-        el.removeAttribute('onclick');
-      }
-    });
-
-    // 移除 contenteditable（下载后不再可编辑）
-    doc.querySelectorAll('[contenteditable]').forEach(el => el.removeAttribute('contenteditable'));
-
-    // 注入同步标记
-    const ts = new Date().toISOString().replace(/[:.]/g, '-').slice(0, 19);
-    const head = doc.querySelector('head');
-    if (head) {
-      const meta = doc.createElement('meta');
-      meta.name = 'sync-ts';
-      meta.content = ts;
-      head.appendChild(meta);
-    }
-
-    const htmlContent = '<!DOCTYPE html>\n' + doc.outerHTML;
-    let sha;
-    try {
-      const existing = await ghApi('GET', `/repos/${GITHUB_REPO}/contents/index.html?ref=${GITHUB_BRANCH}`);
-      sha = existing.sha;
-    } catch(e) { /* 新建 */ }
-    const commitMsg = `Sync full HTML snapshot ${ts}`;
-    const putBody = { message: commitMsg, content: btoa(unescape(encodeURIComponent(htmlContent))), branch: GITHUB_BRANCH };
-    if (sha) putBody.sha = sha;
-    await ghApi('PUT', `/repos/${GITHUB_REPO}/contents/index.html`, putBody);
-    showToast('✅ 完整页面已同步到 GitHub！');
-  } catch(e) { showToast('❌ 同步失败: ' + e.message); }
-}
-
-// ===== GitHub Token 设置面板 =====
-function openGithubPanel() {
-  const existing = document.getElementById('gh-panel');
-  if (existing) { existing.remove(); return; }
-  const panel = document.createElement('div');
-  panel.id = 'gh-panel';
-  panel.style.cssText = 'position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);background:#16213e;border:2px solid #d4af37;border-radius:16px;padding:30px;z-index:10000;min-width:420px;';
-  panel.innerHTML = `
-    <h3 style="color:#d4af37;margin-bottom:15px;">⚙️ GitHub 同步设置</h3>
-    <p style="color:#888;font-size:0.85em;margin-bottom:15px;line-height:1.6;">
-      设置 Token 后，每次编辑都会自动推送完整 HTML 到 GitHub。<br>
-      <strong style="color:#d4af37">你的修改会自动同步给我</strong>（无需下载再上传）<br>
-      生成 Token：<a href="https://github.com/settings/tokens/new" target="_blank" style="color:#d4af37;">点此生成</a> → Note 填 coin → 勾选 <strong style="color:#d4af37">repo</strong> → Generate → 复制粘贴到这里
-    </p>
-    <input id="gh-token-input" type="password" placeholder="ghp_xxxxxxxxxxxxxxxxxxxx" value="${githubToken}"
-      style="width:100%;padding:10px;border:1px solid #555;background:#1a1a2e;color:#eee;border-radius:8px;margin-bottom:12px;font-size:0.9em;">
-    <label style="display:flex;align-items:center;gap:8px;margin-bottom:15px;cursor:pointer;">
-      <input id="gh-auto-sync" type="checkbox" ${autoSyncEnabled?'checked':''} style="width:18px;height:18px;accent-color:#d4af37;">
-      <span style="color:#ccc;font-size:0.9em;">☑️ 编辑后自动同步（每3秒无操作自动推送）</span>
-    </label>
-    <div style="display:flex;gap:10px;justify-content:flex-end;">
-      <button onclick="this.closest('#gh-panel').remove()" style="padding:8px 16px;background:#333;color:#888;border:1px solid #555;border-radius:6px;cursor:pointer;">取消</button>
-      <button onclick="saveGithubToken()" style="padding:8px 16px;background:#d4af37;color:#1a1a2e;border:none;border-radius:6px;cursor:pointer;font-weight:bold;">保存并同步</button>
+<!-- GK-005 -->
+<div class="coin-card" data-category="greek" draggable="true">
+  <div class="drag-handle">&#x280B; Drag</div>
+  <div class="coin-image">
+    <span class="coin-number" contenteditable="true">GK-005</span>
+    <span class="coin-grade" contenteditable="true">gVF</span>
+    <img src="images/GK-005.jpg" alt="GK-005" data-path="images/GK-005.jpg" onerror="this.style.display='none'">
+    <div class="placeholder" onclick="triggerUpload(this)" style="display:none">IMG</div>
+    <div class="img-overlay">
+      <button class="img-btn" onclick="triggerUpload(this)">Upload</button>
+      <button class="img-btn" onclick="editImgPath(this)">Path</button>
     </div>
-    <div id="gh-status" style="margin-top:12px;font-size:0.8em;color:#888;"></div>`;
-  document.body.appendChild(panel);
-  document.getElementById('gh-token-input').focus();
-}
-function saveGithubToken() {
-  const token = document.getElementById('gh-token-input').value.trim();
-  if (!token) return;
-  githubToken = token;
-  localStorage.setItem('gh_token', token);
-  const autoCheck = document.getElementById('gh-auto-sync');
-  autoSyncEnabled = autoCheck ? autoCheck.checked : false;
-  localStorage.setItem('gh_autoSync', autoSyncEnabled ? 'true' : 'false');
-  document.getElementById('gh-status').innerHTML = '<span style="color:#90EE90">✅ Token 已保存' + (autoSyncEnabled ? '，自动同步已开启' : '') + '</span>';
-  syncToGithub().then(() => setTimeout(() => document.getElementById('gh-panel')?.remove(), 1500));
-}
+  </div>
+  <div class="coin-info">
+    <h2 class="coin-title" contenteditable="true">Pamphylia Aspendos Stater</h2>
+    <p class="coin-subtitle" contenteditable="true">GREECE - Pamphylia - Aspendos (BC 380-325)</p>
+    <div class="coin-detail">
+      <div class="detail-item"><div class="detail-label" contenteditable="true">å¹´ä»£</div><div class="detail-value" contenteditable="true">BC 380-325</div></div>
+      <div class="detail-item"><div class="detail-label" contenteditable="true">é¢å¼</div><div class="detail-value" contenteditable="true">Stater é¶å¸</div></div>
+      <div class="detail-item"><div class="detail-label" contenteditable="true">æè´¨</div><div class="detail-value" contenteditable="true">Silver é¶ - 22mm - 10.48g</div></div>
+      <div class="detail-item"><div class="detail-label" contenteditable="true">åè</div><div class="detail-value" contenteditable="true">SNG France 103</div></div>
+    </div>
+    <div class="obv-rev">
+      <div class="obv" contenteditable="true">æ­£é¢: Two wrestlers grappling, FK mark between them.</div>
+      <div class="rev" contenteditable="true">èé¢: Slinger walking right - triskeles - ESTFEDIIYS pellet border</div>
+    </div>
+    <div class="description">
+      <h4 contenteditable="true">HISTORICAL BACKGROUND</h4>
+      <p contenteditable="true">Aspendos was one of the most important Greek cities in Pamphylia, located near the mouth of the Eurymedon River. The obverse depicts two wrestlers engaged in combat. The FK mark is a mint or magistrate control. The reverse features a slinger preparing to fire, referencing the military traditions of southern Anatolia.</p>
+    </div>
+    <span class="tag" contenteditable="true">Pamphylia</span><span class="tag" contenteditable="true">Aspendos</span><span class="tag" contenteditable="true">Greek Colony</span><span class="tag" contenteditable="true">Athletic</span>
+    <div class="bottom-row">
+      <div><div class="price-value" contenteditable="true">$345</div><div class="price-label" contenteditable="true">æäº¤ä»·</div></div>
+      <div class="prov-compact" contenteditable="true">Source not recorded - USD 345.00</div>
+    </div>
+  </div>
+</div>
 
-// ===== 图片操作 =====
-function attachImageHandlers() {
-  document.querySelectorAll('.coin-card').forEach(attachCard);
-}
-function attachCard(card) {
-  const img = card.querySelector('.coin-image img');
-  const placeholder = card.querySelector('.placeholder');
-  if (!img) return;
-  img.addEventListener('error', () => { img.style.display='none'; if(placeholder) placeholder.style.display='flex'; });
-  img.addEventListener('load', () => { img.style.display='block'; if(placeholder) placeholder.style.display='none'; });
-  if (img.complete && img.naturalWidth === 0) { img.style.display='none'; if(placeholder) placeholder.style.display='flex'; }
-  else if (img.complete) { if(placeholder) placeholder.style.display='none'; }
-  // MutationObserver 监听卡片内所有编辑变化，实时触发自动保存
-  const obs = new MutationObserver(() => autoSave());
-  obs.observe(card, { subtree: true, childList: true, characterData: true });
-}
-function triggerUpload(btn) {
-  const card = btn.closest('.coin-card');
-  const coinId = card.querySelector('.coin-number')?.textContent?.trim() || 'coin';
-  const fileInput = document.createElement('input');
-  fileInput.type = 'file';
-  fileInput.accept = 'image/*';
-  fileInput.onchange = async e => {
-    const file = e.target.files[0];
-    if (!file) return;
-    const ext = file.name.split('.').pop();
-    const newName = `${coinId}.${ext}`;
-    const renamed = new File([file], newName, { type: file.type });
-    // 本地预览
-    const reader = new FileReader();
-    reader.onload = ev => {
-      const img = card.querySelector('.coin-image img');
-      const placeholder = card.querySelector('.placeholder');
-      img.src = ev.target.result;
-      img.style.display = 'block';
-      if (placeholder) placeholder.style.display = 'none';
-    };
-    reader.readAsDataURL(file);
-    // 同步到 GitHub
-    if (githubToken) await uploadImage(renamed);
-    else showToast('📷 图片已预览（设置 Token 可自动上传）');
-  };
-  fileInput.click();
-}
-function editImgPath(btn) {
-  const card = btn.closest('.coin-card');
-  const img = card.querySelector('.coin-image img');
-  const currentPath = img.getAttribute('data-path') || img.src;
-  const inp = document.createElement('input');
-  inp.value = currentPath;
-  inp.style.cssText = 'position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);width:80%;max-width:500px;padding:10px;border:2px solid #d4af37;background:#1a1a2e;color:#eee;font-size:0.9em;z-index:10000;border-radius:10px;';
-  inp.onblur = () => { img.src = inp.value; img.setAttribute('data-path', inp.value); inp.remove(); showToast('📷 路径已更新'); };
-  inp.onkeydown = e => { if(e.key==='Enter') inp.blur(); if(e.key==='Escape') inp.remove(); };
-  document.body.appendChild(inp);
-  inp.focus();
-}
+<!-- GK-006 -->
+<div class="coin-card" data-category="greek" draggable="true">
+  <div class="drag-handle">&#x280B; Drag</div>
+  <div class="coin-image">
+    <span class="coin-number" contenteditable="true">GK-006</span>
+    <span class="coin-grade" contenteditable="true">Fine</span>
+    <img src="images/GK-006.jpg" alt="GK-006" data-path="images/GK-006.jpg" onerror="this.style.display='none'">
+    <div class="placeholder" onclick="triggerUpload(this)" style="display:none">IMG</div>
+    <div class="img-overlay">
+      <button class="img-btn" onclick="triggerUpload(this)">Upload</button>
+      <button class="img-btn" onclick="editImgPath(this)">Path</button>
+    </div>
+  </div>
+  <div class="coin-info">
+    <h2 class="coin-title" contenteditable="true">Macedon Philip II AE</h2>
+    <p class="coin-subtitle" contenteditable="true">GREECE - Macedon - Philip II (BC 359-336)</p>
+    <div class="coin-detail">
+      <div class="detail-item"><div class="detail-label" contenteditable="true">å¹´ä»£</div><div class="detail-value" contenteditable="true">BC 359-336</div></div>
+      <div class="detail-item"><div class="detail-label" contenteditable="true">é¢å¼</div><div class="detail-value" contenteditable="true">Bronze ééå¸</div></div>
+      <div class="detail-item"><div class="detail-label" contenteditable="true">æè´¨</div><div class="detail-value" contenteditable="true">AE éé - 17.3mm - 6g - 4.9mm</div></div>
+      <div class="detail-item"><div class="detail-label" contenteditable="true">åè</div><div class="detail-value" contenteditable="true">HGC 3.1, 882</div></div>
+    </div>
+    <div class="obv-rev">
+      <div class="obv" contenteditable="true">æ­£é¢: Apollo laureate head r.</div>
+      <div class="rev" contenteditable="true">èé¢: Jockey on horse r. - PHILIPPOY</div>
+    </div>
+    <div class="description">
+      <h4 contenteditable="true">HISTORICAL BACKGROUND</h4>
+      <p contenteditable="true">Philip II of Macedon (BC 359-336) was the father of Alexander the Great. During his 23-year reign, he transformed Macedonia into the dominant power of the Balkans through military reform. Apollo was the patron deity of the Macedonian royal family.</p>
+    </div>
+    <span class="tag" contenteditable="true">Macedon</span><span class="tag" contenteditable="true">Philip II</span><span class="tag" contenteditable="true">Apollo</span><span class="tag" contenteditable="true">Hellenistic</span>
+    <div class="bottom-row">
+      <div><div class="price-value" contenteditable="true">CNY369</div><div class="price-label" contenteditable="true">æäº¤ä»·</div></div>
+      <div class="prov-compact" contenteditable="true">åç»¿è½© (Xianyu) - 2024-01</div>
+    </div>
+  </div>
+</div>
 
-// ===== 筛选 =====
-function filter(cat) {
-  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-  event.target.classList.add('active');
-  document.querySelectorAll('.coin-card').forEach(c => {
-    c.style.display = (cat==='all'||c.dataset.category===cat)?'block':'none';
-  });
-}
+<!-- UK-001 -->
+<div class="coin-card" data-category="other" draggable="true">
+  <div class="drag-handle">&#x280B; Drag</div>
+  <div class="coin-image">
+    <span class="coin-number" contenteditable="true">UK-001</span>
+    <span class="coin-grade" contenteditable="true">AU</span>
+    <img src="images/UK-001.jpg" alt="UK-001" data-path="images/UK-001.jpg" onerror="this.style.display='none'">
+    <div class="placeholder" onclick="triggerUpload(this)" style="display:none">IMG</div>
+    <div class="img-overlay">
+      <button class="img-btn" onclick="triggerUpload(this)">Upload</button>
+      <button class="img-btn" onclick="editImgPath(this)">Path</button>
+    </div>
+  </div>
+  <div class="coin-info">
+    <h2 class="coin-title" contenteditable="true">GB Victoria Jubilee Crown</h2>
+    <p class="coin-subtitle" contenteditable="true">GREAT BRITAIN - Victoria - Jubilee Head</p>
+    <div class="coin-detail">
+      <div class="detail-item"><div class="detail-label" contenteditable="true">å¹´ä»£</div><div class="detail-value" contenteditable="true">AD 1887</div></div>
+      <div class="detail-item"><div class="detail-label" contenteditable="true">é¢å¼</div><div class="detail-value" contenteditable="true">Crown åæï¼5åä»¤ï¼</div></div>
+      <div class="detail-item"><div class="detail-label" contenteditable="true">æè´¨</div><div class="detail-value" contenteditable="true">Silver é¶ - 38.6mm - approx. 28.28g - .925</div></div>
+      <div class="detail-item"><div class="detail-label" contenteditable="true">åè</div><div class="detail-value" contenteditable="true">S 3921; KM 759; Spink 3921</div></div>
+    </div>
+    <div class="obv-rev">
+      <div class="obv" contenteditable="true">æ­£é¢: Victoria Jubilee bust l. by J.E. Boehm - VICTORIA D:G:BRITT:REG:F:D:</div>
+      <div class="rev" contenteditable="true">èé¢: St. George slaying dragon by B. Pistrucci - 1887 - Royal Mint London</div>
+    </div>
+    <div class="description">
+      <h4 contenteditable="true">HISTORICAL BACKGROUND</h4>
+      <p contenteditable="true">1887 marked Queen Victoria's 50th year on the throne (Golden Jubilee). The Jubilee Head design by Sir J.E. Boehm was controversial. The Pistrucci St. George reverse made its first appearance on a Crown with the Jubilee portrait (1887-1892), replaced in 1893 by the more popular Old Head design.</p>
+    </div>
+    <span class="tag" contenteditable="true">UK</span><span class="tag" contenteditable="true">Victoria</span><span class="tag" contenteditable="true">Jubilee</span><span class="tag" contenteditable="true">St George</span>
+    <div class="bottom-row">
+      <div><div class="price-value" contenteditable="true">CNY1364</div><div class="price-label" contenteditable="true">æäº¤ä»·</div></div>
+      <div class="prov-compact" contenteditable="true">è¯æ³èæ³</div>
+    </div>
+  </div>
+</div>
 
-// ===== 拖拽排序 =====
-let dragSrc = null;
-const grid = document.getElementById('coinGrid');
-grid.addEventListener('dragstart', e => {
-  if (!e.target.closest('.coin-card')) return;
-  dragSrc = e.target.closest('.coin-card');
-  dragSrc.classList.add('dragging');
-  e.dataTransfer.effectAllowed = 'move';
-  e.dataTransfer.setData('text/plain', '');
-});
-grid.addEventListener('dragend', () => {
-  if (dragSrc) dragSrc.classList.remove('dragging');
-  document.querySelectorAll('.coin-card').forEach(c => c.classList.remove('drag-over'));
-});
-grid.addEventListener('dragover', e => {
-  e.preventDefault();
-  const target = e.target.closest('.coin-card');
-  if (target && target !== dragSrc) document.querySelectorAll('.coin-card').forEach(c => c.classList.remove('drag-over'));
-  if (target) target.classList.add('drag-over');
-});
-grid.addEventListener('drop', e => {
-  e.preventDefault();
-  const target = e.target.closest('.coin-card');
-  if (dragSrc && target && target !== dragSrc) {
-    const boxes = [...grid.querySelectorAll('.coin-card')];
-    if (boxes.indexOf(dragSrc) < boxes.indexOf(target)) target.after(dragSrc);
-    else target.before(dragSrc);
-  }
-  document.querySelectorAll('.coin-card').forEach(c => c.classList.remove('drag-over'));
-});
+<!-- DE-001 -->
+<div class="coin-card" data-category="other" draggable="true">
+  <div class="drag-handle">&#x280B; Drag</div>
+  <div class="coin-image">
+    <span class="coin-number" contenteditable="true">DE-001</span>
+    <span class="coin-grade" contenteditable="true">EF</span>
+    <img src="images/DE-001.jpg" alt="DE-001" data-path="images/DE-001.jpg" onerror="this.style.display='none'">
+    <div class="placeholder" onclick="triggerUpload(this)" style="display:none">IMG</div>
+    <div class="img-overlay">
+      <button class="img-btn" onclick="triggerUpload(this)">Upload</button>
+      <button class="img-btn" onclick="editImgPath(this)">Path</button>
+    </div>
+  </div>
+  <div class="coin-info">
+    <h2 class="coin-title" contenteditable="true">German Hindenburg 5 Reichsmark</h2>
+    <p class="coin-subtitle" contenteditable="true">DEUTSCHES REICH - Hindenburg - Reichsadler</p>
+    <div class="coin-detail">
+      <div class="detail-item"><div class="detail-label" contenteditable="true">å¹´ä»£</div><div class="detail-value" contenteditable="true">AD 1935</div></div>
+      <div class="detail-item"><div class="detail-label" contenteditable="true">é¢å¼</div><div class="detail-value" contenteditable="true">5 Reichsmark 5é©¬å</div></div>
+      <div class="detail-item"><div class="detail-label" contenteditable="true">æè´¨</div><div class="detail-value" contenteditable="true">Silver é¶ - approx. 29mm - approx. 13.88g - .500</div></div>
+      <div class="detail-item"><div class="detail-label" contenteditable="true">åè</div><div class="detail-value" contenteditable="true">KM 72; J. 356</div></div>
+    </div>
+    <div class="obv-rev">
+      <div class="obv" contenteditable="true">æ­£é¢: Hindenburg Field Marshal bust r. with dates 1847-1934.</div>
+      <div class="rev" contenteditable="true">èé¢: Reichsadler clutching swastika wreath - 5 Reichsmark - 1935</div>
+    </div>
+    <div class="description">
+      <h4 contentedifiable">HISTORICAL BACKGROUND</h4>
+      <p contenteditable="true">Paul von Hindenburg (1847-1934) was the second President of the Weimar Republic. After his death in 1934, Hitler combined the offices of President and Chancellor, becoming Fuhrer. The 1935 5 Reichsmark continued to feature Hindenburg's portrait on the obverse, using the prestige of the most respected military figure of the Weimar Republic to legitimize Nazi currency.</p>
+    </div>
+    <span class="tag" contenteditable="true">Germany</span><span class="tag" contenteditable="true">Hindenburg</span><span class="tag" contenteditable="true">Nazi</span><span class="tag" contenteditable="true">Reichsadler</span>
+    <div class="bottom-row">
+      <div><div class="price-value" contenteditable="true">CNY202</div><div class="price-label" contenteditable="true">æäº¤ä»·</div></div>
+      <div class="prov-compact" contenteditable="true">è¯æ³èæ³</div>
+    </div>
+  </div>
+</div>
 
-// ===== 自动计算统计数字 =====
-function recalcStats() {
-  const cards = document.querySelectorAll('.coin-card');
-  const coinCount = cards.length;
-  let total = 0;
-  const cats = new Set();
-  cards.forEach(c => {
-    if (c.dataset.category) cats.add(c.dataset.category);
-    const priceText = c.querySelector('.price-value')?.textContent || '';
-    // 提取所有数字（处理 "€386.43 / 9枚" 这种格式）
-    const matches = priceText.match(/[\d,]+\.?\d*/g);
-    if (matches) {
-      matches.forEach(m => {
-        const n = parseFloat(m.replace(/,/g, ''));
-        if (!isNaN(n) && n > 0 && n < 100000) total += n;
-      });
-    }
-  });
-  const countEl = document.querySelector('.stat-count .stat-value');
-  const totalEl = document.querySelector('.stat-total .stat-value');
-  const catsEl = document.querySelector('.stat-cats .stat-value');
-  if (countEl) countEl.textContent = coinCount;
-  if (totalEl) totalEl.textContent = '€' + total.toLocaleString('en-US', {minimumFractionDigits: 0, maximumFractionDigits: 2});
-  if (catsEl) catsEl.textContent = cats.size;
-}
-recalcStats();
-// 卡片内容变化时重新计算
-document.addEventListener('input', recalcStats);
-document.addEventListener('dragend', recalcStats);
+<!-- DE-002 -->
+<div class="coin-card" data-category="other" draggable="true">
+  <div class="drag-handle">&#x280B; Drag</div>
+  <div class="coin-image">
+    <span class="coin-number" contenteditable="true">DE-002</span>
+    <span class="coin-grade" contenteditable="true">EF</span>
+    <img src="images/DE-002.jpg" alt="DE-002" data-path="images/DE-002.jpg" onerror="this.style.display='none'">
+    <div class="placeholder" onclick="triggerUpload(this)" style="display:none">IMG</div>
+    <div class="img-overlay">
+      <button class="img-btn" onclick="triggerUpload(this)">Upload</button>
+      <button class="img-btn" onclick="editImgPath(this)">Path</button>
+    </div>
+  </div>
+  <div class="coin-info">
+    <h2 class="coin-title" contenteditable="true">German Nazi Era 5 Reichsmark</h2>
+    <p class="coin-subtitle" contenteditable="true">DEUTSCHES REICH - Nazi Era - Eagle and Swastika (KM# 94)</p>
+    <div class="coin-detail">
+      <div class="detail-item"><div class="detail-label" contenteditable="true">å¹´ä»£</div><div class="detail-value" contenteditable="true">AD 1938</div></div>
+      <div class="detail-item"><div class="detail-label" contenteditable="true">é¢å¼</div><div class="detail-value" contenteditable="true">5 Reichsmark 5é©¬å</div></div>
+      <div class="detail-item"><div class="detail-label" contenteditable="true">æè´¨</div><div class="detail-value" contenteditable="true">Silver é¶ - approx. 29mm - approx. 13.88g - .500</div></div>
+      <div class="detail-item"><div class="detail-label" contenteditable="true">åè</div><div class="detail-value" contenteditable="true">KM 94; J. 365</div></div>
+    </div>
+    <div class="obv-rev">
+      <div class="obv" contenteditable="true">æ­£é¢: Parteiadler clutching swastika in wreath - Deutsches Reich 1938 - 5 Reichsmark</div>
+      <div class="rev" contenteditable="true">èé¢: Hindenburg Field Marshal portrait (1847-1934)</div>
+    </div>
+    <div class="description">
+      <h4 contenteditable="true">HISTORICAL BACKGROUND</h4>
+      <p contenteditable="true">1938 was a pivotal year of massive rearmament for Nazi Germany. Over 100 million 5 Reichsmark silver coins were minted (approximately 4-6 million by the Stuttgart Mint alone). The Parteiadler design by Hans Schweitzer symbolized Nazi spiritual leadership. The reverse maintains Hindenburg's portrait, creating a deliberate political juxtaposition borrowing the prestige of the deceased military hero to legitimize the Nazi regime.</p>
+    </div>
+    <span class="tag" contenteditable="true">Germany</span><span class="tag" contenteditable="true">Nazi</span><span class="tag" contenteditable="true">Stuttgart</span><span class="tag" contenteditable="true">Reichsadler</span>
+    <div class="bottom-row">
+      <div><div class="price-value" contenteditable="true">CNY137</div><div class="price-label" contenteditable="true">æäº¤ä»·</div></div>
+      <div class="prov-compact" contenteditable="true">è¯æ³èæ³</div>
+    </div>
+  </div>
+</div>
 
-// ===== 自动保存 + 自动同步 =====
-let _saveTimer;
-let _syncCooldown = false;
-function autoSave() {
-  clearTimeout(_saveTimer);
-  _saveTimer = setTimeout(() => {
-    const g = document.getElementById('coinGrid');
-    if (!g) return;
-    const cards = [...g.querySelectorAll('.coin-card')].map(c => c.outerHTML);
-    localStorage.setItem('coinCat_v4', JSON.stringify({ cards }));
-    const ind = document.getElementById('saveIndicator');
-    if (ind) { ind.textContent = '💾 已保存'; clearTimeout(ind._t); ind._t = setTimeout(() => { ind.textContent = ''; }, 2000); }
-    // 自动同步：每3秒无操作后推送一次
-    if (autoSyncEnabled && githubToken && !_syncCooldown) {
-      _syncCooldown = true;
-      clearTimeout(_syncTimer);
-      _syncTimer = setTimeout(() => {
-        syncToGithub().finally(() => { _syncCooldown = false; });
-      }, 3000);
-    }
-  }, 800);
-}
-document.addEventListener('input', autoSave);
-document.addEventListener('dragend', autoSave);
-// 刷新/关闭前同步保存（不等防抖）
-window.addEventListener('beforeunload', () => {
-  const g = document.getElementById('coinGrid');
-  if (!g) return;
-  const cards = [...g.querySelectorAll('.coin-card')].map(c => c.outerHTML);
-  localStorage.setItem('coinCat_v4', JSON.stringify({ cards }));
-});
+<!-- GK-007 -->
+<div class="coin-card" data-category="greek" draggable="true">
+  <div class="drag-handle">&#x280B; Drag</div>
+  <div class="coin-image">
+    <span class="coin-number" contenteditable="true">GK-007</span>
+    <span class="coin-grade" contenteditable="true">VF</span>
+    <img src="images/GK007_combined.jpg" alt="GK-007" data-path="images/GK007_combined.jpg" onerror="this.style.display='none'">
+    <div class="placeholder" onclick="triggerUpload(this)" style="display:none">IMG</div>
+    <div class="img-overlay">
+      <button class="img-btn" onclick="triggerUpload(this)">Upload</button>
+      <button class="img-btn" onclick="editImgPath(this)">Path</button>
+    </div>
+  </div>
+  <div class="coin-info">
+    <h2 class="coin-title" contenteditable="true">Thrace Maroneia Tetradrachm</h2>
+    <p class="coin-subtitle" contenteditable="true">GREECE - Thrace - Maroneia (ca. BC 189/8-49/5)</p>
+    <div class="coin-detail">
+      <div class="detail-item"><div class="detail-label" contenteditable="true">å¹´ä»£</div><div class="detail-value" contenteditable="true">BC ca. 189/8-49/5</div></div>
+      <div class="detail-item"><div class="detail-label" contenteditable="true">é¢å¼</div><div class="detail-value" contenteditable="true">Tetradrachm åå¾·æåé©¬</div></div>
+      <div class="detail-item"><div class="detail-label" contenteditable="true">æè´¨</div><div class="detail-value" contenteditable="true">Silver é¶ - 32mm - 16.2g</div></div>
+      <div class="detail-item"><div class="detail-label" contenteditable="true">åè</div><div class="detail-value" contenteditable="true">-</div></div>
+    </div>
+    <div class="obv-rev">
+      <div class="obv" contenteditable="true">æ­£é¢: Young Dionysos laureate head r. wearing ivy wreath.</div>
+      <div class="rev" contenteditable="true">èé¢: Dionysos nude standing l. holding grapes - DIONYSOU SOPHRONOS MARONEITON - double emblema mark</div>
+    </div>
+    <div class="description">
+      <h4 contenteditable="true">HISTORICAL BACKGROUND</h4>
+      <p contenteditable="true">Maroneia was a major Greek colonial city on the southern Thracian coast, active as a minting center from the mid-5th century BC. The obverse features young Dionysos wearing an ivy (kissos) wreath. The reverse shows Dionysos standing with grapes, flanked by inscriptions indicating the city (Maroneia) and priestly title (Soprhonos). The Maroneia tetradrachm is among the finest artistic achievements of Thracian city coinage.</p>
+    </div>
+    <span class="tag" contenteditable="true">Greece</span><span class="tag" contenteditable="true">Thrace</span><span class="tag" contenteditable="true">Maroneia</span><span class="tag" contenteditable="true">Dionysos</span>
+    <div class="bottom-row">
+      <div><div class="price-value" contenteditable="true">CNY2588</div><div class="price-label" contenteditable="true">æäº¤ä»·</div></div>
+      <div class="prov-compact" contenteditable="true">å¤§ä¹é¾è¡æ (Xianyu) - 2024-02</div>
+    </div>
+  </div>
+</div>
 
-// ===== 恢复本地编辑 =====
-function restoreLocal() {
-  const raw = localStorage.getItem('coinCat_v4');
-  if (!raw) { showToast('⚠️ 没有保存的本地编辑'); return; }
-  try {
-    const d = JSON.parse(raw);
-    const g = document.getElementById('coinGrid');
-    d.cards.forEach(html => {
-      const p = document.createElement('div');
-      p.innerHTML = html;
-      const sc = p.querySelector('.coin-card');
-      if (!sc) return;
-      const num = sc.querySelector('.coin-number')?.textContent?.trim();
-      const ex = [...g.querySelectorAll('.coin-card')].find(c => c.querySelector('.coin-number')?.textContent?.trim() === num);
-      if (!ex) return;
-      const si = sc.querySelector('.coin-image img');
-      if (si) {
-        const di = ex.querySelector('.coin-image img');
-        if (di && si.src) { di.src = si.src; di.setAttribute('data-path', si.getAttribute('data-path')||''); }
-      }
-      // 按 className+tagName 分组，按索引匹配（修复 find() 总是匹配第一个的 bug）
-      const sGroups = {}, dGroups = {};
-      sc.querySelectorAll('[contenteditable]').forEach((el, i) => {
-        const k = el.className + '|' + el.tagName;
-        if (!sGroups[k]) sGroups[k] = [];
-        sGroups[k].push(i);
-      });
-      ex.querySelectorAll('[contenteditable]').forEach((el, i) => {
-        const k = el.className + '|' + el.tagName;
-        if (!dGroups[k]) dGroups[k] = [];
-        dGroups[k].push(el);
-      });
-      Object.keys(sGroups).forEach(k => {
-        sGroups[k].forEach((si, idx) => {
-          if (dGroups[k] && dGroups[k][idx]) {
-            dGroups[k][idx].textContent = sc.querySelectorAll('[contenteditable]')[si].textContent;
-          }
-        });
-      });
-    });
-    const idxMap = {};
-    d.cards.forEach((html, idx) => { const m=html.match(/<span class="coin-number"[^>]*>([^<]+)<\/span>/); if(m) idxMap[m[1].trim()]=idx; });
-    const ordered = [...g.querySelectorAll('.coin-card')].sort((a,b) => (idxMap[a.querySelector('.coin-number')?.textContent?.trim()||'']??999)-(idxMap[b.querySelector('.coin-number')?.textContent?.trim()||'']??999));
-    ordered.forEach(c => g.appendChild(c));
-    attachImageHandlers();
-    showToast('↩️ 已恢复本地编辑');
-  } catch(e) { showToast('❌ 恢复失败'); }
-}
 
-// ===== 导出 CSV =====
-function exportCSV() {
-  const rows = ['id,title,era,denomination,material,reference,grade,price,provenance'];
-  document.querySelectorAll('.coin-card').forEach(c => {
-    const get = sel => c.querySelector(sel)?.textContent?.trim()||'';
-    const q = s => `"${s.replace(/"/g,'""')}"`;
-    const d = c.querySelectorAll('.detail-value');
-    rows.push([get('.coin-number'), get('.coin-title'), d[0]?.textContent.trim()||'', d[1]?.textContent.trim()||'', d[2]?.textContent.trim()||'', d[3]?.textContent.trim()||'', get('.coin-grade'), get('.price-value'), get('.prov-compact').replace(/\s+/g,' ')].map(q).join(','));
-  });
-  const blob = new Blob(['\uFEFF'+rows.join('\n')], {type:'text/csv;charset=utf-8'});
-  const a = document.createElement('a');
-  a.href = URL.createObjectURL(blob);
-  a.download = 'coin_export.csv';
-  a.click();
-  showToast('📋 CSV已导出');
-}
+    </div>
 
-// ===== 直接写回本地 index.html（直连 HTTP 监听器） =====
-function saveToLocalFile() {
-  const doc = document.documentElement.cloneNode(true);
-  doc.querySelectorAll('[contenteditable]').forEach(el => el.removeAttribute('contenteditable'));
-  doc.querySelectorAll('#tokenPanel,#gh-panel').forEach(el => el.remove());
-  const html = '<!DOCTYPE html>\n' + doc.outerHTML;
-  const b64 = btoa(unescape(encodeURIComponent(html)));
-  showToast('💾 正在保存...');
-  fetch('http://localhost:7788/save', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ html: b64, len: html.length })
-  }).then(r => r.text()).then(t => {
-    if (t === 'OK') showToast('✅ 已保存到文件！');
-    else showToast('❌ 保存失败: ' + t);
-  }).catch(e => {
-    showToast('❌ 找不到保存服务，请先启动 http-save.ps1');
-  });
-}
-
-// ===== 尝试自动恢复本地编辑 =====
-// 临时禁用：避免覆盖 HTML 手动修改的内容
-// (function tryRestore() {
-//   const raw = localStorage.getItem('coinCat_v4');
-//   if (!raw) return;
-//   try {
-//     const d = JSON.parse(raw);
-//     if (!d.cards || !d.cards.length) return;
-//     const g = document.getElementById('coinGrid');
-//     d.cards.forEach(html => {
-//       const p = document.createElement('div');
-//       p.innerHTML = html;
-//       const sc = p.querySelector('.coin-card');
-//       if (!sc) return;
-//       const num = sc.querySelector('.coin-number')?.textContent?.trim();
-//       const ex = [...g.querySelectorAll('.coin-card')].find(c => c.querySelector('.coin-number')?.textContent?.trim()===num);
-//       if (!ex) return;
-//       const si = sc.querySelector('.coin-image img');
-//       if (si) {
-//         const di = ex.querySelector('.coin-image img');
-//         if (di && si.src && si.src.startsWith('data:')) { di.src = si.src; di.setAttribute('data-path', si.getAttribute('data-path')||''); }
-//       }
-//       // 按 className+tagName 分组，按索引匹配（修复 find() 总是匹配第一个的 bug）
-//       const sGroups = {}, dGroups = {};
-//       sc.querySelectorAll('[contenteditable]').forEach((el, i) => {
-//         const k = el.className + '|' + el.tagName;
-//         if (!sGroups[k]) sGroups[k] = [];
-//         sGroups[k].push(i);
-//       });
-//       ex.querySelectorAll('[contenteditable]').forEach((el, i) => {
-//         const k = el.className + '|' + el.tagName;
-//         if (!dGroups[k]) dGroups[k] = [];
-//         dGroups[k].push(el);
-//       });
-//       Object.keys(sGroups).forEach(k => {
-//         sGroups[k].forEach((si, idx) => {
-//           if (dGroups[k] && dGroups[k][idx]) {
-//             dGroups[k][idx].textContent = sc.querySelectorAll('[contenteditable]')[si].textContent;
-//           }
-//         });
-//       });
-//     });
-//     setTimeout(() => showToast('↩️ 已恢复上次编辑内容'), 500);
-//   } catch(e) {}
-// })();
-console.log('[tryRestore] 已禁用，页面仅从 HTML 加载数据');
-
-document.querySelectorAll('.coin-card').forEach(attachCard);
-
-</script>
-</body>
-</html>
+</div><!-- end coin-grid -->

@@ -1,0 +1,14 @@
+# 钱币库文件说明
+# tools/ — 本地工具脚本，无需部署到 GitHub Pages
+
+tools/
+*.ps1
+*.py
+versions/
+*.bak
+*.bak2
+*.bak3
+process_*.py
+rebuild_*.py
+merge_*.py
+insert_*.ps1

@@ -891,29 +891,64 @@ grid.addEventListener('drop', e => {
   document.querySelectorAll('.coin-card').forEach(c => c.classList.remove('drag-over'));
 });
 
+// ===== 汇率配置 =====
+const EXCHANGE_RATES = {
+  'CNY': 1,      // 人民币基准
+  'EUR': 7.8,    // 欧元 → 人民币
+  'GBP': 9.2,    // 英镑 → 人民币
+  'USD': 7.2,    // 美元 → 人民币
+  'US$': 7.2,    // 美元 → 人民币
+};
+
+function parsePrice(priceText) {
+  // 匹配币种前缀和金额
+  const patterns = [
+    { regex: /^¥ ?([\d,]+\.?\d*)/, currency: 'CNY' },
+    { regex: /^€ ?([\d,]+\.?\d*)/, currency: 'EUR' },
+    { regex: /^£ ?([\d,]+\.?\d*)/, currency: 'GBP' },
+    { regex: /^US\$ ?([\d,]+\.?\d*)/, currency: 'USD' },
+    { regex: /^\$ ?([\d,]+\.?\d*)/, currency: 'USD' },
+  ];
+  
+  for (const p of patterns) {
+    const match = priceText.match(p.regex);
+    if (match) {
+      const amount = parseFloat(match[1].replace(/,/g, ''));
+      if (!isNaN(amount) && amount > 0 && amount < 100000) {
+        return { amount, currency: p.currency };
+      }
+    }
+  }
+  return null;
+}
+
 // ===== 自动计算统计数字 =====
 function recalcStats() {
   const cards = document.querySelectorAll('.coin-card');
   const coinCount = cards.length;
-  let total = 0;
+  let totalCNY = 0;
   const cats = new Set();
+  const currencyBreakdown = {};
+  
   cards.forEach(c => {
     if (c.dataset.category) cats.add(c.dataset.category);
     const priceText = c.querySelector('.price-value')?.textContent || '';
-    // 提取所有数字（处理 "€386.43 / 9枚" 这种格式）
-    const matches = priceText.match(/[\d,]+\.?\d*/g);
-    if (matches) {
-      matches.forEach(m => {
-        const n = parseFloat(m.replace(/,/g, ''));
-        if (!isNaN(n) && n > 0 && n < 100000) total += n;
-      });
+    const price = parsePrice(priceText);
+    if (price) {
+      const rate = EXCHANGE_RATES[price.currency] || 1;
+      const cnyValue = price.amount * rate;
+      totalCNY += cnyValue;
+      // 累加各币种原始金额
+      if (!currencyBreakdown[price.currency]) currencyBreakdown[price.currency] = 0;
+      currencyBreakdown[price.currency] += price.amount;
     }
   });
+  
   const countEl = document.querySelector('.stat-count .stat-value');
   const totalEl = document.querySelector('.stat-total .stat-value');
   const catsEl = document.querySelector('.stat-cats .stat-value');
   if (countEl) countEl.textContent = coinCount;
-  if (totalEl) totalEl.textContent = '€' + total.toLocaleString('en-US', {minimumFractionDigits: 0, maximumFractionDigits: 2});
+  if (totalEl) totalEl.textContent = '¥' + Math.round(totalCNY).toLocaleString('zh-CN');
   if (catsEl) catsEl.textContent = cats.size;
 }
 recalcStats();

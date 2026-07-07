@@ -9,7 +9,7 @@
   "denomination": "AR Drachm",
   "material": "Silver · 20mm · 5.29g",
   "reference": "Deppert-Lippitz 515; SNG von Aulock -; SNG Copenhagen -; BMC 94",
-  "description": "",
+  "description": "这枚币来自古希腊首位哲学家泰勒斯的家乡米利都。泰勒斯是古希腊七贤之一，西方思想史上第一个有记载有名字留下来的思想家，被称为“科学和哲学之祖”。",
   "obverse": "正面: Laureate head of Apollo left",
   "reverse": "反面: Lion standing to left, looking back at star with eight rays; monogram over T before, ΑΛΚΩΝ in exergue",
   "tags": [
@@ -19,15 +19,15 @@
     "狮子",
     "阿尔康"
   ],
-  "price": "—",
-  "price_currency": "",
-  "price_cny": "",
-  "seller": "",
-  "auction": "",
+  "price": "¥3,780",
+  "price_currency": "CNY",
+  "price_cny": 3780,
+  "seller": "琋语集藏",
+  "auction": "2024-03",
   "lot": "",
-  "year": "",
-  "provenance_raw": "Ex Roma Numismatics Ltd.",
-  "created_at": "2026-07-07T17:40:43",
-  "git_commit": "73ac0a7",
+  "year": "2024",
+  "provenance_raw": "<strong>琋语集藏</strong> · 2024-03 · Ex Roma Numismatics Ltd.",
+  "created_at": "2026-07-07T17:43:25",
+  "git_commit": "09d17cb",
   "image_size": 2600529
 }

@@ -36,26 +36,7 @@ if sys.platform == "win32":
 
 # ============ 配置区域：录入新币 ============
 # 每枚新币按以下结构添加。已确认卡片不要修改。
-coins = [
-    # {
-    #     "number": "",
-    #     "image": "images/.jpg",
-    #     "grade": "",
-    #     "title": "",
-    #     "subtitle": "",
-    #     "era": "",
-    #     "denomination": "",
-    #     "material": "",
-    #     "reference": "—",
-    #     "description": "",
-    #     "obverse": "",
-    #     "reverse": "",
-    #     "tags": [],
-    #     "price": "",
-    #     "provenance": "",
-    #     "category": "",
-    # },
-]
+coins = []
 # ============ 以下逻辑固定，无需修改 ============
 
 BASE_DIR = r"C:\Users\zhaojingyun\.qclaw\workspace-agent-d8b9b18a\coin-collection"

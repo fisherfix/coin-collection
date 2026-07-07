@@ -37,24 +37,24 @@ if sys.platform == "win32":
 # ============ 配置区域：录入新币 ============
 # 每枚新币按以下结构添加。已确认卡片不要修改。
 coins = [
-    {
-        "number": "GR-002",
-        "image": "images/GR-002.jpg",
-        "grade": "GVF",
-        "title": "伊斯特罗斯 双人头银币",
-        "subtitle": "海鹰抓海豚 · 黑海古典银币",
-        "era": "BC 340-BC 313",
-        "denomination": "Stater 斯塔特",
-        "material": "Silver 银 · 20.5mm · 5.53g",
-        "reference": "AMNG I-436; SNG BM Black Sea-237",
-        "description": "莫西亚（Moesia）伊斯特罗斯（Istros，黑海西岸重要城邦，约今罗马尼亚境内多瑙河三角洲）铸造的古典银币。\n\n正面为双少年头像——一正一反、相互环绕。这种独特的双人头像图案是伊斯特罗斯城币的标志性设计，其象征意义学界尚有争议：一种观点认为代表Dioscuri（双子神卡斯托尔与波吕克斯），另一观点认为表现城邦的两位创建英雄或神灵（Heroes）。\n\n背面为海鹰（鸥鹭）展开双翅抓握海豚，向左飞行。底部署名IΣTPIH（伊斯特罗斯城的希腊文名称）。这一图案反映了伊斯特罗斯作为黑海贸易港口的海洋经济特征——海鹰象征天空与神意，海豚象征海洋与商业繁荣，两者结合宣示城市对黑海贸易通道的掌控。\n\n伊斯特罗斯城约公元前656年由米勒图斯（Miletus）移民建立，是黑海地区最早的希腊殖民城邦之一。其钱币铸造传统延续数百年，银币体系与雅典、爱奥尼亚等地有密切往来。",
-        "obverse": "正面: 双少年头像 · 一正一反相互环绕 · 古典希腊城邦风格",
-        "reverse": "背面: 海鹰展开双翅向左飞行抓握海豚 · 底部铭文 IΣTPIH（Istros，伊斯特罗斯）",
-        "tags": ["希腊古典时期", "伊斯特罗斯", "莫西亚", "黑海殖民城邦", "双人头", "银币", "斯塔特", "古典时期", "AMNG", "SNG"],
-        "price": "£270",
-        "provenance": "<strong>Classical Numismatic Group</strong> · 拍卖 · 2024-09",
-        "category": "greek",
-    },
+    # {
+    #     "number": "",
+    #     "image": "images/.jpg",
+    #     "grade": "",
+    #     "title": "",
+    #     "subtitle": "",
+    #     "era": "",
+    #     "denomination": "",
+    #     "material": "",
+    #     "reference": "—",
+    #     "description": "",
+    #     "obverse": "",
+    #     "reverse": "",
+    #     "tags": [],
+    #     "price": "",
+    #     "provenance": "",
+    #     "category": "",
+    # },
 ]
 # ============ 以下逻辑固定，无需修改 ============
 

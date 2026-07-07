@@ -1,0 +1,33 @@
+{
+  "id": "GK-012",
+  "category": "GK",
+  "grade": "GVF",
+  "title": "米利都·阿尔康 1德拉克马银币",
+  "subtitle": "Ionia, Miletos · Alkon",
+  "image": "images/GK-012.jpg",
+  "era": "BC 260–250",
+  "denomination": "AR Drachm",
+  "material": "Silver · 20mm · 5.29g",
+  "reference": "Deppert-Lippitz 515; SNG von Aulock -; SNG Copenhagen -; BMC 94",
+  "description": "",
+  "obverse": "正面: Laureate head of Apollo left",
+  "reverse": "反面: Lion standing to left, looking back at star with eight rays; monogram over T before, ΑΛΚΩΝ in exergue",
+  "tags": [
+    "GK",
+    "米利都",
+    "阿波罗",
+    "狮子",
+    "阿尔康"
+  ],
+  "price": "—",
+  "price_currency": "",
+  "price_cny": "",
+  "seller": "",
+  "auction": "",
+  "lot": "",
+  "year": "",
+  "provenance_raw": "Ex Roma Numismatics Ltd.",
+  "created_at": "2026-07-07T17:40:43",
+  "git_commit": "73ac0a7",
+  "image_size": 2600529
+}

@@ -5,11 +5,11 @@
   "title": "米利都·阿尔康 1德拉克马银币",
   "subtitle": "Ionia, Miletos · Alkon",
   "image": "images/GK-012.jpg",
-  "era": "BC 260–250",
+  "era": "BC 260-250",
   "denomination": "AR Drachm",
   "material": "Silver · 20mm · 5.29g",
   "reference": "Deppert-Lippitz 515; SNG von Aulock -; SNG Copenhagen -; BMC 94",
-  "description": "这枚币来自古希腊首位哲学家泰勒斯的家乡米利都。泰勒斯是古希腊七贤之一，西方思想史上第一个有记载有名字留下来的思想家，被称为“科学和哲学之祖”。",
+  "description": "这枚币来自古希腊首位哲学家泰勒斯的家乡米利都。泰勒斯是古希腊七贤之一，西方思想史上第一个有记载有名字留下来的思想家，被称为\"科学和哲学之祖\"。据希罗多德记载，泰勒斯曾准确预言了一次日食（学界推测为公元前585年5月28日），并提出\"水是万物本源\"的命题。米利都位于爱奥尼亚海岸，是公元前7至5世纪爱琴海世界最繁盛的工商业城邦之一，殖民范围远及埃及与黑海沿岸，由铸币官阿尔康（ΑΛΚΩΝ）发行此币。",
   "obverse": "正面: Laureate head of Apollo left",
   "reverse": "反面: Lion standing to left, looking back at star with eight rays; monogram over T before, ΑΛΚΩΝ in exergue",
   "tags": [
@@ -27,7 +27,7 @@
   "lot": "",
   "year": "2024",
   "provenance_raw": "<strong>琋语集藏</strong> · 2024-03 · Ex Roma Numismatics Ltd.",
-  "created_at": "2026-07-07T17:43:25",
-  "git_commit": "09d17cb",
+  "created_at": "2026-07-07T17:45:09",
+  "git_commit": "b3a8a12",
   "image_size": 2600529
 }

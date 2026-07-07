@@ -1,31 +1,7 @@
 {
   "id": "UK-001",
-  "category": "uk",
-  "grade": "—",
   "title": "维多利亚·马剑·克朗银币",
-  "subtitle": "UNITED KINGDOM · Victoria · St. George & Dragon · 1887",
+  "description": "<h4 contenteditable=\"true\">📜 历史背景</h4>\n      <p contenteditable=\"true\">维多利亚女王禧年（Jubilee Head）是1887年为纪念女王登基50周年而发行的纪念性头像。5克劳恩（5 shillings = 1 Crown）是英国高价值银币，由皇家造币厂铸造。禧年头像由雕塑家约瑟夫·爱德华·伯姆（Joseph Edgar Boehm）设计，是维多利亚时代最具辨识度的钱币肖像之一。</p>",
   "image": "images/UK-001.jpg",
-  "era": "1887",
-  "denomination": "Crown (5 shillings) 克朗",
-  "material": "Silver 银 · 28.28g · .925",
-  "reference": "J.E. Boehm (正面) · B. Pistrucci (背面)",
-  "description": "维多利亚女王禧年（Jubilee Head）是1887年为纪念女王登基50周年而发行的纪念性头像。5克劳恩（5 shillings = 1 Crown）是英国高价值银币，由皇家造币厂铸造。禧年头像由雕塑家约瑟夫·爱德华·伯姆（Joseph Edgar Boehm）设计，是维多利亚时代最具辨识度的钱币肖像之一。",
-  "obverse": "正面: 维多利亚女王禧年头像右向",
-  "reverse": "背面: 圣乔治策马刺剑，斗篷飞扬，长矛刺杀毒龙，骏马前蹄腾空；龙蜷于马蹄下，翅膀伸展；底部 exergue 内镌 1887；Pistrucci 经典马剑图",
-  "tags": [
-    "英国",
-    "维多利亚",
-    "禧年",
-    "克朗"
-  ],
-  "price": "¥1,364",
-  "price_currency": "CNY",
-  "price_cny": 1364,
-  "seller": "良泉藏泉",
-  "auction": "",
-  "lot": "",
-  "year": "",
-  "provenance_raw": "<strong>良泉藏泉</strong>",
-  "created_at": "2026-07-07T15:40:28",
-  "image_size": 851124
+  "category": "uk"
 }

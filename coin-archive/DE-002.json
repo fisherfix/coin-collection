@@ -1,7 +1,30 @@
 {
   "id": "DE-002",
+  "category": "german",
+  "grade": "—",
   "title": "兴登堡 Reichsadler 5马克银币",
-  "description": "<h4 contenteditable=\"true\">📜 历史背景</h4>\n      <p contenteditable=\"true\">保罗·冯·兴登堡（Paul von Hindenburg，1847-1934）是德国著名军事将领和政治家，于1925年至1934年担任魏玛共和国总统。1933年他任命阿道夫·希特勒为总理，最终导致纳粹党掌权。<br><br>\"Reichsadler\"（帝国之鹰）版5马克银币正面为兴登堡戎装胸像，背面为德意志帝国之鹰纹章。这类银币是魏玛共和国末期至第三帝国早期的重要流通货币，1938年铸造版见证了战前德国的货币体系。A标表示由柏林造币厂（Berlin）铸造。</p>",
+  "subtitle": "DEUTSCHLAND · Paul von Hindenburg · 1938",
   "image": "images/DE-002.jpg",
-  "category": "german"
+  "era": "1938",
+  "denomination": "5 Reichsmark",
+  "material": "Silver 银",
+  "reference": "A (柏林)",
+  "description": "保罗·冯·兴登堡（Paul von Hindenburg，1847-1934）是德国著名军事将领和政治家，于1925年至1934年担任魏玛共和国总统。1933年他任命阿道夫·希特勒为总理，最终导致纳粹党掌权。<br><br>\"Reichsadler\"（帝国之鹰）版5马克银币正面为兴登堡戎装胸像，背面为德意志帝国之鹰纹章。这类银币是魏玛共和国末期至第三帝国早期的重要流通货币，1938年铸造版见证了战前德国的货币体系。A标表示由柏林造币厂（Berlin）铸造。",
+  "obverse": "正面: 兴登堡戎装胸像右向",
+  "reverse": "背面: 德意志帝国之鹰纹章",
+  "tags": [
+    "德国",
+    "兴登堡",
+    "5马克"
+  ],
+  "price": "¥137",
+  "price_currency": "CNY",
+  "price_cny": 137,
+  "seller": "良泉藏泉",
+  "auction": "",
+  "lot": "",
+  "year": "",
+  "provenance_raw": "<strong>良泉藏泉</strong>",
+  "created_at": "2026-07-07T16:02:53",
+  "image_size": 1068203
 }

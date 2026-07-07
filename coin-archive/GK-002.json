@@ -1,7 +1,31 @@
 {
   "id": "GK-002",
+  "category": "greek",
+  "grade": "gVF",
   "title": "吕西马科斯 Lampsakos 四德拉克马",
-  "description": "<h4 contenteditable=\"true\">📜 历史背景</h4>\n      <p contenteditable=\"true\">吕西马科斯（Lysimachos，BC 360-281）是亚历山大大帝的六位近身侍卫（Somatophylax）之一，于BC 306/305年在色雷斯自立为王，建都莱普提昂杜斯（Lysimotelia），随后在其治下的色雷斯及小亚细亚地区大规模铸造四德拉克马金币。Lampsakos（兰普萨科斯）位于达达尼尔海峡入口，是吕西马科斯王国最重要的造币中心之一，掌控着从本都-潘提卡彭至爱琴海的贵金属流通命脉。<br><br>吕西马科斯四德拉克马正面沿用经典的亚历山大阿蒙之角（Ammon Horn）形象——这一肖像自BC 336年起便随亚历山大的军事扩张流通于整个希腊化世界，是最早、最具辨识度的希腊化君主肖像。亚历山大通过宣称自己是埃及阿蒙神之子（Jupiter Ammon）来建构其神性血统，吕西马科斯沿用这一肖像，既是政治宣传，也是对亚历山大开创的希腊化君主制iconography（肖像体系）的直接继承。<br><br>背面雅典娜·阿尔基德莫斯（Athena Alkidemos）是马其顿及亚历山大继承者们偏爱的战神形象——手持阿尔基（Alche，阿克顿的神盾）和矛，身披盔甲配狮皮头盔。Lampsakos造币厂以ΑΘΗΝΑΣ作为控制标记（control mark），用于区分不同批次和工匠。吕西马科斯四德拉克马是希腊化时期发行量最大、流通最广的硬币版式之一。</p>",
+  "subtitle": "GREECE · Hellenistic · Lysimachos (BC 297-281)",
   "image": "images/GK-002.jpg",
-  "category": "greek"
+  "era": "BC 297-281",
+  "denomination": "Tetradrachm 四德拉克马",
+  "material": "Silver 银 · 28mm · 17.05g",
+  "reference": "Thompson 50; HGC 3 1750b",
+  "description": "吕西马科斯（Lysimachos，BC 360-281）是亚历山大大帝的六位近身侍卫（Somatophylax）之一，于BC 306/305年在色雷斯自立为王，建都莱普提昂杜斯（Lysimotelia），随后在其治下的色雷斯及小亚细亚地区大规模铸造四德拉克马金币。Lampsakos（兰普萨科斯）位于达达尼尔海峡入口，是吕西马科斯王国最重要的造币中心之一，掌控着从本都-潘提卡彭至爱琴海的贵金属流通命脉。<br><br>吕西马科斯四德拉克马正面沿用经典的亚历山大阿蒙之角（Ammon Horn）形象——这一肖像自BC 336年起便随亚历山大的军事扩张流通于整个希腊化世界，是最早、最具辨识度的希腊化君主肖像。亚历山大通过宣称自己是埃及阿蒙神之子（Jupiter Ammon）来建构其神性血统，吕西马科斯沿用这一肖像，既是政治宣传，也是对亚历山大开创的希腊化君主制iconography（肖像体系）的直接继承。<br><br>背面雅典娜·阿尔基德莫斯（Athena Alkidemos）是马其顿及亚历山大继承者们偏爱的战神形象——手持阿尔基（Alche，阿克顿的神盾）和矛，身披盔甲配狮皮头盔。Lampsakos造币厂以ΑΘΗΝΑΣ作为控制标记（control mark），用于区分不同批次和工匠。吕西马科斯四德拉克马是希腊化时期发行量最大、流通最广的硬币版式之一。",
+  "obverse": "正面: ΑΛΕΞΑΝΔΡΟΥ · 亚历山大大帝戴阿蒙（Ammon）角状头饰头像右",
+  "reverse": "背面: ΑΘΗΝΑ · 雅典娜戴盔持盾矛立像右 · ΒΑΣΙΛΕΩΣ ΛΥΣΙΜΑΧΟΥ · ΑΘΗΝΑΣ（造币厂控制标记）",
+  "tags": [
+    "希腊化",
+    "吕西马科斯",
+    "Lampsakos",
+    "亚历山大继承者"
+  ],
+  "price": "€1,850",
+  "price_currency": "EUR",
+  "price_cny": 14430,
+  "seller": "Camerarius Numizmatika",
+  "auction": "",
+  "lot": "",
+  "year": "",
+  "provenance_raw": "<strong>Camerarius Numizmatika</strong>（现）<br><strong>Solidus Numismatik</strong>（前，德国）",
+  "created_at": "2026-07-07T16:02:53",
+  "image_size": 569494
 }

@@ -1,7 +1,30 @@
 {
   "id": "GR-001",
+  "category": "greek",
+  "grade": "VF",
   "title": "锡拉库萨·Deinomenid 僭主 四德拉克马",
-  "description": "<h4 contenteditable=\"true\">📜 历史背景</h4>\n      <p contenteditable=\"true\">Deinomenid 四兄弟（Gelon、Hieron、Thrasybulus、Polyzelus）于 BC 485 年建立僭主统治，Syracuse 由此跃升为西地中海最强希腊城邦。BC 480 年希梅拉战役（Himera）—— Gelon 联合 Akragas 城大败迦太基，古典作家希罗多德将其与同年的萨拉米斯海战并列为希腊人东西方战略的标志性胜利。四马战车（Quadriga）向右疾驰、Nike 飞降加冕，直接象征此类军事胜利与神圣赐福。背面 Arethusa 头像被四只海豚环绕——海豚是 Syracuse 延续数百年的城徽，寓意城市被海洋拥抱的地理与文化双重身份。此币属 Boehringer 115 标准版式，代表古典西西里艺术巅峰的前夜。</p>",
+  "subtitle": "SICILY · Syracuse · Deinomenid Tyranny",
   "image": "images/GR-001.jpg",
-  "category": "greek"
+  "era": "BC 485-466",
+  "denomination": "Tetradrachm 四德拉克马",
+  "material": "银 · 24mm · 16.72g",
+  "reference": "Boehringer 115; HGC 2 1306",
+  "description": "Deinomenid 四兄弟（Gelon、Hieron、Thrasybulus、Polyzelus）于 BC 485 年建立僭主统治，Syracuse 由此跃升为西地中海最强希腊城邦。BC 480 年希梅拉战役（Himera）—— Gelon 联合 Akragas 城大败迦太基，古典作家希罗多德将其与同年的萨拉米斯海战并列为希腊人东西方战略的标志性胜利。四马战车（Quadriga）向右疾驰、Nike 飞降加冕，直接象征此类军事胜利与神圣赐福。背面 Arethusa 头像被四只海豚环绕——海豚是 Syracuse 延续数百年的城徽，寓意城市被海洋拥抱的地理与文化双重身份。此币属 Boehringer 115 标准版式，代表古典西西里艺术巅峰的前夜。",
+  "obverse": "正面: 四马战车+Nike飞降加冕",
+  "reverse": "背面: ΣVRAKOΣION / Arethusa+四海豚",
+  "tags": [
+    "西西里",
+    "僭主时期",
+    "古典早期"
+  ],
+  "price": "€1,308",
+  "price_currency": "EUR",
+  "price_cny": 10202,
+  "seller": "Auctionaes AG",
+  "auction": "Auction 7",
+  "lot": "80",
+  "year": "1977",
+  "provenance_raw": "<strong>Auctionaes AG</strong> · Auction 7 · Lot 80 · 1977<br>再递 <strong>Numismatik Naumann</strong> · 2025",
+  "created_at": "2026-07-07T16:02:52",
+  "image_size": 1181529
 }

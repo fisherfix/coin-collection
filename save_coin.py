@@ -92,25 +92,28 @@ def parse_provenance(prov_html):
     """解析来源字段，提取卖家、拍卖、Lot、年份"""
     if not prov_html:
         return "", "", "", ""
-    # 提取 <strong>...</strong> 作为卖家
+    # 提取 <strong>...</strong> 作为卖家（取最后一次 = 实际购买方）
     strong_matches = re.findall(r'<strong>([^<]+)</strong>', prov_html)
-    seller = strong_matches[0] if strong_matches else ""
+    seller = strong_matches[-1] if strong_matches else ""
 
-    # 提取年份
-    year_match = re.search(r'\b(1[89]\d{2}|20\d{2})\b', prov_html)
-    year = year_match.group(1) if year_match else ""
+    # 提取年份（取最后一次 = 实际购买年份）
+    year_matches = re.findall(r'\b(1[89]\d{2}|20\d{2})\b', prov_html)
+    year = year_matches[-1] if year_matches else ""
 
-    # 提取 Lot
-    lot_match = re.search(r'Lot\s*(\d+)', prov_html, re.IGNORECASE)
-    lot = lot_match.group(1) if lot_match else ""
+    # 提取 Lot（取最后一次 = 实际购买 Lot）
+    lot_matches = re.findall(r'Lot\s*(\d+)', prov_html, re.IGNORECASE)
+    lot = lot_matches[-1] if lot_matches else ""
 
-    # 提取拍卖（Lot 前面的部分）
+    # 提取拍卖：优先从最后一次 "<strong>卖家</strong> · 拍卖名" 抓
     auction = ""
-    if "·" in prov_html:
+    strong_auction_matches = re.findall(r'<strong>[^<]+</strong>\s*·\s*([^<·]+?)(?=\s*·|\s*<|$)', prov_html)
+    if strong_auction_matches:
+        auction = strong_auction_matches[-1].strip()
+    elif "·" in prov_html:
+        # 回退：取最后一段
         parts = re.split(r'·', prov_html)
-        # 通常第二段是拍卖名
         if len(parts) > 1:
-            auction = re.sub(r'<[^>]+>', '', parts[1]).strip()
+            auction = re.sub(r'<[^>]+>', '', parts[-2]).strip() if len(parts) >= 2 else ""
 
     # 清理卖家中的 <br>
     seller = re.sub(r'<br>.*$', '', seller, flags=re.DOTALL).strip()

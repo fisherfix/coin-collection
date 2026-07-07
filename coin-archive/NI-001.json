@@ -4,7 +4,7 @@
   "grade": "NGC-AU50",
   "title": "拿破仑皇帝兼意大利国王1索尔迪铜币",
   "subtitle": "伦巴第铁王冠 · 米兰造币厂",
-  "image": "images/ROM-007.jpg",
+  "image": "images/NI-001.jpg",
   "era": "AD 1811",
   "denomination": "1 Soldo 索尔迪",
   "material": "Copper 铜 · 22mm · ~4.6g",
@@ -33,5 +33,6 @@
   "lot": "",
   "year": "2025",
   "provenance_raw": "<strong>云台主人</strong> · 私洽 · 2025-10",
-  "created_at": "2026-07-06T17:45:39"
+  "created_at": "2026-07-07T15:40:28",
+  "image_size": 1700919
 }

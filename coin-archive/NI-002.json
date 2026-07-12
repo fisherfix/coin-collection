@@ -1,0 +1,32 @@
+{
+  "id": "NI-002",
+  "category": "NI",
+  "grade": "—",
+  "title": "意大利王国 · 拿破仑一世 5索尔迪 银币 1809 米兰",
+  "subtitle": "Napoleone Imperatore e Re · Regno d'Italia · Milano",
+  "image": "images/NI-002.jpg",
+  "era": "AD 1809",
+  "denomination": "5 Soldi",
+  "material": "Silver · 15mm · 1.27g · 6h",
+  "reference": "Mont. 279; KM 19/5.1; R1 (发行量602,134)",
+  "description": "意大利王国（1805-1814）为拿破仑一世治下北意大利的附庸王国，由米兰总督区演化而来。1805年3月17日，拿破仑接受意大利王冠；5月26日，约瑟芬与他在米兰大教堂加冕，与巴黎加冕一样，他亲手将王冠戴上，宣告\"上帝赐予我，触者当心\"。后任命其女婿欧仁·德·博阿尔内为意大利总督。9年间，米兰造币厂以拿破仑名义发行全套意大利王国银铜币，5索尔迪为小额流通币，铁王冠（Corona di Ferro）作为王国主权标志，源自中世纪伦巴第王国。1814年1月缪拉背叛与奥地利结盟，意大利王国王朝崩溃。",
+  "obverse": "正面: Tête nue de Napoléon Ier à droite / NAPOLEONE IMPERATORE E RE · 1809",
+  "reverse": "反面: La Couronne de Fer / REGNO D'ITALIA · 5. SOLDI · M",
+  "tags": [
+    "NI",
+    "拿破仑一世",
+    "意大利王国",
+    "5 Soldi",
+    "铁王冠"
+  ],
+  "price": "€127",
+  "price_currency": "EUR",
+  "price_cny": 991,
+  "seller": "CGB",
+  "auction": "2026-07",
+  "lot": "",
+  "year": "2026",
+  "provenance_raw": "<strong>CGB</strong> · 2026-07",
+  "created_at": "2026-07-12T13:50:07",
+  "image_size": 190805
+}

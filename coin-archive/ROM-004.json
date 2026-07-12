@@ -2,15 +2,15 @@
   "id": "ROM-004",
   "category": "romaeg",
   "grade": "×9",
-  "title": "埃及·尼禄等亚历山大四德拉克马（批量×9）",
+  "title": "埃及·尼禄等亚历山大四德拉克马(批量×9)",
   "subtitle": "ROMAN EGYPT · Alexandria · Nero &amp; Others ×9",
   "image": "images/ROM-004.jpg",
-  "era": "54–68+ AD（多位皇帝）",
+  "era": "54-68+ AD(多位皇帝)",
   "denomination": "BI 银合金 Tetradrachm ×9",
   "material": "€387",
   "reference": "≈€43",
-  "description": "Numismatik Naumann Auction 154 批量Lot，包含9枚亚历山大造币厂Billon Tetradrachm，主要涵盖尼禄时期及同时代其他皇帝。正面多位皇帝肖像（含NEPΩN KΛAY KAIΣ ΣEB ΓEP等多版式），背面鹰立持权杖、L年份标记等典型亚历山大类型。部分带Aegis争议细节。",
-  "obverse": "正面: 多位皇帝头像（Nero为主，含Claudius等）",
+  "description": "Numismatik Naumann Auction 154 批量Lot,包含9枚亚历山大造币厂Billon Tetradrachm,主要涵盖尼禄时期及同时代其他皇帝。正面多位皇帝肖像(含NEPΩN KΛAY KAIΣ ΣEB ΓEP等多版式),背面鹰立持权杖、L年份标记等典型亚历山大类型。部分带Aegis争议细节。",
+  "obverse": "正面: 多位皇帝头像(Nero为主,含Claudius等)",
   "reverse": "背面: 鹰立/埃及符号/L不同纪年",
   "tags": [
     "批量Lot",
@@ -26,6 +26,6 @@
   "lot": "",
   "year": "2025",
   "provenance_raw": "<strong>Numismatik Naumann</strong> · Auction 154 · 2025",
-  "created_at": "2026-07-07T17:23:17",
+  "created_at": "2026-07-12T14:22:32",
   "image_size": 1246233
 }

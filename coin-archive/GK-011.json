@@ -9,9 +9,9 @@
   "denomination": "AE18",
   "material": "青铜 · 18mm · 4.37g",
   "reference": "SNG Stancomb-668; SNG France-1129-33; HGC 7-249",
-  "description": "本都王国（Pontos）位于安纳托利亚北部黑海沿岸，阿米索斯（Amisos，今土耳其萨姆松）是其最重要的港口城市之一。本都王国自米特里达梯一世建立，经历了数代君主的统治。约BC 120年，米特里达梯六世（Mithradates VI Eupator）继位，由于年幼由母亲摄政，此枚铜币即发行于这一时期。丰饶角象征富饶，狄俄斯库里兄弟的双帽子则暗示港口的航海保护，八芒星则代表这对孪生神兄弟。铭文ΑΜΙΣΟΥ即阿米索斯的希腊文拼写。",
+  "description": "本都王国(Pontos)位于安纳托利亚北部黑海沿岸,阿米索斯(Amisos,今土耳其萨姆松)是其最重要的港口城市之一。本都王国自米特里达梯一世建立,经历了数代君主的统治。约BC 120年,米特里达梯六世(Mithradates VI Eupator)继位,由于年幼由母亲摄政,此枚铜币即发行于这一时期。丰饶角象征富饶,狄俄斯库里兄弟的双帽子则暗示港口的航海保护,八芒星则代表这对孪生神兄弟。铭文ΑΜΙΣΟΥ即阿米索斯的希腊文拼写。",
   "obverse": "正面: winged and draped bust of Perseus right",
-  "reverse": "背面: 丰饶角两侧为狄俄斯库里兄弟皮里帽，ΑΜΙ-ΣΟΥ横列下方",
+  "reverse": "背面: 丰饶角两侧为狄俄斯库里兄弟皮里帽,ΑΜΙ-ΣΟΥ横列下方",
   "tags": [
     "本都",
     "阿米索斯",
@@ -29,6 +29,6 @@
   "lot": "",
   "year": "2026",
   "provenance_raw": "<strong>The Coin CABINET</strong> · Auction Ancients 34 · Lot · 2026-04-23",
-  "created_at": "2026-07-07T17:23:18",
+  "created_at": "2026-07-12T14:22:33",
   "image_size": 302838
 }

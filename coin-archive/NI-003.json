@@ -1,0 +1,32 @@
+{
+  "id": "NI-003",
+  "category": "NI",
+  "grade": "—",
+  "title": "意大利王国 · 拿破仑一世 3 Centesimi 铜币 1813 米兰",
+  "subtitle": "Napoleone Imperatore e Re · Regno d'Italia · Milano",
+  "image": "images/NI-003.jpg",
+  "era": "AD 1813",
+  "denomination": "3 Centesimi",
+  "material": "Copper · M",
+  "reference": "Mont. 312",
+  "description": "意大利王国（1805-1814）为拿破仑一世治下北意大利的附庸王国。1813年铸造的3 Centesimi为该系列最后年份之一，1814年随着拿破仑第一次退位，意大利王国随之覆灭。铁王冠（Corona Ferrea）为伦巴第王国的古老加冕标志，也是拿破仑作为意大利国王的象征。",
+  "obverse": "正面: NAPOLEONE IMPERATORE E RE · Tête nue de Napoléon Ier à gauche · 1813 · M",
+  "reverse": "反面: REGNO D'ITALIA · La Couronne de Fer · 3 CENTESIMI · M",
+  "tags": [
+    "NI",
+    "拿破仑一世",
+    "意大利王国",
+    "3 Centesimi",
+    "铁王冠"
+  ],
+  "price": "€96",
+  "price_currency": "EUR",
+  "price_cny": 749,
+  "seller": "CGB",
+  "auction": "2026-07",
+  "lot": "",
+  "year": "2026",
+  "provenance_raw": "<strong>CGB</strong> · 2026-07",
+  "created_at": "2026-07-12T13:55:56",
+  "image_size": 176279
+}

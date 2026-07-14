@@ -3,7 +3,7 @@
   "category": "greek",
   "grade": "",
   "title": "阿坎索斯 回首牛",
-  "subtitle": "Acanthus · Thraco-Macedonian · 二至四氧化物银币",
+  "subtitle": "Acanthus · Thraco-Macedonian · 三奥波银币",
   "image": "images/GR-006.jpg",
   "era": "BC 470-390",
   "denomination": "3 Obol 三奥波",
@@ -21,6 +21,11 @@
   "price": "¥121",
   "price_currency": "CNY",
   "price_cny": 121,
-  "created_at": "2026-07-14T19:19:38",
+  "seller": "良泉奇美",
+  "auction": "2024-09",
+  "lot": "",
+  "year": "2024",
+  "provenance_raw": "<strong>良泉奇美</strong> · 2024-09",
+  "created_at": "2026-07-14T19:49:28",
   "image_size": 2040871
 }

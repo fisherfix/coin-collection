@@ -1,0 +1,26 @@
+{
+  "id": "GR-006",
+  "category": "greek",
+  "grade": "",
+  "title": "阿坎索斯 回首牛",
+  "subtitle": "Acanthus · Thraco-Macedonian · 二至四氧化物银币",
+  "image": "images/GR-006.jpg",
+  "era": "BC 470-390",
+  "denomination": "3 Obol 三奥波",
+  "material": "Silver · — · 约 1.84g",
+  "reference": "—",
+  "description": "阿坎索斯（Acanthus）是一座位于卡尔息狄斯半岛（Chalcidice）南端的爱奥尼亚希腊城邦，约 BC 550 年由安德罗斯岛民建立。这座城市坐落于构成雅典娜海湾入口的战略要地，其经济主要依赖渔业、贸易和黄金开采。<br><br>阿坎索斯发行的\"回首牛\"银币是古典早期希腊钱币中最具辨识度的图像之一。正面为一头公牛卧姿，牛头向后回望，呈现典型的阿提卡艺术风格，这种独特姿态可能与酒神狄俄尼索斯崇拜有关。背面采用四分杯形凹陷纹（quadripartite incuse square），是色雷斯-马其顿银币的典型特征。<br><br>阿坎索斯币铸造年代约在 BC 470-390 年间，正值古典希腊时代早期。这些币当时作为贸易货币流通于爱琴海北部地区，反映了城邦与周边部落和殖民地的活跃商业往来。",
+  "obverse": "正面: 卧牛回首（recumbent bull looking back），牛身卧于方形凹陷内",
+  "reverse": "反面: 四分杯形凹陷纹（quadripartite incuse square），常见于色雷斯-马其顿银币",
+  "tags": [
+    "阿坎索斯",
+    "回首牛",
+    "色雷斯-马其顿",
+    "古典早期"
+  ],
+  "price": "¥121",
+  "price_currency": "CNY",
+  "price_cny": 121,
+  "created_at": "2026-07-14T19:19:38",
+  "image_size": 2040871
+}

@@ -13,15 +13,9 @@ _*.log
 # 归档目录
 _archive/
 
-# 基线指纹（每次会变，不入版本控制）
-.protect-baseline.json
+# 本地版本备份（体积大，不入版本控制）
+backups/
 
-# IDE
-.vscode/
-.idea/
-*.swp
-
-# 注意：保留 _ref_gr001.html 作为标准模板参考
 
 # 测试用文件
 test_*

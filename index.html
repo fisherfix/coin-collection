@@ -3935,6 +3935,31 @@ console.log('[tryRestore] 已禁用,页面仅从 HTML 加载数据');
 
 document.querySelectorAll('.coin-card').forEach(attachCard);
 
+// ===== 运行时自愈：拆开任何被嵌套/合并的卡片 =====
+// 防御：若因旧版 localStorage 还原、拖拽异常或浏览器缓存导致某张 .coin-card 被嵌进另一张，
+// 此处将其移出为同级兄弟节点，确保每张卡都是 .coin-grid 的直接子元素、互不合并。
+(function healCards() {
+  const grid = document.getElementById('coinGrid');
+  if (!grid) return;
+  let fixed = 0;
+  // 反复扫描直到没有嵌套为止（防御深层嵌套）
+  for (let pass = 0; pass < 10; pass++) {
+    let changed = false;
+    grid.querySelectorAll('.coin-card').forEach(card => {
+      const inner = card.querySelector('.coin-card');
+      if (inner) {
+        card.after(inner);   // 移到父卡之后，成为同级兄弟
+        fixed++; changed = true;
+      }
+    });
+    if (!changed) break;
+  }
+  if (fixed > 0) {
+    console.warn('[healCards] 已自动拆开 ' + fixed + ' 张被嵌套的卡片');
+    showToast('🔧 已自动修复 ' + fixed + ' 张卡片的嵌套显示');
+  }
+})();
+
 </script>
 </body>
 </html>

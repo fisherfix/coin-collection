@@ -22,7 +22,7 @@ h1 { text-align: center; color: #d4af37; font-size: 2em; margin-bottom: 10px; }
 .tool-btn.github { border-color: #d4af37; color: #d4af37; }
 .tool-btn.github:hover { background: #d4af37; color: #1a1a2e; }
 .coin-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(420px, 1fr)); grid-auto-flow: dense; gap: 30px; max-width: 1600px; margin: 0 auto; }
-.coin-card { background: #16213e; border-radius: 16px; overflow: hidden; box-shadow: 0 10px 40px rgba(0,0,0,0.3); transition: transform 0.3s, box-shadow 0.3s; cursor: default; }
+.coin-card { background: #16213e; border-radius: 16px; overflow: hidden; box-shadow: 0 10px 40px rgba(0,0,0,0.3); transition: transform 0.3s, box-shadow 0.3s; cursor: default; border: 1px solid #2a2a4a; }
 .coin-card:hover { transform: translateY(-5px); box-shadow: 0 15px 50px rgba(0,0,0,0.4); }
 .coin-card.dragging { opacity: 0.5; }
 .coin-card.drag-over { transform: scale(1.02); box-shadow: 0 0 0 2px #d4af37; }
@@ -3647,6 +3647,7 @@ grid.addEventListener('dragstart', e => {
 grid.addEventListener('dragend', () => {
   if (dragSrc) dragSrc.classList.remove('dragging');
   document.querySelectorAll('.coin-card').forEach(c => c.classList.remove('drag-over'));
+  dragSrc = null;
 });
 grid.addEventListener('dragover', e => {
   e.preventDefault();
@@ -3774,6 +3775,8 @@ function restoreLocal() {
       p.innerHTML = html;
       const sc = p.querySelector('.coin-card');
       if (!sc) return;
+      // 防御:单条记录含多个币号 = 损坏数据(如旧版把多卡存成一个),跳过以免污染现有卡片
+      if (sc.querySelectorAll('.coin-number').length > 1) { console.warn('[restoreLocal] 跳过损坏记录(含多个币号)'); return; }
       const num = sc.querySelector('.coin-number')?.textContent?.trim();
       const ex = [...g.querySelectorAll('.coin-card')].find(c => c.querySelector('.coin-number')?.textContent?.trim() === num);
       if (!ex) return;

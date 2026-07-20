@@ -116,6 +116,7 @@ h1 { text-align: center; color: #d4af37; font-size: 2em; margin-bottom: 10px; }
 <!-- PDF export deps -->
 <script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/dom-to-image@2.6.0/dist/dom-to-image.min.js"></script>
 
 
 </head>
@@ -4579,53 +4580,20 @@ function saveVersion(note) {
 }
 
 // ══════════════════════════════════════
-// PDF 导出（使用 jsPDF + html2canvas）
+// PDF 导出（使用 dom-to-image + jsPDF）
 // ══════════════════════════════════════
 async function exportPDF() {
   showToast('📄 正在生成 PDF，请稍候…');
   try {
     // 检查依赖
     if (!window.jspdf) { showToast('❌ PDF 库未加载，请刷新页面'); return; }
-    if (!window.html2canvas) { showToast('❌ html2canvas 未加载，请刷新页面'); return; }
+    if (!window.domtoimage) { showToast('❌ dom-to-image 未加载，请刷新页面'); return; }
 
     const { jsPDF } = window.jspdf;
     const cards = [...document.querySelectorAll('.coin-card')]
       .filter(c => c.style.display !== 'none');
 
     if (!cards.length) { showToast('⚠️ 没有可见卡片'); return; }
-
-    // 克隆卡片并替换图片为 base64（解决跨域问题）
-    const prepareCardForExport = async (originalCard) => {
-      const clone = originalCard.cloneNode(true);
-      const imgs = clone.querySelectorAll('img');
-      
-      for (let img of imgs) {
-        const src = img.src;
-        if (src && !src.startsWith('data:')) {
-          try {
-            // 尝试读取图片为 base64
-            const response = await fetch(src);
-            const blob = await response.blob();
-            const base64 = await new Promise((resolve) => {
-              const reader = new FileReader();
-              reader.onloadend = () => resolve(reader.result);
-              reader.readAsDataURL(blob);
-            });
-            img.src = base64;
-          } catch (e) {
-            // 如果失败，保留原样，html2canvas 会尝试处理
-            console.warn('无法转换图片:', src, e);
-          }
-        }
-      }
-      
-      // 将克隆的卡片临时添加到 DOM（隐藏）
-      clone.style.position = 'absolute';
-      clone.style.left = '-9999px';
-      clone.style.top = '0';
-      document.body.appendChild(clone);
-      return clone;
-    };
 
     const pdf = new jsPDF({ orientation: 'portrait', unit: 'mm', format: 'a4' });
     const pageW = pdf.internal.pageSize.getWidth();
@@ -4655,21 +4623,20 @@ async function exportPDF() {
       pdf.setTextColor(150, 150, 150);
       pdf.text(`${i + 1} / ${cards.length}`, pageW - margin, 8, { align: 'right' });
 
-      // 准备克隆卡片
-      const clone = await prepareCardForExport(cards[i]);
-      
       try {
-        // 将克隆的卡片转为 canvas
-        const canvas = await html2canvas(clone, {
-          scale: 1.5,
-          backgroundColor: '#16213e',
-          useCORS: false,
-          allowTaint: true,
-          logging: false
+        // 使用 dom-to-image 将卡片转为 PNG（对跨域图片更友好）
+        const dataUrl = await domtoimage.toPng(cards[i], {
+          bgcolor: '#16213e',
+          quality: 0.95,
+          style: {
+            'transform': 'scale(1.5)',
+            'transform-origin': 'top left'
+          }
         });
 
-        const imgData = canvas.toDataURL('image/jpeg', 0.85);
-        const imgH = (canvas.height / canvas.width) * cardW;
+        // 计算图片尺寸
+        const imgProps = pdf.getImageProperties(dataUrl);
+        const imgH = (imgProps.height / imgProps.width) * cardW;
 
         // 限制单卡高度
         let finalH = Math.min(imgH, pageH - 25);
@@ -4680,10 +4647,13 @@ async function exportPDF() {
         }
 
         const x = (pageW - finalW) / 2;
-        pdf.addImage(imgData, 'JPEG', x, 14, finalW, finalH);
-      } finally {
-        // 清理临时克隆
-        document.body.removeChild(clone);
+        pdf.addImage(dataUrl, 'PNG', x, 14, finalW, finalH);
+      } catch (imgErr) {
+        console.warn('卡片渲染失败:', imgErr);
+        // 降级：显示文字信息
+        pdf.setFontSize(12);
+        pdf.setTextColor(255, 100, 100);
+        pdf.text('图片渲染失败', pageW / 2, pageH / 2, { align: 'center' });
       }
 
       // 页脚

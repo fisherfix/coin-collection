@@ -4198,34 +4198,10 @@ console.log('[tryRestore] 已禁用,页面仅从 HTML 加载数据');
 // 根因:早期 autoSave 会把拖拽中临时嵌套的多张卡 outerHTML 一起写入,形成"含多个 coin-number 的损坏记录"
 // 该记录即使在 tryRestore 禁用的情况下,也会被手动点击"恢复本地编辑"按钮错误应用,造成多卡合并
 // 此处主动检测并清除,无需用户手动操作
-(function autoCleanupBadLocalStorage() {
-  const raw = localStorage.getItem('coinCat_v4');
-  if (!raw) return;
-  let bad = 0, total = 0, parseErr = false;
-  try {
-    const d = JSON.parse(raw);
-    if (!d.cards || !Array.isArray(d.cards)) { parseErr = true; }
-    else {
-      total = d.cards.length;
-      d.cards.forEach(html => {
-        const p = document.createElement('div');
-        p.innerHTML = html;
-        const sc = p.querySelector('.coin-card');
-        if (sc && sc.querySelectorAll('.coin-number').length > 1) bad++;
-      });
-    }
-  } catch(e) { parseErr = true; }
-  if (parseErr) {
-    localStorage.removeItem('coinCat_v4');
-    console.warn('[autoCleanup] localStorage 数据无法解析,已清空');
-    setTimeout(() => showToast('🧹 本地数据格式损坏,已自动清空'), 800);
-    return;
-  }
-  if (bad > 0) {
-    localStorage.removeItem('coinCat_v4');
-    console.warn(`[autoCleanup] 发现 ${bad}/${total} 条损坏记录(含多个币号),已清空 localStorage`);
-    setTimeout(() => showToast(`🧹 检测到 ${bad} 条损坏的本地数据,已自动清空`), 800);
-  }
+// 强制清除 localStorage 缓存，确保每次加载都从 HTML 文件读取干净数据
+(function forceCleanLocal() {
+  localStorage.removeItem('coinCat_v4');
+  console.warn('[forceClean] localStorage cleared, loading fresh HTML');
 })();
 
 document.querySelectorAll('.coin-card').forEach(attachCard);

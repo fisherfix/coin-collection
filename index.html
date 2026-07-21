@@ -4,6 +4,403 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>🏛️ 钱币收藏数据库</title>
+<!-- ☆ Firebase 配置 - 请填写你自己的项目参数 ☆ -->
+<script>
+  // ====== 请将下方的 firebaseConfig 替换为你 Firebase 项目的配置 ======
+  const firebaseConfig = {
+    apiKey: "YOUR_API_KEY",
+    authDomain: "YOUR_PROJECT.firebaseapp.com",
+    projectId: "YOUR_PROJECT_ID",
+    storageBucket: "YOUR_PROJECT.appspot.com",
+    messagingSenderId: "YOUR_SENDER_ID",
+    appId: "YOUR_APP_ID"
+  };
+  // ====== 如果不想用云端功能，只需保留上述 firebaseConfig 为空，页面仍可正常使用 ======
+
+  let firebaseApp = null;
+  let db = null;
+  let firebaseReady = false;
+
+  function initFirebase() {
+    if (!firebaseConfig.projectId || firebaseConfig.projectId === 'YOUR_PROJECT_ID') {
+      console.log('[Firebase] 未配置，跳过云端功能');
+      return;
+    }
+    try {
+      firebaseApp = firebase.initializeApp(firebaseConfig);
+      db = firebase.firestore();
+      firebaseReady = true;
+      console.log('[Firebase] 已连接 Firestore');
+    } catch(e) {
+      console.error('[Firebase] 初始化失败:', e);
+    }
+  }
+
+  // ====== 密码工具函数 (SHA-256) ======
+  async function sha256(str) {
+    const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(str));
+    return Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2,'0')).join('');
+  }
+
+  // ====== 页面访问控制 ======
+  // 页面加载时同步检查密码，保护页面内容不被未授权访问
+  function checkAccess() {
+    const storedHash = localStorage.getItem('nc_pw_hash');
+    if (!storedHash) {
+      // 首次访问：要求设置密码
+      const pw = prompt('🔒 首次访问，请设置访问密码（至少4位）：');
+      if (!pw || pw.length < 4) {
+        alert('密码至少4位，页面将刷新重试。');
+        location.reload();
+        return;
+      }
+      const pw2 = prompt('请再次输入密码以确认：');
+      if (pw !== pw2) {
+        alert('两次密码不一致，页面将刷新重试。');
+        location.reload();
+        return;
+      }
+      // Hash 并存储
+      sha256(pw).then(h => {
+        localStorage.setItem('nc_pw_hash', h);
+        showToast('✓ 密码已设置，欢迎！');
+      });
+      return;
+    }
+    // 已设置密码：验证
+    const pw = prompt('🔐 钱币收藏数据库 - 请输入密码：');
+    if (!pw) {
+      document.body.innerHTML = '<div style="display:flex;align-items:center;justify-content:center;height:100vh;background:#08080f;color:#d4af37;font-family:Segoe UI,sans-serif;font-size:1.5em;">访问已取消</div>';
+      return;
+    }
+    sha256(pw).then(h => {
+      if (h !== storedHash) {
+        alert('密码错误！');
+        location.reload();
+        return;
+      }
+      showToast('✓ 已解锁，欢迎！');
+      if (firebaseReady) loadFromCloud();
+    });
+  }
+
+  function showLoginScreen(mode) {
+    const overlay = document.getElementById('loginOverlay');
+    if (!overlay) return;
+    overlay.style.display = 'flex';
+    const title = document.getElementById('loginTitle');
+    const sub = document.getElementById('loginSubtitle');
+    const input = document.getElementById('loginInput');
+    const btn = document.getElementById('loginBtn');
+    if (mode === 'setup') {
+      title.textContent = '🔒 设置访问密码';
+      sub.textContent = '请设置一个密码，之后每次打开页面都需要输入此密码。';
+      input.placeholder = '输入新密码';
+      btn.textContent = '确认并进入';
+      btn.onclick = setupPassword;
+    } else {
+      title.textContent = '🔐 钱币收藏数据库';
+      sub.textContent = '请输入密码访问';
+      input.placeholder = '输入密码';
+      btn.textContent = '解锁';
+      btn.onclick = verifyPassword;
+    }
+    input.value = '';
+    input.focus();
+    input.onkeydown = (e) => { if (e.key === 'Enter') btn.click(); };
+  }
+
+  async function setupPassword() {
+    const pw = document.getElementById('loginInput').value.trim();
+    if (!pw || pw.length < 4) { showLoginToast('密码至少4位'); return; }
+    const hash = await sha256(pw);
+    localStorage.setItem('nc_pw_hash', hash);
+    document.getElementById('loginOverlay').style.display = 'none';
+    showToast('✓ 密码已设置');
+    if (firebaseReady) loadFromCloud();
+  }
+
+  async function verifyPassword() {
+    const pw = document.getElementById('loginInput').value.trim();
+    if (!pw) { showLoginToast('请输入密码'); return; }
+    const hash = await sha256(pw);
+    const storedHash = localStorage.getItem('nc_pw_hash');
+    if (hash === storedHash) {
+      document.getElementById('loginOverlay').style.display = 'none';
+      if (firebaseReady) loadFromCloud();
+    } else {
+      showLoginToast('密码错误');
+      document.getElementById('loginInput').value = '';
+    }
+  }
+
+  function showLoginToast(msg) {
+    const el = document.getElementById('loginToast');
+    if (!el) return;
+    el.textContent = msg;
+    el.style.opacity = '1';
+    setTimeout(() => { el.style.opacity = '0'; }, 2500);
+  }
+
+  function changePassword() {
+    const newPw = prompt('请输入新密码（至少4位）：');
+    if (!newPw || newPw.length < 4) { showToast('密码至少4位'); return; }
+    const confirmPw = prompt('请再次输入新密码：');
+    if (newPw !== confirmPw) { showToast('两次密码不一致'); return; }
+    sha256(newPw).then(hash => {
+      localStorage.setItem('nc_pw_hash', hash);
+      showToast('✓ 密码已修改');
+    });
+  }
+
+  // ====== 云端保存与加载 ======
+  async function saveToCloud() {
+    if (!firebaseReady || !db) {
+      showToast('⚠ 云端未配置');
+      return false;
+    }
+    const cards = [...document.querySelectorAll('.coin-card')].map(c => c.outerHTML);
+    const cardData = cards.map(c => {
+      const num = c.querySelector ? (c.querySelector('.coin-number')?.textContent?.trim() || '') : '';
+      const editables = {};
+      if (c.querySelectorAll) {
+        c.querySelectorAll('[contenteditable]').forEach(el => {
+          const key = el.className + '|' + el.tagName;
+          if (!editables[key]) editables[key] = [];
+          editables[key].push(el.textContent);
+        });
+      }
+      const img = c.querySelector ? c.querySelector('.coin-image img') : null;
+      return { num, editables, imgSrc: img?.src || '', imgPath: img?.getAttribute('data-path') || '' };
+    });
+    const ts = new Date().toISOString();
+    const revEntry = {
+      ts,
+      displayTs: new Date().toLocaleString('zh-CN'),
+      count: cards.length,
+      note: '云端同步',
+      cardData,
+      cardsHtml: cards  // 存储完整 HTML 以便恢复
+    };
+    try {
+      await db.collection('coinDB').doc('current').set({
+        cards,
+        cardData,
+        lastModified: firebase.firestore.FieldValue.serverTimestamp(),
+        count: cards.length
+      });
+      await db.collection('coinDB').doc('revisions').collection('entries').add({
+        ...revEntry,
+        serverTs: firebase.firestore.FieldValue.serverTimestamp()
+      });
+      showToast(`☁ 已保存至云端 (${cards.length} 张卡片)`);
+      return true;
+    } catch(e) {
+      console.error('[Cloud Save]', e);
+      showToast('✗ 云端保存失败: ' + e.message);
+      return false;
+    }
+  }
+
+  async function loadFromCloud() {
+    if (!firebaseReady || !db) return;
+    try {
+      const doc = await db.collection('coinDB').doc('current').get();
+      if (doc.exists && doc.data().cards) {
+        const data = doc.data();
+        const grid = document.getElementById('coinGrid');
+        if (grid) {
+          grid.innerHTML = data.cards.join('');
+          filterCoins();
+          showToast(`☁ 从云端加载了 ${data.count || data.cards.length} 张卡片`);
+        }
+      }
+    } catch(e) {
+      console.error('[Cloud Load]', e);
+    }
+  }
+
+  async function showCloudRevisions() {
+    if (!firebaseReady || !db) { showToast('⚠ 云端未配置'); return; }
+    try {
+      const snap = await db.collection('coinDB').doc('revisions').collection('entries')
+        .orderBy('ts', 'desc').limit(30).get();
+      if (snap.empty) { showToast('暂无云端修订记录'); return; }
+      let html = '<div style="padding:16px;">';
+      snap.forEach(doc => {
+        const d = doc.data();
+        html += `<div style="padding:10px 0;border-bottom:1px solid #333;cursor:pointer;" onclick="restoreFromCloudRev('${doc.id}')">
+          <div style="color:#d4af37;font-size:0.85em;">${d.displayTs || d.ts}</div>
+          <div style="color:#aaa;font-size:0.8em;margin-top:4px;">${d.count} 张卡片${d.note ? ' - ' + d.note : ''}</div>
+        </div>`;
+      });
+      html += '</div>';
+      const panel = document.getElementById('cloudRevPanel');
+      if (panel) {
+        panel.innerHTML = html;
+        panel.style.display = 'flex';
+      }
+    } catch(e) {
+      showToast('✗ 加载云端修订失败');
+    }
+  }
+
+  // 从云端修订历史恢复指定版本
+  async function restoreFromCloudRev(revId) {
+    if (!firebaseReady || !db) { showToast('⚠ 云端未配置'); return; }
+    if (!confirm('确定要恢复此修订版本吗？当前页面内容将被覆盖。')) return;
+    try {
+      const doc = await db.collection('coinDB').doc('revisions').collection('entries').doc(revId).get();
+      if (!doc.exists) { showToast('✗ 修订不存在'); return; }
+      const d = doc.data();
+      const grid = document.getElementById('coinGrid');
+      if (grid) {
+        if (d.cardsHtml && d.cardsHtml.length > 0) {
+          // 直接用保存的完整 HTML 恢复
+          grid.innerHTML = d.cardsHtml.join('');
+        } else {
+          // 降级：用 cardData 重建（不完整）
+          showToast('⚠ 此修订无完整快照，仅显示卡片数据');
+        }
+        filterCoins();
+      }
+      const panel = document.getElementById('cloudRevPanel');
+      if (panel) panel.style.display = 'none';
+      showToast(`✓ 已恢复 ${d.count || 0} 张卡片的修订版本`);
+    } catch(e) {
+      console.error('[Cloud Restore]', e);
+      showToast('✗ 恢复失败');
+    }
+  }
+
+  
+  // ====== 增强 PDF 导出 (高清卡片图) ======
+  async function exportPDF() {
+    const cards = [...document.querySelectorAll('.coin-card')].filter(c => c.style.display !== 'none');
+    if (!cards.length) { showToast('⚠ 没有可见卡片'); return; }
+
+    const printWindow = window.open('', '_blank', 'width=1200,height=800');
+    if (!printWindow) { showToast('✗ 请允许弹出窗口以导出 PDF'); return; }
+
+    // 构建打印页面，完整还原卡片视觉
+    const cardPages = [];
+    for (const card of cards) {
+      // 使用 html2canvas 渲染单卡片为图片
+      try {
+        const canvas = await html2canvas(card, {
+          scale: 2,
+          backgroundColor: '#16213e',
+          useCORS: true,
+          allowTaint: true,
+          logging: false
+        });
+        cardPages.push(canvas.toDataURL('image/jpeg', 0.92));
+      } catch(e) {
+        // Fallback: 直接克隆 HTML
+        const clone = card.cloneNode(true);
+        clone.querySelectorAll('.drag-handle').forEach(el => el.remove());
+        clone.querySelectorAll('[contenteditable]').forEach(el => el.removeAttribute('contenteditable'));
+        cardPages.push(null); // signal HTML fallback
+      }
+    }
+
+    const totalPages = cardPages.length;
+    let pagesHtml = '';
+    for (let i = 0; i < cardPages.length; i++) {
+      const pg = i + 1;
+      if (cardPages[i]) {
+        pagesHtml += `<div class="print-page">
+          <div class="print-hdr">
+            <span>🏛️ 钱币收藏数据库</span><span>${pg} / ${totalPages}</span>
+          </div>
+          <div class="print-img-wrap">
+            <img src="${cardPages[i]}" alt="coin" style="max-width:100%;max-height:85vh;display:block;margin:0 auto;" />
+          </div>
+          <div class="print-ftr">
+            <span>NumisMaster Collection</span><span>${new Date().toLocaleDateString('zh-CN')}</span>
+          </div>
+        </div>`;
+      }
+    }
+
+    printWindow.document.write(`<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>钱币收藏数据库 - PDF</title>
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family: 'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif; background:#fff; }
+.print-page { width:210mm; min-height:297mm; padding:15mm 20mm; page-break-after:always; page-break-inside:avoid; display:flex; flex-direction:column; background:#16213e; }
+.print-page:last-child { page-break-after:auto; }
+.print-hdr { display:flex; justify-content:space-between; align-items:center; padding:8px 0; border-bottom:2px solid #d4af37; margin-bottom:10mm; color:#d4af37; font-size:12px; }
+.print-img-wrap { flex:1; display:flex; align-items:center; justify-content:center; padding:5mm 0; }
+.print-ftr { display:flex; justify-content:space-between; align-items:center; padding:8px 0; border-top:1px solid #333; margin-top:10mm; color:#888; font-size:10px; }
+@media print { .print-page { background:#16213e !important; -webkit-print-color-adjust:exact; print-color-adjust:exact; } }
+
+
+/* ===== 登录界面 ===== */
+#loginOverlay { font-family: 'Segoe UI','PingFang SC',sans-serif; }
+#loginOverlay input:focus { border-color: #d4af37 !important; box-shadow: 0 0 10px rgba(212,175,55,0.3); }
+#loginBtn:hover { background: #e8c547 !important; }
+
+/* ===== 云端修订面板 ===== */
+#cloudRevPanel { font-family: 'Segoe UI','PingFang SC', sans-serif; }
+#cloudRevPanel::-webkit-scrollbar { width: 6px; }
+#cloudRevPanel::-webkit-scrollbar-track { background: #1a1a3e; }
+#cloudRevPanel::-webkit-scrollbar-thumb { background: #d4af37; border-radius: 3px; }
+
+/* ===== PDF 打印页面样式 ===== */
+.print-page { font-family: 'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif !important; }
+
+
+</style>
+</head>
+<body>
+<!-- 登录界面 -->
+<div id="loginOverlay" style="display:none;position:fixed;inset:0;background:#08080f;z-index:99999;justify-content:center;align-items:center;flex-direction:column;">
+  <div style="background:#16213e;border:2px solid #d4af37;border-radius:20px;padding:40px;min-width:360px;max-width:420px;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,0.8);">
+    <div style="font-size:3em;margin-bottom:16px;">🏛️</div>
+    <h2 id="loginTitle" style="color:#d4af37;margin-bottom:8px;font-size:1.4em;">🔒 钱币收藏数据库</h2>
+    <p id="loginSubtitle" style="color:#888;font-size:0.85em;margin-bottom:24px;line-height:1.5;">请输入密码访问</p>
+    <input id="loginInput" type="password" placeholder="输入密码"
+      style="width:100%;padding:12px 16px;background:#0a0a1a;border:1px solid #444;border-radius:8px;color:#eee;font-size:1em;outline:none;text-align:center;margin-bottom:16px;box-sizing:border-box;">
+    <button id="loginBtn" onclick="verifyPassword()"
+      style="width:100%;padding:12px;background:#d4af37;color:#1a1a2e;border:none;border-radius:8px;font-size:1em;font-weight:bold;cursor:pointer;margin-bottom:12px;">
+      解锁
+    </button>
+    <div id="loginToast" style="color:#f66;font-size:0.8em;min-height:1.2em;opacity:0;transition:opacity 0.3s;"></div>
+    <div style="margin-top:16px;font-size:0.75em;color:#555;line-height:1.6;">
+      <div id="cloudStatusLine" style="color:#888;margin-bottom:4px;"></div>
+      密码存储于本地 · 云端同步可选配置
+    </div>
+  </div>
+</div>
+
+<!-- 云端修订面板 -->
+<div id="cloudRevPanel" style="display:none;position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);background:#1a1a3e;border:2px solid #d4af37;border-radius:16px;z-index:9998;min-width:400px;max-width:600px;max-height:70vh;overflow-y:auto;box-shadow:0 20px 60px rgba(0,0,0,0.8);">
+  <div style="display:flex;justify-content:space-between;align-items:center;padding:16px 20px;border-bottom:1px solid #d4af37;position:sticky;top:0;background:#1a1a3e;border-radius:16px 16px 0 0;">
+    <span style="color:#d4af37;font-weight:bold;">☁ 云端修订历史</span>
+    <button onclick="document.getElementById('cloudRevPanel').style.display='none'" style="background:none;border:none;color:#888;font-size:1.2em;cursor:pointer;">✕</button>
+  </div>
+</div>
+
+${pagesHtml}</body>
+</html>`);
+    printWindow.document.close();
+    showToast('✓ PDF 预览已打开，请使用浏览器打印功能（Ctrl+P）保存为 PDF');
+  }
+
+  // ====== 初始化 ======
+  initFirebase();
+  // 页面加载时检查密码（同步阻止渲染，直到验证通过）
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', checkAccess);
+  } else {
+    checkAccess();
+  }
+</script>
+
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body { font-family: 'Segoe UI', 'PingFang SC', sans-serif; background: #08080f; color: #eee; min-height: 100vh; padding: 20px 40px 60px; }
@@ -119,6 +516,11 @@ h1 { text-align: center; color: #d4af37; font-size: 2em; margin-bottom: 10px; }
 <script src="https://cdn.jsdelivr.net/npm/dom-to-image@2.6.0/dist/dom-to-image.min.js"></script>
 
 
+<!-- Firebase SDK -->
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+
 </head>
 <body>
 
@@ -153,6 +555,11 @@ h1 { text-align: center; color: #d4af37; font-size: 2em; margin-bottom: 10px; }
   <!-- 保存系列 -->
   <button class="tool-btn tool-save" onclick="saveVersion()" style="border-color:#4cff4c;color:#4cff4c">💾 保存修订</button>
   <button class="tool-btn tool-history" onclick="toggleHistory()" style="border-color:#d4af37;color:#d4af37">📜 版本历史 <span id="historyCount" class="tool-badge">0</span></button>
+  <!-- 云端 -->
+  <button class="tool-btn" onclick="saveToCloud()" style="border-color:#87ceeb;color:#87ceeb" title="保存到 Firebase 云端">☁ 保存云端</button>
+  <button class="tool-btn" onclick="showCloudRevisions()" style="border-color:#87ceeb;color:#87ceeb" title="查看云端修订历史">☁ 云端修订</button>
+  <!-- 密码 -->
+  <button class="tool-btn" onclick="changePassword()" style="border-color:#aaa;color:#aaa" title="修改访问密码">🔑 改密码</button>
   <!-- 导出 -->
   <button class="tool-btn" onclick="exportPDF()">📄 导出PDF</button>
   <button class="tool-btn" onclick="exportCSV()">📋 导出CSV</button>

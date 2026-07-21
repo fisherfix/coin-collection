@@ -1,36 +1,63 @@
-# Python
+# ============================================================
+# 钱币收藏数据库 .gitignore
+# ============================================================
+
+# Python 缓存
 __pycache__/
 *.py[cod]
 *.egg-info/
 
-# 临时/调试文件
-_*.py
-_*.js
-_*.log
-*.bak
+# 开发/调试脚本（按需保留可执行脚本）
+*.ps1
+*.psm1
+*.bat
+*.cmd
+*.sh
+*.out
 *.tmp
+*.log
+*.bak
+*.swp
 
-# 归档目录
-_archive/
+# 中间产物（由脚本生成，不入版本控制）
+images_opt/          # PDF 优化中间图片
+coin-collection.db   # SQLite 数据库（由 save_coin.py 生成）
+coingrid_end.txt     # 调试输出
+coin_issues_*.md     # 调试记录
+catalog.csv          # 辅助索引（card 已有完整数据）
+*.xlsx               # Excel 导出文件
 
-# 本地版本备份（体积大，不入版本控制）
-backups/
-
-
-# 测试用文件
-test_*
+# PDF / 文档（由工具生成，用户本地保留）
+*.pdf
 
 # 自动备份（运行时产生）
 *.bak
-*.tmp
-
-# 基线指纹（每次会变，不入版本控制）
 .protect-baseline.json
 
-# 归档目录
+# 大文件归档（本地备份，不需要进入仓库）
+backups/
 _archive/
+_*/                   # 所有以下划线开头的调试目录
 
-# IDE
+# 开发临时文件
+test_*
+debug*
+extract*
+find*
+fix*
+rebuild*
+analyze*
+count*
+check*
+patch*
+verify*
+
+# IDE / 编辑器
 .vscode/
 .idea/
 *.swp
+
+# ============================================================
+# 保留清单（明确不过滤）
+# !labels.txt
+# ============================================================

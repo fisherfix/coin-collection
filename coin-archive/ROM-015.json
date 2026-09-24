@@ -2,16 +2,16 @@
   "id": "ROM-015",
   "category": "roman",
   "grade": "-",
-  "title": "罗马行省·芒冠蓄须头像 铜币（归属待考）",
-  "subtitle": "ROMAN PROVINCIAL · AE · Radiate Bearded Bust / Standing Figure · Attribution Pending",
+  "title": "罗马行省·上默西亚 维米纳库姆 图拉真·德西乌斯 铜币",
+  "subtitle": "MOESIA SUPERIOR · VIMINACIUM · Trajan Decius · AD 249-251",
   "image": "images/ROM-015.jpg",
-  "era": "待考",
+  "era": "AD 249-251（AN XII = AD 250/251）",
   "denomination": "AE 行省铜币",
   "material": "Bronze 青铜 · 25.5mm · 7.85g",
-  "reference": "—",
+  "reference": "RPC IX 12 / 17 / 21-23（精确版别待铭文确认）",
   "description": "罗马行省铜币(Roman Provincial AE)。行省币是罗马帝国授权各行省城市自行打制的流通货币,与罗马本土造币厂发行的币种并行流通。其典型特征是正面沿用皇帝肖像与拉丁铭文,背面保留希腊语城名与地方神祇、城市象征——同一枚币上并存两种语言与两套图像体系,这是行省币最鲜明的辨识特征,也是研究帝国地方治理与城市认同的重要实物。\n\n本枚为铜质,直径 25.5mm、重 7.85g,属行省币中等规格。正面为蓄须男性头像向右,头戴芒冠(radiate);背面为站立人像,周围与底部有铭文行。因币面磨损较重,皇帝归属、发行城市与背面神祇名称均无法可靠释读,故年代与参考编号暂记「待考」。\n\n后续若取得拍卖方标注、同版清晰图录或可靠参考编号,可据此补全归属。按本库原则,未确认的归属不写入卡片,以免形成错误档案。",
-  "obverse": "正面: 蓄须男性头像向右,头戴芒冠;周围环绕铭文(磨损,不可释读)",
-  "reverse": "反面: 站立人像,周围及底部铭文行(磨损,不可释读)",
+  "obverse": "桂冠、披袍执甲半身像向右（图拉真·德西乌斯）；周围环绕铭文",
+  "reverse": "P M S COL VIM, AN XII；默西亚化身立像向左，两侧公牛与狮子",
   "tags": [
     "古罗马",
     "罗马行省",
@@ -28,5 +28,8 @@
   "year": "2026",
   "provenance_raw": "<strong>琋语集藏</strong> · 2026-08-09",
   "created_at": "2026-09-24T16:06:29",
-  "image_size": 815060
+  "image_size": 815060,
+  "mint": "Viminacium 维米纳库姆, Moesia Superior",
+  "ruler": "Trajan Decius 图拉真·德西乌斯",
+  "attribution": "Moesia Superior, Viminacium; Issue AN XII = AD 250/251; RPC IX, probably 12/17/21-23; exact subtype pending legend/attribute confirmation"
 }
